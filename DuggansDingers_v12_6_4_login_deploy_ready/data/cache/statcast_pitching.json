@@ -1,0 +1,5784 @@
+{
+  "statcast_v2_2026-07-22_2026": {
+    "hitters": {
+      "650333": {
+        "avg_exit_velocity": 87.0,
+        "max_exit_velocity": 104.4,
+        "barrel_pct": 0.5,
+        "hard_hit_pct": 21.4,
+        "sweet_spot_pct": 39.3
+      },
+      "663538": {
+        "avg_exit_velocity": 86.1,
+        "max_exit_velocity": 105.8,
+        "barrel_pct": 0.8,
+        "hard_hit_pct": 27.5,
+        "sweet_spot_pct": 36.5
+      },
+      "676391": {
+        "avg_exit_velocity": 85.0,
+        "max_exit_velocity": 109.7,
+        "barrel_pct": 2.6,
+        "hard_hit_pct": 22.4,
+        "sweet_spot_pct": 34.4
+      },
+      "645277": {
+        "avg_exit_velocity": 86.8,
+        "max_exit_velocity": 108.7,
+        "barrel_pct": 4.1,
+        "hard_hit_pct": 27.4,
+        "sweet_spot_pct": 33.9
+      },
+      "672640": {
+        "avg_exit_velocity": 89.5,
+        "max_exit_velocity": 112.8,
+        "barrel_pct": 7.1,
+        "hard_hit_pct": 42.6,
+        "sweet_spot_pct": 31.4
+      },
+      "606466": {
+        "avg_exit_velocity": 91.1,
+        "max_exit_velocity": 116.9,
+        "barrel_pct": 10.5,
+        "hard_hit_pct": 44.7,
+        "sweet_spot_pct": 33.0
+      },
+      "666182": {
+        "avg_exit_velocity": 89.9,
+        "max_exit_velocity": 114.9,
+        "barrel_pct": 6.7,
+        "hard_hit_pct": 43.0,
+        "sweet_spot_pct": 36.0
+      },
+      "647304": {
+        "avg_exit_velocity": 87.5,
+        "max_exit_velocity": 111.5,
+        "barrel_pct": 4.6,
+        "hard_hit_pct": 36.4,
+        "sweet_spot_pct": 34.0
+      },
+      "608324": {
+        "avg_exit_velocity": 88.1,
+        "max_exit_velocity": 108.3,
+        "barrel_pct": 4.3,
+        "hard_hit_pct": 36.5,
+        "sweet_spot_pct": 31.0
+      },
+      "802415": {
+        "avg_exit_velocity": 83.9,
+        "max_exit_velocity": 102.2,
+        "barrel_pct": 0.0,
+        "hard_hit_pct": 14.4,
+        "sweet_spot_pct": 24.9
+      },
+      "669364": {
+        "avg_exit_velocity": 87.0,
+        "max_exit_velocity": 108.6,
+        "barrel_pct": 4.4,
+        "hard_hit_pct": 29.0,
+        "sweet_spot_pct": 37.7
+      },
+      "676475": {
+        "avg_exit_velocity": 91.6,
+        "max_exit_velocity": 111.7,
+        "barrel_pct": 11.3,
+        "hard_hit_pct": 48.1,
+        "sweet_spot_pct": 34.1
+      },
+      "650490": {
+        "avg_exit_velocity": 91.1,
+        "max_exit_velocity": 113.7,
+        "barrel_pct": 6.9,
+        "hard_hit_pct": 47.8,
+        "sweet_spot_pct": 29.2
+      },
+      "808982": {
+        "avg_exit_velocity": 87.1,
+        "max_exit_velocity": 107.6,
+        "barrel_pct": 2.2,
+        "hard_hit_pct": 28.5,
+        "sweet_spot_pct": 35.8
+      },
+      "695734": {
+        "avg_exit_velocity": 88.2,
+        "max_exit_velocity": 109.5,
+        "barrel_pct": 7.9,
+        "hard_hit_pct": 35.7,
+        "sweet_spot_pct": 37.1
+      },
+      "683002": {
+        "avg_exit_velocity": 89.6,
+        "max_exit_velocity": 111.9,
+        "barrel_pct": 7.1,
+        "hard_hit_pct": 44.4,
+        "sweet_spot_pct": 28.9
+      },
+      "665487": {
+        "avg_exit_velocity": 92.1,
+        "max_exit_velocity": 115.7,
+        "barrel_pct": 11.3,
+        "hard_hit_pct": 53.2,
+        "sweet_spot_pct": 30.6
+      },
+      "607208": {
+        "avg_exit_velocity": 88.9,
+        "max_exit_velocity": 110.1,
+        "barrel_pct": 6.8,
+        "hard_hit_pct": 41.3,
+        "sweet_spot_pct": 33.5
+      },
+      "661388": {
+        "avg_exit_velocity": 90.0,
+        "max_exit_velocity": 112.7,
+        "barrel_pct": 7.4,
+        "hard_hit_pct": 42.6,
+        "sweet_spot_pct": 31.0
+      },
+      "805808": {
+        "avg_exit_velocity": 88.0,
+        "max_exit_velocity": 109.5,
+        "barrel_pct": 7.8,
+        "hard_hit_pct": 37.3,
+        "sweet_spot_pct": 36.6
+      },
+      "802139": {
+        "avg_exit_velocity": 90.0,
+        "max_exit_velocity": 108.7,
+        "barrel_pct": 7.2,
+        "hard_hit_pct": 45.2,
+        "sweet_spot_pct": 35.9
+      },
+      "643289": {
+        "avg_exit_velocity": 86.4,
+        "max_exit_velocity": 108.3,
+        "barrel_pct": 4.6,
+        "hard_hit_pct": 30.7,
+        "sweet_spot_pct": 35.0
+      },
+      "665489": {
+        "avg_exit_velocity": 90.2,
+        "max_exit_velocity": 116.0,
+        "barrel_pct": 6.9,
+        "hard_hit_pct": 43.8,
+        "sweet_spot_pct": 30.4
+      },
+      "518692": {
+        "avg_exit_velocity": 90.2,
+        "max_exit_velocity": 110.3,
+        "barrel_pct": 10.2,
+        "hard_hit_pct": 44.3,
+        "sweet_spot_pct": 36.7
+      },
+      "664761": {
+        "avg_exit_velocity": 90.5,
+        "max_exit_velocity": 109.4,
+        "barrel_pct": 5.3,
+        "hard_hit_pct": 42.4,
+        "sweet_spot_pct": 32.6
+      },
+      "681624": {
+        "avg_exit_velocity": 88.9,
+        "max_exit_velocity": 109.7,
+        "barrel_pct": 8.2,
+        "hard_hit_pct": 43.8,
+        "sweet_spot_pct": 36.2
+      },
+      "666176": {
+        "avg_exit_velocity": 89.6,
+        "max_exit_velocity": 114.9,
+        "barrel_pct": 8.6,
+        "hard_hit_pct": 43.3,
+        "sweet_spot_pct": 32.9
+      },
+      "691406": {
+        "avg_exit_velocity": 93.0,
+        "max_exit_velocity": 116.9,
+        "barrel_pct": 13.6,
+        "hard_hit_pct": 51.3,
+        "sweet_spot_pct": 28.9
+      },
+      "672695": {
+        "avg_exit_velocity": 87.1,
+        "max_exit_velocity": 109.9,
+        "barrel_pct": 3.0,
+        "hard_hit_pct": 29.7,
+        "sweet_spot_pct": 32.6
+      },
+      "702284": {
+        "avg_exit_velocity": 88.4,
+        "max_exit_velocity": 111.3,
+        "barrel_pct": 5.3,
+        "hard_hit_pct": 38.7,
+        "sweet_spot_pct": 35.3
+      },
+      "641355": {
+        "avg_exit_velocity": 89.1,
+        "max_exit_velocity": 109.3,
+        "barrel_pct": 6.3,
+        "hard_hit_pct": 36.8,
+        "sweet_spot_pct": 39.7
+      },
+      "669477": {
+        "avg_exit_velocity": 89.7,
+        "max_exit_velocity": 112.3,
+        "barrel_pct": 12.0,
+        "hard_hit_pct": 44.1,
+        "sweet_spot_pct": 39.5
+      },
+      "677951": {
+        "avg_exit_velocity": 92.9,
+        "max_exit_velocity": 117.2,
+        "barrel_pct": 12.0,
+        "hard_hit_pct": 52.2,
+        "sweet_spot_pct": 38.1
+      },
+      "681198": {
+        "avg_exit_velocity": 83.7,
+        "max_exit_velocity": 107.6,
+        "barrel_pct": 5.4,
+        "hard_hit_pct": 27.9,
+        "sweet_spot_pct": 36.9
+      },
+      "671056": {
+        "avg_exit_velocity": 89.0,
+        "max_exit_velocity": 112.3,
+        "barrel_pct": 5.4,
+        "hard_hit_pct": 39.1,
+        "sweet_spot_pct": 28.9
+      },
+      "686797": {
+        "avg_exit_velocity": 88.1,
+        "max_exit_velocity": 108.0,
+        "barrel_pct": 3.7,
+        "hard_hit_pct": 31.8,
+        "sweet_spot_pct": 32.1
+      },
+      "678246": {
+        "avg_exit_velocity": 90.4,
+        "max_exit_velocity": 112.9,
+        "barrel_pct": 14.9,
+        "hard_hit_pct": 46.4,
+        "sweet_spot_pct": 40.5
+      },
+      "701398": {
+        "avg_exit_velocity": 90.3,
+        "max_exit_velocity": 111.4,
+        "barrel_pct": 13.9,
+        "hard_hit_pct": 40.3,
+        "sweet_spot_pct": 33.2
+      },
+      "670541": {
+        "avg_exit_velocity": 94.6,
+        "max_exit_velocity": 118.5,
+        "barrel_pct": 19.0,
+        "hard_hit_pct": 53.2,
+        "sweet_spot_pct": 42.4
+      },
+      "670623": {
+        "avg_exit_velocity": 86.7,
+        "max_exit_velocity": 106.8,
+        "barrel_pct": 5.8,
+        "hard_hit_pct": 30.5,
+        "sweet_spot_pct": 37.7
+      },
+      "677800": {
+        "avg_exit_velocity": 90.1,
+        "max_exit_velocity": 113.1,
+        "barrel_pct": 13.0,
+        "hard_hit_pct": 42.5,
+        "sweet_spot_pct": 36.6
+      },
+      "677587": {
+        "avg_exit_velocity": 86.7,
+        "max_exit_velocity": 109.6,
+        "barrel_pct": 2.7,
+        "hard_hit_pct": 32.4,
+        "sweet_spot_pct": 33.9
+      },
+      "521692": {
+        "avg_exit_velocity": 89.0,
+        "max_exit_velocity": 111.2,
+        "barrel_pct": 9.7,
+        "hard_hit_pct": 42.4,
+        "sweet_spot_pct": 34.0
+      },
+      "678882": {
+        "avg_exit_velocity": 86.2,
+        "max_exit_velocity": 109.9,
+        "barrel_pct": 4.9,
+        "hard_hit_pct": 31.9,
+        "sweet_spot_pct": 36.5
+      },
+      "689414": {
+        "avg_exit_velocity": 85.3,
+        "max_exit_velocity": 107.5,
+        "barrel_pct": 3.8,
+        "hard_hit_pct": 30.2,
+        "sweet_spot_pct": 25.3
+      },
+      "621566": {
+        "avg_exit_velocity": 92.6,
+        "max_exit_velocity": 111.6,
+        "barrel_pct": 13.9,
+        "hard_hit_pct": 50.5,
+        "sweet_spot_pct": 31.4
+      },
+      "693304": {
+        "avg_exit_velocity": 85.8,
+        "max_exit_velocity": 109.7,
+        "barrel_pct": 2.8,
+        "hard_hit_pct": 36.0,
+        "sweet_spot_pct": 34.3
+      },
+      "673962": {
+        "avg_exit_velocity": 90.6,
+        "max_exit_velocity": 110.1,
+        "barrel_pct": 6.3,
+        "hard_hit_pct": 48.3,
+        "sweet_spot_pct": 39.9
+      },
+      "671739": {
+        "avg_exit_velocity": 91.4,
+        "max_exit_velocity": 114.9,
+        "barrel_pct": 12.3,
+        "hard_hit_pct": 50.5,
+        "sweet_spot_pct": 29.1
+      },
+      "680757": {
+        "avg_exit_velocity": 83.2,
+        "max_exit_velocity": 101.1,
+        "barrel_pct": 0.4,
+        "hard_hit_pct": 9.5,
+        "sweet_spot_pct": 39.8
+      },
+      "701807": {
+        "avg_exit_velocity": 89.2,
+        "max_exit_velocity": 109.8,
+        "barrel_pct": 7.4,
+        "hard_hit_pct": 40.6,
+        "sweet_spot_pct": 38.5
+      },
+      "682928": {
+        "avg_exit_velocity": 89.9,
+        "max_exit_velocity": 110.8,
+        "barrel_pct": 11.0,
+        "hard_hit_pct": 42.6,
+        "sweet_spot_pct": 34.4
+      },
+      "701538": {
+        "avg_exit_velocity": 89.6,
+        "max_exit_velocity": 109.7,
+        "barrel_pct": 9.9,
+        "hard_hit_pct": 45.4,
+        "sweet_spot_pct": 37.6
+      },
+      "621493": {
+        "avg_exit_velocity": 89.3,
+        "max_exit_velocity": 109.5,
+        "barrel_pct": 5.7,
+        "hard_hit_pct": 38.2,
+        "sweet_spot_pct": 36.4
+      },
+      "607043": {
+        "avg_exit_velocity": 92.4,
+        "max_exit_velocity": 110.5,
+        "barrel_pct": 12.5,
+        "hard_hit_pct": 52.5,
+        "sweet_spot_pct": 36.8
+      },
+      "547180": {
+        "avg_exit_velocity": 90.2,
+        "max_exit_velocity": 113.5,
+        "barrel_pct": 11.2,
+        "hard_hit_pct": 45.7,
+        "sweet_spot_pct": 36.0
+      },
+      "691023": {
+        "avg_exit_velocity": 93.9,
+        "max_exit_velocity": 116.6,
+        "barrel_pct": 14.1,
+        "hard_hit_pct": 50.5,
+        "sweet_spot_pct": 34.3
+      },
+      "605137": {
+        "avg_exit_velocity": 89.9,
+        "max_exit_velocity": 112.6,
+        "barrel_pct": 10.1,
+        "hard_hit_pct": 43.3,
+        "sweet_spot_pct": 33.9
+      },
+      "677594": {
+        "avg_exit_velocity": 90.3,
+        "max_exit_velocity": 114.6,
+        "barrel_pct": 9.1,
+        "hard_hit_pct": 44.6,
+        "sweet_spot_pct": 32.2
+      },
+      "669127": {
+        "avg_exit_velocity": 92.0,
+        "max_exit_velocity": 114.4,
+        "barrel_pct": 15.2,
+        "hard_hit_pct": 45.3,
+        "sweet_spot_pct": 37.3
+      },
+      "592518": {
+        "avg_exit_velocity": 90.4,
+        "max_exit_velocity": 112.0,
+        "barrel_pct": 11.2,
+        "hard_hit_pct": 44.2,
+        "sweet_spot_pct": 32.6
+      },
+      "572233": {
+        "avg_exit_velocity": 89.3,
+        "max_exit_velocity": 112.5,
+        "barrel_pct": 9.8,
+        "hard_hit_pct": 42.2,
+        "sweet_spot_pct": 31.3
+      },
+      "681082": {
+        "avg_exit_velocity": 89.0,
+        "max_exit_velocity": 111.9,
+        "barrel_pct": 6.9,
+        "hard_hit_pct": 37.8,
+        "sweet_spot_pct": 34.9
+      },
+      "666018": {
+        "avg_exit_velocity": 91.0,
+        "max_exit_velocity": 111.4,
+        "barrel_pct": 9.9,
+        "hard_hit_pct": 44.7,
+        "sweet_spot_pct": 37.2
+      },
+      "800050": {
+        "avg_exit_velocity": 91.1,
+        "max_exit_velocity": 111.2,
+        "barrel_pct": 6.6,
+        "hard_hit_pct": 44.9,
+        "sweet_spot_pct": 35.2
+      },
+      "668930": {
+        "avg_exit_velocity": 90.6,
+        "max_exit_velocity": 109.6,
+        "barrel_pct": 8.5,
+        "hard_hit_pct": 43.7,
+        "sweet_spot_pct": 37.8
+      },
+      "663656": {
+        "avg_exit_velocity": 88.9,
+        "max_exit_velocity": 107.6,
+        "barrel_pct": 5.6,
+        "hard_hit_pct": 38.3,
+        "sweet_spot_pct": 34.9
+      },
+      "805367": {
+        "avg_exit_velocity": 87.8,
+        "max_exit_velocity": 107.7,
+        "barrel_pct": 4.1,
+        "hard_hit_pct": 34.7,
+        "sweet_spot_pct": 33.5
+      },
+      "683737": {
+        "avg_exit_velocity": 88.3,
+        "max_exit_velocity": 108.7,
+        "barrel_pct": 10.0,
+        "hard_hit_pct": 40.5,
+        "sweet_spot_pct": 34.2
+      },
+      "646240": {
+        "avg_exit_velocity": 92.2,
+        "max_exit_velocity": 112.4,
+        "barrel_pct": 11.2,
+        "hard_hit_pct": 50.0,
+        "sweet_spot_pct": 32.5
+      },
+      "624413": {
+        "avg_exit_velocity": 93.7,
+        "max_exit_velocity": 114.6,
+        "barrel_pct": 12.4,
+        "hard_hit_pct": 54.3,
+        "sweet_spot_pct": 34.1
+      },
+      "807712": {
+        "avg_exit_velocity": 84.3,
+        "max_exit_velocity": 107.3,
+        "barrel_pct": 3.0,
+        "hard_hit_pct": 27.7,
+        "sweet_spot_pct": 36.0
+      },
+      "593428": {
+        "avg_exit_velocity": 88.0,
+        "max_exit_velocity": 111.0,
+        "barrel_pct": 6.4,
+        "hard_hit_pct": 39.0,
+        "sweet_spot_pct": 28.1
+      },
+      "682998": {
+        "avg_exit_velocity": 91.3,
+        "max_exit_velocity": 112.9,
+        "barrel_pct": 11.6,
+        "hard_hit_pct": 46.4,
+        "sweet_spot_pct": 28.1
+      },
+      "693307": {
+        "avg_exit_velocity": 89.7,
+        "max_exit_velocity": 110.8,
+        "barrel_pct": 11.7,
+        "hard_hit_pct": 47.0,
+        "sweet_spot_pct": 41.4
+      },
+      "691718": {
+        "avg_exit_velocity": 90.1,
+        "max_exit_velocity": 114.6,
+        "barrel_pct": 10.6,
+        "hard_hit_pct": 47.5,
+        "sweet_spot_pct": 37.0
+      },
+      "671277": {
+        "avg_exit_velocity": 91.8,
+        "max_exit_velocity": 114.0,
+        "barrel_pct": 10.6,
+        "hard_hit_pct": 46.0,
+        "sweet_spot_pct": 34.3
+      },
+      "691026": {
+        "avg_exit_velocity": 88.1,
+        "max_exit_velocity": 108.5,
+        "barrel_pct": 3.0,
+        "hard_hit_pct": 35.1,
+        "sweet_spot_pct": 32.8
+      },
+      "668804": {
+        "avg_exit_velocity": 90.9,
+        "max_exit_velocity": 113.7,
+        "barrel_pct": 10.6,
+        "hard_hit_pct": 47.2,
+        "sweet_spot_pct": 36.6
+      },
+      "702332": {
+        "avg_exit_velocity": 84.9,
+        "max_exit_velocity": 107.9,
+        "barrel_pct": 2.7,
+        "hard_hit_pct": 29.2,
+        "sweet_spot_pct": 27.7
+      },
+      "545121": {
+        "avg_exit_velocity": 87.6,
+        "max_exit_velocity": 109.4,
+        "barrel_pct": 3.4,
+        "hard_hit_pct": 34.7,
+        "sweet_spot_pct": 30.4
+      },
+      "664040": {
+        "avg_exit_velocity": 91.0,
+        "max_exit_velocity": 111.1,
+        "barrel_pct": 12.2,
+        "hard_hit_pct": 45.8,
+        "sweet_spot_pct": 36.6
+      },
+      "642715": {
+        "avg_exit_velocity": 88.1,
+        "max_exit_velocity": 108.8,
+        "barrel_pct": 9.5,
+        "hard_hit_pct": 40.1,
+        "sweet_spot_pct": 37.4
+      },
+      "660271": {
+        "avg_exit_velocity": 93.4,
+        "max_exit_velocity": 114.6,
+        "barrel_pct": 16.9,
+        "hard_hit_pct": 52.9,
+        "sweet_spot_pct": 39.1
+      },
+      "700250": {
+        "avg_exit_velocity": 92.3,
+        "max_exit_velocity": 110.9,
+        "barrel_pct": 15.4,
+        "hard_hit_pct": 48.5,
+        "sweet_spot_pct": 40.0
+      },
+      "669394": {
+        "avg_exit_velocity": 90.0,
+        "max_exit_velocity": 113.6,
+        "barrel_pct": 10.8,
+        "hard_hit_pct": 46.7,
+        "sweet_spot_pct": 30.1
+      },
+      "669016": {
+        "avg_exit_velocity": 89.6,
+        "max_exit_velocity": 110.1,
+        "barrel_pct": 9.7,
+        "hard_hit_pct": 45.2,
+        "sweet_spot_pct": 44.0
+      },
+      "668227": {
+        "avg_exit_velocity": 91.3,
+        "max_exit_velocity": 113.0,
+        "barrel_pct": 7.8,
+        "hard_hit_pct": 42.2,
+        "sweet_spot_pct": 37.6
+      },
+      "691016": {
+        "avg_exit_velocity": 90.2,
+        "max_exit_velocity": 113.2,
+        "barrel_pct": 10.2,
+        "hard_hit_pct": 44.7,
+        "sweet_spot_pct": 31.0
+      },
+      "694384": {
+        "avg_exit_velocity": 87.3,
+        "max_exit_velocity": 106.6,
+        "barrel_pct": 2.0,
+        "hard_hit_pct": 32.5,
+        "sweet_spot_pct": 36.1
+      },
+      "687263": {
+        "avg_exit_velocity": 89.5,
+        "max_exit_velocity": 109.7,
+        "barrel_pct": 12.6,
+        "hard_hit_pct": 39.7,
+        "sweet_spot_pct": 34.0
+      },
+      "695578": {
+        "avg_exit_velocity": 95.2,
+        "max_exit_velocity": 116.3,
+        "barrel_pct": 22.1,
+        "hard_hit_pct": 59.7,
+        "sweet_spot_pct": 41.1
+      },
+      "805300": {
+        "avg_exit_velocity": 86.7,
+        "max_exit_velocity": 110.9,
+        "barrel_pct": 3.2,
+        "hard_hit_pct": 33.2,
+        "sweet_spot_pct": 27.7
+      },
+      "571448": {
+        "avg_exit_velocity": 85.3,
+        "max_exit_velocity": 107.5,
+        "barrel_pct": 7.1,
+        "hard_hit_pct": 33.1,
+        "sweet_spot_pct": 36.1
+      },
+      "682985": {
+        "avg_exit_velocity": 91.6,
+        "max_exit_velocity": 112.4,
+        "barrel_pct": 14.3,
+        "hard_hit_pct": 50.6,
+        "sweet_spot_pct": 37.8
+      },
+      "621020": {
+        "avg_exit_velocity": 89.8,
+        "max_exit_velocity": 110.3,
+        "barrel_pct": 7.2,
+        "hard_hit_pct": 42.8,
+        "sweet_spot_pct": 28.8
+      },
+      "668715": {
+        "avg_exit_velocity": 89.7,
+        "max_exit_velocity": 107.2,
+        "barrel_pct": 12.0,
+        "hard_hit_pct": 39.6,
+        "sweet_spot_pct": 36.0
+      },
+      "664983": {
+        "avg_exit_velocity": 85.2,
+        "max_exit_velocity": 108.6,
+        "barrel_pct": 5.6,
+        "hard_hit_pct": 25.2,
+        "sweet_spot_pct": 36.4
+      },
+      "686217": {
+        "avg_exit_velocity": 85.9,
+        "max_exit_velocity": 107.2,
+        "barrel_pct": 2.0,
+        "hard_hit_pct": 27.8,
+        "sweet_spot_pct": 28.1
+      },
+      "701358": {
+        "avg_exit_velocity": 89.4,
+        "max_exit_velocity": 114.7,
+        "barrel_pct": 11.7,
+        "hard_hit_pct": 44.4,
+        "sweet_spot_pct": 31.0
+      },
+      "665742": {
+        "avg_exit_velocity": 92.5,
+        "max_exit_velocity": 114.2,
+        "barrel_pct": 14.2,
+        "hard_hit_pct": 48.6,
+        "sweet_spot_pct": 31.6
+      },
+      "663586": {
+        "avg_exit_velocity": 90.6,
+        "max_exit_velocity": 112.2,
+        "barrel_pct": 11.4,
+        "hard_hit_pct": 43.5,
+        "sweet_spot_pct": 31.7
+      },
+      "680776": {
+        "avg_exit_velocity": 89.6,
+        "max_exit_velocity": 114.7,
+        "barrel_pct": 11.0,
+        "hard_hit_pct": 38.2,
+        "sweet_spot_pct": 31.3
+      },
+      "656811": {
+        "avg_exit_velocity": 89.8,
+        "max_exit_velocity": 108.1,
+        "barrel_pct": 7.8,
+        "hard_hit_pct": 45.5,
+        "sweet_spot_pct": 34.8
+      },
+      "678662": {
+        "avg_exit_velocity": 87.3,
+        "max_exit_velocity": 109.1,
+        "barrel_pct": 6.6,
+        "hard_hit_pct": 33.2,
+        "sweet_spot_pct": 36.5
+      },
+      "665926": {
+        "avg_exit_velocity": 86.2,
+        "max_exit_velocity": 108.9,
+        "barrel_pct": 4.1,
+        "hard_hit_pct": 23.5,
+        "sweet_spot_pct": 30.0
+      },
+      "665019": {
+        "avg_exit_velocity": 92.7,
+        "max_exit_velocity": 108.2,
+        "barrel_pct": 12.8,
+        "hard_hit_pct": 45.9,
+        "sweet_spot_pct": 35.5
+      },
+      "687859": {
+        "avg_exit_velocity": 89.8,
+        "max_exit_velocity": 107.9,
+        "barrel_pct": 2.1,
+        "hard_hit_pct": 38.2,
+        "sweet_spot_pct": 40.7
+      },
+      "643446": {
+        "avg_exit_velocity": 86.4,
+        "max_exit_velocity": 105.0,
+        "barrel_pct": 0.8,
+        "hard_hit_pct": 32.4,
+        "sweet_spot_pct": 36.5
+      },
+      "677649": {
+        "avg_exit_velocity": 88.4,
+        "max_exit_velocity": 111.5,
+        "barrel_pct": 6.4,
+        "hard_hit_pct": 36.9,
+        "sweet_spot_pct": 36.0
+      },
+      "672960": {
+        "avg_exit_velocity": 91.0,
+        "max_exit_velocity": 112.6,
+        "barrel_pct": 14.0,
+        "hard_hit_pct": 46.2,
+        "sweet_spot_pct": 31.4
+      },
+      "662139": {
+        "avg_exit_velocity": 86.1,
+        "max_exit_velocity": 110.4,
+        "barrel_pct": 6.8,
+        "hard_hit_pct": 38.3,
+        "sweet_spot_pct": 34.0
+      },
+      "575929": {
+        "avg_exit_velocity": 90.7,
+        "max_exit_velocity": 114.4,
+        "barrel_pct": 14.5,
+        "hard_hit_pct": 47.0,
+        "sweet_spot_pct": 32.9
+      },
+      "514888": {
+        "avg_exit_velocity": 85.6,
+        "max_exit_velocity": 107.3,
+        "barrel_pct": 6.0,
+        "hard_hit_pct": 32.5,
+        "sweet_spot_pct": 34.2
+      },
+      "543760": {
+        "avg_exit_velocity": 86.2,
+        "max_exit_velocity": 107.5,
+        "barrel_pct": 7.7,
+        "hard_hit_pct": 35.2,
+        "sweet_spot_pct": 36.9
+      },
+      "803011": {
+        "avg_exit_velocity": 87.5,
+        "max_exit_velocity": 108.4,
+        "barrel_pct": 6.4,
+        "hard_hit_pct": 36.2,
+        "sweet_spot_pct": 39.1
+      },
+      "695506": {
+        "avg_exit_velocity": 93.0,
+        "max_exit_velocity": 116.1,
+        "barrel_pct": 15.0,
+        "hard_hit_pct": 55.4,
+        "sweet_spot_pct": 34.8
+      },
+      "656775": {
+        "avg_exit_velocity": 88.0,
+        "max_exit_velocity": 110.4,
+        "barrel_pct": 4.3,
+        "hard_hit_pct": 31.2,
+        "sweet_spot_pct": 26.6
+      },
+      "621439": {
+        "avg_exit_velocity": 90.8,
+        "max_exit_velocity": 111.9,
+        "barrel_pct": 18.1,
+        "hard_hit_pct": 47.4,
+        "sweet_spot_pct": 33.2
+      },
+      "695600": {
+        "avg_exit_velocity": 90.8,
+        "max_exit_velocity": 113.7,
+        "barrel_pct": 9.6,
+        "hard_hit_pct": 43.5,
+        "sweet_spot_pct": 31.3
+      },
+      "664023": {
+        "avg_exit_velocity": 89.7,
+        "max_exit_velocity": 111.5,
+        "barrel_pct": 12.2,
+        "hard_hit_pct": 43.0,
+        "sweet_spot_pct": 33.6
+      },
+      "696100": {
+        "avg_exit_velocity": 91.0,
+        "max_exit_velocity": 116.2,
+        "barrel_pct": 17.5,
+        "hard_hit_pct": 46.3,
+        "sweet_spot_pct": 34.9
+      },
+      "656305": {
+        "avg_exit_velocity": 88.2,
+        "max_exit_velocity": 113.0,
+        "barrel_pct": 6.6,
+        "hard_hit_pct": 35.8,
+        "sweet_spot_pct": 25.3
+      },
+      "673548": {
+        "avg_exit_velocity": 89.2,
+        "max_exit_velocity": 112.9,
+        "barrel_pct": 9.6,
+        "hard_hit_pct": 41.2,
+        "sweet_spot_pct": 39.0
+      },
+      "696285": {
+        "avg_exit_velocity": 88.7,
+        "max_exit_velocity": 110.1,
+        "barrel_pct": 7.0,
+        "hard_hit_pct": 35.5,
+        "sweet_spot_pct": 35.5
+      },
+      "691594": {
+        "avg_exit_velocity": 87.1,
+        "max_exit_velocity": 108.4,
+        "barrel_pct": 1.3,
+        "hard_hit_pct": 31.3,
+        "sweet_spot_pct": 30.4
+      },
+      "686948": {
+        "avg_exit_velocity": 91.5,
+        "max_exit_velocity": 112.8,
+        "barrel_pct": 15.4,
+        "hard_hit_pct": 50.7,
+        "sweet_spot_pct": 37.9
+      },
+      "695657": {
+        "avg_exit_velocity": 89.2,
+        "max_exit_velocity": 114.4,
+        "barrel_pct": 13.7,
+        "hard_hit_pct": 44.2,
+        "sweet_spot_pct": 35.2
+      },
+      "608070": {
+        "avg_exit_velocity": 90.3,
+        "max_exit_velocity": 110.8,
+        "barrel_pct": 6.6,
+        "hard_hit_pct": 44.2,
+        "sweet_spot_pct": 36.6
+      },
+      "571970": {
+        "avg_exit_velocity": 90.1,
+        "max_exit_velocity": 110.1,
+        "barrel_pct": 13.7,
+        "hard_hit_pct": 44.2,
+        "sweet_spot_pct": 34.5
+      },
+      "682829": {
+        "avg_exit_velocity": 94.2,
+        "max_exit_velocity": 116.3,
+        "barrel_pct": 14.6,
+        "hard_hit_pct": 52.2,
+        "sweet_spot_pct": 36.7
+      },
+      "665862": {
+        "avg_exit_velocity": 90.9,
+        "max_exit_velocity": 112.4,
+        "barrel_pct": 9.8,
+        "hard_hit_pct": 41.8,
+        "sweet_spot_pct": 28.9
+      },
+      "672580": {
+        "avg_exit_velocity": 90.1,
+        "max_exit_velocity": 110.6,
+        "barrel_pct": 4.9,
+        "hard_hit_pct": 41.3,
+        "sweet_spot_pct": 32.9
+      },
+      "641487": {
+        "avg_exit_velocity": 88.2,
+        "max_exit_velocity": 107.8,
+        "barrel_pct": 6.7,
+        "hard_hit_pct": 36.2,
+        "sweet_spot_pct": 35.7
+      },
+      "663757": {
+        "avg_exit_velocity": 91.3,
+        "max_exit_velocity": 111.6,
+        "barrel_pct": 11.2,
+        "hard_hit_pct": 47.8,
+        "sweet_spot_pct": 33.0
+      },
+      "605141": {
+        "avg_exit_velocity": 90.5,
+        "max_exit_velocity": 108.1,
+        "barrel_pct": 8.5,
+        "hard_hit_pct": 38.6,
+        "sweet_spot_pct": 40.4
+      },
+      "691720": {
+        "avg_exit_velocity": 89.7,
+        "max_exit_velocity": 111.8,
+        "barrel_pct": 8.5,
+        "hard_hit_pct": 43.5,
+        "sweet_spot_pct": 41.3
+      },
+      "686469": {
+        "avg_exit_velocity": 88.7,
+        "max_exit_velocity": 108.1,
+        "barrel_pct": 7.2,
+        "hard_hit_pct": 38.6,
+        "sweet_spot_pct": 36.3
+      },
+      "805779": {
+        "avg_exit_velocity": 83.8,
+        "max_exit_velocity": 105.6,
+        "barrel_pct": 2.7,
+        "hard_hit_pct": 28.2,
+        "sweet_spot_pct": 32.7
+      },
+      "657757": {
+        "avg_exit_velocity": 87.9,
+        "max_exit_velocity": 110.1,
+        "barrel_pct": 7.3,
+        "hard_hit_pct": 40.5,
+        "sweet_spot_pct": 35.5
+      },
+      "676609": {
+        "avg_exit_velocity": 83.8,
+        "max_exit_velocity": 108.5,
+        "barrel_pct": 3.7,
+        "hard_hit_pct": 25.2,
+        "sweet_spot_pct": 28.3
+      },
+      "683083": {
+        "avg_exit_velocity": 85.0,
+        "max_exit_velocity": 105.8,
+        "barrel_pct": 0.5,
+        "hard_hit_pct": 21.1,
+        "sweet_spot_pct": 31.2
+      },
+      "671976": {
+        "avg_exit_velocity": 87.4,
+        "max_exit_velocity": 108.5,
+        "barrel_pct": 5.0,
+        "hard_hit_pct": 31.3,
+        "sweet_spot_pct": 32.6
+      },
+      "702222": {
+        "avg_exit_velocity": 86.6,
+        "max_exit_velocity": 106.9,
+        "barrel_pct": 0.9,
+        "hard_hit_pct": 33.0,
+        "sweet_spot_pct": 28.4
+      },
+      "679529": {
+        "avg_exit_velocity": 89.8,
+        "max_exit_velocity": 109.8,
+        "barrel_pct": 14.3,
+        "hard_hit_pct": 42.4,
+        "sweet_spot_pct": 45.2
+      },
+      "678554": {
+        "avg_exit_velocity": 88.2,
+        "max_exit_velocity": 110.1,
+        "barrel_pct": 11.1,
+        "hard_hit_pct": 42.9,
+        "sweet_spot_pct": 36.4
+      },
+      "656941": {
+        "avg_exit_velocity": 93.3,
+        "max_exit_velocity": 113.2,
+        "barrel_pct": 19.0,
+        "hard_hit_pct": 52.8,
+        "sweet_spot_pct": 39.4
+      },
+      "650489": {
+        "avg_exit_velocity": 88.1,
+        "max_exit_velocity": 112.1,
+        "barrel_pct": 7.4,
+        "hard_hit_pct": 40.5,
+        "sweet_spot_pct": 32.1
+      },
+      "683146": {
+        "avg_exit_velocity": 89.4,
+        "max_exit_velocity": 111.7,
+        "barrel_pct": 8.4,
+        "hard_hit_pct": 39.1,
+        "sweet_spot_pct": 35.8
+      },
+      "543807": {
+        "avg_exit_velocity": 88.7,
+        "max_exit_velocity": 109.2,
+        "barrel_pct": 8.0,
+        "hard_hit_pct": 40.4,
+        "sweet_spot_pct": 31.9
+      },
+      "672515": {
+        "avg_exit_velocity": 89.1,
+        "max_exit_velocity": 110.9,
+        "barrel_pct": 7.0,
+        "hard_hit_pct": 40.4,
+        "sweet_spot_pct": 38.5
+      },
+      "663616": {
+        "avg_exit_velocity": 87.1,
+        "max_exit_velocity": 108.8,
+        "barrel_pct": 7.0,
+        "hard_hit_pct": 34.7,
+        "sweet_spot_pct": 39.4
+      },
+      "663837": {
+        "avg_exit_velocity": 87.7,
+        "max_exit_velocity": 107.4,
+        "barrel_pct": 5.2,
+        "hard_hit_pct": 36.8,
+        "sweet_spot_pct": 35.8
+      },
+      "641343": {
+        "avg_exit_velocity": 92.5,
+        "max_exit_velocity": 114.8,
+        "barrel_pct": 13.7,
+        "hard_hit_pct": 52.8,
+        "sweet_spot_pct": 35.8
+      },
+      "668939": {
+        "avg_exit_velocity": 89.4,
+        "max_exit_velocity": 110.3,
+        "barrel_pct": 7.1,
+        "hard_hit_pct": 42.0,
+        "sweet_spot_pct": 40.6
+      },
+      "686555": {
+        "avg_exit_velocity": 88.5,
+        "max_exit_velocity": 110.9,
+        "barrel_pct": 5.7,
+        "hard_hit_pct": 41.4,
+        "sweet_spot_pct": 32.4
+      },
+      "687462": {
+        "avg_exit_velocity": 86.9,
+        "max_exit_velocity": 108.0,
+        "barrel_pct": 8.6,
+        "hard_hit_pct": 34.3,
+        "sweet_spot_pct": 27.6
+      },
+      "690993": {
+        "avg_exit_velocity": 89.3,
+        "max_exit_velocity": 109.6,
+        "barrel_pct": 8.1,
+        "hard_hit_pct": 42.9,
+        "sweet_spot_pct": 38.6
+      },
+      "643217": {
+        "avg_exit_velocity": 89.1,
+        "max_exit_velocity": 106.8,
+        "barrel_pct": 9.2,
+        "hard_hit_pct": 47.1,
+        "sweet_spot_pct": 35.7
+      },
+      "686681": {
+        "avg_exit_velocity": 90.1,
+        "max_exit_velocity": 108.4,
+        "barrel_pct": 6.3,
+        "hard_hit_pct": 41.3,
+        "sweet_spot_pct": 33.0
+      },
+      "545361": {
+        "avg_exit_velocity": 90.7,
+        "max_exit_velocity": 114.6,
+        "barrel_pct": 19.0,
+        "hard_hit_pct": 48.3,
+        "sweet_spot_pct": 36.6
+      },
+      "663968": {
+        "avg_exit_velocity": 84.7,
+        "max_exit_velocity": 104.6,
+        "barrel_pct": 1.5,
+        "hard_hit_pct": 27.0,
+        "sweet_spot_pct": 23.0
+      },
+      "701762": {
+        "avg_exit_velocity": 93.6,
+        "max_exit_velocity": 115.9,
+        "barrel_pct": 18.1,
+        "hard_hit_pct": 58.3,
+        "sweet_spot_pct": 38.7
+      },
+      "671289": {
+        "avg_exit_velocity": 88.0,
+        "max_exit_velocity": 110.2,
+        "barrel_pct": 1.5,
+        "hard_hit_pct": 35.8,
+        "sweet_spot_pct": 30.9
+      },
+      "694192": {
+        "avg_exit_velocity": 92.4,
+        "max_exit_velocity": 113.3,
+        "barrel_pct": 13.3,
+        "hard_hit_pct": 47.0,
+        "sweet_spot_pct": 32.0
+      },
+      "694212": {
+        "avg_exit_velocity": 91.3,
+        "max_exit_velocity": 112.5,
+        "barrel_pct": 12.9,
+        "hard_hit_pct": 45.5,
+        "sweet_spot_pct": 33.2
+      },
+      "609280": {
+        "avg_exit_velocity": 88.3,
+        "max_exit_velocity": 109.0,
+        "barrel_pct": 4.5,
+        "hard_hit_pct": 36.3,
+        "sweet_spot_pct": 26.4
+      },
+      "701675": {
+        "avg_exit_velocity": 86.2,
+        "max_exit_velocity": 110.1,
+        "barrel_pct": 7.5,
+        "hard_hit_pct": 32.2,
+        "sweet_spot_pct": 34.7
+      },
+      "668709": {
+        "avg_exit_velocity": 89.0,
+        "max_exit_velocity": 112.6,
+        "barrel_pct": 9.5,
+        "hard_hit_pct": 41.4,
+        "sweet_spot_pct": 43.2
+      },
+      "683953": {
+        "avg_exit_velocity": 88.3,
+        "max_exit_velocity": 108.1,
+        "barrel_pct": 5.1,
+        "hard_hit_pct": 36.4,
+        "sweet_spot_pct": 29.4
+      },
+      "592626": {
+        "avg_exit_velocity": 92.0,
+        "max_exit_velocity": 110.6,
+        "barrel_pct": 11.8,
+        "hard_hit_pct": 49.2,
+        "sweet_spot_pct": 32.3
+      },
+      "663743": {
+        "avg_exit_velocity": 85.7,
+        "max_exit_velocity": 108.9,
+        "barrel_pct": 2.6,
+        "hard_hit_pct": 36.1,
+        "sweet_spot_pct": 23.1
+      },
+      "665750": {
+        "avg_exit_velocity": 87.3,
+        "max_exit_velocity": 110.0,
+        "barrel_pct": 4.6,
+        "hard_hit_pct": 29.9,
+        "sweet_spot_pct": 30.9
+      },
+      "605170": {
+        "avg_exit_velocity": 89.6,
+        "max_exit_velocity": 107.2,
+        "barrel_pct": 7.3,
+        "hard_hit_pct": 38.3,
+        "sweet_spot_pct": 41.5
+      },
+      "592663": {
+        "avg_exit_velocity": 89.3,
+        "max_exit_velocity": 109.4,
+        "barrel_pct": 4.7,
+        "hard_hit_pct": 39.3,
+        "sweet_spot_pct": 33.5
+      },
+      "656716": {
+        "avg_exit_velocity": 84.8,
+        "max_exit_velocity": 106.0,
+        "barrel_pct": 2.6,
+        "hard_hit_pct": 20.5,
+        "sweet_spot_pct": 35.3
+      },
+      "668885": {
+        "avg_exit_velocity": 86.9,
+        "max_exit_velocity": 106.8,
+        "barrel_pct": 2.1,
+        "hard_hit_pct": 27.9,
+        "sweet_spot_pct": 32.1
+      },
+      "642086": {
+        "avg_exit_velocity": 87.8,
+        "max_exit_velocity": 109.1,
+        "barrel_pct": 5.9,
+        "hard_hit_pct": 35.6,
+        "sweet_spot_pct": 32.4
+      },
+      "687401": {
+        "avg_exit_velocity": 87.9,
+        "max_exit_velocity": 110.8,
+        "barrel_pct": 4.3,
+        "hard_hit_pct": 34.0,
+        "sweet_spot_pct": 27.7
+      },
+      "608348": {
+        "avg_exit_velocity": 88.0,
+        "max_exit_velocity": 108.4,
+        "barrel_pct": 6.4,
+        "hard_hit_pct": 38.0,
+        "sweet_spot_pct": 31.6
+      },
+      "680574": {
+        "avg_exit_velocity": 88.8,
+        "max_exit_velocity": 110.5,
+        "barrel_pct": 9.1,
+        "hard_hit_pct": 38.0,
+        "sweet_spot_pct": 37.4
+      },
+      "686527": {
+        "avg_exit_velocity": 92.8,
+        "max_exit_velocity": 114.7,
+        "barrel_pct": 14.4,
+        "hard_hit_pct": 48.1,
+        "sweet_spot_pct": 34.2
+      },
+      "502671": {
+        "avg_exit_velocity": 86.5,
+        "max_exit_velocity": 109.8,
+        "barrel_pct": 11.3,
+        "hard_hit_pct": 38.2,
+        "sweet_spot_pct": 34.4
+      },
+      "657041": {
+        "avg_exit_velocity": 89.7,
+        "max_exit_velocity": 108.4,
+        "barrel_pct": 7.0,
+        "hard_hit_pct": 43.0,
+        "sweet_spot_pct": 37.6
+      },
+      "669065": {
+        "avg_exit_velocity": 91.5,
+        "max_exit_velocity": 111.9,
+        "barrel_pct": 11.3,
+        "hard_hit_pct": 53.8,
+        "sweet_spot_pct": 34.4
+      },
+      "672724": {
+        "avg_exit_velocity": 87.3,
+        "max_exit_velocity": 110.3,
+        "barrel_pct": 7.6,
+        "hard_hit_pct": 37.3,
+        "sweet_spot_pct": 34.1
+      },
+      "664770": {
+        "avg_exit_velocity": 86.6,
+        "max_exit_velocity": 107.5,
+        "barrel_pct": 1.1,
+        "hard_hit_pct": 28.8,
+        "sweet_spot_pct": 29.3
+      },
+      "669003": {
+        "avg_exit_velocity": 92.6,
+        "max_exit_velocity": 115.5,
+        "barrel_pct": 14.1,
+        "hard_hit_pct": 49.5,
+        "sweet_spot_pct": 32.6
+      },
+      "624585": {
+        "avg_exit_velocity": 88.2,
+        "max_exit_velocity": 112.7,
+        "barrel_pct": 11.4,
+        "hard_hit_pct": 41.8,
+        "sweet_spot_pct": 36.4
+      },
+      "700932": {
+        "avg_exit_velocity": 89.1,
+        "max_exit_velocity": 108.4,
+        "barrel_pct": 10.9,
+        "hard_hit_pct": 39.9,
+        "sweet_spot_pct": 33.3
+      },
+      "660688": {
+        "avg_exit_velocity": 89.3,
+        "max_exit_velocity": 106.3,
+        "barrel_pct": 5.5,
+        "hard_hit_pct": 39.3,
+        "sweet_spot_pct": 34.4
+      },
+      "666126": {
+        "avg_exit_velocity": 90.1,
+        "max_exit_velocity": 110.4,
+        "barrel_pct": 7.7,
+        "hard_hit_pct": 40.7,
+        "sweet_spot_pct": 37.2
+      },
+      "670764": {
+        "avg_exit_velocity": 85.3,
+        "max_exit_velocity": 105.8,
+        "barrel_pct": 2.8,
+        "hard_hit_pct": 22.8,
+        "sweet_spot_pct": 32.0
+      },
+      "668901": {
+        "avg_exit_velocity": 89.5,
+        "max_exit_velocity": 110.2,
+        "barrel_pct": 10.1,
+        "hard_hit_pct": 43.8,
+        "sweet_spot_pct": 32.0
+      },
+      "682657": {
+        "avg_exit_velocity": 88.0,
+        "max_exit_velocity": 110.1,
+        "barrel_pct": 7.9,
+        "hard_hit_pct": 37.3,
+        "sweet_spot_pct": 36.0
+      },
+      "671732": {
+        "avg_exit_velocity": 89.1,
+        "max_exit_velocity": 112.7,
+        "barrel_pct": 5.6,
+        "hard_hit_pct": 44.9,
+        "sweet_spot_pct": 31.1
+      },
+      "592885": {
+        "avg_exit_velocity": 89.0,
+        "max_exit_velocity": 111.1,
+        "barrel_pct": 6.8,
+        "hard_hit_pct": 41.8,
+        "sweet_spot_pct": 27.7
+      },
+      "671218": {
+        "avg_exit_velocity": 92.4,
+        "max_exit_velocity": 111.7,
+        "barrel_pct": 15.4,
+        "hard_hit_pct": 50.3,
+        "sweet_spot_pct": 34.3
+      },
+      "650859": {
+        "avg_exit_velocity": 88.1,
+        "max_exit_velocity": 109.2,
+        "barrel_pct": 4.6,
+        "hard_hit_pct": 36.6,
+        "sweet_spot_pct": 27.4
+      },
+      "694497": {
+        "avg_exit_velocity": 87.7,
+        "max_exit_velocity": 108.2,
+        "barrel_pct": 6.3,
+        "hard_hit_pct": 37.7,
+        "sweet_spot_pct": 26.9
+      },
+      "687093": {
+        "avg_exit_velocity": 89.1,
+        "max_exit_velocity": 108.6,
+        "barrel_pct": 6.9,
+        "hard_hit_pct": 41.7,
+        "sweet_spot_pct": 37.1
+      },
+      "668904": {
+        "avg_exit_velocity": 89.1,
+        "max_exit_velocity": 112.4,
+        "barrel_pct": 12.7,
+        "hard_hit_pct": 41.6,
+        "sweet_spot_pct": 33.5
+      },
+      "663886": {
+        "avg_exit_velocity": 90.9,
+        "max_exit_velocity": 108.5,
+        "barrel_pct": 11.0,
+        "hard_hit_pct": 45.7,
+        "sweet_spot_pct": 40.5
+      },
+      "665161": {
+        "avg_exit_velocity": 87.5,
+        "max_exit_velocity": 110.0,
+        "barrel_pct": 4.7,
+        "hard_hit_pct": 38.4,
+        "sweet_spot_pct": 32.6
+      },
+      "573262": {
+        "avg_exit_velocity": 90.3,
+        "max_exit_velocity": 107.0,
+        "barrel_pct": 6.4,
+        "hard_hit_pct": 43.0,
+        "sweet_spot_pct": 32.6
+      },
+      "664034": {
+        "avg_exit_velocity": 92.2,
+        "max_exit_velocity": 109.6,
+        "barrel_pct": 12.3,
+        "hard_hit_pct": 49.7,
+        "sweet_spot_pct": 38.6
+      },
+      "677942": {
+        "avg_exit_velocity": 92.6,
+        "max_exit_velocity": 112.9,
+        "barrel_pct": 7.1,
+        "hard_hit_pct": 48.8,
+        "sweet_spot_pct": 41.8
+      },
+      "687551": {
+        "avg_exit_velocity": 85.6,
+        "max_exit_velocity": 110.1,
+        "barrel_pct": 1.8,
+        "hard_hit_pct": 32.9,
+        "sweet_spot_pct": 32.4
+      },
+      "810938": {
+        "avg_exit_velocity": 87.4,
+        "max_exit_velocity": 109.2,
+        "barrel_pct": 1.8,
+        "hard_hit_pct": 34.1,
+        "sweet_spot_pct": 32.9
+      },
+      "669236": {
+        "avg_exit_velocity": 89.4,
+        "max_exit_velocity": 110.9,
+        "barrel_pct": 7.7,
+        "hard_hit_pct": 38.5,
+        "sweet_spot_pct": 30.8
+      },
+      "679845": {
+        "avg_exit_velocity": 87.5,
+        "max_exit_velocity": 110.8,
+        "barrel_pct": 4.7,
+        "hard_hit_pct": 29.6,
+        "sweet_spot_pct": 35.5
+      },
+      "666160": {
+        "avg_exit_velocity": 89.7,
+        "max_exit_velocity": 109.1,
+        "barrel_pct": 11.3,
+        "hard_hit_pct": 44.0,
+        "sweet_spot_pct": 31.0
+      },
+      "807799": {
+        "avg_exit_velocity": 88.8,
+        "max_exit_velocity": 108.6,
+        "barrel_pct": 3.0,
+        "hard_hit_pct": 39.5,
+        "sweet_spot_pct": 29.3
+      },
+      "680869": {
+        "avg_exit_velocity": 88.8,
+        "max_exit_velocity": 108.1,
+        "barrel_pct": 6.6,
+        "hard_hit_pct": 41.3,
+        "sweet_spot_pct": 28.1
+      },
+      "660821": {
+        "avg_exit_velocity": 91.1,
+        "max_exit_velocity": 112.3,
+        "barrel_pct": 10.8,
+        "hard_hit_pct": 46.7,
+        "sweet_spot_pct": 32.9
+      },
+      "682177": {
+        "avg_exit_velocity": 88.1,
+        "max_exit_velocity": 108.2,
+        "barrel_pct": 7.8,
+        "hard_hit_pct": 38.0,
+        "sweet_spot_pct": 32.3
+      },
+      "606192": {
+        "avg_exit_velocity": 90.0,
+        "max_exit_velocity": 110.7,
+        "barrel_pct": 9.6,
+        "hard_hit_pct": 45.2,
+        "sweet_spot_pct": 31.3
+      },
+      "663728": {
+        "avg_exit_velocity": 87.9,
+        "max_exit_velocity": 109.9,
+        "barrel_pct": 11.4,
+        "hard_hit_pct": 31.9,
+        "sweet_spot_pct": 33.1
+      },
+      "681351": {
+        "avg_exit_velocity": 86.9,
+        "max_exit_velocity": 114.3,
+        "barrel_pct": 10.3,
+        "hard_hit_pct": 36.4,
+        "sweet_spot_pct": 29.7
+      },
+      "680700": {
+        "avg_exit_velocity": 85.8,
+        "max_exit_velocity": 106.9,
+        "barrel_pct": 3.6,
+        "hard_hit_pct": 24.8,
+        "sweet_spot_pct": 34.5
+      },
+      "691785": {
+        "avg_exit_velocity": 86.1,
+        "max_exit_velocity": 109.1,
+        "barrel_pct": 6.1,
+        "hard_hit_pct": 36.0,
+        "sweet_spot_pct": 25.6
+      },
+      "681715": {
+        "avg_exit_velocity": 92.4,
+        "max_exit_velocity": 110.9,
+        "barrel_pct": 12.8,
+        "hard_hit_pct": 51.2,
+        "sweet_spot_pct": 34.8
+      },
+      "678391": {
+        "avg_exit_velocity": 83.3,
+        "max_exit_velocity": 108.5,
+        "barrel_pct": 3.7,
+        "hard_hit_pct": 25.8,
+        "sweet_spot_pct": 33.7
+      },
+      "670042": {
+        "avg_exit_velocity": 90.6,
+        "max_exit_velocity": 113.8,
+        "barrel_pct": 16.6,
+        "hard_hit_pct": 47.2,
+        "sweet_spot_pct": 39.3
+      },
+      "804606": {
+        "avg_exit_velocity": 87.8,
+        "max_exit_velocity": 113.2,
+        "barrel_pct": 8.0,
+        "hard_hit_pct": 37.0,
+        "sweet_spot_pct": 31.5
+      },
+      "666152": {
+        "avg_exit_velocity": 86.8,
+        "max_exit_velocity": 109.9,
+        "barrel_pct": 3.8,
+        "hard_hit_pct": 27.7,
+        "sweet_spot_pct": 25.0
+      },
+      "553993": {
+        "avg_exit_velocity": 88.3,
+        "max_exit_velocity": 111.3,
+        "barrel_pct": 10.1,
+        "hard_hit_pct": 32.1,
+        "sweet_spot_pct": 34.0
+      },
+      "682626": {
+        "avg_exit_velocity": 90.1,
+        "max_exit_velocity": 112.6,
+        "barrel_pct": 16.0,
+        "hard_hit_pct": 43.6,
+        "sweet_spot_pct": 30.8
+      },
+      "805999": {
+        "avg_exit_velocity": 89.4,
+        "max_exit_velocity": 110.5,
+        "barrel_pct": 7.1,
+        "hard_hit_pct": 42.6,
+        "sweet_spot_pct": 35.5
+      },
+      "666397": {
+        "avg_exit_velocity": 91.1,
+        "max_exit_velocity": 109.1,
+        "barrel_pct": 7.1,
+        "hard_hit_pct": 50.6,
+        "sweet_spot_pct": 42.2
+      },
+      "542303": {
+        "avg_exit_velocity": 89.5,
+        "max_exit_velocity": 111.2,
+        "barrel_pct": 8.5,
+        "hard_hit_pct": 38.6,
+        "sweet_spot_pct": 39.9
+      },
+      "669707": {
+        "avg_exit_velocity": 87.5,
+        "max_exit_velocity": 108.6,
+        "barrel_pct": 2.6,
+        "hard_hit_pct": 36.8,
+        "sweet_spot_pct": 32.2
+      },
+      "665833": {
+        "avg_exit_velocity": 96.0,
+        "max_exit_velocity": 119.0,
+        "barrel_pct": 16.4,
+        "hard_hit_pct": 59.2,
+        "sweet_spot_pct": 34.9
+      },
+      "670770": {
+        "avg_exit_velocity": 87.4,
+        "max_exit_velocity": 106.4,
+        "barrel_pct": 2.7,
+        "hard_hit_pct": 28.0,
+        "sweet_spot_pct": 25.3
+      },
+      "666969": {
+        "avg_exit_velocity": 92.1,
+        "max_exit_velocity": 112.1,
+        "barrel_pct": 9.3,
+        "hard_hit_pct": 48.0,
+        "sweet_spot_pct": 38.0
+      },
+      "691723": {
+        "avg_exit_velocity": 92.3,
+        "max_exit_velocity": 116.5,
+        "barrel_pct": 11.4,
+        "hard_hit_pct": 49.0,
+        "sweet_spot_pct": 27.5
+      },
+      "681481": {
+        "avg_exit_velocity": 89.8,
+        "max_exit_velocity": 110.3,
+        "barrel_pct": 10.1,
+        "hard_hit_pct": 44.6,
+        "sweet_spot_pct": 35.1
+      },
+      "663993": {
+        "avg_exit_velocity": 89.1,
+        "max_exit_velocity": 112.7,
+        "barrel_pct": 11.6,
+        "hard_hit_pct": 40.8,
+        "sweet_spot_pct": 39.5
+      },
+      "805811": {
+        "avg_exit_velocity": 92.5,
+        "max_exit_velocity": 113.4,
+        "barrel_pct": 13.0,
+        "hard_hit_pct": 54.8,
+        "sweet_spot_pct": 34.9
+      },
+      "660670": {
+        "avg_exit_velocity": 90.1,
+        "max_exit_velocity": 113.3,
+        "barrel_pct": 13.1,
+        "hard_hit_pct": 43.4,
+        "sweet_spot_pct": 32.4
+      },
+      "641857": {
+        "avg_exit_velocity": 91.0,
+        "max_exit_velocity": 110.5,
+        "barrel_pct": 11.0,
+        "hard_hit_pct": 50.7,
+        "sweet_spot_pct": 33.1
+      },
+      "656555": {
+        "avg_exit_velocity": 88.8,
+        "max_exit_velocity": 112.3,
+        "barrel_pct": 12.5,
+        "hard_hit_pct": 40.3,
+        "sweet_spot_pct": 34.0
+      },
+      "592450": {
+        "avg_exit_velocity": 94.1,
+        "max_exit_velocity": 116.2,
+        "barrel_pct": 21.7,
+        "hard_hit_pct": 57.3,
+        "sweet_spot_pct": 33.6
+      },
+      "669224": {
+        "avg_exit_velocity": 88.8,
+        "max_exit_velocity": 110.5,
+        "barrel_pct": 6.3,
+        "hard_hit_pct": 43.7,
+        "sweet_spot_pct": 32.4
+      },
+      "681297": {
+        "avg_exit_velocity": 86.9,
+        "max_exit_velocity": 113.3,
+        "barrel_pct": 10.6,
+        "hard_hit_pct": 36.6,
+        "sweet_spot_pct": 26.8
+      },
+      "694728": {
+        "avg_exit_velocity": 86.8,
+        "max_exit_velocity": 111.1,
+        "barrel_pct": 8.6,
+        "hard_hit_pct": 37.1,
+        "sweet_spot_pct": 28.6
+      },
+      "808959": {
+        "avg_exit_velocity": 93.8,
+        "max_exit_velocity": 114.1,
+        "barrel_pct": 19.1,
+        "hard_hit_pct": 58.1,
+        "sweet_spot_pct": 28.7
+      },
+      "703607": {
+        "avg_exit_velocity": 90.0,
+        "max_exit_velocity": 113.6,
+        "barrel_pct": 6.8,
+        "hard_hit_pct": 46.6,
+        "sweet_spot_pct": 25.0
+      },
+      "690976": {
+        "avg_exit_velocity": 88.7,
+        "max_exit_velocity": 106.8,
+        "barrel_pct": 5.3,
+        "hard_hit_pct": 37.1,
+        "sweet_spot_pct": 34.8
+      },
+      "681393": {
+        "avg_exit_velocity": 87.0,
+        "max_exit_velocity": 106.9,
+        "barrel_pct": 7.6,
+        "hard_hit_pct": 36.6,
+        "sweet_spot_pct": 29.8
+      },
+      "687221": {
+        "avg_exit_velocity": 89.0,
+        "max_exit_velocity": 109.3,
+        "barrel_pct": 11.5,
+        "hard_hit_pct": 43.1,
+        "sweet_spot_pct": 35.4
+      },
+      "608369": {
+        "avg_exit_velocity": 91.1,
+        "max_exit_velocity": 110.3,
+        "barrel_pct": 15.4,
+        "hard_hit_pct": 44.6,
+        "sweet_spot_pct": 33.1
+      },
+      "669357": {
+        "avg_exit_velocity": 89.3,
+        "max_exit_velocity": 111.9,
+        "barrel_pct": 9.2,
+        "hard_hit_pct": 43.8,
+        "sweet_spot_pct": 34.6
+      },
+      "683357": {
+        "avg_exit_velocity": 91.8,
+        "max_exit_velocity": 112.6,
+        "barrel_pct": 16.3,
+        "hard_hit_pct": 48.1,
+        "sweet_spot_pct": 47.3
+      }
+    },
+    "pitchers": {
+      "645261": {
+        "pitcher_avg_exit_velocity": 88.1,
+        "pitcher_max_exit_velocity": 111.3,
+        "pitcher_barrel_pct": 5.3,
+        "pitcher_hard_hit_pct": 34.5,
+        "pitcher_sweet_spot_pct": 31.9
+      },
+      "650911": {
+        "pitcher_avg_exit_velocity": 89.6,
+        "pitcher_max_exit_velocity": 112.7,
+        "pitcher_barrel_pct": 8.4,
+        "pitcher_hard_hit_pct": 43.8,
+        "pitcher_sweet_spot_pct": 31.4
+      },
+      "608379": {
+        "pitcher_avg_exit_velocity": 88.4,
+        "pitcher_max_exit_velocity": 115.8,
+        "pitcher_barrel_pct": 6.3,
+        "pitcher_hard_hit_pct": 36.1,
+        "pitcher_sweet_spot_pct": 33.2
+      },
+      "607259": {
+        "pitcher_avg_exit_velocity": 87.1,
+        "pitcher_max_exit_velocity": 111.9,
+        "pitcher_barrel_pct": 7.1,
+        "pitcher_hard_hit_pct": 32.7,
+        "pitcher_sweet_spot_pct": 36.2
+      },
+      "547179": {
+        "pitcher_avg_exit_velocity": 90.7,
+        "pitcher_max_exit_velocity": 114.2,
+        "pitcher_barrel_pct": 9.2,
+        "pitcher_hard_hit_pct": 46.7,
+        "pitcher_sweet_spot_pct": 33.3
+      },
+      "669358": {
+        "pitcher_avg_exit_velocity": 90.2,
+        "pitcher_max_exit_velocity": 116.9,
+        "pitcher_barrel_pct": 7.0,
+        "pitcher_hard_hit_pct": 42.0,
+        "pitcher_sweet_spot_pct": 36.4
+      },
+      "593958": {
+        "pitcher_avg_exit_velocity": 88.7,
+        "pitcher_max_exit_velocity": 111.4,
+        "pitcher_barrel_pct": 9.6,
+        "pitcher_hard_hit_pct": 37.5,
+        "pitcher_sweet_spot_pct": 36.3
+      },
+      "676440": {
+        "pitcher_avg_exit_velocity": 89.6,
+        "pitcher_max_exit_velocity": 115.6,
+        "pitcher_barrel_pct": 8.8,
+        "pitcher_hard_hit_pct": 40.5,
+        "pitcher_sweet_spot_pct": 34.0
+      },
+      "571945": {
+        "pitcher_avg_exit_velocity": 89.9,
+        "pitcher_max_exit_velocity": 113.3,
+        "pitcher_barrel_pct": 8.7,
+        "pitcher_hard_hit_pct": 41.6,
+        "pitcher_sweet_spot_pct": 34.1
+      },
+      "669923": {
+        "pitcher_avg_exit_velocity": 89.5,
+        "pitcher_max_exit_velocity": 109.2,
+        "pitcher_barrel_pct": 6.9,
+        "pitcher_hard_hit_pct": 42.2,
+        "pitcher_sweet_spot_pct": 32.4
+      },
+      "607625": {
+        "pitcher_avg_exit_velocity": 90.7,
+        "pitcher_max_exit_velocity": 111.5,
+        "pitcher_barrel_pct": 9.6,
+        "pitcher_hard_hit_pct": 43.9,
+        "pitcher_sweet_spot_pct": 37.2
+      },
+      "668678": {
+        "pitcher_avg_exit_velocity": 90.8,
+        "pitcher_max_exit_velocity": 113.6,
+        "pitcher_barrel_pct": 11.0,
+        "pitcher_hard_hit_pct": 44.7,
+        "pitcher_sweet_spot_pct": 34.3
+      },
+      "664285": {
+        "pitcher_avg_exit_velocity": 89.6,
+        "pitcher_max_exit_velocity": 112.0,
+        "pitcher_barrel_pct": 6.4,
+        "pitcher_hard_hit_pct": 41.5,
+        "pitcher_sweet_spot_pct": 28.9
+      },
+      "592332": {
+        "pitcher_avg_exit_velocity": 88.5,
+        "pitcher_max_exit_velocity": 112.3,
+        "pitcher_barrel_pct": 8.3,
+        "pitcher_hard_hit_pct": 39.2,
+        "pitcher_sweet_spot_pct": 33.9
+      },
+      "671096": {
+        "pitcher_avg_exit_velocity": 89.8,
+        "pitcher_max_exit_velocity": 113.0,
+        "pitcher_barrel_pct": 7.1,
+        "pitcher_hard_hit_pct": 38.5,
+        "pitcher_sweet_spot_pct": 30.7
+      },
+      "669467": {
+        "pitcher_avg_exit_velocity": 87.6,
+        "pitcher_max_exit_velocity": 117.8,
+        "pitcher_barrel_pct": 6.0,
+        "pitcher_hard_hit_pct": 34.5,
+        "pitcher_sweet_spot_pct": 30.3
+      },
+      "700241": {
+        "pitcher_avg_exit_velocity": 90.2,
+        "pitcher_max_exit_velocity": 116.0,
+        "pitcher_barrel_pct": 9.6,
+        "pitcher_hard_hit_pct": 41.3,
+        "pitcher_sweet_spot_pct": 32.8
+      },
+      "693821": {
+        "pitcher_avg_exit_velocity": 90.0,
+        "pitcher_max_exit_velocity": 113.0,
+        "pitcher_barrel_pct": 6.0,
+        "pitcher_hard_hit_pct": 39.9,
+        "pitcher_sweet_spot_pct": 32.6
+      },
+      "642547": {
+        "pitcher_avg_exit_velocity": 87.8,
+        "pitcher_max_exit_velocity": 114.7,
+        "pitcher_barrel_pct": 5.4,
+        "pitcher_hard_hit_pct": 38.7,
+        "pitcher_sweet_spot_pct": 33.5
+      },
+      "656492": {
+        "pitcher_avg_exit_velocity": 87.5,
+        "pitcher_max_exit_velocity": 119.0,
+        "pitcher_barrel_pct": 9.5,
+        "pitcher_hard_hit_pct": 37.2,
+        "pitcher_sweet_spot_pct": 36.3
+      },
+      "518876": {
+        "pitcher_avg_exit_velocity": 90.3,
+        "pitcher_max_exit_velocity": 114.5,
+        "pitcher_barrel_pct": 13.8,
+        "pitcher_hard_hit_pct": 44.6,
+        "pitcher_sweet_spot_pct": 41.6
+      },
+      "543135": {
+        "pitcher_avg_exit_velocity": 88.8,
+        "pitcher_max_exit_velocity": 115.9,
+        "pitcher_barrel_pct": 8.6,
+        "pitcher_hard_hit_pct": 40.8,
+        "pitcher_sweet_spot_pct": 29.4
+      },
+      "656605": {
+        "pitcher_avg_exit_velocity": 89.3,
+        "pitcher_max_exit_velocity": 111.7,
+        "pitcher_barrel_pct": 7.4,
+        "pitcher_hard_hit_pct": 42.6,
+        "pitcher_sweet_spot_pct": 38.3
+      },
+      "605488": {
+        "pitcher_avg_exit_velocity": 88.1,
+        "pitcher_max_exit_velocity": 114.1,
+        "pitcher_barrel_pct": 9.9,
+        "pitcher_hard_hit_pct": 35.8,
+        "pitcher_sweet_spot_pct": 34.9
+      },
+      "684007": {
+        "pitcher_avg_exit_velocity": 88.0,
+        "pitcher_max_exit_velocity": 111.1,
+        "pitcher_barrel_pct": 9.9,
+        "pitcher_hard_hit_pct": 36.4,
+        "pitcher_sweet_spot_pct": 31.8
+      },
+      "607067": {
+        "pitcher_avg_exit_velocity": 89.6,
+        "pitcher_max_exit_velocity": 112.5,
+        "pitcher_barrel_pct": 10.0,
+        "pitcher_hard_hit_pct": 40.2,
+        "pitcher_sweet_spot_pct": 36.4
+      },
+      "702070": {
+        "pitcher_avg_exit_velocity": 89.6,
+        "pitcher_max_exit_velocity": 115.9,
+        "pitcher_barrel_pct": 9.7,
+        "pitcher_hard_hit_pct": 39.3,
+        "pitcher_sweet_spot_pct": 41.1
+      },
+      "607536": {
+        "pitcher_avg_exit_velocity": 90.8,
+        "pitcher_max_exit_velocity": 112.9,
+        "pitcher_barrel_pct": 10.9,
+        "pitcher_hard_hit_pct": 43.6,
+        "pitcher_sweet_spot_pct": 36.4
+      },
+      "641793": {
+        "pitcher_avg_exit_velocity": 91.7,
+        "pitcher_max_exit_velocity": 115.2,
+        "pitcher_barrel_pct": 11.3,
+        "pitcher_hard_hit_pct": 45.3,
+        "pitcher_sweet_spot_pct": 36.6
+      },
+      "680736": {
+        "pitcher_avg_exit_velocity": 89.7,
+        "pitcher_max_exit_velocity": 111.5,
+        "pitcher_barrel_pct": 7.5,
+        "pitcher_hard_hit_pct": 42.5,
+        "pitcher_sweet_spot_pct": 35.0
+      },
+      "657277": {
+        "pitcher_avg_exit_velocity": 88.6,
+        "pitcher_max_exit_velocity": 114.4,
+        "pitcher_barrel_pct": 5.3,
+        "pitcher_hard_hit_pct": 39.8,
+        "pitcher_sweet_spot_pct": 29.8
+      },
+      "677944": {
+        "pitcher_avg_exit_velocity": 88.4,
+        "pitcher_max_exit_velocity": 112.2,
+        "pitcher_barrel_pct": 7.9,
+        "pitcher_hard_hit_pct": 37.7,
+        "pitcher_sweet_spot_pct": 37.4
+      },
+      "677952": {
+        "pitcher_avg_exit_velocity": 90.5,
+        "pitcher_max_exit_velocity": 113.1,
+        "pitcher_barrel_pct": 6.6,
+        "pitcher_hard_hit_pct": 42.3,
+        "pitcher_sweet_spot_pct": 33.1
+      },
+      "693433": {
+        "pitcher_avg_exit_velocity": 89.6,
+        "pitcher_max_exit_velocity": 114.3,
+        "pitcher_barrel_pct": 7.0,
+        "pitcher_hard_hit_pct": 42.7,
+        "pitcher_sweet_spot_pct": 33.2
+      },
+      "592662": {
+        "pitcher_avg_exit_velocity": 89.2,
+        "pitcher_max_exit_velocity": 112.9,
+        "pitcher_barrel_pct": 9.2,
+        "pitcher_hard_hit_pct": 38.4,
+        "pitcher_sweet_spot_pct": 31.7
+      },
+      "808967": {
+        "pitcher_avg_exit_velocity": 87.8,
+        "pitcher_max_exit_velocity": 114.2,
+        "pitcher_barrel_pct": 6.7,
+        "pitcher_hard_hit_pct": 35.0,
+        "pitcher_sweet_spot_pct": 31.2
+      },
+      "800048": {
+        "pitcher_avg_exit_velocity": 87.2,
+        "pitcher_max_exit_velocity": 110.4,
+        "pitcher_barrel_pct": 5.4,
+        "pitcher_hard_hit_pct": 33.1,
+        "pitcher_sweet_spot_pct": 33.1
+      },
+      "693645": {
+        "pitcher_avg_exit_velocity": 87.9,
+        "pitcher_max_exit_velocity": 115.1,
+        "pitcher_barrel_pct": 8.3,
+        "pitcher_hard_hit_pct": 38.9,
+        "pitcher_sweet_spot_pct": 33.4
+      },
+      "650633": {
+        "pitcher_avg_exit_velocity": 87.3,
+        "pitcher_max_exit_velocity": 114.6,
+        "pitcher_barrel_pct": 8.6,
+        "pitcher_hard_hit_pct": 33.2,
+        "pitcher_sweet_spot_pct": 33.5
+      },
+      "669302": {
+        "pitcher_avg_exit_velocity": 90.3,
+        "pitcher_max_exit_velocity": 115.2,
+        "pitcher_barrel_pct": 10.5,
+        "pitcher_hard_hit_pct": 42.8,
+        "pitcher_sweet_spot_pct": 37.1
+      },
+      "667755": {
+        "pitcher_avg_exit_velocity": 88.7,
+        "pitcher_max_exit_velocity": 112.7,
+        "pitcher_barrel_pct": 8.0,
+        "pitcher_hard_hit_pct": 37.6,
+        "pitcher_sweet_spot_pct": 32.2
+      },
+      "657746": {
+        "pitcher_avg_exit_velocity": 89.7,
+        "pitcher_max_exit_velocity": 115.1,
+        "pitcher_barrel_pct": 11.3,
+        "pitcher_hard_hit_pct": 42.1,
+        "pitcher_sweet_spot_pct": 34.7
+      },
+      "681347": {
+        "pitcher_avg_exit_velocity": 88.3,
+        "pitcher_max_exit_velocity": 113.9,
+        "pitcher_barrel_pct": 8.4,
+        "pitcher_hard_hit_pct": 38.8,
+        "pitcher_sweet_spot_pct": 35.6
+      },
+      "605400": {
+        "pitcher_avg_exit_velocity": 88.4,
+        "pitcher_max_exit_velocity": 113.5,
+        "pitcher_barrel_pct": 10.1,
+        "pitcher_hard_hit_pct": 39.6,
+        "pitcher_sweet_spot_pct": 34.4
+      },
+      "663903": {
+        "pitcher_avg_exit_velocity": 90.8,
+        "pitcher_max_exit_velocity": 113.4,
+        "pitcher_barrel_pct": 9.8,
+        "pitcher_hard_hit_pct": 41.7,
+        "pitcher_sweet_spot_pct": 35.5
+      },
+      "608372": {
+        "pitcher_avg_exit_velocity": 90.6,
+        "pitcher_max_exit_velocity": 116.7,
+        "pitcher_barrel_pct": 13.7,
+        "pitcher_hard_hit_pct": 44.4,
+        "pitcher_sweet_spot_pct": 38.9
+      },
+      "669022": {
+        "pitcher_avg_exit_velocity": 89.8,
+        "pitcher_max_exit_velocity": 115.7,
+        "pitcher_barrel_pct": 8.8,
+        "pitcher_hard_hit_pct": 44.1,
+        "pitcher_sweet_spot_pct": 35.3
+      },
+      "663436": {
+        "pitcher_avg_exit_velocity": 90.0,
+        "pitcher_max_exit_velocity": 117.2,
+        "pitcher_barrel_pct": 6.5,
+        "pitcher_hard_hit_pct": 44.0,
+        "pitcher_sweet_spot_pct": 36.6
+      },
+      "672456": {
+        "pitcher_avg_exit_velocity": 88.9,
+        "pitcher_max_exit_velocity": 111.8,
+        "pitcher_barrel_pct": 7.2,
+        "pitcher_hard_hit_pct": 38.5,
+        "pitcher_sweet_spot_pct": 29.3
+      },
+      "672282": {
+        "pitcher_avg_exit_velocity": 89.6,
+        "pitcher_max_exit_velocity": 112.6,
+        "pitcher_barrel_pct": 7.6,
+        "pitcher_hard_hit_pct": 37.2,
+        "pitcher_sweet_spot_pct": 32.9
+      },
+      "669372": {
+        "pitcher_avg_exit_velocity": 87.1,
+        "pitcher_max_exit_velocity": 112.1,
+        "pitcher_barrel_pct": 6.3,
+        "pitcher_hard_hit_pct": 34.8,
+        "pitcher_sweet_spot_pct": 30.5
+      },
+      "668909": {
+        "pitcher_avg_exit_velocity": 91.0,
+        "pitcher_max_exit_velocity": 116.0,
+        "pitcher_barrel_pct": 12.0,
+        "pitcher_hard_hit_pct": 49.0,
+        "pitcher_sweet_spot_pct": 35.0
+      },
+      "669461": {
+        "pitcher_avg_exit_velocity": 90.7,
+        "pitcher_max_exit_velocity": 112.0,
+        "pitcher_barrel_pct": 9.3,
+        "pitcher_hard_hit_pct": 43.0,
+        "pitcher_sweet_spot_pct": 42.3
+      },
+      "607200": {
+        "pitcher_avg_exit_velocity": 88.8,
+        "pitcher_max_exit_velocity": 114.5,
+        "pitcher_barrel_pct": 7.0,
+        "pitcher_hard_hit_pct": 39.5,
+        "pitcher_sweet_spot_pct": 34.8
+      },
+      "669432": {
+        "pitcher_avg_exit_velocity": 89.1,
+        "pitcher_max_exit_velocity": 116.8,
+        "pitcher_barrel_pct": 6.4,
+        "pitcher_hard_hit_pct": 39.5,
+        "pitcher_sweet_spot_pct": 32.1
+      },
+      "622491": {
+        "pitcher_avg_exit_velocity": 89.7,
+        "pitcher_max_exit_velocity": 112.3,
+        "pitcher_barrel_pct": 9.4,
+        "pitcher_hard_hit_pct": 41.1,
+        "pitcher_sweet_spot_pct": 32.7
+      },
+      "680732": {
+        "pitcher_avg_exit_velocity": 88.7,
+        "pitcher_max_exit_velocity": 113.4,
+        "pitcher_barrel_pct": 7.4,
+        "pitcher_hard_hit_pct": 35.4,
+        "pitcher_sweet_spot_pct": 34.7
+      },
+      "680694": {
+        "pitcher_avg_exit_velocity": 88.0,
+        "pitcher_max_exit_velocity": 114.2,
+        "pitcher_barrel_pct": 8.1,
+        "pitcher_hard_hit_pct": 36.0,
+        "pitcher_sweet_spot_pct": 30.0
+      },
+      "666200": {
+        "pitcher_avg_exit_velocity": 86.7,
+        "pitcher_max_exit_velocity": 110.9,
+        "pitcher_barrel_pct": 5.4,
+        "pitcher_hard_hit_pct": 30.7,
+        "pitcher_sweet_spot_pct": 34.1
+      },
+      "701542": {
+        "pitcher_avg_exit_velocity": 90.2,
+        "pitcher_max_exit_velocity": 116.9,
+        "pitcher_barrel_pct": 7.1,
+        "pitcher_hard_hit_pct": 40.0,
+        "pitcher_sweet_spot_pct": 34.2
+      },
+      "694973": {
+        "pitcher_avg_exit_velocity": 88.1,
+        "pitcher_max_exit_velocity": 111.1,
+        "pitcher_barrel_pct": 6.1,
+        "pitcher_hard_hit_pct": 37.9,
+        "pitcher_sweet_spot_pct": 33.4
+      },
+      "676974": {
+        "pitcher_avg_exit_velocity": 89.7,
+        "pitcher_max_exit_velocity": 112.1,
+        "pitcher_barrel_pct": 8.5,
+        "pitcher_hard_hit_pct": 42.0,
+        "pitcher_sweet_spot_pct": 32.1
+      },
+      "676917": {
+        "pitcher_avg_exit_velocity": 89.3,
+        "pitcher_max_exit_velocity": 111.5,
+        "pitcher_barrel_pct": 6.9,
+        "pitcher_hard_hit_pct": 40.5,
+        "pitcher_sweet_spot_pct": 34.4
+      },
+      "656849": {
+        "pitcher_avg_exit_velocity": 90.4,
+        "pitcher_max_exit_velocity": 111.7,
+        "pitcher_barrel_pct": 6.5,
+        "pitcher_hard_hit_pct": 43.3,
+        "pitcher_sweet_spot_pct": 35.7
+      },
+      "681517": {
+        "pitcher_avg_exit_velocity": 91.6,
+        "pitcher_max_exit_velocity": 113.5,
+        "pitcher_barrel_pct": 10.7,
+        "pitcher_hard_hit_pct": 50.3,
+        "pitcher_sweet_spot_pct": 36.9
+      },
+      "641743": {
+        "pitcher_avg_exit_velocity": 88.8,
+        "pitcher_max_exit_velocity": 113.4,
+        "pitcher_barrel_pct": 8.6,
+        "pitcher_hard_hit_pct": 39.7,
+        "pitcher_sweet_spot_pct": 35.2
+      },
+      "656876": {
+        "pitcher_avg_exit_velocity": 87.6,
+        "pitcher_max_exit_velocity": 111.3,
+        "pitcher_barrel_pct": 6.9,
+        "pitcher_hard_hit_pct": 33.9,
+        "pitcher_sweet_spot_pct": 31.1
+      },
+      "676282": {
+        "pitcher_avg_exit_velocity": 87.6,
+        "pitcher_max_exit_velocity": 111.7,
+        "pitcher_barrel_pct": 7.6,
+        "pitcher_hard_hit_pct": 37.0,
+        "pitcher_sweet_spot_pct": 30.1
+      },
+      "681190": {
+        "pitcher_avg_exit_velocity": 92.0,
+        "pitcher_max_exit_velocity": 114.1,
+        "pitcher_barrel_pct": 12.5,
+        "pitcher_hard_hit_pct": 47.6,
+        "pitcher_sweet_spot_pct": 41.0
+      },
+      "543243": {
+        "pitcher_avg_exit_velocity": 89.0,
+        "pitcher_max_exit_velocity": 111.1,
+        "pitcher_barrel_pct": 7.0,
+        "pitcher_hard_hit_pct": 36.6,
+        "pitcher_sweet_spot_pct": 33.8
+      },
+      "671737": {
+        "pitcher_avg_exit_velocity": 91.3,
+        "pitcher_max_exit_velocity": 112.7,
+        "pitcher_barrel_pct": 9.8,
+        "pitcher_hard_hit_pct": 45.3,
+        "pitcher_sweet_spot_pct": 38.7
+      },
+      "677960": {
+        "pitcher_avg_exit_velocity": 89.8,
+        "pitcher_max_exit_velocity": 114.6,
+        "pitcher_barrel_pct": 10.1,
+        "pitcher_hard_hit_pct": 42.3,
+        "pitcher_sweet_spot_pct": 34.3
+      },
+      "677958": {
+        "pitcher_avg_exit_velocity": 89.1,
+        "pitcher_max_exit_velocity": 113.6,
+        "pitcher_barrel_pct": 7.3,
+        "pitcher_hard_hit_pct": 42.3,
+        "pitcher_sweet_spot_pct": 30.4
+      },
+      "621111": {
+        "pitcher_avg_exit_velocity": 90.2,
+        "pitcher_max_exit_velocity": 111.9,
+        "pitcher_barrel_pct": 8.5,
+        "pitcher_hard_hit_pct": 41.2,
+        "pitcher_sweet_spot_pct": 32.4
+      },
+      "687064": {
+        "pitcher_avg_exit_velocity": 89.4,
+        "pitcher_max_exit_velocity": 114.0,
+        "pitcher_barrel_pct": 6.0,
+        "pitcher_hard_hit_pct": 42.2,
+        "pitcher_sweet_spot_pct": 36.5
+      },
+      "694738": {
+        "pitcher_avg_exit_velocity": 86.3,
+        "pitcher_max_exit_velocity": 112.9,
+        "pitcher_barrel_pct": 3.9,
+        "pitcher_hard_hit_pct": 28.8,
+        "pitcher_sweet_spot_pct": 32.7
+      },
+      "690997": {
+        "pitcher_avg_exit_velocity": 87.5,
+        "pitcher_max_exit_velocity": 111.0,
+        "pitcher_barrel_pct": 6.4,
+        "pitcher_hard_hit_pct": 35.0,
+        "pitcher_sweet_spot_pct": 34.3
+      },
+      "605288": {
+        "pitcher_avg_exit_velocity": 90.1,
+        "pitcher_max_exit_velocity": 112.8,
+        "pitcher_barrel_pct": 9.6,
+        "pitcher_hard_hit_pct": 42.1,
+        "pitcher_sweet_spot_pct": 34.3
+      },
+      "669160": {
+        "pitcher_avg_exit_velocity": 90.0,
+        "pitcher_max_exit_velocity": 114.8,
+        "pitcher_barrel_pct": 6.1,
+        "pitcher_hard_hit_pct": 45.4,
+        "pitcher_sweet_spot_pct": 35.0
+      },
+      "656550": {
+        "pitcher_avg_exit_velocity": 90.8,
+        "pitcher_max_exit_velocity": 111.3,
+        "pitcher_barrel_pct": 8.3,
+        "pitcher_hard_hit_pct": 42.8,
+        "pitcher_sweet_spot_pct": 34.2
+      },
+      "696149": {
+        "pitcher_avg_exit_velocity": 89.0,
+        "pitcher_max_exit_velocity": 114.8,
+        "pitcher_barrel_pct": 6.5,
+        "pitcher_hard_hit_pct": 37.5,
+        "pitcher_sweet_spot_pct": 29.5
+      },
+      "594798": {
+        "pitcher_avg_exit_velocity": 90.9,
+        "pitcher_max_exit_velocity": 114.9,
+        "pitcher_barrel_pct": 9.2,
+        "pitcher_hard_hit_pct": 45.2,
+        "pitcher_sweet_spot_pct": 39.3
+      },
+      "519242": {
+        "pitcher_avg_exit_velocity": 87.3,
+        "pitcher_max_exit_velocity": 113.2,
+        "pitcher_barrel_pct": 5.9,
+        "pitcher_hard_hit_pct": 32.7,
+        "pitcher_sweet_spot_pct": 35.7
+      },
+      "695505": {
+        "pitcher_avg_exit_velocity": 88.9,
+        "pitcher_max_exit_velocity": 113.1,
+        "pitcher_barrel_pct": 8.6,
+        "pitcher_hard_hit_pct": 36.4,
+        "pitcher_sweet_spot_pct": 32.3
+      },
+      "676106": {
+        "pitcher_avg_exit_velocity": 90.0,
+        "pitcher_max_exit_velocity": 114.7,
+        "pitcher_barrel_pct": 9.4,
+        "pitcher_hard_hit_pct": 43.8,
+        "pitcher_sweet_spot_pct": 31.8
+      },
+      "571578": {
+        "pitcher_avg_exit_velocity": 88.4,
+        "pitcher_max_exit_velocity": 114.6,
+        "pitcher_barrel_pct": 7.5,
+        "pitcher_hard_hit_pct": 42.1,
+        "pitcher_sweet_spot_pct": 38.3
+      },
+      "650644": {
+        "pitcher_avg_exit_velocity": 90.6,
+        "pitcher_max_exit_velocity": 112.1,
+        "pitcher_barrel_pct": 10.2,
+        "pitcher_hard_hit_pct": 46.2,
+        "pitcher_sweet_spot_pct": 39.5
+      },
+      "669194": {
+        "pitcher_avg_exit_velocity": 90.5,
+        "pitcher_max_exit_velocity": 112.4,
+        "pitcher_barrel_pct": 10.2,
+        "pitcher_hard_hit_pct": 43.4,
+        "pitcher_sweet_spot_pct": 34.7
+      },
+      "669387": {
+        "pitcher_avg_exit_velocity": 90.4,
+        "pitcher_max_exit_velocity": 109.4,
+        "pitcher_barrel_pct": 7.3,
+        "pitcher_hard_hit_pct": 46.2,
+        "pitcher_sweet_spot_pct": 34.4
+      },
+      "663556": {
+        "pitcher_avg_exit_velocity": 89.4,
+        "pitcher_max_exit_velocity": 112.2,
+        "pitcher_barrel_pct": 8.9,
+        "pitcher_hard_hit_pct": 40.7,
+        "pitcher_sweet_spot_pct": 33.3
+      },
+      "813349": {
+        "pitcher_avg_exit_velocity": 90.6,
+        "pitcher_max_exit_velocity": 113.3,
+        "pitcher_barrel_pct": 10.6,
+        "pitcher_hard_hit_pct": 40.9,
+        "pitcher_sweet_spot_pct": 33.1
+      },
+      "624133": {
+        "pitcher_avg_exit_velocity": 86.0,
+        "pitcher_max_exit_velocity": 113.6,
+        "pitcher_barrel_pct": 5.2,
+        "pitcher_hard_hit_pct": 31.1,
+        "pitcher_sweet_spot_pct": 38.6
+      },
+      "808963": {
+        "pitcher_avg_exit_velocity": 90.3,
+        "pitcher_max_exit_velocity": 115.7,
+        "pitcher_barrel_pct": 12.0,
+        "pitcher_hard_hit_pct": 44.8,
+        "pitcher_sweet_spot_pct": 33.6
+      },
+      "641816": {
+        "pitcher_avg_exit_velocity": 89.6,
+        "pitcher_max_exit_velocity": 110.5,
+        "pitcher_barrel_pct": 7.3,
+        "pitcher_hard_hit_pct": 35.9,
+        "pitcher_sweet_spot_pct": 33.9
+      },
+      "641778": {
+        "pitcher_avg_exit_velocity": 88.0,
+        "pitcher_max_exit_velocity": 114.5,
+        "pitcher_barrel_pct": 10.9,
+        "pitcher_hard_hit_pct": 35.5,
+        "pitcher_sweet_spot_pct": 35.9
+      },
+      "663567": {
+        "pitcher_avg_exit_velocity": 88.8,
+        "pitcher_max_exit_velocity": 114.7,
+        "pitcher_barrel_pct": 6.5,
+        "pitcher_hard_hit_pct": 36.7,
+        "pitcher_sweet_spot_pct": 28.2
+      },
+      "663969": {
+        "pitcher_avg_exit_velocity": 90.0,
+        "pitcher_max_exit_velocity": 112.9,
+        "pitcher_barrel_pct": 7.8,
+        "pitcher_hard_hit_pct": 42.9,
+        "pitcher_sweet_spot_pct": 32.2
+      },
+      "686218": {
+        "pitcher_avg_exit_velocity": 89.4,
+        "pitcher_max_exit_velocity": 111.0,
+        "pitcher_barrel_pct": 10.3,
+        "pitcher_hard_hit_pct": 39.9,
+        "pitcher_sweet_spot_pct": 35.8
+      },
+      "801139": {
+        "pitcher_avg_exit_velocity": 87.8,
+        "pitcher_max_exit_velocity": 112.3,
+        "pitcher_barrel_pct": 7.0,
+        "pitcher_hard_hit_pct": 34.3,
+        "pitcher_sweet_spot_pct": 31.0
+      },
+      "700712": {
+        "pitcher_avg_exit_velocity": 86.9,
+        "pitcher_max_exit_velocity": 114.6,
+        "pitcher_barrel_pct": 5.0,
+        "pitcher_hard_hit_pct": 33.2,
+        "pitcher_sweet_spot_pct": 26.6
+      },
+      "554430": {
+        "pitcher_avg_exit_velocity": 86.3,
+        "pitcher_max_exit_velocity": 110.2,
+        "pitcher_barrel_pct": 5.9,
+        "pitcher_hard_hit_pct": 33.9,
+        "pitcher_sweet_spot_pct": 33.1
+      },
+      "641927": {
+        "pitcher_avg_exit_velocity": 88.1,
+        "pitcher_max_exit_velocity": 115.5,
+        "pitcher_barrel_pct": 9.6,
+        "pitcher_hard_hit_pct": 33.5,
+        "pitcher_sweet_spot_pct": 28.5
+      },
+      "656427": {
+        "pitcher_avg_exit_velocity": 90.5,
+        "pitcher_max_exit_velocity": 113.5,
+        "pitcher_barrel_pct": 8.4,
+        "pitcher_hard_hit_pct": 46.2,
+        "pitcher_sweet_spot_pct": 39.9
+      },
+      "527048": {
+        "pitcher_avg_exit_velocity": 88.0,
+        "pitcher_max_exit_velocity": 116.9,
+        "pitcher_barrel_pct": 6.8,
+        "pitcher_hard_hit_pct": 36.3,
+        "pitcher_sweet_spot_pct": 35.4
+      },
+      "640455": {
+        "pitcher_avg_exit_velocity": 88.3,
+        "pitcher_max_exit_velocity": 114.6,
+        "pitcher_barrel_pct": 8.4,
+        "pitcher_hard_hit_pct": 40.5,
+        "pitcher_sweet_spot_pct": 35.9
+      },
+      "695076": {
+        "pitcher_avg_exit_velocity": 90.6,
+        "pitcher_max_exit_velocity": 112.8,
+        "pitcher_barrel_pct": 8.9,
+        "pitcher_hard_hit_pct": 39.6,
+        "pitcher_sweet_spot_pct": 37.0
+      },
+      "683004": {
+        "pitcher_avg_exit_velocity": 88.0,
+        "pitcher_max_exit_velocity": 113.0,
+        "pitcher_barrel_pct": 10.3,
+        "pitcher_hard_hit_pct": 39.9,
+        "pitcher_sweet_spot_pct": 37.8
+      },
+      "647336": {
+        "pitcher_avg_exit_velocity": 87.7,
+        "pitcher_max_exit_velocity": 112.0,
+        "pitcher_barrel_pct": 8.6,
+        "pitcher_hard_hit_pct": 34.1,
+        "pitcher_sweet_spot_pct": 36.6
+      },
+      "681293": {
+        "pitcher_avg_exit_velocity": 87.5,
+        "pitcher_max_exit_velocity": 109.3,
+        "pitcher_barrel_pct": 7.8,
+        "pitcher_hard_hit_pct": 30.9,
+        "pitcher_sweet_spot_pct": 38.7
+      },
+      "694819": {
+        "pitcher_avg_exit_velocity": 86.8,
+        "pitcher_max_exit_velocity": 111.7,
+        "pitcher_barrel_pct": 3.0,
+        "pitcher_hard_hit_pct": 33.5,
+        "pitcher_sweet_spot_pct": 33.0
+      },
+      "687075": {
+        "pitcher_avg_exit_velocity": 89.9,
+        "pitcher_max_exit_velocity": 113.9,
+        "pitcher_barrel_pct": 8.7,
+        "pitcher_hard_hit_pct": 42.9,
+        "pitcher_sweet_spot_pct": 35.2
+      },
+      "656302": {
+        "pitcher_avg_exit_velocity": 85.9,
+        "pitcher_max_exit_velocity": 113.2,
+        "pitcher_barrel_pct": 5.4,
+        "pitcher_hard_hit_pct": 33.0,
+        "pitcher_sweet_spot_pct": 33.5
+      },
+      "691587": {
+        "pitcher_avg_exit_velocity": 88.2,
+        "pitcher_max_exit_velocity": 113.4,
+        "pitcher_barrel_pct": 12.1,
+        "pitcher_hard_hit_pct": 39.5,
+        "pitcher_sweet_spot_pct": 32.3
+      },
+      "676083": {
+        "pitcher_avg_exit_velocity": 90.0,
+        "pitcher_max_exit_velocity": 114.2,
+        "pitcher_barrel_pct": 7.2,
+        "pitcher_hard_hit_pct": 41.4,
+        "pitcher_sweet_spot_pct": 28.4
+      },
+      "678394": {
+        "pitcher_avg_exit_velocity": 90.3,
+        "pitcher_max_exit_velocity": 113.2,
+        "pitcher_barrel_pct": 10.4,
+        "pitcher_hard_hit_pct": 44.1,
+        "pitcher_sweet_spot_pct": 33.8
+      },
+      "691725": {
+        "pitcher_avg_exit_velocity": 87.1,
+        "pitcher_max_exit_velocity": 113.0,
+        "pitcher_barrel_pct": 9.6,
+        "pitcher_hard_hit_pct": 35.2,
+        "pitcher_sweet_spot_pct": 31.1
+      },
+      "663554": {
+        "pitcher_avg_exit_velocity": 88.4,
+        "pitcher_max_exit_velocity": 110.4,
+        "pitcher_barrel_pct": 6.4,
+        "pitcher_hard_hit_pct": 35.8,
+        "pitcher_sweet_spot_pct": 34.4
+      },
+      "694477": {
+        "pitcher_avg_exit_velocity": 89.2,
+        "pitcher_max_exit_velocity": 116.1,
+        "pitcher_barrel_pct": 6.9,
+        "pitcher_hard_hit_pct": 38.5,
+        "pitcher_sweet_spot_pct": 35.3
+      },
+      "686790": {
+        "pitcher_avg_exit_velocity": 89.0,
+        "pitcher_max_exit_velocity": 114.4,
+        "pitcher_barrel_pct": 4.1,
+        "pitcher_hard_hit_pct": 37.8,
+        "pitcher_sweet_spot_pct": 27.6
+      },
+      "675660": {
+        "pitcher_avg_exit_velocity": 87.9,
+        "pitcher_max_exit_velocity": 113.6,
+        "pitcher_barrel_pct": 8.8,
+        "pitcher_hard_hit_pct": 36.9,
+        "pitcher_sweet_spot_pct": 33.6
+      },
+      "805673": {
+        "pitcher_avg_exit_velocity": 90.5,
+        "pitcher_max_exit_velocity": 112.8,
+        "pitcher_barrel_pct": 12.5,
+        "pitcher_hard_hit_pct": 38.9,
+        "pitcher_sweet_spot_pct": 36.1
+      },
+      "690986": {
+        "pitcher_avg_exit_velocity": 89.2,
+        "pitcher_max_exit_velocity": 115.0,
+        "pitcher_barrel_pct": 6.5,
+        "pitcher_hard_hit_pct": 36.6,
+        "pitcher_sweet_spot_pct": 36.6
+      },
+      "592791": {
+        "pitcher_avg_exit_velocity": 88.6,
+        "pitcher_max_exit_velocity": 112.4,
+        "pitcher_barrel_pct": 14.4,
+        "pitcher_hard_hit_pct": 39.1,
+        "pitcher_sweet_spot_pct": 36.7
+      },
+      "702056": {
+        "pitcher_avg_exit_velocity": 88.8,
+        "pitcher_max_exit_velocity": 111.0,
+        "pitcher_barrel_pct": 5.6,
+        "pitcher_hard_hit_pct": 35.0,
+        "pitcher_sweet_spot_pct": 36.4
+      },
+      "665795": {
+        "pitcher_avg_exit_velocity": 91.3,
+        "pitcher_max_exit_velocity": 115.4,
+        "pitcher_barrel_pct": 11.7,
+        "pitcher_hard_hit_pct": 42.7,
+        "pitcher_sweet_spot_pct": 35.2
+      },
+      "660271": {
+        "pitcher_avg_exit_velocity": 87.4,
+        "pitcher_max_exit_velocity": 111.2,
+        "pitcher_barrel_pct": 3.8,
+        "pitcher_hard_hit_pct": 33.8,
+        "pitcher_sweet_spot_pct": 26.8
+      },
+      "669373": {
+        "pitcher_avg_exit_velocity": 86.9,
+        "pitcher_max_exit_velocity": 111.8,
+        "pitcher_barrel_pct": 6.7,
+        "pitcher_hard_hit_pct": 34.1,
+        "pitcher_sweet_spot_pct": 32.7
+      },
+      "686799": {
+        "pitcher_avg_exit_velocity": 89.4,
+        "pitcher_max_exit_velocity": 111.4,
+        "pitcher_barrel_pct": 7.2,
+        "pitcher_hard_hit_pct": 42.8,
+        "pitcher_sweet_spot_pct": 30.3
+      },
+      "643377": {
+        "pitcher_avg_exit_velocity": 89.1,
+        "pitcher_max_exit_velocity": 110.2,
+        "pitcher_barrel_pct": 10.1,
+        "pitcher_hard_hit_pct": 41.1,
+        "pitcher_sweet_spot_pct": 37.2
+      },
+      "663978": {
+        "pitcher_avg_exit_velocity": 88.8,
+        "pitcher_max_exit_velocity": 116.3,
+        "pitcher_barrel_pct": 8.3,
+        "pitcher_hard_hit_pct": 36.9,
+        "pitcher_sweet_spot_pct": 34.5
+      },
+      "663372": {
+        "pitcher_avg_exit_velocity": 88.2,
+        "pitcher_max_exit_velocity": 111.0,
+        "pitcher_barrel_pct": 11.2,
+        "pitcher_hard_hit_pct": 40.8,
+        "pitcher_sweet_spot_pct": 32.5
+      },
+      "688642": {
+        "pitcher_avg_exit_velocity": 89.0,
+        "pitcher_max_exit_velocity": 111.0,
+        "pitcher_barrel_pct": 8.4,
+        "pitcher_hard_hit_pct": 41.6,
+        "pitcher_sweet_spot_pct": 39.6
+      },
+      "680573": {
+        "pitcher_avg_exit_velocity": 90.0,
+        "pitcher_max_exit_velocity": 112.6,
+        "pitcher_barrel_pct": 8.5,
+        "pitcher_hard_hit_pct": 43.0,
+        "pitcher_sweet_spot_pct": 31.5
+      },
+      "665871": {
+        "pitcher_avg_exit_velocity": 90.5,
+        "pitcher_max_exit_velocity": 112.4,
+        "pitcher_barrel_pct": 8.2,
+        "pitcher_hard_hit_pct": 48.7,
+        "pitcher_sweet_spot_pct": 34.4
+      },
+      "605135": {
+        "pitcher_avg_exit_velocity": 87.4,
+        "pitcher_max_exit_velocity": 114.0,
+        "pitcher_barrel_pct": 4.1,
+        "pitcher_hard_hit_pct": 34.5,
+        "pitcher_sweet_spot_pct": 29.9
+      },
+      "682052": {
+        "pitcher_avg_exit_velocity": 85.2,
+        "pitcher_max_exit_velocity": 110.8,
+        "pitcher_barrel_pct": 4.6,
+        "pitcher_hard_hit_pct": 31.4,
+        "pitcher_sweet_spot_pct": 32.0
+      },
+      "625643": {
+        "pitcher_avg_exit_velocity": 87.5,
+        "pitcher_max_exit_velocity": 114.5,
+        "pitcher_barrel_pct": 7.8,
+        "pitcher_hard_hit_pct": 35.8,
+        "pitcher_sweet_spot_pct": 38.9
+      },
+      "666157": {
+        "pitcher_avg_exit_velocity": 90.4,
+        "pitcher_max_exit_velocity": 115.9,
+        "pitcher_barrel_pct": 7.8,
+        "pitcher_hard_hit_pct": 38.3,
+        "pitcher_sweet_spot_pct": 35.8
+      },
+      "687570": {
+        "pitcher_avg_exit_velocity": 90.2,
+        "pitcher_max_exit_velocity": 110.5,
+        "pitcher_barrel_pct": 9.4,
+        "pitcher_hard_hit_pct": 39.6,
+        "pitcher_sweet_spot_pct": 34.4
+      },
+      "694297": {
+        "pitcher_avg_exit_velocity": 88.6,
+        "pitcher_max_exit_velocity": 112.3,
+        "pitcher_barrel_pct": 9.0,
+        "pitcher_hard_hit_pct": 37.2,
+        "pitcher_sweet_spot_pct": 31.9
+      },
+      "678906": {
+        "pitcher_avg_exit_velocity": 89.8,
+        "pitcher_max_exit_velocity": 113.4,
+        "pitcher_barrel_pct": 7.0,
+        "pitcher_hard_hit_pct": 39.8,
+        "pitcher_sweet_spot_pct": 36.6
+      },
+      "685299": {
+        "pitcher_avg_exit_velocity": 91.2,
+        "pitcher_max_exit_velocity": 111.5,
+        "pitcher_barrel_pct": 11.4,
+        "pitcher_hard_hit_pct": 43.8,
+        "pitcher_sweet_spot_pct": 34.1
+      },
+      "693686": {
+        "pitcher_avg_exit_velocity": 86.4,
+        "pitcher_max_exit_velocity": 109.0,
+        "pitcher_barrel_pct": 3.9,
+        "pitcher_hard_hit_pct": 33.7,
+        "pitcher_sweet_spot_pct": 27.1
+      },
+      "679883": {
+        "pitcher_avg_exit_velocity": 87.8,
+        "pitcher_max_exit_velocity": 109.9,
+        "pitcher_barrel_pct": 6.1,
+        "pitcher_hard_hit_pct": 35.2,
+        "pitcher_sweet_spot_pct": 31.3
+      },
+      "676962": {
+        "pitcher_avg_exit_velocity": 90.3,
+        "pitcher_max_exit_velocity": 113.1,
+        "pitcher_barrel_pct": 7.3,
+        "pitcher_hard_hit_pct": 43.0,
+        "pitcher_sweet_spot_pct": 31.3
+      },
+      "678022": {
+        "pitcher_avg_exit_velocity": 89.1,
+        "pitcher_max_exit_velocity": 111.2,
+        "pitcher_barrel_pct": 7.9,
+        "pitcher_hard_hit_pct": 38.1,
+        "pitcher_sweet_spot_pct": 35.4
+      },
+      "663568": {
+        "pitcher_avg_exit_velocity": 88.5,
+        "pitcher_max_exit_velocity": 112.8,
+        "pitcher_barrel_pct": 6.8,
+        "pitcher_hard_hit_pct": 36.9,
+        "pitcher_sweet_spot_pct": 33.0
+      },
+      "693855": {
+        "pitcher_avg_exit_velocity": 88.3,
+        "pitcher_max_exit_velocity": 110.9,
+        "pitcher_barrel_pct": 9.2,
+        "pitcher_hard_hit_pct": 37.4,
+        "pitcher_sweet_spot_pct": 32.2
+      },
+      "622663": {
+        "pitcher_avg_exit_velocity": 88.8,
+        "pitcher_max_exit_velocity": 113.6,
+        "pitcher_barrel_pct": 8.7,
+        "pitcher_hard_hit_pct": 38.7,
+        "pitcher_sweet_spot_pct": 34.1
+      },
+      "656288": {
+        "pitcher_avg_exit_velocity": 90.7,
+        "pitcher_max_exit_velocity": 113.8,
+        "pitcher_barrel_pct": 9.9,
+        "pitcher_hard_hit_pct": 48.8,
+        "pitcher_sweet_spot_pct": 35.5
+      },
+      "695418": {
+        "pitcher_avg_exit_velocity": 87.9,
+        "pitcher_max_exit_velocity": 115.9,
+        "pitcher_barrel_pct": 5.9,
+        "pitcher_hard_hit_pct": 40.8,
+        "pitcher_sweet_spot_pct": 24.9
+      },
+      "702273": {
+        "pitcher_avg_exit_velocity": 89.1,
+        "pitcher_max_exit_velocity": 110.7,
+        "pitcher_barrel_pct": 10.7,
+        "pitcher_hard_hit_pct": 39.6,
+        "pitcher_sweet_spot_pct": 38.5
+      },
+      "805123": {
+        "pitcher_avg_exit_velocity": 89.4,
+        "pitcher_max_exit_velocity": 111.8,
+        "pitcher_barrel_pct": 8.3,
+        "pitcher_hard_hit_pct": 36.1,
+        "pitcher_sweet_spot_pct": 39.1
+      },
+      "608331": {
+        "pitcher_avg_exit_velocity": 86.1,
+        "pitcher_max_exit_velocity": 111.6,
+        "pitcher_barrel_pct": 1.8,
+        "pitcher_hard_hit_pct": 30.8,
+        "pitcher_sweet_spot_pct": 26.0
+      },
+      "571927": {
+        "pitcher_avg_exit_velocity": 88.6,
+        "pitcher_max_exit_velocity": 114.9,
+        "pitcher_barrel_pct": 13.0,
+        "pitcher_hard_hit_pct": 36.1,
+        "pitcher_sweet_spot_pct": 44.4
+      },
+      "608718": {
+        "pitcher_avg_exit_velocity": 86.0,
+        "pitcher_max_exit_velocity": 110.4,
+        "pitcher_barrel_pct": 6.0,
+        "pitcher_hard_hit_pct": 29.2,
+        "pitcher_sweet_spot_pct": 35.1
+      },
+      "615698": {
+        "pitcher_avg_exit_velocity": 87.6,
+        "pitcher_max_exit_velocity": 111.2,
+        "pitcher_barrel_pct": 9.6,
+        "pitcher_hard_hit_pct": 35.5,
+        "pitcher_sweet_spot_pct": 32.5
+      },
+      "543037": {
+        "pitcher_avg_exit_velocity": 89.9,
+        "pitcher_max_exit_velocity": 114.4,
+        "pitcher_barrel_pct": 9.4,
+        "pitcher_hard_hit_pct": 41.8,
+        "pitcher_sweet_spot_pct": 35.0
+      },
+      "682243": {
+        "pitcher_avg_exit_velocity": 86.4,
+        "pitcher_max_exit_velocity": 111.5,
+        "pitcher_barrel_pct": 6.9,
+        "pitcher_hard_hit_pct": 29.6,
+        "pitcher_sweet_spot_pct": 27.0
+      },
+      "670245": {
+        "pitcher_avg_exit_velocity": 89.3,
+        "pitcher_max_exit_velocity": 114.4,
+        "pitcher_barrel_pct": 12.0,
+        "pitcher_hard_hit_pct": 39.9,
+        "pitcher_sweet_spot_pct": 38.6
+      },
+      "677865": {
+        "pitcher_avg_exit_velocity": 87.1,
+        "pitcher_max_exit_velocity": 111.1,
+        "pitcher_barrel_pct": 3.9,
+        "pitcher_hard_hit_pct": 36.8,
+        "pitcher_sweet_spot_pct": 31.0
+      },
+      "687562": {
+        "pitcher_avg_exit_velocity": 86.8,
+        "pitcher_max_exit_velocity": 115.8,
+        "pitcher_barrel_pct": 5.8,
+        "pitcher_hard_hit_pct": 34.4,
+        "pitcher_sweet_spot_pct": 25.3
+      },
+      "668964": {
+        "pitcher_avg_exit_velocity": 91.6,
+        "pitcher_max_exit_velocity": 113.1,
+        "pitcher_barrel_pct": 5.9,
+        "pitcher_hard_hit_pct": 46.1,
+        "pitcher_sweet_spot_pct": 32.2
+      },
+      "593974": {
+        "pitcher_avg_exit_velocity": 87.5,
+        "pitcher_max_exit_velocity": 109.3,
+        "pitcher_barrel_pct": 3.9,
+        "pitcher_hard_hit_pct": 33.6,
+        "pitcher_sweet_spot_pct": 34.9
+      },
+      "623454": {
+        "pitcher_avg_exit_velocity": 90.4,
+        "pitcher_max_exit_velocity": 115.3,
+        "pitcher_barrel_pct": 7.9,
+        "pitcher_hard_hit_pct": 39.5,
+        "pitcher_sweet_spot_pct": 28.3
+      },
+      "688107": {
+        "pitcher_avg_exit_velocity": 86.6,
+        "pitcher_max_exit_velocity": 110.4,
+        "pitcher_barrel_pct": 7.2,
+        "pitcher_hard_hit_pct": 30.9,
+        "pitcher_sweet_spot_pct": 36.8
+      },
+      "674841": {
+        "pitcher_avg_exit_velocity": 90.0,
+        "pitcher_max_exit_velocity": 116.5,
+        "pitcher_barrel_pct": 6.0,
+        "pitcher_hard_hit_pct": 44.4,
+        "pitcher_sweet_spot_pct": 33.8
+      },
+      "681035": {
+        "pitcher_avg_exit_velocity": 87.7,
+        "pitcher_max_exit_velocity": 112.8,
+        "pitcher_barrel_pct": 7.3,
+        "pitcher_hard_hit_pct": 34.0,
+        "pitcher_sweet_spot_pct": 41.3
+      },
+      "702275": {
+        "pitcher_avg_exit_velocity": 89.4,
+        "pitcher_max_exit_velocity": 111.9,
+        "pitcher_barrel_pct": 8.7,
+        "pitcher_hard_hit_pct": 38.0,
+        "pitcher_sweet_spot_pct": 30.0
+      },
+      "605280": {
+        "pitcher_avg_exit_velocity": 89.8,
+        "pitcher_max_exit_velocity": 111.1,
+        "pitcher_barrel_pct": 5.3,
+        "pitcher_hard_hit_pct": 44.0,
+        "pitcher_sweet_spot_pct": 27.3
+      },
+      "660761": {
+        "pitcher_avg_exit_velocity": 87.9,
+        "pitcher_max_exit_velocity": 114.9,
+        "pitcher_barrel_pct": 2.0,
+        "pitcher_hard_hit_pct": 31.5,
+        "pitcher_sweet_spot_pct": 35.6
+      },
+      "571510": {
+        "pitcher_avg_exit_velocity": 90.0,
+        "pitcher_max_exit_velocity": 112.5,
+        "pitcher_barrel_pct": 10.1,
+        "pitcher_hard_hit_pct": 45.3,
+        "pitcher_sweet_spot_pct": 35.1
+      },
+      "837227": {
+        "pitcher_avg_exit_velocity": 89.9,
+        "pitcher_max_exit_velocity": 112.6,
+        "pitcher_barrel_pct": 10.9,
+        "pitcher_hard_hit_pct": 45.6,
+        "pitcher_sweet_spot_pct": 36.7
+      },
+      "621112": {
+        "pitcher_avg_exit_velocity": 86.2,
+        "pitcher_max_exit_velocity": 111.9,
+        "pitcher_barrel_pct": 6.8,
+        "pitcher_hard_hit_pct": 32.7,
+        "pitcher_sweet_spot_pct": 27.2
+      },
+      "656794": {
+        "pitcher_avg_exit_velocity": 87.1,
+        "pitcher_max_exit_velocity": 111.0,
+        "pitcher_barrel_pct": 5.4,
+        "pitcher_hard_hit_pct": 36.1,
+        "pitcher_sweet_spot_pct": 34.0
+      },
+      "608566": {
+        "pitcher_avg_exit_velocity": 89.4,
+        "pitcher_max_exit_velocity": 113.5,
+        "pitcher_barrel_pct": 9.6,
+        "pitcher_hard_hit_pct": 45.2,
+        "pitcher_sweet_spot_pct": 34.2
+      },
+      "643511": {
+        "pitcher_avg_exit_velocity": 84.2,
+        "pitcher_max_exit_velocity": 112.9,
+        "pitcher_barrel_pct": 1.4,
+        "pitcher_hard_hit_pct": 25.3,
+        "pitcher_sweet_spot_pct": 22.6
+      },
+      "622608": {
+        "pitcher_avg_exit_velocity": 88.0,
+        "pitcher_max_exit_velocity": 112.2,
+        "pitcher_barrel_pct": 6.2,
+        "pitcher_hard_hit_pct": 40.4,
+        "pitcher_sweet_spot_pct": 33.6
+      },
+      "695611": {
+        "pitcher_avg_exit_velocity": 90.3,
+        "pitcher_max_exit_velocity": 113.6,
+        "pitcher_barrel_pct": 5.5,
+        "pitcher_hard_hit_pct": 41.4,
+        "pitcher_sweet_spot_pct": 37.9
+      },
+      "675512": {
+        "pitcher_avg_exit_velocity": 88.9,
+        "pitcher_max_exit_velocity": 111.9,
+        "pitcher_barrel_pct": 5.5,
+        "pitcher_hard_hit_pct": 35.9,
+        "pitcher_sweet_spot_pct": 29.7
+      },
+      "676879": {
+        "pitcher_avg_exit_velocity": 87.7,
+        "pitcher_max_exit_velocity": 116.9,
+        "pitcher_barrel_pct": 4.8,
+        "pitcher_hard_hit_pct": 39.3,
+        "pitcher_sweet_spot_pct": 29.7
+      },
+      "676760": {
+        "pitcher_avg_exit_velocity": 88.8,
+        "pitcher_max_exit_velocity": 113.2,
+        "pitcher_barrel_pct": 7.6,
+        "pitcher_hard_hit_pct": 39.6,
+        "pitcher_sweet_spot_pct": 29.9
+      },
+      "500779": {
+        "pitcher_avg_exit_velocity": 88.2,
+        "pitcher_max_exit_velocity": 115.8,
+        "pitcher_barrel_pct": 8.4,
+        "pitcher_hard_hit_pct": 32.9,
+        "pitcher_sweet_spot_pct": 35.0
+      },
+      "664141": {
+        "pitcher_avg_exit_velocity": 88.1,
+        "pitcher_max_exit_velocity": 112.0,
+        "pitcher_barrel_pct": 6.3,
+        "pitcher_hard_hit_pct": 36.6,
+        "pitcher_sweet_spot_pct": 37.3
+      },
+      "670970": {
+        "pitcher_avg_exit_velocity": 86.2,
+        "pitcher_max_exit_velocity": 113.2,
+        "pitcher_barrel_pct": 2.1,
+        "pitcher_hard_hit_pct": 31.7,
+        "pitcher_sweet_spot_pct": 26.8
+      },
+      "663623": {
+        "pitcher_avg_exit_velocity": 89.7,
+        "pitcher_max_exit_velocity": 114.9,
+        "pitcher_barrel_pct": 12.0,
+        "pitcher_hard_hit_pct": 45.8,
+        "pitcher_sweet_spot_pct": 34.5
+      },
+      "700669": {
+        "pitcher_avg_exit_velocity": 92.5,
+        "pitcher_max_exit_velocity": 114.6,
+        "pitcher_barrel_pct": 12.1,
+        "pitcher_hard_hit_pct": 47.5,
+        "pitcher_sweet_spot_pct": 33.3
+      },
+      "663947": {
+        "pitcher_avg_exit_velocity": 88.1,
+        "pitcher_max_exit_velocity": 110.7,
+        "pitcher_barrel_pct": 5.8,
+        "pitcher_hard_hit_pct": 39.1,
+        "pitcher_sweet_spot_pct": 34.8
+      },
+      "687911": {
+        "pitcher_avg_exit_velocity": 87.1,
+        "pitcher_max_exit_velocity": 108.6,
+        "pitcher_barrel_pct": 5.8,
+        "pitcher_hard_hit_pct": 35.5,
+        "pitcher_sweet_spot_pct": 36.2
+      },
+      "660853": {
+        "pitcher_avg_exit_velocity": 87.8,
+        "pitcher_max_exit_velocity": 109.5,
+        "pitcher_barrel_pct": 5.8,
+        "pitcher_hard_hit_pct": 36.5,
+        "pitcher_sweet_spot_pct": 33.6
+      },
+      "664199": {
+        "pitcher_avg_exit_velocity": 86.9,
+        "pitcher_max_exit_velocity": 112.3,
+        "pitcher_barrel_pct": 8.8,
+        "pitcher_hard_hit_pct": 33.1,
+        "pitcher_sweet_spot_pct": 30.9
+      },
+      "678606": {
+        "pitcher_avg_exit_velocity": 86.2,
+        "pitcher_max_exit_velocity": 110.7,
+        "pitcher_barrel_pct": 5.3,
+        "pitcher_hard_hit_pct": 34.6,
+        "pitcher_sweet_spot_pct": 26.3
+      },
+      "702193": {
+        "pitcher_avg_exit_velocity": 86.2,
+        "pitcher_max_exit_velocity": 109.9,
+        "pitcher_barrel_pct": 3.0,
+        "pitcher_hard_hit_pct": 32.3,
+        "pitcher_sweet_spot_pct": 27.8
+      },
+      "670990": {
+        "pitcher_avg_exit_velocity": 84.5,
+        "pitcher_max_exit_velocity": 107.9,
+        "pitcher_barrel_pct": 6.1,
+        "pitcher_hard_hit_pct": 30.3,
+        "pitcher_sweet_spot_pct": 32.6
+      },
+      "669199": {
+        "pitcher_avg_exit_velocity": 89.9,
+        "pitcher_max_exit_velocity": 110.9,
+        "pitcher_barrel_pct": 9.1,
+        "pitcher_hard_hit_pct": 39.4,
+        "pitcher_sweet_spot_pct": 28.8
+      },
+      "656271": {
+        "pitcher_avg_exit_velocity": 88.2,
+        "pitcher_max_exit_velocity": 109.8,
+        "pitcher_barrel_pct": 8.3,
+        "pitcher_hard_hit_pct": 31.8,
+        "pitcher_sweet_spot_pct": 35.6
+      },
+      "686993": {
+        "pitcher_avg_exit_velocity": 90.3,
+        "pitcher_max_exit_velocity": 112.1,
+        "pitcher_barrel_pct": 9.2,
+        "pitcher_hard_hit_pct": 45.0,
+        "pitcher_sweet_spot_pct": 29.8
+      },
+      "642121": {
+        "pitcher_avg_exit_velocity": 87.1,
+        "pitcher_max_exit_velocity": 110.7,
+        "pitcher_barrel_pct": 12.2,
+        "pitcher_hard_hit_pct": 38.9,
+        "pitcher_sweet_spot_pct": 37.4
+      },
+      "687330": {
+        "pitcher_avg_exit_velocity": 89.9,
+        "pitcher_max_exit_velocity": 113.0,
+        "pitcher_barrel_pct": 6.9,
+        "pitcher_hard_hit_pct": 46.2,
+        "pitcher_sweet_spot_pct": 33.1
+      },
+      "675848": {
+        "pitcher_avg_exit_velocity": 89.9,
+        "pitcher_max_exit_velocity": 110.4,
+        "pitcher_barrel_pct": 3.8,
+        "pitcher_hard_hit_pct": 40.0,
+        "pitcher_sweet_spot_pct": 33.8
+      },
+      "679358": {
+        "pitcher_avg_exit_velocity": 86.3,
+        "pitcher_max_exit_velocity": 113.3,
+        "pitcher_barrel_pct": 6.9,
+        "pitcher_hard_hit_pct": 29.2,
+        "pitcher_sweet_spot_pct": 36.2
+      },
+      "668984": {
+        "pitcher_avg_exit_velocity": 87.8,
+        "pitcher_max_exit_velocity": 118.5,
+        "pitcher_barrel_pct": 8.5,
+        "pitcher_hard_hit_pct": 39.7,
+        "pitcher_sweet_spot_pct": 41.5
+      },
+      "657514": {
+        "pitcher_avg_exit_velocity": 85.5,
+        "pitcher_max_exit_velocity": 111.1,
+        "pitcher_barrel_pct": 4.6,
+        "pitcher_hard_hit_pct": 29.2,
+        "pitcher_sweet_spot_pct": 30.0
+      },
+      "694335": {
+        "pitcher_avg_exit_velocity": 91.0,
+        "pitcher_max_exit_velocity": 110.0,
+        "pitcher_barrel_pct": 7.0,
+        "pitcher_hard_hit_pct": 45.0,
+        "pitcher_sweet_spot_pct": 36.4
+      },
+      "680730": {
+        "pitcher_avg_exit_velocity": 90.9,
+        "pitcher_max_exit_velocity": 112.1,
+        "pitcher_barrel_pct": 8.5,
+        "pitcher_hard_hit_pct": 41.9,
+        "pitcher_sweet_spot_pct": 33.3
+      },
+      "672782": {
+        "pitcher_avg_exit_velocity": 89.3,
+        "pitcher_max_exit_velocity": 114.7,
+        "pitcher_barrel_pct": 10.1,
+        "pitcher_hard_hit_pct": 45.1,
+        "pitcher_sweet_spot_pct": 34.9
+      },
+      "663460": {
+        "pitcher_avg_exit_velocity": 89.4,
+        "pitcher_max_exit_velocity": 114.2,
+        "pitcher_barrel_pct": 7.8,
+        "pitcher_hard_hit_pct": 39.5,
+        "pitcher_sweet_spot_pct": 38.8
+      },
+      "687396": {
+        "pitcher_avg_exit_velocity": 87.3,
+        "pitcher_max_exit_velocity": 109.3,
+        "pitcher_barrel_pct": 4.7,
+        "pitcher_hard_hit_pct": 35.9,
+        "pitcher_sweet_spot_pct": 38.3
+      },
+      "641302": {
+        "pitcher_avg_exit_velocity": 87.5,
+        "pitcher_max_exit_velocity": 110.0,
+        "pitcher_barrel_pct": 3.9,
+        "pitcher_hard_hit_pct": 35.2,
+        "pitcher_sweet_spot_pct": 28.9
+      },
+      "669330": {
+        "pitcher_avg_exit_velocity": 88.0,
+        "pitcher_max_exit_velocity": 112.4,
+        "pitcher_barrel_pct": 6.3,
+        "pitcher_hard_hit_pct": 34.6,
+        "pitcher_sweet_spot_pct": 33.9
+      },
+      "544150": {
+        "pitcher_avg_exit_velocity": 89.5,
+        "pitcher_max_exit_velocity": 111.8,
+        "pitcher_barrel_pct": 9.5,
+        "pitcher_hard_hit_pct": 39.7,
+        "pitcher_sweet_spot_pct": 38.9
+      },
+      "657612": {
+        "pitcher_avg_exit_velocity": 89.9,
+        "pitcher_max_exit_velocity": 113.8,
+        "pitcher_barrel_pct": 7.1,
+        "pitcher_hard_hit_pct": 43.7,
+        "pitcher_sweet_spot_pct": 23.0
+      },
+      "642701": {
+        "pitcher_avg_exit_velocity": 89.8,
+        "pitcher_max_exit_velocity": 109.4,
+        "pitcher_barrel_pct": 9.5,
+        "pitcher_hard_hit_pct": 41.3,
+        "pitcher_sweet_spot_pct": 42.9
+      },
+      "680755": {
+        "pitcher_avg_exit_velocity": 88.3,
+        "pitcher_max_exit_velocity": 109.2,
+        "pitcher_barrel_pct": 12.7,
+        "pitcher_hard_hit_pct": 39.7,
+        "pitcher_sweet_spot_pct": 27.8
+      },
+      "640448": {
+        "pitcher_avg_exit_velocity": 90.1,
+        "pitcher_max_exit_velocity": 112.7,
+        "pitcher_barrel_pct": 8.0,
+        "pitcher_hard_hit_pct": 43.2,
+        "pitcher_sweet_spot_pct": 26.4
+      },
+      "641835": {
+        "pitcher_avg_exit_velocity": 89.0,
+        "pitcher_max_exit_velocity": 110.8,
+        "pitcher_barrel_pct": 7.3,
+        "pitcher_hard_hit_pct": 45.2,
+        "pitcher_sweet_spot_pct": 32.3
+      },
+      "668941": {
+        "pitcher_avg_exit_velocity": 91.3,
+        "pitcher_max_exit_velocity": 111.8,
+        "pitcher_barrel_pct": 8.1,
+        "pitcher_hard_hit_pct": 43.1,
+        "pitcher_sweet_spot_pct": 36.6
+      },
+      "595345": {
+        "pitcher_avg_exit_velocity": 86.7,
+        "pitcher_max_exit_velocity": 110.5,
+        "pitcher_barrel_pct": 4.1,
+        "pitcher_hard_hit_pct": 29.3,
+        "pitcher_sweet_spot_pct": 28.5
+      },
+      "665622": {
+        "pitcher_avg_exit_velocity": 90.4,
+        "pitcher_max_exit_velocity": 111.1,
+        "pitcher_barrel_pct": 7.3,
+        "pitcher_hard_hit_pct": 39.0,
+        "pitcher_sweet_spot_pct": 39.0
+      },
+      "696270": {
+        "pitcher_avg_exit_velocity": 87.5,
+        "pitcher_max_exit_velocity": 113.6,
+        "pitcher_barrel_pct": 8.2,
+        "pitcher_hard_hit_pct": 36.1,
+        "pitcher_sweet_spot_pct": 30.3
+      },
+      "642232": {
+        "pitcher_avg_exit_velocity": 83.0,
+        "pitcher_max_exit_velocity": 110.8,
+        "pitcher_barrel_pct": 3.3,
+        "pitcher_hard_hit_pct": 23.8,
+        "pitcher_sweet_spot_pct": 34.4
+      },
+      "623211": {
+        "pitcher_avg_exit_velocity": 83.7,
+        "pitcher_max_exit_velocity": 111.7,
+        "pitcher_barrel_pct": 2.5,
+        "pitcher_hard_hit_pct": 24.6,
+        "pitcher_sweet_spot_pct": 25.4
+      },
+      "668674": {
+        "pitcher_avg_exit_velocity": 86.6,
+        "pitcher_max_exit_velocity": 114.2,
+        "pitcher_barrel_pct": 5.7,
+        "pitcher_hard_hit_pct": 40.2,
+        "pitcher_sweet_spot_pct": 31.1
+      },
+      "801403": {
+        "pitcher_avg_exit_velocity": 90.6,
+        "pitcher_max_exit_velocity": 111.3,
+        "pitcher_barrel_pct": 9.9,
+        "pitcher_hard_hit_pct": 52.1,
+        "pitcher_sweet_spot_pct": 24.0
+      },
+      "670036": {
+        "pitcher_avg_exit_velocity": 87.9,
+        "pitcher_max_exit_velocity": 109.5,
+        "pitcher_barrel_pct": 9.9,
+        "pitcher_hard_hit_pct": 40.5,
+        "pitcher_sweet_spot_pct": 43.8
+      },
+      "666277": {
+        "pitcher_avg_exit_velocity": 90.4,
+        "pitcher_max_exit_velocity": 113.4,
+        "pitcher_barrel_pct": 9.1,
+        "pitcher_hard_hit_pct": 41.7,
+        "pitcher_sweet_spot_pct": 26.4
+      },
+      "699134": {
+        "pitcher_avg_exit_velocity": 87.1,
+        "pitcher_max_exit_velocity": 105.7,
+        "pitcher_barrel_pct": 2.5,
+        "pitcher_hard_hit_pct": 31.4,
+        "pitcher_sweet_spot_pct": 19.8
+      },
+      "669947": {
+        "pitcher_avg_exit_velocity": 88.2,
+        "pitcher_max_exit_velocity": 109.4,
+        "pitcher_barrel_pct": 10.8,
+        "pitcher_hard_hit_pct": 37.5,
+        "pitcher_sweet_spot_pct": 37.5
+      },
+      "680570": {
+        "pitcher_avg_exit_velocity": 92.3,
+        "pitcher_max_exit_velocity": 113.7,
+        "pitcher_barrel_pct": 10.0,
+        "pitcher_hard_hit_pct": 55.0,
+        "pitcher_sweet_spot_pct": 42.5
+      },
+      "660825": {
+        "pitcher_avg_exit_velocity": 90.2,
+        "pitcher_max_exit_velocity": 110.4,
+        "pitcher_barrel_pct": 7.5,
+        "pitcher_hard_hit_pct": 39.2,
+        "pitcher_sweet_spot_pct": 35.0
+      },
+      "571948": {
+        "pitcher_avg_exit_velocity": 88.5,
+        "pitcher_max_exit_velocity": 109.8,
+        "pitcher_barrel_pct": 5.9,
+        "pitcher_hard_hit_pct": 37.8,
+        "pitcher_sweet_spot_pct": 37.0
+      },
+      "669270": {
+        "pitcher_avg_exit_velocity": 89.1,
+        "pitcher_max_exit_velocity": 112.8,
+        "pitcher_barrel_pct": 5.9,
+        "pitcher_hard_hit_pct": 39.5,
+        "pitcher_sweet_spot_pct": 30.3
+      },
+      "657044": {
+        "pitcher_avg_exit_velocity": 88.4,
+        "pitcher_max_exit_velocity": 112.2,
+        "pitcher_barrel_pct": 4.2,
+        "pitcher_hard_hit_pct": 34.5,
+        "pitcher_sweet_spot_pct": 29.4
+      },
+      "681982": {
+        "pitcher_avg_exit_velocity": 88.8,
+        "pitcher_max_exit_velocity": 111.3,
+        "pitcher_barrel_pct": 6.7,
+        "pitcher_hard_hit_pct": 38.7,
+        "pitcher_sweet_spot_pct": 33.6
+      },
+      "702474": {
+        "pitcher_avg_exit_velocity": 91.5,
+        "pitcher_max_exit_velocity": 111.1,
+        "pitcher_barrel_pct": 6.8,
+        "pitcher_hard_hit_pct": 50.8,
+        "pitcher_sweet_spot_pct": 33.9
+      },
+      "691799": {
+        "pitcher_avg_exit_velocity": 89.3,
+        "pitcher_max_exit_velocity": 108.6,
+        "pitcher_barrel_pct": 6.8,
+        "pitcher_hard_hit_pct": 40.7,
+        "pitcher_sweet_spot_pct": 28.0
+      },
+      "657097": {
+        "pitcher_avg_exit_velocity": 89.4,
+        "pitcher_max_exit_velocity": 111.6,
+        "pitcher_barrel_pct": 7.6,
+        "pitcher_hard_hit_pct": 44.9,
+        "pitcher_sweet_spot_pct": 39.0
+      },
+      "663542": {
+        "pitcher_avg_exit_velocity": 88.0,
+        "pitcher_max_exit_velocity": 110.4,
+        "pitcher_barrel_pct": 3.4,
+        "pitcher_hard_hit_pct": 35.9,
+        "pitcher_sweet_spot_pct": 29.9
+      },
+      "663738": {
+        "pitcher_avg_exit_velocity": 87.4,
+        "pitcher_max_exit_velocity": 111.3,
+        "pitcher_barrel_pct": 6.0,
+        "pitcher_hard_hit_pct": 35.9,
+        "pitcher_sweet_spot_pct": 30.8
+      },
+      "676534": {
+        "pitcher_avg_exit_velocity": 89.7,
+        "pitcher_max_exit_velocity": 111.4,
+        "pitcher_barrel_pct": 5.2,
+        "pitcher_hard_hit_pct": 43.1,
+        "pitcher_sweet_spot_pct": 34.5
+      },
+      "669438": {
+        "pitcher_avg_exit_velocity": 89.2,
+        "pitcher_max_exit_velocity": 112.6,
+        "pitcher_barrel_pct": 14.7,
+        "pitcher_hard_hit_pct": 38.1,
+        "pitcher_sweet_spot_pct": 36.2
+      },
+      "605540": {
+        "pitcher_avg_exit_velocity": 90.0,
+        "pitcher_max_exit_velocity": 108.9,
+        "pitcher_barrel_pct": 7.8,
+        "pitcher_hard_hit_pct": 34.5,
+        "pitcher_sweet_spot_pct": 29.3
+      },
+      "607074": {
+        "pitcher_avg_exit_velocity": 89.9,
+        "pitcher_max_exit_velocity": 111.7,
+        "pitcher_barrel_pct": 5.2,
+        "pitcher_hard_hit_pct": 35.7,
+        "pitcher_sweet_spot_pct": 33.0
+      },
+      "669711": {
+        "pitcher_avg_exit_velocity": 86.9,
+        "pitcher_max_exit_velocity": 114.6,
+        "pitcher_barrel_pct": 4.3,
+        "pitcher_hard_hit_pct": 32.2,
+        "pitcher_sweet_spot_pct": 27.0
+      },
+      "642528": {
+        "pitcher_avg_exit_velocity": 86.0,
+        "pitcher_max_exit_velocity": 112.3,
+        "pitcher_barrel_pct": 3.5,
+        "pitcher_hard_hit_pct": 32.2,
+        "pitcher_sweet_spot_pct": 27.8
+      },
+      "696147": {
+        "pitcher_avg_exit_velocity": 86.7,
+        "pitcher_max_exit_velocity": 114.1,
+        "pitcher_barrel_pct": 7.0,
+        "pitcher_hard_hit_pct": 32.2,
+        "pitcher_sweet_spot_pct": 30.4
+      },
+      "656638": {
+        "pitcher_avg_exit_velocity": 90.0,
+        "pitcher_max_exit_velocity": 114.1,
+        "pitcher_barrel_pct": 12.2,
+        "pitcher_hard_hit_pct": 41.7,
+        "pitcher_sweet_spot_pct": 38.3
+      },
+      "573124": {
+        "pitcher_avg_exit_velocity": 86.0,
+        "pitcher_max_exit_velocity": 110.0,
+        "pitcher_barrel_pct": 6.1,
+        "pitcher_hard_hit_pct": 28.7,
+        "pitcher_sweet_spot_pct": 41.7
+      },
+      "656464": {
+        "pitcher_avg_exit_velocity": 90.0,
+        "pitcher_max_exit_velocity": 108.3,
+        "pitcher_barrel_pct": 9.6,
+        "pitcher_hard_hit_pct": 43.0,
+        "pitcher_sweet_spot_pct": 31.6
+      },
+      "670167": {
+        "pitcher_avg_exit_velocity": 89.9,
+        "pitcher_max_exit_velocity": 110.3,
+        "pitcher_barrel_pct": 7.9,
+        "pitcher_hard_hit_pct": 42.1,
+        "pitcher_sweet_spot_pct": 36.0
+      },
+      "815083": {
+        "pitcher_avg_exit_velocity": 89.6,
+        "pitcher_max_exit_velocity": 112.6,
+        "pitcher_barrel_pct": 8.8,
+        "pitcher_hard_hit_pct": 48.1,
+        "pitcher_sweet_spot_pct": 44.7
+      },
+      "673540": {
+        "pitcher_avg_exit_velocity": 90.0,
+        "pitcher_max_exit_velocity": 109.3,
+        "pitcher_barrel_pct": 13.3,
+        "pitcher_hard_hit_pct": 38.9,
+        "pitcher_sweet_spot_pct": 43.4
+      },
+      "666808": {
+        "pitcher_avg_exit_velocity": 90.9,
+        "pitcher_max_exit_velocity": 109.2,
+        "pitcher_barrel_pct": 6.2,
+        "pitcher_hard_hit_pct": 49.6,
+        "pitcher_sweet_spot_pct": 24.8
+      },
+      "672335": {
+        "pitcher_avg_exit_velocity": 91.9,
+        "pitcher_max_exit_velocity": 114.7,
+        "pitcher_barrel_pct": 13.3,
+        "pitcher_hard_hit_pct": 52.2,
+        "pitcher_sweet_spot_pct": 25.7
+      },
+      "621121": {
+        "pitcher_avg_exit_velocity": 91.2,
+        "pitcher_max_exit_velocity": 111.9,
+        "pitcher_barrel_pct": 8.0,
+        "pitcher_hard_hit_pct": 49.1,
+        "pitcher_sweet_spot_pct": 38.4
+      },
+      "663687": {
+        "pitcher_avg_exit_velocity": 86.4,
+        "pitcher_max_exit_velocity": 110.3,
+        "pitcher_barrel_pct": 5.4,
+        "pitcher_hard_hit_pct": 30.4,
+        "pitcher_sweet_spot_pct": 31.3
+      },
+      "686973": {
+        "pitcher_avg_exit_velocity": 87.2,
+        "pitcher_max_exit_velocity": 112.7,
+        "pitcher_barrel_pct": 2.7,
+        "pitcher_hard_hit_pct": 35.7,
+        "pitcher_sweet_spot_pct": 24.1
+      },
+      "691951": {
+        "pitcher_avg_exit_velocity": 86.8,
+        "pitcher_max_exit_velocity": 113.0,
+        "pitcher_barrel_pct": 9.0,
+        "pitcher_hard_hit_pct": 35.1,
+        "pitcher_sweet_spot_pct": 35.1
+      },
+      "676617": {
+        "pitcher_avg_exit_velocity": 88.6,
+        "pitcher_max_exit_velocity": 109.8,
+        "pitcher_barrel_pct": 7.3,
+        "pitcher_hard_hit_pct": 40.0,
+        "pitcher_sweet_spot_pct": 30.0
+      },
+      "668873": {
+        "pitcher_avg_exit_velocity": 87.4,
+        "pitcher_max_exit_velocity": 109.6,
+        "pitcher_barrel_pct": 7.3,
+        "pitcher_hard_hit_pct": 35.5,
+        "pitcher_sweet_spot_pct": 31.8
+      },
+      "689296": {
+        "pitcher_avg_exit_velocity": 88.0,
+        "pitcher_max_exit_velocity": 110.7,
+        "pitcher_barrel_pct": 8.2,
+        "pitcher_hard_hit_pct": 39.1,
+        "pitcher_sweet_spot_pct": 40.9
+      },
+      "594580": {
+        "pitcher_avg_exit_velocity": 87.8,
+        "pitcher_max_exit_velocity": 109.9,
+        "pitcher_barrel_pct": 6.4,
+        "pitcher_hard_hit_pct": 31.8,
+        "pitcher_sweet_spot_pct": 28.2
+      },
+      "670950": {
+        "pitcher_avg_exit_velocity": 90.6,
+        "pitcher_max_exit_velocity": 107.9,
+        "pitcher_barrel_pct": 8.3,
+        "pitcher_hard_hit_pct": 41.3,
+        "pitcher_sweet_spot_pct": 33.0
+      },
+      "670280": {
+        "pitcher_avg_exit_velocity": 86.3,
+        "pitcher_max_exit_velocity": 111.5,
+        "pitcher_barrel_pct": 3.7,
+        "pitcher_hard_hit_pct": 36.7,
+        "pitcher_sweet_spot_pct": 22.9
+      },
+      "596001": {
+        "pitcher_avg_exit_velocity": 87.0,
+        "pitcher_max_exit_velocity": 112.2,
+        "pitcher_barrel_pct": 3.7,
+        "pitcher_hard_hit_pct": 33.9,
+        "pitcher_sweet_spot_pct": 38.5
+      },
+      "689254": {
+        "pitcher_avg_exit_velocity": 86.3,
+        "pitcher_max_exit_velocity": 111.9,
+        "pitcher_barrel_pct": 8.3,
+        "pitcher_hard_hit_pct": 33.9,
+        "pitcher_sweet_spot_pct": 39.4
+      },
+      "656641": {
+        "pitcher_avg_exit_velocity": 88.5,
+        "pitcher_max_exit_velocity": 108.5,
+        "pitcher_barrel_pct": 6.4,
+        "pitcher_hard_hit_pct": 38.5,
+        "pitcher_sweet_spot_pct": 23.9
+      },
+      "671922": {
+        "pitcher_avg_exit_velocity": 91.9,
+        "pitcher_max_exit_velocity": 113.2,
+        "pitcher_barrel_pct": 10.1,
+        "pitcher_hard_hit_pct": 43.9,
+        "pitcher_sweet_spot_pct": 37.6
+      },
+      "670329": {
+        "pitcher_avg_exit_velocity": 86.1,
+        "pitcher_max_exit_velocity": 108.9,
+        "pitcher_barrel_pct": 6.5,
+        "pitcher_hard_hit_pct": 34.6,
+        "pitcher_sweet_spot_pct": 25.2
+      },
+      "621381": {
+        "pitcher_avg_exit_velocity": 89.3,
+        "pitcher_max_exit_velocity": 111.4,
+        "pitcher_barrel_pct": 9.4,
+        "pitcher_hard_hit_pct": 38.7,
+        "pitcher_sweet_spot_pct": 29.2
+      },
+      "676571": {
+        "pitcher_avg_exit_velocity": 91.3,
+        "pitcher_max_exit_velocity": 109.7,
+        "pitcher_barrel_pct": 9.4,
+        "pitcher_hard_hit_pct": 44.3,
+        "pitcher_sweet_spot_pct": 29.2
+      },
+      "682842": {
+        "pitcher_avg_exit_velocity": 87.6,
+        "pitcher_max_exit_velocity": 112.6,
+        "pitcher_barrel_pct": 1.9,
+        "pitcher_hard_hit_pct": 32.4,
+        "pitcher_sweet_spot_pct": 27.6
+      },
+      "668390": {
+        "pitcher_avg_exit_velocity": 88.1,
+        "pitcher_max_exit_velocity": 112.7,
+        "pitcher_barrel_pct": 5.7,
+        "pitcher_hard_hit_pct": 42.9,
+        "pitcher_sweet_spot_pct": 37.1
+      },
+      "667463": {
+        "pitcher_avg_exit_velocity": 89.1,
+        "pitcher_max_exit_velocity": 110.1,
+        "pitcher_barrel_pct": 8.6,
+        "pitcher_hard_hit_pct": 36.2,
+        "pitcher_sweet_spot_pct": 35.2
+      },
+      "694361": {
+        "pitcher_avg_exit_velocity": 88.8,
+        "pitcher_max_exit_velocity": 113.1,
+        "pitcher_barrel_pct": 2.9,
+        "pitcher_hard_hit_pct": 38.1,
+        "pitcher_sweet_spot_pct": 32.4
+      },
+      "694346": {
+        "pitcher_avg_exit_velocity": 91.2,
+        "pitcher_max_exit_velocity": 112.7,
+        "pitcher_barrel_pct": 9.5,
+        "pitcher_hard_hit_pct": 47.6,
+        "pitcher_sweet_spot_pct": 32.4
+      },
+      "592773": {
+        "pitcher_avg_exit_velocity": 89.5,
+        "pitcher_max_exit_velocity": 114.3,
+        "pitcher_barrel_pct": 7.6,
+        "pitcher_hard_hit_pct": 33.3,
+        "pitcher_sweet_spot_pct": 32.4
+      },
+      "800311": {
+        "pitcher_avg_exit_velocity": 89.1,
+        "pitcher_max_exit_velocity": 109.3,
+        "pitcher_barrel_pct": 4.8,
+        "pitcher_hard_hit_pct": 36.5,
+        "pitcher_sweet_spot_pct": 30.8
+      },
+      "682608": {
+        "pitcher_avg_exit_velocity": 86.3,
+        "pitcher_max_exit_velocity": 110.3,
+        "pitcher_barrel_pct": 5.8,
+        "pitcher_hard_hit_pct": 32.7,
+        "pitcher_sweet_spot_pct": 32.7
+      },
+      "676263": {
+        "pitcher_avg_exit_velocity": 88.9,
+        "pitcher_max_exit_velocity": 111.9,
+        "pitcher_barrel_pct": 6.8,
+        "pitcher_hard_hit_pct": 40.8,
+        "pitcher_sweet_spot_pct": 25.2
+      },
+      "683003": {
+        "pitcher_avg_exit_velocity": 89.9,
+        "pitcher_max_exit_velocity": 115.1,
+        "pitcher_barrel_pct": 6.8,
+        "pitcher_hard_hit_pct": 38.8,
+        "pitcher_sweet_spot_pct": 34.0
+      },
+      "681402": {
+        "pitcher_avg_exit_velocity": 93.9,
+        "pitcher_max_exit_velocity": 110.4,
+        "pitcher_barrel_pct": 15.5,
+        "pitcher_hard_hit_pct": 50.5,
+        "pitcher_sweet_spot_pct": 44.7
+      },
+      "656546": {
+        "pitcher_avg_exit_velocity": 86.9,
+        "pitcher_max_exit_velocity": 107.7,
+        "pitcher_barrel_pct": 7.8,
+        "pitcher_hard_hit_pct": 31.4,
+        "pitcher_sweet_spot_pct": 32.4
+      },
+      "667297": {
+        "pitcher_avg_exit_velocity": 87.8,
+        "pitcher_max_exit_velocity": 110.7,
+        "pitcher_barrel_pct": 6.9,
+        "pitcher_hard_hit_pct": 35.3,
+        "pitcher_sweet_spot_pct": 29.4
+      },
+      "669276": {
+        "pitcher_avg_exit_velocity": 86.7,
+        "pitcher_max_exit_velocity": 110.4,
+        "pitcher_barrel_pct": 3.9,
+        "pitcher_hard_hit_pct": 29.4,
+        "pitcher_sweet_spot_pct": 34.3
+      },
+      "592094": {
+        "pitcher_avg_exit_velocity": 87.8,
+        "pitcher_max_exit_velocity": 115.6,
+        "pitcher_barrel_pct": 6.9,
+        "pitcher_hard_hit_pct": 36.3,
+        "pitcher_sweet_spot_pct": 26.5
+      },
+      "686613": {
+        "pitcher_avg_exit_velocity": 85.4,
+        "pitcher_max_exit_velocity": 112.0,
+        "pitcher_barrel_pct": 5.9,
+        "pitcher_hard_hit_pct": 38.2,
+        "pitcher_sweet_spot_pct": 27.5
+      },
+      "596133": {
+        "pitcher_avg_exit_velocity": 88.3,
+        "pitcher_max_exit_velocity": 112.0,
+        "pitcher_barrel_pct": 8.8,
+        "pitcher_hard_hit_pct": 32.4,
+        "pitcher_sweet_spot_pct": 25.5
+      },
+      "656848": {
+        "pitcher_avg_exit_velocity": 90.9,
+        "pitcher_max_exit_velocity": 110.9,
+        "pitcher_barrel_pct": 11.9,
+        "pitcher_hard_hit_pct": 43.6,
+        "pitcher_sweet_spot_pct": 26.7
+      },
+      "680767": {
+        "pitcher_avg_exit_velocity": 89.9,
+        "pitcher_max_exit_velocity": 110.4,
+        "pitcher_barrel_pct": 6.9,
+        "pitcher_hard_hit_pct": 37.6,
+        "pitcher_sweet_spot_pct": 25.7
+      },
+      "621383": {
+        "pitcher_avg_exit_velocity": 87.4,
+        "pitcher_max_exit_velocity": 108.0,
+        "pitcher_barrel_pct": 6.9,
+        "pitcher_hard_hit_pct": 33.7,
+        "pitcher_sweet_spot_pct": 42.6
+      },
+      "621237": {
+        "pitcher_avg_exit_velocity": 87.2,
+        "pitcher_max_exit_velocity": 112.7,
+        "pitcher_barrel_pct": 4.0,
+        "pitcher_hard_hit_pct": 26.7,
+        "pitcher_sweet_spot_pct": 37.6
+      },
+      "666661": {
+        "pitcher_avg_exit_velocity": 85.3,
+        "pitcher_max_exit_velocity": 111.0,
+        "pitcher_barrel_pct": 4.0,
+        "pitcher_hard_hit_pct": 32.0,
+        "pitcher_sweet_spot_pct": 28.0
+      },
+      "664875": {
+        "pitcher_avg_exit_velocity": 90.0,
+        "pitcher_max_exit_velocity": 116.6,
+        "pitcher_barrel_pct": 10.0,
+        "pitcher_hard_hit_pct": 43.0,
+        "pitcher_sweet_spot_pct": 40.0
+      },
+      "607455": {
+        "pitcher_avg_exit_velocity": 90.2,
+        "pitcher_max_exit_velocity": 116.2,
+        "pitcher_barrel_pct": 7.0,
+        "pitcher_hard_hit_pct": 39.0,
+        "pitcher_sweet_spot_pct": 30.0
+      },
+      "606996": {
+        "pitcher_avg_exit_velocity": 86.9,
+        "pitcher_max_exit_velocity": 115.0,
+        "pitcher_barrel_pct": 7.0,
+        "pitcher_hard_hit_pct": 30.0,
+        "pitcher_sweet_spot_pct": 35.0
+      },
+      "683769": {
+        "pitcher_avg_exit_velocity": 86.0,
+        "pitcher_max_exit_velocity": 114.1,
+        "pitcher_barrel_pct": 7.0,
+        "pitcher_hard_hit_pct": 28.3,
+        "pitcher_sweet_spot_pct": 36.0
+      },
+      "519141": {
+        "pitcher_avg_exit_velocity": 88.5,
+        "pitcher_max_exit_velocity": 109.8,
+        "pitcher_barrel_pct": 9.0,
+        "pitcher_hard_hit_pct": 37.0,
+        "pitcher_sweet_spot_pct": 30.0
+      },
+      "642397": {
+        "pitcher_avg_exit_velocity": 85.8,
+        "pitcher_max_exit_velocity": 111.2,
+        "pitcher_barrel_pct": 6.0,
+        "pitcher_hard_hit_pct": 35.0,
+        "pitcher_sweet_spot_pct": 32.0
+      },
+      "687606": {
+        "pitcher_avg_exit_velocity": 91.0,
+        "pitcher_max_exit_velocity": 108.7,
+        "pitcher_barrel_pct": 9.1,
+        "pitcher_hard_hit_pct": 37.4,
+        "pitcher_sweet_spot_pct": 36.4
+      },
+      "689147": {
+        "pitcher_avg_exit_velocity": 83.8,
+        "pitcher_max_exit_velocity": 111.4,
+        "pitcher_barrel_pct": 6.1,
+        "pitcher_hard_hit_pct": 24.2,
+        "pitcher_sweet_spot_pct": 30.3
+      },
+      "683618": {
+        "pitcher_avg_exit_velocity": 82.6,
+        "pitcher_max_exit_velocity": 108.8,
+        "pitcher_barrel_pct": 3.0,
+        "pitcher_hard_hit_pct": 26.3,
+        "pitcher_sweet_spot_pct": 21.2
+      },
+      "681810": {
+        "pitcher_avg_exit_velocity": 90.1,
+        "pitcher_max_exit_velocity": 115.0,
+        "pitcher_barrel_pct": 13.1,
+        "pitcher_hard_hit_pct": 42.4,
+        "pitcher_sweet_spot_pct": 47.5
+      },
+      "687473": {
+        "pitcher_avg_exit_velocity": 89.5,
+        "pitcher_max_exit_velocity": 109.3,
+        "pitcher_barrel_pct": 9.1,
+        "pitcher_hard_hit_pct": 42.4,
+        "pitcher_sweet_spot_pct": 36.4
+      },
+      "669020": {
+        "pitcher_avg_exit_velocity": 89.7,
+        "pitcher_max_exit_velocity": 112.4,
+        "pitcher_barrel_pct": 6.1,
+        "pitcher_hard_hit_pct": 42.7,
+        "pitcher_sweet_spot_pct": 32.7
+      },
+      "663558": {
+        "pitcher_avg_exit_velocity": 86.8,
+        "pitcher_max_exit_velocity": 110.7,
+        "pitcher_barrel_pct": 7.1,
+        "pitcher_hard_hit_pct": 28.6,
+        "pitcher_sweet_spot_pct": 29.6
+      },
+      "666171": {
+        "pitcher_avg_exit_velocity": 88.8,
+        "pitcher_max_exit_velocity": 108.2,
+        "pitcher_barrel_pct": 6.1,
+        "pitcher_hard_hit_pct": 34.7,
+        "pitcher_sweet_spot_pct": 27.6
+      },
+      "548384": {
+        "pitcher_avg_exit_velocity": 87.4,
+        "pitcher_max_exit_velocity": 110.7,
+        "pitcher_barrel_pct": 5.1,
+        "pitcher_hard_hit_pct": 31.6,
+        "pitcher_sweet_spot_pct": 36.7
+      },
+      "518585": {
+        "pitcher_avg_exit_velocity": 85.4,
+        "pitcher_max_exit_velocity": 108.6,
+        "pitcher_barrel_pct": 7.1,
+        "pitcher_hard_hit_pct": 22.4,
+        "pitcher_sweet_spot_pct": 27.6
+      },
+      "675911": {
+        "pitcher_avg_exit_velocity": 89.1,
+        "pitcher_max_exit_velocity": 111.5,
+        "pitcher_barrel_pct": 11.2,
+        "pitcher_hard_hit_pct": 36.7,
+        "pitcher_sweet_spot_pct": 35.7
+      },
+      "605130": {
+        "pitcher_avg_exit_velocity": 87.9,
+        "pitcher_max_exit_velocity": 108.1,
+        "pitcher_barrel_pct": 9.3,
+        "pitcher_hard_hit_pct": 36.1,
+        "pitcher_sweet_spot_pct": 30.9
+      },
+      "666974": {
+        "pitcher_avg_exit_velocity": 89.6,
+        "pitcher_max_exit_velocity": 110.1,
+        "pitcher_barrel_pct": 6.2,
+        "pitcher_hard_hit_pct": 41.2,
+        "pitcher_sweet_spot_pct": 23.7
+      },
+      "676755": {
+        "pitcher_avg_exit_velocity": 91.0,
+        "pitcher_max_exit_velocity": 111.5,
+        "pitcher_barrel_pct": 12.4,
+        "pitcher_hard_hit_pct": 46.4,
+        "pitcher_sweet_spot_pct": 45.4
+      },
+      "608337": {
+        "pitcher_avg_exit_velocity": 90.0,
+        "pitcher_max_exit_velocity": 111.5,
+        "pitcher_barrel_pct": 4.2,
+        "pitcher_hard_hit_pct": 43.8,
+        "pitcher_sweet_spot_pct": 38.5
+      },
+      "663992": {
+        "pitcher_avg_exit_velocity": 87.1,
+        "pitcher_max_exit_velocity": 110.6,
+        "pitcher_barrel_pct": 6.3,
+        "pitcher_hard_hit_pct": 32.6,
+        "pitcher_sweet_spot_pct": 35.8
+      },
+      "681217": {
+        "pitcher_avg_exit_velocity": 86.8,
+        "pitcher_max_exit_velocity": 107.2,
+        "pitcher_barrel_pct": 9.5,
+        "pitcher_hard_hit_pct": 32.6,
+        "pitcher_sweet_spot_pct": 38.9
+      },
+      "579328": {
+        "pitcher_avg_exit_velocity": 90.2,
+        "pitcher_max_exit_velocity": 116.2,
+        "pitcher_barrel_pct": 8.5,
+        "pitcher_hard_hit_pct": 42.6,
+        "pitcher_sweet_spot_pct": 35.1
+      },
+      "623149": {
+        "pitcher_avg_exit_velocity": 91.2,
+        "pitcher_max_exit_velocity": 110.2,
+        "pitcher_barrel_pct": 13.8,
+        "pitcher_hard_hit_pct": 42.6,
+        "pitcher_sweet_spot_pct": 40.4
+      },
+      "656945": {
+        "pitcher_avg_exit_velocity": 88.6,
+        "pitcher_max_exit_velocity": 113.0,
+        "pitcher_barrel_pct": 6.4,
+        "pitcher_hard_hit_pct": 30.9,
+        "pitcher_sweet_spot_pct": 36.2
+      },
+      "656730": {
+        "pitcher_avg_exit_velocity": 91.0,
+        "pitcher_max_exit_velocity": 111.1,
+        "pitcher_barrel_pct": 5.4,
+        "pitcher_hard_hit_pct": 43.0,
+        "pitcher_sweet_spot_pct": 29.0
+      },
+      "663362": {
+        "pitcher_avg_exit_velocity": 89.4,
+        "pitcher_max_exit_velocity": 105.8,
+        "pitcher_barrel_pct": 7.5,
+        "pitcher_hard_hit_pct": 38.7,
+        "pitcher_sweet_spot_pct": 25.8
+      },
+      "663765": {
+        "pitcher_avg_exit_velocity": 91.2,
+        "pitcher_max_exit_velocity": 110.0,
+        "pitcher_barrel_pct": 8.6,
+        "pitcher_hard_hit_pct": 48.4,
+        "pitcher_sweet_spot_pct": 46.2
+      },
+      "641755": {
+        "pitcher_avg_exit_velocity": 84.8,
+        "pitcher_max_exit_velocity": 109.6,
+        "pitcher_barrel_pct": 6.5,
+        "pitcher_hard_hit_pct": 26.9,
+        "pitcher_sweet_spot_pct": 32.3
+      },
+      "676775": {
+        "pitcher_avg_exit_velocity": 85.9,
+        "pitcher_max_exit_velocity": 108.7,
+        "pitcher_barrel_pct": 4.3,
+        "pitcher_hard_hit_pct": 29.3,
+        "pitcher_sweet_spot_pct": 30.4
+      },
+      "642207": {
+        "pitcher_avg_exit_velocity": 87.8,
+        "pitcher_max_exit_velocity": 108.7,
+        "pitcher_barrel_pct": 5.4,
+        "pitcher_hard_hit_pct": 30.4,
+        "pitcher_sweet_spot_pct": 37.0
+      },
+      "656234": {
+        "pitcher_avg_exit_velocity": 89.4,
+        "pitcher_max_exit_velocity": 113.2,
+        "pitcher_barrel_pct": 9.8,
+        "pitcher_hard_hit_pct": 38.0,
+        "pitcher_sweet_spot_pct": 34.8
+      },
+      "663574": {
+        "pitcher_avg_exit_velocity": 91.8,
+        "pitcher_max_exit_velocity": 110.3,
+        "pitcher_barrel_pct": 10.9,
+        "pitcher_hard_hit_pct": 46.7,
+        "pitcher_sweet_spot_pct": 37.0
+      },
+      "676477": {
+        "pitcher_avg_exit_velocity": 87.4,
+        "pitcher_max_exit_velocity": 109.6,
+        "pitcher_barrel_pct": 4.3,
+        "pitcher_hard_hit_pct": 32.6,
+        "pitcher_sweet_spot_pct": 31.5
+      },
+      "643410": {
+        "pitcher_avg_exit_velocity": 86.8,
+        "pitcher_max_exit_velocity": 110.5,
+        "pitcher_barrel_pct": 3.3,
+        "pitcher_hard_hit_pct": 31.9,
+        "pitcher_sweet_spot_pct": 37.4
+      },
+      "670059": {
+        "pitcher_avg_exit_velocity": 87.7,
+        "pitcher_max_exit_velocity": 110.3,
+        "pitcher_barrel_pct": 7.7,
+        "pitcher_hard_hit_pct": 48.4,
+        "pitcher_sweet_spot_pct": 24.2
+      },
+      "663423": {
+        "pitcher_avg_exit_velocity": 91.0,
+        "pitcher_max_exit_velocity": 116.3,
+        "pitcher_barrel_pct": 7.7,
+        "pitcher_hard_hit_pct": 45.6,
+        "pitcher_sweet_spot_pct": 33.0
+      },
+      "676254": {
+        "pitcher_avg_exit_velocity": 85.4,
+        "pitcher_max_exit_velocity": 110.3,
+        "pitcher_barrel_pct": 6.7,
+        "pitcher_hard_hit_pct": 35.6,
+        "pitcher_sweet_spot_pct": 30.0
+      },
+      "641329": {
+        "pitcher_avg_exit_velocity": 86.3,
+        "pitcher_max_exit_velocity": 109.1,
+        "pitcher_barrel_pct": 6.7,
+        "pitcher_hard_hit_pct": 32.2,
+        "pitcher_sweet_spot_pct": 30.0
+      },
+      "681895": {
+        "pitcher_avg_exit_velocity": 84.6,
+        "pitcher_max_exit_velocity": 109.5,
+        "pitcher_barrel_pct": 3.3,
+        "pitcher_hard_hit_pct": 31.1,
+        "pitcher_sweet_spot_pct": 27.8
+      },
+      "646241": {
+        "pitcher_avg_exit_velocity": 91.0,
+        "pitcher_max_exit_velocity": 105.8,
+        "pitcher_barrel_pct": 6.7,
+        "pitcher_hard_hit_pct": 44.4,
+        "pitcher_sweet_spot_pct": 35.6
+      },
+      "542888": {
+        "pitcher_avg_exit_velocity": 89.0,
+        "pitcher_max_exit_velocity": 111.3,
+        "pitcher_barrel_pct": 6.7,
+        "pitcher_hard_hit_pct": 36.0,
+        "pitcher_sweet_spot_pct": 30.3
+      },
+      "681867": {
+        "pitcher_avg_exit_velocity": 87.2,
+        "pitcher_max_exit_velocity": 111.2,
+        "pitcher_barrel_pct": 4.5,
+        "pitcher_hard_hit_pct": 36.0,
+        "pitcher_sweet_spot_pct": 22.5
+      },
+      "682254": {
+        "pitcher_avg_exit_velocity": 86.9,
+        "pitcher_max_exit_velocity": 112.9,
+        "pitcher_barrel_pct": 9.0,
+        "pitcher_hard_hit_pct": 39.3,
+        "pitcher_sweet_spot_pct": 23.6
+      },
+      "682120": {
+        "pitcher_avg_exit_velocity": 87.1,
+        "pitcher_max_exit_velocity": 110.5,
+        "pitcher_barrel_pct": 9.0,
+        "pitcher_hard_hit_pct": 34.8,
+        "pitcher_sweet_spot_pct": 30.3
+      },
+      "628452": {
+        "pitcher_avg_exit_velocity": 87.5,
+        "pitcher_max_exit_velocity": 111.7,
+        "pitcher_barrel_pct": 6.7,
+        "pitcher_hard_hit_pct": 34.8,
+        "pitcher_sweet_spot_pct": 29.2
+      },
+      "663158": {
+        "pitcher_avg_exit_velocity": 84.9,
+        "pitcher_max_exit_velocity": 107.5,
+        "pitcher_barrel_pct": 3.4,
+        "pitcher_hard_hit_pct": 33.0,
+        "pitcher_sweet_spot_pct": 33.0
+      },
+      "669211": {
+        "pitcher_avg_exit_velocity": 85.4,
+        "pitcher_max_exit_velocity": 109.0,
+        "pitcher_barrel_pct": 5.7,
+        "pitcher_hard_hit_pct": 28.4,
+        "pitcher_sweet_spot_pct": 33.0
+      },
+      "572955": {
+        "pitcher_avg_exit_velocity": 90.8,
+        "pitcher_max_exit_velocity": 109.8,
+        "pitcher_barrel_pct": 12.5,
+        "pitcher_hard_hit_pct": 40.9,
+        "pitcher_sweet_spot_pct": 42.0
+      },
+      "695534": {
+        "pitcher_avg_exit_velocity": 87.8,
+        "pitcher_max_exit_velocity": 112.6,
+        "pitcher_barrel_pct": 8.0,
+        "pitcher_hard_hit_pct": 36.4,
+        "pitcher_sweet_spot_pct": 34.1
+      },
+      "641745": {
+        "pitcher_avg_exit_velocity": 85.5,
+        "pitcher_max_exit_velocity": 108.0,
+        "pitcher_barrel_pct": 4.5,
+        "pitcher_hard_hit_pct": 31.8,
+        "pitcher_sweet_spot_pct": 27.3
+      },
+      "664991": {
+        "pitcher_avg_exit_velocity": 88.7,
+        "pitcher_max_exit_velocity": 109.4,
+        "pitcher_barrel_pct": 5.7,
+        "pitcher_hard_hit_pct": 37.9,
+        "pitcher_sweet_spot_pct": 28.7
+      },
+      "622088": {
+        "pitcher_avg_exit_velocity": 88.1,
+        "pitcher_max_exit_velocity": 110.2,
+        "pitcher_barrel_pct": 6.9,
+        "pitcher_hard_hit_pct": 33.3,
+        "pitcher_sweet_spot_pct": 23.0
+      },
+      "680742": {
+        "pitcher_avg_exit_velocity": 84.9,
+        "pitcher_max_exit_velocity": 108.9,
+        "pitcher_barrel_pct": 4.7,
+        "pitcher_hard_hit_pct": 29.1,
+        "pitcher_sweet_spot_pct": 31.4
+      },
+      "592836": {
+        "pitcher_avg_exit_velocity": 87.5,
+        "pitcher_max_exit_velocity": 108.8,
+        "pitcher_barrel_pct": 12.8,
+        "pitcher_hard_hit_pct": 36.0,
+        "pitcher_sweet_spot_pct": 37.2
+      },
+      "518886": {
+        "pitcher_avg_exit_velocity": 89.3,
+        "pitcher_max_exit_velocity": 107.4,
+        "pitcher_barrel_pct": 3.5,
+        "pitcher_hard_hit_pct": 34.9,
+        "pitcher_sweet_spot_pct": 32.6
+      },
+      "682227": {
+        "pitcher_avg_exit_velocity": 88.1,
+        "pitcher_max_exit_velocity": 111.1,
+        "pitcher_barrel_pct": 10.5,
+        "pitcher_hard_hit_pct": 41.9,
+        "pitcher_sweet_spot_pct": 34.9
+      },
+      "552640": {
+        "pitcher_avg_exit_velocity": 88.5,
+        "pitcher_max_exit_velocity": 114.6,
+        "pitcher_barrel_pct": 5.8,
+        "pitcher_hard_hit_pct": 38.4,
+        "pitcher_sweet_spot_pct": 34.9
+      },
+      "607192": {
+        "pitcher_avg_exit_velocity": 90.4,
+        "pitcher_max_exit_velocity": 108.8,
+        "pitcher_barrel_pct": 8.1,
+        "pitcher_hard_hit_pct": 38.4,
+        "pitcher_sweet_spot_pct": 30.2
+      },
+      "673513": {
+        "pitcher_avg_exit_velocity": 87.2,
+        "pitcher_max_exit_velocity": 108.9,
+        "pitcher_barrel_pct": 10.5,
+        "pitcher_hard_hit_pct": 32.6,
+        "pitcher_sweet_spot_pct": 27.9
+      },
+      "676979": {
+        "pitcher_avg_exit_velocity": 89.6,
+        "pitcher_max_exit_velocity": 112.8,
+        "pitcher_barrel_pct": 10.5,
+        "pitcher_hard_hit_pct": 45.3,
+        "pitcher_sweet_spot_pct": 41.9
+      },
+      "657424": {
+        "pitcher_avg_exit_velocity": 86.6,
+        "pitcher_max_exit_velocity": 110.5,
+        "pitcher_barrel_pct": 10.5,
+        "pitcher_hard_hit_pct": 31.4,
+        "pitcher_sweet_spot_pct": 33.7
+      },
+      "669165": {
+        "pitcher_avg_exit_velocity": 89.2,
+        "pitcher_max_exit_velocity": 109.4,
+        "pitcher_barrel_pct": 7.1,
+        "pitcher_hard_hit_pct": 41.2,
+        "pitcher_sweet_spot_pct": 31.8
+      },
+      "685126": {
+        "pitcher_avg_exit_velocity": 89.1,
+        "pitcher_max_exit_velocity": 110.6,
+        "pitcher_barrel_pct": 8.2,
+        "pitcher_hard_hit_pct": 38.8,
+        "pitcher_sweet_spot_pct": 36.5
+      },
+      "663767": {
+        "pitcher_avg_exit_velocity": 87.7,
+        "pitcher_max_exit_velocity": 108.4,
+        "pitcher_barrel_pct": 11.9,
+        "pitcher_hard_hit_pct": 36.9,
+        "pitcher_sweet_spot_pct": 36.9
+      },
+      "807743": {
+        "pitcher_avg_exit_velocity": 88.5,
+        "pitcher_max_exit_velocity": 110.8,
+        "pitcher_barrel_pct": 9.5,
+        "pitcher_hard_hit_pct": 34.5,
+        "pitcher_sweet_spot_pct": 44.0
+      },
+      "674444": {
+        "pitcher_avg_exit_velocity": 89.5,
+        "pitcher_max_exit_velocity": 112.5,
+        "pitcher_barrel_pct": 11.9,
+        "pitcher_hard_hit_pct": 35.7,
+        "pitcher_sweet_spot_pct": 35.7
+      },
+      "669622": {
+        "pitcher_avg_exit_velocity": 88.4,
+        "pitcher_max_exit_velocity": 109.8,
+        "pitcher_barrel_pct": 7.1,
+        "pitcher_hard_hit_pct": 33.3,
+        "pitcher_sweet_spot_pct": 28.6
+      },
+      "656222": {
+        "pitcher_avg_exit_velocity": 90.6,
+        "pitcher_max_exit_velocity": 116.9,
+        "pitcher_barrel_pct": 10.7,
+        "pitcher_hard_hit_pct": 42.9,
+        "pitcher_sweet_spot_pct": 35.7
+      },
+      "664208": {
+        "pitcher_avg_exit_velocity": 88.7,
+        "pitcher_max_exit_velocity": 109.6,
+        "pitcher_barrel_pct": 11.9,
+        "pitcher_hard_hit_pct": 42.9,
+        "pitcher_sweet_spot_pct": 44.0
+      },
+      "622554": {
+        "pitcher_avg_exit_velocity": 91.2,
+        "pitcher_max_exit_velocity": 111.1,
+        "pitcher_barrel_pct": 9.6,
+        "pitcher_hard_hit_pct": 39.8,
+        "pitcher_sweet_spot_pct": 38.6
+      },
+      "666142": {
+        "pitcher_avg_exit_velocity": 89.6,
+        "pitcher_max_exit_velocity": 111.6,
+        "pitcher_barrel_pct": 15.7,
+        "pitcher_hard_hit_pct": 39.8,
+        "pitcher_sweet_spot_pct": 32.5
+      },
+      "662253": {
+        "pitcher_avg_exit_velocity": 87.7,
+        "pitcher_max_exit_velocity": 111.9,
+        "pitcher_barrel_pct": 8.4,
+        "pitcher_hard_hit_pct": 42.2,
+        "pitcher_sweet_spot_pct": 33.7
+      },
+      "701656": {
+        "pitcher_avg_exit_velocity": 87.3,
+        "pitcher_max_exit_velocity": 106.5,
+        "pitcher_barrel_pct": 8.5,
+        "pitcher_hard_hit_pct": 34.1,
+        "pitcher_sweet_spot_pct": 40.2
+      },
+      "680802": {
+        "pitcher_avg_exit_velocity": 90.3,
+        "pitcher_max_exit_velocity": 109.6,
+        "pitcher_barrel_pct": 11.1,
+        "pitcher_hard_hit_pct": 49.4,
+        "pitcher_sweet_spot_pct": 39.5
+      },
+      "657756": {
+        "pitcher_avg_exit_velocity": 88.1,
+        "pitcher_max_exit_velocity": 111.8,
+        "pitcher_barrel_pct": 6.2,
+        "pitcher_hard_hit_pct": 37.0,
+        "pitcher_sweet_spot_pct": 35.8
+      },
+      "664126": {
+        "pitcher_avg_exit_velocity": 92.0,
+        "pitcher_max_exit_velocity": 115.2,
+        "pitcher_barrel_pct": 13.6,
+        "pitcher_hard_hit_pct": 44.4,
+        "pitcher_sweet_spot_pct": 38.3
+      },
+      "687377": {
+        "pitcher_avg_exit_velocity": 84.7,
+        "pitcher_max_exit_velocity": 111.3,
+        "pitcher_barrel_pct": 7.5,
+        "pitcher_hard_hit_pct": 33.8,
+        "pitcher_sweet_spot_pct": 25.0
+      },
+      "681892": {
+        "pitcher_avg_exit_velocity": 85.1,
+        "pitcher_max_exit_velocity": 113.3,
+        "pitcher_barrel_pct": 5.0,
+        "pitcher_hard_hit_pct": 27.5,
+        "pitcher_sweet_spot_pct": 26.3
+      },
+      "621366": {
+        "pitcher_avg_exit_velocity": 88.3,
+        "pitcher_max_exit_velocity": 110.6,
+        "pitcher_barrel_pct": 5.1,
+        "pitcher_hard_hit_pct": 39.7,
+        "pitcher_sweet_spot_pct": 23.1
+      },
+      "650556": {
+        "pitcher_avg_exit_velocity": 91.5,
+        "pitcher_max_exit_velocity": 106.9,
+        "pitcher_barrel_pct": 7.7,
+        "pitcher_hard_hit_pct": 48.7,
+        "pitcher_sweet_spot_pct": 37.2
+      },
+      "623474": {
+        "pitcher_avg_exit_velocity": 89.9,
+        "pitcher_max_exit_velocity": 113.1,
+        "pitcher_barrel_pct": 10.3,
+        "pitcher_hard_hit_pct": 39.7,
+        "pitcher_sweet_spot_pct": 30.8
+      },
+      "820862": {
+        "pitcher_avg_exit_velocity": 90.7,
+        "pitcher_max_exit_velocity": 112.9,
+        "pitcher_barrel_pct": 7.7,
+        "pitcher_hard_hit_pct": 44.9,
+        "pitcher_sweet_spot_pct": 29.5
+      },
+      "677955": {
+        "pitcher_avg_exit_velocity": 89.7,
+        "pitcher_max_exit_velocity": 114.4,
+        "pitcher_barrel_pct": 3.8,
+        "pitcher_hard_hit_pct": 39.7,
+        "pitcher_sweet_spot_pct": 33.3
+      },
+      "547973": {
+        "pitcher_avg_exit_velocity": 87.6,
+        "pitcher_max_exit_velocity": 113.5,
+        "pitcher_barrel_pct": 7.7,
+        "pitcher_hard_hit_pct": 35.9,
+        "pitcher_sweet_spot_pct": 24.4
+      },
+      "676684": {
+        "pitcher_avg_exit_velocity": 89.0,
+        "pitcher_max_exit_velocity": 112.6,
+        "pitcher_barrel_pct": 5.2,
+        "pitcher_hard_hit_pct": 35.1,
+        "pitcher_sweet_spot_pct": 22.1
+      },
+      "669456": {
+        "pitcher_avg_exit_velocity": 91.7,
+        "pitcher_max_exit_velocity": 113.2,
+        "pitcher_barrel_pct": 11.7,
+        "pitcher_hard_hit_pct": 53.2,
+        "pitcher_sweet_spot_pct": 36.4
+      },
+      "642100": {
+        "pitcher_avg_exit_velocity": 88.1,
+        "pitcher_max_exit_velocity": 112.0,
+        "pitcher_barrel_pct": 11.8,
+        "pitcher_hard_hit_pct": 36.8,
+        "pitcher_sweet_spot_pct": 23.7
+      },
+      "806188": {
+        "pitcher_avg_exit_velocity": 86.5,
+        "pitcher_max_exit_velocity": 108.3,
+        "pitcher_barrel_pct": 2.6,
+        "pitcher_hard_hit_pct": 35.5,
+        "pitcher_sweet_spot_pct": 39.5
+      },
+      "681799": {
+        "pitcher_avg_exit_velocity": 91.1,
+        "pitcher_max_exit_velocity": 109.6,
+        "pitcher_barrel_pct": 3.9,
+        "pitcher_hard_hit_pct": 44.7,
+        "pitcher_sweet_spot_pct": 26.3
+      },
+      "453286": {
+        "pitcher_avg_exit_velocity": 89.2,
+        "pitcher_max_exit_velocity": 110.9,
+        "pitcher_barrel_pct": 13.2,
+        "pitcher_hard_hit_pct": 39.5,
+        "pitcher_sweet_spot_pct": 38.2
+      },
+      "676664": {
+        "pitcher_avg_exit_velocity": 91.4,
+        "pitcher_max_exit_velocity": 110.4,
+        "pitcher_barrel_pct": 9.3,
+        "pitcher_hard_hit_pct": 48.0,
+        "pitcher_sweet_spot_pct": 26.7
+      },
+      "690925": {
+        "pitcher_avg_exit_velocity": 89.6,
+        "pitcher_max_exit_velocity": 107.0,
+        "pitcher_barrel_pct": 6.8,
+        "pitcher_hard_hit_pct": 40.5,
+        "pitcher_sweet_spot_pct": 27.0
+      },
+      "683175": {
+        "pitcher_avg_exit_velocity": 89.8,
+        "pitcher_max_exit_velocity": 110.0,
+        "pitcher_barrel_pct": 9.5,
+        "pitcher_hard_hit_pct": 40.5,
+        "pitcher_sweet_spot_pct": 37.8
+      },
+      "661395": {
+        "pitcher_avg_exit_velocity": 91.5,
+        "pitcher_max_exit_velocity": 111.1,
+        "pitcher_barrel_pct": 4.1,
+        "pitcher_hard_hit_pct": 47.3,
+        "pitcher_sweet_spot_pct": 25.7
+      },
+      "573204": {
+        "pitcher_avg_exit_velocity": 88.3,
+        "pitcher_max_exit_velocity": 113.0,
+        "pitcher_barrel_pct": 14.9,
+        "pitcher_hard_hit_pct": 37.8,
+        "pitcher_sweet_spot_pct": 33.8
+      },
+      "701519": {
+        "pitcher_avg_exit_velocity": 87.7,
+        "pitcher_max_exit_velocity": 111.6,
+        "pitcher_barrel_pct": 8.2,
+        "pitcher_hard_hit_pct": 30.1,
+        "pitcher_sweet_spot_pct": 38.4
+      },
+      "681911": {
+        "pitcher_avg_exit_velocity": 87.3,
+        "pitcher_max_exit_velocity": 113.4,
+        "pitcher_barrel_pct": 5.5,
+        "pitcher_hard_hit_pct": 35.6,
+        "pitcher_sweet_spot_pct": 34.2
+      },
+      "695380": {
+        "pitcher_avg_exit_velocity": 89.8,
+        "pitcher_max_exit_velocity": 109.9,
+        "pitcher_barrel_pct": 2.8,
+        "pitcher_hard_hit_pct": 42.3,
+        "pitcher_sweet_spot_pct": 35.2
+      },
+      "665660": {
+        "pitcher_avg_exit_velocity": 90.7,
+        "pitcher_max_exit_velocity": 114.1,
+        "pitcher_barrel_pct": 20.0,
+        "pitcher_hard_hit_pct": 50.0,
+        "pitcher_sweet_spot_pct": 31.4
+      },
+      "664076": {
+        "pitcher_avg_exit_velocity": 87.1,
+        "pitcher_max_exit_velocity": 111.9,
+        "pitcher_barrel_pct": 8.6,
+        "pitcher_hard_hit_pct": 41.4,
+        "pitcher_sweet_spot_pct": 35.7
+      },
+      "676428": {
+        "pitcher_avg_exit_velocity": 87.5,
+        "pitcher_max_exit_velocity": 108.9,
+        "pitcher_barrel_pct": 4.3,
+        "pitcher_hard_hit_pct": 32.9,
+        "pitcher_sweet_spot_pct": 28.6
+      },
+      "543056": {
+        "pitcher_avg_exit_velocity": 82.1,
+        "pitcher_max_exit_velocity": 112.4,
+        "pitcher_barrel_pct": 1.4,
+        "pitcher_hard_hit_pct": 21.4,
+        "pitcher_sweet_spot_pct": 27.1
+      },
+      "663855": {
+        "pitcher_avg_exit_velocity": 88.5,
+        "pitcher_max_exit_velocity": 110.9,
+        "pitcher_barrel_pct": 1.4,
+        "pitcher_hard_hit_pct": 30.4,
+        "pitcher_sweet_spot_pct": 26.1
+      },
+      "699823": {
+        "pitcher_avg_exit_velocity": 89.9,
+        "pitcher_max_exit_velocity": 108.7,
+        "pitcher_barrel_pct": 4.3,
+        "pitcher_hard_hit_pct": 43.5,
+        "pitcher_sweet_spot_pct": 29.0
+      },
+      "669084": {
+        "pitcher_avg_exit_velocity": 86.2,
+        "pitcher_max_exit_velocity": 109.8,
+        "pitcher_barrel_pct": 5.8,
+        "pitcher_hard_hit_pct": 30.4,
+        "pitcher_sweet_spot_pct": 26.1
+      },
+      "689266": {
+        "pitcher_avg_exit_velocity": 89.7,
+        "pitcher_max_exit_velocity": 113.2,
+        "pitcher_barrel_pct": 7.4,
+        "pitcher_hard_hit_pct": 39.7,
+        "pitcher_sweet_spot_pct": 36.8
+      },
+      "623437": {
+        "pitcher_avg_exit_velocity": 91.2,
+        "pitcher_max_exit_velocity": 115.7,
+        "pitcher_barrel_pct": 8.8,
+        "pitcher_hard_hit_pct": 45.6,
+        "pitcher_sweet_spot_pct": 25.0
+      },
+      "689441": {
+        "pitcher_avg_exit_velocity": 89.2,
+        "pitcher_max_exit_velocity": 112.7,
+        "pitcher_barrel_pct": 7.4,
+        "pitcher_hard_hit_pct": 36.8,
+        "pitcher_sweet_spot_pct": 36.8
+      },
+      "660604": {
+        "pitcher_avg_exit_velocity": 87.8,
+        "pitcher_max_exit_velocity": 109.8,
+        "pitcher_barrel_pct": 5.9,
+        "pitcher_hard_hit_pct": 30.9,
+        "pitcher_sweet_spot_pct": 25.0
+      },
+      "694360": {
+        "pitcher_avg_exit_velocity": 89.8,
+        "pitcher_max_exit_velocity": 111.6,
+        "pitcher_barrel_pct": 6.0,
+        "pitcher_hard_hit_pct": 40.3,
+        "pitcher_sweet_spot_pct": 22.4
+      },
+      "665152": {
+        "pitcher_avg_exit_velocity": 87.7,
+        "pitcher_max_exit_velocity": 108.6,
+        "pitcher_barrel_pct": 11.9,
+        "pitcher_hard_hit_pct": 32.8,
+        "pitcher_sweet_spot_pct": 40.3
+      },
+      "669684": {
+        "pitcher_avg_exit_velocity": 86.4,
+        "pitcher_max_exit_velocity": 108.1,
+        "pitcher_barrel_pct": 7.6,
+        "pitcher_hard_hit_pct": 34.8,
+        "pitcher_sweet_spot_pct": 22.7
+      },
+      "686580": {
+        "pitcher_avg_exit_velocity": 88.7,
+        "pitcher_max_exit_velocity": 109.4,
+        "pitcher_barrel_pct": 6.1,
+        "pitcher_hard_hit_pct": 40.9,
+        "pitcher_sweet_spot_pct": 37.9
+      },
+      "689546": {
+        "pitcher_avg_exit_velocity": 87.7,
+        "pitcher_max_exit_velocity": 109.0,
+        "pitcher_barrel_pct": 3.0,
+        "pitcher_hard_hit_pct": 24.2,
+        "pitcher_sweet_spot_pct": 24.2
+      },
+      "695243": {
+        "pitcher_avg_exit_velocity": 84.4,
+        "pitcher_max_exit_velocity": 109.1,
+        "pitcher_barrel_pct": 3.0,
+        "pitcher_hard_hit_pct": 22.7,
+        "pitcher_sweet_spot_pct": 30.3
+      },
+      "595014": {
+        "pitcher_avg_exit_velocity": 88.2,
+        "pitcher_max_exit_velocity": 110.3,
+        "pitcher_barrel_pct": 12.5,
+        "pitcher_hard_hit_pct": 42.2,
+        "pitcher_sweet_spot_pct": 34.4
+      },
+      "804267": {
+        "pitcher_avg_exit_velocity": 89.8,
+        "pitcher_max_exit_velocity": 106.7,
+        "pitcher_barrel_pct": 12.5,
+        "pitcher_hard_hit_pct": 37.5,
+        "pitcher_sweet_spot_pct": 35.9
+      },
+      "669212": {
+        "pitcher_avg_exit_velocity": 88.9,
+        "pitcher_max_exit_velocity": 110.0,
+        "pitcher_barrel_pct": 6.3,
+        "pitcher_hard_hit_pct": 42.2,
+        "pitcher_sweet_spot_pct": 39.1
+      },
+      "678020": {
+        "pitcher_avg_exit_velocity": 91.2,
+        "pitcher_max_exit_velocity": 110.1,
+        "pitcher_barrel_pct": 6.3,
+        "pitcher_hard_hit_pct": 39.1,
+        "pitcher_sweet_spot_pct": 40.6
+      },
+      "445276": {
+        "pitcher_avg_exit_velocity": 87.0,
+        "pitcher_max_exit_velocity": 111.5,
+        "pitcher_barrel_pct": 6.3,
+        "pitcher_hard_hit_pct": 31.3,
+        "pitcher_sweet_spot_pct": 39.1
+      },
+      "669062": {
+        "pitcher_avg_exit_velocity": 84.2,
+        "pitcher_max_exit_velocity": 113.7,
+        "pitcher_barrel_pct": 7.9,
+        "pitcher_hard_hit_pct": 30.2,
+        "pitcher_sweet_spot_pct": 31.7
+      },
+      "701719": {
+        "pitcher_avg_exit_velocity": 90.0,
+        "pitcher_max_exit_velocity": 111.4,
+        "pitcher_barrel_pct": 3.2,
+        "pitcher_hard_hit_pct": 36.5,
+        "pitcher_sweet_spot_pct": 28.6
+      },
+      "669724": {
+        "pitcher_avg_exit_velocity": 89.9,
+        "pitcher_max_exit_velocity": 110.1,
+        "pitcher_barrel_pct": 7.9,
+        "pitcher_hard_hit_pct": 42.9,
+        "pitcher_sweet_spot_pct": 28.6
+      },
+      "688158": {
+        "pitcher_avg_exit_velocity": 85.0,
+        "pitcher_max_exit_velocity": 109.6,
+        "pitcher_barrel_pct": 1.6,
+        "pitcher_hard_hit_pct": 27.0,
+        "pitcher_sweet_spot_pct": 39.7
+      },
+      "661563": {
+        "pitcher_avg_exit_velocity": 93.2,
+        "pitcher_max_exit_velocity": 114.3,
+        "pitcher_barrel_pct": 9.7,
+        "pitcher_hard_hit_pct": 46.8,
+        "pitcher_sweet_spot_pct": 27.4
+      },
+      "690928": {
+        "pitcher_avg_exit_velocity": 90.3,
+        "pitcher_max_exit_velocity": 109.3,
+        "pitcher_barrel_pct": 11.3,
+        "pitcher_hard_hit_pct": 48.4,
+        "pitcher_sweet_spot_pct": 43.5
+      },
+      "700249": {
+        "pitcher_avg_exit_velocity": 91.3,
+        "pitcher_max_exit_velocity": 110.2,
+        "pitcher_barrel_pct": 9.7,
+        "pitcher_hard_hit_pct": 45.2,
+        "pitcher_sweet_spot_pct": 22.6
+      },
+      "669920": {
+        "pitcher_avg_exit_velocity": 87.1,
+        "pitcher_max_exit_velocity": 110.0,
+        "pitcher_barrel_pct": 9.8,
+        "pitcher_hard_hit_pct": 37.7,
+        "pitcher_sweet_spot_pct": 31.1
+      },
+      "668933": {
+        "pitcher_avg_exit_velocity": 88.9,
+        "pitcher_max_exit_velocity": 107.1,
+        "pitcher_barrel_pct": 6.6,
+        "pitcher_hard_hit_pct": 36.1,
+        "pitcher_sweet_spot_pct": 27.9
+      },
+      "472610": {
+        "pitcher_avg_exit_velocity": 88.4,
+        "pitcher_max_exit_velocity": 109.2,
+        "pitcher_barrel_pct": 4.9,
+        "pitcher_hard_hit_pct": 44.3,
+        "pitcher_sweet_spot_pct": 34.4
+      },
+      "471911": {
+        "pitcher_avg_exit_velocity": 89.4,
+        "pitcher_max_exit_velocity": 109.1,
+        "pitcher_barrel_pct": 9.8,
+        "pitcher_hard_hit_pct": 41.0,
+        "pitcher_sweet_spot_pct": 47.5
+      },
+      "657571": {
+        "pitcher_avg_exit_velocity": 85.9,
+        "pitcher_max_exit_velocity": 109.4,
+        "pitcher_barrel_pct": 4.9,
+        "pitcher_hard_hit_pct": 34.4,
+        "pitcher_sweet_spot_pct": 34.4
+      },
+      "703615": {
+        "pitcher_avg_exit_velocity": 88.2,
+        "pitcher_max_exit_velocity": 111.8,
+        "pitcher_barrel_pct": 6.7,
+        "pitcher_hard_hit_pct": 35.0,
+        "pitcher_sweet_spot_pct": 23.3
+      },
+      "677053": {
+        "pitcher_avg_exit_velocity": 89.6,
+        "pitcher_max_exit_velocity": 110.1,
+        "pitcher_barrel_pct": 13.3,
+        "pitcher_hard_hit_pct": 45.0,
+        "pitcher_sweet_spot_pct": 31.7
+      },
+      "680604": {
+        "pitcher_avg_exit_velocity": 92.7,
+        "pitcher_max_exit_velocity": 111.8,
+        "pitcher_barrel_pct": 10.0,
+        "pitcher_hard_hit_pct": 50.0,
+        "pitcher_sweet_spot_pct": 36.7
+      },
+      "621345": {
+        "pitcher_avg_exit_velocity": 88.1,
+        "pitcher_max_exit_velocity": 107.0,
+        "pitcher_barrel_pct": 10.0,
+        "pitcher_hard_hit_pct": 36.7,
+        "pitcher_sweet_spot_pct": 26.7
+      },
+      "594027": {
+        "pitcher_avg_exit_velocity": 85.1,
+        "pitcher_max_exit_velocity": 110.4,
+        "pitcher_barrel_pct": 5.1,
+        "pitcher_hard_hit_pct": 28.8,
+        "pitcher_sweet_spot_pct": 28.8
+      },
+      "680744": {
+        "pitcher_avg_exit_velocity": 87.7,
+        "pitcher_max_exit_velocity": 110.4,
+        "pitcher_barrel_pct": 6.8,
+        "pitcher_hard_hit_pct": 37.3,
+        "pitcher_sweet_spot_pct": 23.7
+      },
+      "675989": {
+        "pitcher_avg_exit_velocity": 90.7,
+        "pitcher_max_exit_velocity": 110.5,
+        "pitcher_barrel_pct": 10.3,
+        "pitcher_hard_hit_pct": 48.3,
+        "pitcher_sweet_spot_pct": 36.2
+      },
+      "695684": {
+        "pitcher_avg_exit_velocity": 86.9,
+        "pitcher_max_exit_velocity": 107.3,
+        "pitcher_barrel_pct": 5.2,
+        "pitcher_hard_hit_pct": 34.5,
+        "pitcher_sweet_spot_pct": 31.0
+      },
+      "669060": {
+        "pitcher_avg_exit_velocity": 91.7,
+        "pitcher_max_exit_velocity": 112.2,
+        "pitcher_barrel_pct": 3.4,
+        "pitcher_hard_hit_pct": 51.7,
+        "pitcher_sweet_spot_pct": 41.4
+      },
+      "686560": {
+        "pitcher_avg_exit_velocity": 86.7,
+        "pitcher_max_exit_velocity": 107.6,
+        "pitcher_barrel_pct": 3.4,
+        "pitcher_hard_hit_pct": 29.3,
+        "pitcher_sweet_spot_pct": 34.5
+      },
+      "685801": {
+        "pitcher_avg_exit_velocity": 89.6,
+        "pitcher_max_exit_velocity": 109.8,
+        "pitcher_barrel_pct": 5.3,
+        "pitcher_hard_hit_pct": 36.8,
+        "pitcher_sweet_spot_pct": 35.1
+      },
+      "683232": {
+        "pitcher_avg_exit_velocity": 90.3,
+        "pitcher_max_exit_velocity": 109.8,
+        "pitcher_barrel_pct": 12.3,
+        "pitcher_hard_hit_pct": 50.9,
+        "pitcher_sweet_spot_pct": 38.6
+      },
+      "686930": {
+        "pitcher_avg_exit_velocity": 89.1,
+        "pitcher_max_exit_velocity": 106.8,
+        "pitcher_barrel_pct": 10.5,
+        "pitcher_hard_hit_pct": 43.9,
+        "pitcher_sweet_spot_pct": 33.3
+      },
+      "690953": {
+        "pitcher_avg_exit_velocity": 87.7,
+        "pitcher_max_exit_velocity": 109.2,
+        "pitcher_barrel_pct": 5.3,
+        "pitcher_hard_hit_pct": 40.4,
+        "pitcher_sweet_spot_pct": 40.4
+      },
+      "696062": {
+        "pitcher_avg_exit_velocity": 93.2,
+        "pitcher_max_exit_velocity": 107.1,
+        "pitcher_barrel_pct": 5.4,
+        "pitcher_hard_hit_pct": 53.6,
+        "pitcher_sweet_spot_pct": 30.4
+      },
+      "688883": {
+        "pitcher_avg_exit_velocity": 89.5,
+        "pitcher_max_exit_velocity": 111.2,
+        "pitcher_barrel_pct": 7.1,
+        "pitcher_hard_hit_pct": 42.9,
+        "pitcher_sweet_spot_pct": 35.7
+      },
+      "642546": {
+        "pitcher_avg_exit_velocity": 87.8,
+        "pitcher_max_exit_velocity": 112.0,
+        "pitcher_barrel_pct": 7.1,
+        "pitcher_hard_hit_pct": 35.7,
+        "pitcher_sweet_spot_pct": 30.4
+      },
+      "671936": {
+        "pitcher_avg_exit_velocity": 87.5,
+        "pitcher_max_exit_velocity": 110.0,
+        "pitcher_barrel_pct": 5.4,
+        "pitcher_hard_hit_pct": 35.7,
+        "pitcher_sweet_spot_pct": 35.7
+      },
+      "674370": {
+        "pitcher_avg_exit_velocity": 88.5,
+        "pitcher_max_exit_velocity": 108.9,
+        "pitcher_barrel_pct": 8.9,
+        "pitcher_hard_hit_pct": 41.1,
+        "pitcher_sweet_spot_pct": 37.5
+      },
+      "681151": {
+        "pitcher_avg_exit_velocity": 91.4,
+        "pitcher_max_exit_velocity": 109.3,
+        "pitcher_barrel_pct": 14.3,
+        "pitcher_hard_hit_pct": 42.9,
+        "pitcher_sweet_spot_pct": 41.1
+      },
+      "805299": {
+        "pitcher_avg_exit_velocity": 89.5,
+        "pitcher_max_exit_velocity": 114.6,
+        "pitcher_barrel_pct": 1.8,
+        "pitcher_hard_hit_pct": 33.9,
+        "pitcher_sweet_spot_pct": 17.9
+      },
+      "663878": {
+        "pitcher_avg_exit_velocity": 84.8,
+        "pitcher_max_exit_velocity": 110.1,
+        "pitcher_barrel_pct": 7.3,
+        "pitcher_hard_hit_pct": 30.9,
+        "pitcher_sweet_spot_pct": 34.5
+      },
+      "677961": {
+        "pitcher_avg_exit_velocity": 90.2,
+        "pitcher_max_exit_velocity": 114.7,
+        "pitcher_barrel_pct": 9.1,
+        "pitcher_hard_hit_pct": 41.8,
+        "pitcher_sweet_spot_pct": 36.4
+      },
+      "805326": {
+        "pitcher_avg_exit_velocity": 91.9,
+        "pitcher_max_exit_velocity": 108.6,
+        "pitcher_barrel_pct": 9.1,
+        "pitcher_hard_hit_pct": 50.9,
+        "pitcher_sweet_spot_pct": 40.0
+      },
+      "688297": {
+        "pitcher_avg_exit_velocity": 88.9,
+        "pitcher_max_exit_velocity": 108.1,
+        "pitcher_barrel_pct": 14.5,
+        "pitcher_hard_hit_pct": 43.6,
+        "pitcher_sweet_spot_pct": 29.1
+      },
+      "696131": {
+        "pitcher_avg_exit_velocity": 92.6,
+        "pitcher_max_exit_velocity": 108.7,
+        "pitcher_barrel_pct": 14.8,
+        "pitcher_hard_hit_pct": 53.7,
+        "pitcher_sweet_spot_pct": 38.9
+      },
+      "455119": {
+        "pitcher_avg_exit_velocity": 91.3,
+        "pitcher_max_exit_velocity": 110.2,
+        "pitcher_barrel_pct": 11.1,
+        "pitcher_hard_hit_pct": 44.4,
+        "pitcher_sweet_spot_pct": 51.9
+      },
+      "686753": {
+        "pitcher_avg_exit_velocity": 86.4,
+        "pitcher_max_exit_velocity": 105.3,
+        "pitcher_barrel_pct": 5.7,
+        "pitcher_hard_hit_pct": 28.3,
+        "pitcher_sweet_spot_pct": 37.7
+      },
+      "695239": {
+        "pitcher_avg_exit_velocity": 85.8,
+        "pitcher_max_exit_velocity": 110.6,
+        "pitcher_barrel_pct": 3.8,
+        "pitcher_hard_hit_pct": 34.0,
+        "pitcher_sweet_spot_pct": 30.2
+      },
+      "679775": {
+        "pitcher_avg_exit_velocity": 87.7,
+        "pitcher_max_exit_velocity": 108.1,
+        "pitcher_barrel_pct": 5.7,
+        "pitcher_hard_hit_pct": 34.0,
+        "pitcher_sweet_spot_pct": 39.6
+      },
+      "607481": {
+        "pitcher_avg_exit_velocity": 93.6,
+        "pitcher_max_exit_velocity": 108.1,
+        "pitcher_barrel_pct": 15.1,
+        "pitcher_hard_hit_pct": 54.7,
+        "pitcher_sweet_spot_pct": 30.2
+      },
+      "696070": {
+        "pitcher_avg_exit_velocity": 85.5,
+        "pitcher_max_exit_velocity": 107.0,
+        "pitcher_barrel_pct": 7.5,
+        "pitcher_hard_hit_pct": 32.1,
+        "pitcher_sweet_spot_pct": 37.7
+      },
+      "641312": {
+        "pitcher_avg_exit_velocity": 87.0,
+        "pitcher_max_exit_velocity": 111.4,
+        "pitcher_barrel_pct": 7.7,
+        "pitcher_hard_hit_pct": 36.5,
+        "pitcher_sweet_spot_pct": 32.7
+      },
+      "664299": {
+        "pitcher_avg_exit_velocity": 91.4,
+        "pitcher_max_exit_velocity": 109.9,
+        "pitcher_barrel_pct": 11.5,
+        "pitcher_hard_hit_pct": 42.3,
+        "pitcher_sweet_spot_pct": 42.3
+      },
+      "681870": {
+        "pitcher_avg_exit_velocity": 92.1,
+        "pitcher_max_exit_velocity": 110.3,
+        "pitcher_barrel_pct": 11.5,
+        "pitcher_hard_hit_pct": 44.2,
+        "pitcher_sweet_spot_pct": 50.0
+      },
+      "489446": {
+        "pitcher_avg_exit_velocity": 92.9,
+        "pitcher_max_exit_velocity": 112.2,
+        "pitcher_barrel_pct": 9.6,
+        "pitcher_hard_hit_pct": 51.9,
+        "pitcher_sweet_spot_pct": 40.4
+      },
+      "673929": {
+        "pitcher_avg_exit_velocity": 92.4,
+        "pitcher_max_exit_velocity": 115.3,
+        "pitcher_barrel_pct": 25.0,
+        "pitcher_hard_hit_pct": 44.2,
+        "pitcher_sweet_spot_pct": 44.2
+      },
+      "641941": {
+        "pitcher_avg_exit_velocity": 92.1,
+        "pitcher_max_exit_velocity": 107.7,
+        "pitcher_barrel_pct": 11.5,
+        "pitcher_hard_hit_pct": 57.7,
+        "pitcher_sweet_spot_pct": 40.4
+      },
+      "683742": {
+        "pitcher_avg_exit_velocity": 87.3,
+        "pitcher_max_exit_velocity": 108.9,
+        "pitcher_barrel_pct": 11.5,
+        "pitcher_hard_hit_pct": 34.6,
+        "pitcher_sweet_spot_pct": 30.8
+      },
+      "687849": {
+        "pitcher_avg_exit_velocity": 89.9,
+        "pitcher_max_exit_velocity": 107.9,
+        "pitcher_barrel_pct": 11.8,
+        "pitcher_hard_hit_pct": 45.1,
+        "pitcher_sweet_spot_pct": 35.3
+      },
+      "641401": {
+        "pitcher_avg_exit_velocity": 91.6,
+        "pitcher_max_exit_velocity": 111.6,
+        "pitcher_barrel_pct": 14.0,
+        "pitcher_hard_hit_pct": 44.0,
+        "pitcher_sweet_spot_pct": 34.0
+      },
+      "573009": {
+        "pitcher_avg_exit_velocity": 90.5,
+        "pitcher_max_exit_velocity": 109.3,
+        "pitcher_barrel_pct": 10.0,
+        "pitcher_hard_hit_pct": 44.0,
+        "pitcher_sweet_spot_pct": 34.0
+      },
+      "689520": {
+        "pitcher_avg_exit_velocity": 92.4,
+        "pitcher_max_exit_velocity": 107.9,
+        "pitcher_barrel_pct": 8.0,
+        "pitcher_hard_hit_pct": 50.0,
+        "pitcher_sweet_spot_pct": 38.0
+      },
+      "689818": {
+        "pitcher_avg_exit_velocity": 87.9,
+        "pitcher_max_exit_velocity": 111.5,
+        "pitcher_barrel_pct": 12.0,
+        "pitcher_hard_hit_pct": 36.0,
+        "pitcher_sweet_spot_pct": 40.0
+      },
+      "677161": {
+        "pitcher_avg_exit_velocity": 88.1,
+        "pitcher_max_exit_velocity": 111.6,
+        "pitcher_barrel_pct": 8.2,
+        "pitcher_hard_hit_pct": 38.8,
+        "pitcher_sweet_spot_pct": 36.7
+      },
+      "669093": {
+        "pitcher_avg_exit_velocity": 84.8,
+        "pitcher_max_exit_velocity": 104.8,
+        "pitcher_barrel_pct": 8.2,
+        "pitcher_hard_hit_pct": 32.7,
+        "pitcher_sweet_spot_pct": 34.7
+      },
+      "656529": {
+        "pitcher_avg_exit_velocity": 86.7,
+        "pitcher_max_exit_velocity": 109.9,
+        "pitcher_barrel_pct": 4.1,
+        "pitcher_hard_hit_pct": 32.7,
+        "pitcher_sweet_spot_pct": 28.6
+      },
+      "656212": {
+        "pitcher_avg_exit_velocity": 92.2,
+        "pitcher_max_exit_velocity": 113.6,
+        "pitcher_barrel_pct": 8.3,
+        "pitcher_hard_hit_pct": 45.8,
+        "pitcher_sweet_spot_pct": 35.4
+      },
+      "684049": {
+        "pitcher_avg_exit_velocity": 90.9,
+        "pitcher_max_exit_velocity": 110.4,
+        "pitcher_barrel_pct": 17.0,
+        "pitcher_hard_hit_pct": 46.8,
+        "pitcher_sweet_spot_pct": 38.3
+      },
+      "608723": {
+        "pitcher_avg_exit_velocity": 90.8,
+        "pitcher_max_exit_velocity": 109.1,
+        "pitcher_barrel_pct": 8.5,
+        "pitcher_hard_hit_pct": 40.4,
+        "pitcher_sweet_spot_pct": 38.3
+      },
+      "677976": {
+        "pitcher_avg_exit_velocity": 91.1,
+        "pitcher_max_exit_velocity": 112.5,
+        "pitcher_barrel_pct": 6.4,
+        "pitcher_hard_hit_pct": 40.4,
+        "pitcher_sweet_spot_pct": 38.3
+      },
+      "683000": {
+        "pitcher_avg_exit_velocity": 85.8,
+        "pitcher_max_exit_velocity": 108.1,
+        "pitcher_barrel_pct": 8.7,
+        "pitcher_hard_hit_pct": 43.5,
+        "pitcher_sweet_spot_pct": 28.3
+      },
+      "572143": {
+        "pitcher_avg_exit_velocity": 90.3,
+        "pitcher_max_exit_velocity": 108.4,
+        "pitcher_barrel_pct": 4.3,
+        "pitcher_hard_hit_pct": 47.8,
+        "pitcher_sweet_spot_pct": 34.8
+      },
+      "608650": {
+        "pitcher_avg_exit_velocity": 91.6,
+        "pitcher_max_exit_velocity": 107.7,
+        "pitcher_barrel_pct": 6.5,
+        "pitcher_hard_hit_pct": 39.1,
+        "pitcher_sweet_spot_pct": 34.8
+      },
+      "694037": {
+        "pitcher_avg_exit_velocity": 88.9,
+        "pitcher_max_exit_velocity": 108.1,
+        "pitcher_barrel_pct": 6.5,
+        "pitcher_hard_hit_pct": 30.4,
+        "pitcher_sweet_spot_pct": 54.3
+      },
+      "663559": {
+        "pitcher_avg_exit_velocity": 91.5,
+        "pitcher_max_exit_velocity": 109.6,
+        "pitcher_barrel_pct": 6.7,
+        "pitcher_hard_hit_pct": 44.4,
+        "pitcher_sweet_spot_pct": 48.9
+      },
+      "605452": {
+        "pitcher_avg_exit_velocity": 86.2,
+        "pitcher_max_exit_velocity": 108.1,
+        "pitcher_barrel_pct": 11.4,
+        "pitcher_hard_hit_pct": 36.4,
+        "pitcher_sweet_spot_pct": 31.8
+      },
+      "624522": {
+        "pitcher_avg_exit_velocity": 92.5,
+        "pitcher_max_exit_velocity": 112.0,
+        "pitcher_barrel_pct": 13.6,
+        "pitcher_hard_hit_pct": 50.0,
+        "pitcher_sweet_spot_pct": 40.9
+      },
+      "671212": {
+        "pitcher_avg_exit_velocity": 87.3,
+        "pitcher_max_exit_velocity": 108.4,
+        "pitcher_barrel_pct": 4.5,
+        "pitcher_hard_hit_pct": 43.2,
+        "pitcher_sweet_spot_pct": 43.2
+      },
+      "695001": {
+        "pitcher_avg_exit_velocity": 83.8,
+        "pitcher_max_exit_velocity": 108.3,
+        "pitcher_barrel_pct": 2.3,
+        "pitcher_hard_hit_pct": 34.1,
+        "pitcher_sweet_spot_pct": 29.5
+      },
+      "669371": {
+        "pitcher_avg_exit_velocity": 88.9,
+        "pitcher_max_exit_velocity": 107.6,
+        "pitcher_barrel_pct": 13.6,
+        "pitcher_hard_hit_pct": 40.9,
+        "pitcher_sweet_spot_pct": 36.4
+      },
+      "702021": {
+        "pitcher_avg_exit_velocity": 86.9,
+        "pitcher_max_exit_velocity": 111.1,
+        "pitcher_barrel_pct": 0.0,
+        "pitcher_hard_hit_pct": 25.0,
+        "pitcher_sweet_spot_pct": 47.7
+      },
+      "592155": {
+        "pitcher_avg_exit_velocity": 90.0,
+        "pitcher_max_exit_velocity": 106.8,
+        "pitcher_barrel_pct": 7.0,
+        "pitcher_hard_hit_pct": 39.5,
+        "pitcher_sweet_spot_pct": 27.9
+      },
+      "621074": {
+        "pitcher_avg_exit_velocity": 88.2,
+        "pitcher_max_exit_velocity": 109.0,
+        "pitcher_barrel_pct": 7.0,
+        "pitcher_hard_hit_pct": 41.9,
+        "pitcher_sweet_spot_pct": 44.2
+      },
+      "621097": {
+        "pitcher_avg_exit_velocity": 84.1,
+        "pitcher_max_exit_velocity": 107.9,
+        "pitcher_barrel_pct": 2.4,
+        "pitcher_hard_hit_pct": 28.6,
+        "pitcher_sweet_spot_pct": 26.2
+      },
+      "676604": {
+        "pitcher_avg_exit_velocity": 91.0,
+        "pitcher_max_exit_velocity": 107.5,
+        "pitcher_barrel_pct": 4.8,
+        "pitcher_hard_hit_pct": 47.6,
+        "pitcher_sweet_spot_pct": 28.6
+      },
+      "694680": {
+        "pitcher_avg_exit_velocity": 90.9,
+        "pitcher_max_exit_velocity": 109.7,
+        "pitcher_barrel_pct": 12.2,
+        "pitcher_hard_hit_pct": 48.8,
+        "pitcher_sweet_spot_pct": 39.0
+      },
+      "687765": {
+        "pitcher_avg_exit_velocity": 91.6,
+        "pitcher_max_exit_velocity": 106.7,
+        "pitcher_barrel_pct": 2.4,
+        "pitcher_hard_hit_pct": 41.5,
+        "pitcher_sweet_spot_pct": 26.8
+      },
+      "681916": {
+        "pitcher_avg_exit_velocity": 88.4,
+        "pitcher_max_exit_velocity": 106.7,
+        "pitcher_barrel_pct": 7.3,
+        "pitcher_hard_hit_pct": 36.6,
+        "pitcher_sweet_spot_pct": 29.3
+      },
+      "682995": {
+        "pitcher_avg_exit_velocity": 89.4,
+        "pitcher_max_exit_velocity": 112.3,
+        "pitcher_barrel_pct": 7.3,
+        "pitcher_hard_hit_pct": 43.9,
+        "pitcher_sweet_spot_pct": 31.7
+      },
+      "695034": {
+        "pitcher_avg_exit_velocity": 86.9,
+        "pitcher_max_exit_velocity": 106.6,
+        "pitcher_barrel_pct": 4.9,
+        "pitcher_hard_hit_pct": 48.8,
+        "pitcher_sweet_spot_pct": 29.3
+      },
+      "672582": {
+        "pitcher_avg_exit_velocity": 92.4,
+        "pitcher_max_exit_velocity": 114.6,
+        "pitcher_barrel_pct": 7.3,
+        "pitcher_hard_hit_pct": 51.2,
+        "pitcher_sweet_spot_pct": 24.4
+      },
+      "663941": {
+        "pitcher_avg_exit_velocity": 88.9,
+        "pitcher_max_exit_velocity": 108.4,
+        "pitcher_barrel_pct": 10.0,
+        "pitcher_hard_hit_pct": 40.0,
+        "pitcher_sweet_spot_pct": 25.0
+      },
+      "666374": {
+        "pitcher_avg_exit_velocity": 88.9,
+        "pitcher_max_exit_velocity": 111.3,
+        "pitcher_barrel_pct": 5.0,
+        "pitcher_hard_hit_pct": 40.0,
+        "pitcher_sweet_spot_pct": 40.0
+      },
+      "664129": {
+        "pitcher_avg_exit_velocity": 90.2,
+        "pitcher_max_exit_velocity": 108.6,
+        "pitcher_barrel_pct": 7.7,
+        "pitcher_hard_hit_pct": 35.9,
+        "pitcher_sweet_spot_pct": 35.9
+      },
+      "696136": {
+        "pitcher_avg_exit_velocity": 88.5,
+        "pitcher_max_exit_velocity": 113.4,
+        "pitcher_barrel_pct": 7.7,
+        "pitcher_hard_hit_pct": 43.6,
+        "pitcher_sweet_spot_pct": 30.8
+      },
+      "686751": {
+        "pitcher_avg_exit_velocity": 88.2,
+        "pitcher_max_exit_velocity": 110.1,
+        "pitcher_barrel_pct": 10.5,
+        "pitcher_hard_hit_pct": 36.8,
+        "pitcher_sweet_spot_pct": 34.2
+      },
+      "664854": {
+        "pitcher_avg_exit_velocity": 89.5,
+        "pitcher_max_exit_velocity": 105.4,
+        "pitcher_barrel_pct": 5.3,
+        "pitcher_hard_hit_pct": 47.4,
+        "pitcher_sweet_spot_pct": 15.8
+      },
+      "701552": {
+        "pitcher_avg_exit_velocity": 91.0,
+        "pitcher_max_exit_velocity": 108.3,
+        "pitcher_barrel_pct": 13.2,
+        "pitcher_hard_hit_pct": 39.5,
+        "pitcher_sweet_spot_pct": 34.2
+      },
+      "684974": {
+        "pitcher_avg_exit_velocity": 87.7,
+        "pitcher_max_exit_velocity": 110.4,
+        "pitcher_barrel_pct": 10.8,
+        "pitcher_hard_hit_pct": 37.8,
+        "pitcher_sweet_spot_pct": 35.1
+      },
+      "683352": {
+        "pitcher_avg_exit_velocity": 87.9,
+        "pitcher_max_exit_velocity": 111.8,
+        "pitcher_barrel_pct": 10.8,
+        "pitcher_hard_hit_pct": 37.8,
+        "pitcher_sweet_spot_pct": 24.3
+      },
+      "687312": {
+        "pitcher_avg_exit_velocity": 90.1,
+        "pitcher_max_exit_velocity": 108.8,
+        "pitcher_barrel_pct": 2.7,
+        "pitcher_hard_hit_pct": 29.7,
+        "pitcher_sweet_spot_pct": 37.8
+      },
+      "666711": {
+        "pitcher_avg_exit_velocity": 84.5,
+        "pitcher_max_exit_velocity": 107.1,
+        "pitcher_barrel_pct": 0.0,
+        "pitcher_hard_hit_pct": 24.3,
+        "pitcher_sweet_spot_pct": 24.3
+      },
+      "668881": {
+        "pitcher_avg_exit_velocity": 91.3,
+        "pitcher_max_exit_velocity": 108.5,
+        "pitcher_barrel_pct": 8.1,
+        "pitcher_hard_hit_pct": 43.2,
+        "pitcher_sweet_spot_pct": 48.6
+      },
+      "694851": {
+        "pitcher_avg_exit_velocity": 89.9,
+        "pitcher_max_exit_velocity": 110.6,
+        "pitcher_barrel_pct": 8.1,
+        "pitcher_hard_hit_pct": 43.2,
+        "pitcher_sweet_spot_pct": 29.7
+      },
+      "601713": {
+        "pitcher_avg_exit_velocity": 86.2,
+        "pitcher_max_exit_velocity": 105.9,
+        "pitcher_barrel_pct": 2.8,
+        "pitcher_hard_hit_pct": 30.6,
+        "pitcher_sweet_spot_pct": 25.0
+      },
+      "605447": {
+        "pitcher_avg_exit_velocity": 87.8,
+        "pitcher_max_exit_velocity": 107.5,
+        "pitcher_barrel_pct": 5.6,
+        "pitcher_hard_hit_pct": 41.7,
+        "pitcher_sweet_spot_pct": 38.9
+      },
+      "623352": {
+        "pitcher_avg_exit_velocity": 82.6,
+        "pitcher_max_exit_velocity": 104.7,
+        "pitcher_barrel_pct": 2.8,
+        "pitcher_hard_hit_pct": 22.2,
+        "pitcher_sweet_spot_pct": 33.3
+      },
+      "676467": {
+        "pitcher_avg_exit_velocity": 88.7,
+        "pitcher_max_exit_velocity": 108.2,
+        "pitcher_barrel_pct": 11.4,
+        "pitcher_hard_hit_pct": 48.6,
+        "pitcher_sweet_spot_pct": 40.0
+      },
+      "806960": {
+        "pitcher_avg_exit_velocity": 90.4,
+        "pitcher_max_exit_velocity": 110.4,
+        "pitcher_barrel_pct": 14.3,
+        "pitcher_hard_hit_pct": 45.7,
+        "pitcher_sweet_spot_pct": 42.9
+      },
+      "687209": {
+        "pitcher_avg_exit_velocity": 92.3,
+        "pitcher_max_exit_velocity": 110.4,
+        "pitcher_barrel_pct": 11.4,
+        "pitcher_hard_hit_pct": 39.4,
+        "pitcher_sweet_spot_pct": 45.7
+      },
+      "694462": {
+        "pitcher_avg_exit_velocity": 89.3,
+        "pitcher_max_exit_velocity": 108.6,
+        "pitcher_barrel_pct": 8.6,
+        "pitcher_hard_hit_pct": 34.3,
+        "pitcher_sweet_spot_pct": 20.0
+      },
+      "663485": {
+        "pitcher_avg_exit_velocity": 94.4,
+        "pitcher_max_exit_velocity": 108.7,
+        "pitcher_barrel_pct": 8.6,
+        "pitcher_hard_hit_pct": 51.4,
+        "pitcher_sweet_spot_pct": 31.4
+      },
+      "694363": {
+        "pitcher_avg_exit_velocity": 91.0,
+        "pitcher_max_exit_velocity": 107.7,
+        "pitcher_barrel_pct": 2.9,
+        "pitcher_hard_hit_pct": 50.0,
+        "pitcher_sweet_spot_pct": 17.6
+      },
+      "676051": {
+        "pitcher_avg_exit_velocity": 92.6,
+        "pitcher_max_exit_velocity": 106.8,
+        "pitcher_barrel_pct": 2.9,
+        "pitcher_hard_hit_pct": 52.9,
+        "pitcher_sweet_spot_pct": 20.6
+      },
+      "681168": {
+        "pitcher_avg_exit_velocity": 91.0,
+        "pitcher_max_exit_velocity": 114.9,
+        "pitcher_barrel_pct": 8.8,
+        "pitcher_hard_hit_pct": 50.0,
+        "pitcher_sweet_spot_pct": 38.2
+      },
+      "687931": {
+        "pitcher_avg_exit_velocity": 89.3,
+        "pitcher_max_exit_velocity": 105.7,
+        "pitcher_barrel_pct": 5.9,
+        "pitcher_hard_hit_pct": 41.2,
+        "pitcher_sweet_spot_pct": 35.3
+      },
+      "687223": {
+        "pitcher_avg_exit_velocity": 89.3,
+        "pitcher_max_exit_velocity": 102.9,
+        "pitcher_barrel_pct": 5.9,
+        "pitcher_hard_hit_pct": 29.4,
+        "pitcher_sweet_spot_pct": 47.1
+      },
+      "696519": {
+        "pitcher_avg_exit_velocity": 87.7,
+        "pitcher_max_exit_velocity": 109.9,
+        "pitcher_barrel_pct": 5.9,
+        "pitcher_hard_hit_pct": 29.4,
+        "pitcher_sweet_spot_pct": 17.6
+      },
+      "804636": {
+        "pitcher_avg_exit_velocity": 89.9,
+        "pitcher_max_exit_velocity": 104.6,
+        "pitcher_barrel_pct": 6.1,
+        "pitcher_hard_hit_pct": 30.3,
+        "pitcher_sweet_spot_pct": 30.3
+      },
+      "694918": {
+        "pitcher_avg_exit_velocity": 86.3,
+        "pitcher_max_exit_velocity": 110.1,
+        "pitcher_barrel_pct": 6.1,
+        "pitcher_hard_hit_pct": 36.4,
+        "pitcher_sweet_spot_pct": 30.3
+      },
+      "592454": {
+        "pitcher_avg_exit_velocity": 93.1,
+        "pitcher_max_exit_velocity": 113.6,
+        "pitcher_barrel_pct": 15.6,
+        "pitcher_hard_hit_pct": 56.3,
+        "pitcher_sweet_spot_pct": 31.3
+      },
+      "663465": {
+        "pitcher_avg_exit_velocity": 89.9,
+        "pitcher_max_exit_velocity": 110.8,
+        "pitcher_barrel_pct": 15.6,
+        "pitcher_hard_hit_pct": 43.8,
+        "pitcher_sweet_spot_pct": 50.0
+      },
+      "681676": {
+        "pitcher_avg_exit_velocity": 83.9,
+        "pitcher_max_exit_velocity": 108.9,
+        "pitcher_barrel_pct": 6.3,
+        "pitcher_hard_hit_pct": 34.4,
+        "pitcher_sweet_spot_pct": 37.5
+      },
+      "669620": {
+        "pitcher_avg_exit_velocity": 91.1,
+        "pitcher_max_exit_velocity": 112.7,
+        "pitcher_barrel_pct": 12.5,
+        "pitcher_hard_hit_pct": 53.1,
+        "pitcher_sweet_spot_pct": 46.9
+      },
+      "678368": {
+        "pitcher_avg_exit_velocity": 91.3,
+        "pitcher_max_exit_velocity": 110.7,
+        "pitcher_barrel_pct": 15.6,
+        "pitcher_hard_hit_pct": 50.0,
+        "pitcher_sweet_spot_pct": 40.6
+      },
+      "671382": {
+        "pitcher_avg_exit_velocity": 87.0,
+        "pitcher_max_exit_velocity": 106.5,
+        "pitcher_barrel_pct": 6.3,
+        "pitcher_hard_hit_pct": 28.1,
+        "pitcher_sweet_spot_pct": 28.1
+      },
+      "670062": {
+        "pitcher_avg_exit_velocity": 86.8,
+        "pitcher_max_exit_velocity": 107.9,
+        "pitcher_barrel_pct": 6.3,
+        "pitcher_hard_hit_pct": 18.8,
+        "pitcher_sweet_spot_pct": 25.0
+      },
+      "684320": {
+        "pitcher_avg_exit_velocity": 87.2,
+        "pitcher_max_exit_velocity": 110.1,
+        "pitcher_barrel_pct": 12.9,
+        "pitcher_hard_hit_pct": 32.3,
+        "pitcher_sweet_spot_pct": 38.7
+      },
+      "621053": {
+        "pitcher_avg_exit_velocity": 91.5,
+        "pitcher_max_exit_velocity": 109.2,
+        "pitcher_barrel_pct": 22.6,
+        "pitcher_hard_hit_pct": 51.6,
+        "pitcher_sweet_spot_pct": 35.5
+      },
+      "702752": {
+        "pitcher_avg_exit_velocity": 90.2,
+        "pitcher_max_exit_velocity": 111.7,
+        "pitcher_barrel_pct": 9.7,
+        "pitcher_hard_hit_pct": 35.5,
+        "pitcher_sweet_spot_pct": 29.0
+      },
+      "691769": {
+        "pitcher_avg_exit_velocity": 90.4,
+        "pitcher_max_exit_velocity": 113.7,
+        "pitcher_barrel_pct": 13.3,
+        "pitcher_hard_hit_pct": 43.3,
+        "pitcher_sweet_spot_pct": 53.3
+      },
+      "692230": {
+        "pitcher_avg_exit_velocity": 83.5,
+        "pitcher_max_exit_velocity": 115.1,
+        "pitcher_barrel_pct": 3.3,
+        "pitcher_hard_hit_pct": 16.7,
+        "pitcher_sweet_spot_pct": 33.3
+      },
+      "687531": {
+        "pitcher_avg_exit_velocity": 85.8,
+        "pitcher_max_exit_velocity": 106.1,
+        "pitcher_barrel_pct": 3.3,
+        "pitcher_hard_hit_pct": 23.3,
+        "pitcher_sweet_spot_pct": 46.7
+      },
+      "676568": {
+        "pitcher_avg_exit_velocity": 87.6,
+        "pitcher_max_exit_velocity": 106.3,
+        "pitcher_barrel_pct": 6.7,
+        "pitcher_hard_hit_pct": 43.3,
+        "pitcher_sweet_spot_pct": 30.0
+      },
+      "663776": {
+        "pitcher_avg_exit_velocity": 87.9,
+        "pitcher_max_exit_velocity": 107.7,
+        "pitcher_barrel_pct": 3.3,
+        "pitcher_hard_hit_pct": 36.7,
+        "pitcher_sweet_spot_pct": 36.7
+      },
+      "686475": {
+        "pitcher_avg_exit_velocity": 91.3,
+        "pitcher_max_exit_velocity": 104.8,
+        "pitcher_barrel_pct": 13.8,
+        "pitcher_hard_hit_pct": 44.8,
+        "pitcher_sweet_spot_pct": 55.2
+      },
+      "805427": {
+        "pitcher_avg_exit_velocity": 84.4,
+        "pitcher_max_exit_velocity": 105.3,
+        "pitcher_barrel_pct": 3.4,
+        "pitcher_hard_hit_pct": 13.8,
+        "pitcher_sweet_spot_pct": 27.6
+      },
+      "668970": {
+        "pitcher_avg_exit_velocity": 86.9,
+        "pitcher_max_exit_velocity": 107.6,
+        "pitcher_barrel_pct": 17.9,
+        "pitcher_hard_hit_pct": 35.7,
+        "pitcher_sweet_spot_pct": 42.9
+      },
+      "608371": {
+        "pitcher_avg_exit_velocity": 86.8,
+        "pitcher_max_exit_velocity": 105.1,
+        "pitcher_barrel_pct": 7.1,
+        "pitcher_hard_hit_pct": 39.3,
+        "pitcher_sweet_spot_pct": 25.0
+      },
+      "592779": {
+        "pitcher_avg_exit_velocity": 82.6,
+        "pitcher_max_exit_velocity": 105.4,
+        "pitcher_barrel_pct": 3.6,
+        "pitcher_hard_hit_pct": 21.4,
+        "pitcher_sweet_spot_pct": 17.9
+      },
+      "697812": {
+        "pitcher_avg_exit_velocity": 94.6,
+        "pitcher_max_exit_velocity": 109.4,
+        "pitcher_barrel_pct": 3.6,
+        "pitcher_hard_hit_pct": 57.1,
+        "pitcher_sweet_spot_pct": 32.1
+      },
+      "664353": {
+        "pitcher_avg_exit_velocity": 89.2,
+        "pitcher_max_exit_velocity": 103.7,
+        "pitcher_barrel_pct": 7.1,
+        "pitcher_hard_hit_pct": 42.9,
+        "pitcher_sweet_spot_pct": 25.0
+      },
+      "676742": {
+        "pitcher_avg_exit_velocity": 86.2,
+        "pitcher_max_exit_velocity": 109.2,
+        "pitcher_barrel_pct": 7.4,
+        "pitcher_hard_hit_pct": 25.9,
+        "pitcher_sweet_spot_pct": 40.7
+      },
+      "685005": {
+        "pitcher_avg_exit_velocity": 91.8,
+        "pitcher_max_exit_velocity": 111.7,
+        "pitcher_barrel_pct": 7.4,
+        "pitcher_hard_hit_pct": 63.0,
+        "pitcher_sweet_spot_pct": 44.4
+      },
+      "689225": {
+        "pitcher_avg_exit_velocity": 88.6,
+        "pitcher_max_exit_velocity": 106.8,
+        "pitcher_barrel_pct": 11.1,
+        "pitcher_hard_hit_pct": 48.1,
+        "pitcher_sweet_spot_pct": 25.9
+      },
+      "681343": {
+        "pitcher_avg_exit_velocity": 82.2,
+        "pitcher_max_exit_velocity": 109.9,
+        "pitcher_barrel_pct": 0.0,
+        "pitcher_hard_hit_pct": 33.3,
+        "pitcher_sweet_spot_pct": 29.6
+      },
+      "660787": {
+        "pitcher_avg_exit_velocity": 92.7,
+        "pitcher_max_exit_velocity": 111.2,
+        "pitcher_barrel_pct": 0.0,
+        "pitcher_hard_hit_pct": 40.7,
+        "pitcher_sweet_spot_pct": 22.2
+      },
+      "681252": {
+        "pitcher_avg_exit_velocity": 87.2,
+        "pitcher_max_exit_velocity": 107.9,
+        "pitcher_barrel_pct": 11.1,
+        "pitcher_hard_hit_pct": 40.7,
+        "pitcher_sweet_spot_pct": 33.3
+      },
+      "676661": {
+        "pitcher_avg_exit_velocity": 92.2,
+        "pitcher_max_exit_velocity": 108.1,
+        "pitcher_barrel_pct": 11.1,
+        "pitcher_hard_hit_pct": 40.7,
+        "pitcher_sweet_spot_pct": 22.2
+      },
+      "686610": {
+        "pitcher_avg_exit_velocity": 89.3,
+        "pitcher_max_exit_velocity": 111.2,
+        "pitcher_barrel_pct": 19.2,
+        "pitcher_hard_hit_pct": 38.5,
+        "pitcher_sweet_spot_pct": 26.9
+      },
+      "680916": {
+        "pitcher_avg_exit_velocity": 88.1,
+        "pitcher_max_exit_velocity": 107.7,
+        "pitcher_barrel_pct": 3.8,
+        "pitcher_hard_hit_pct": 34.6,
+        "pitcher_sweet_spot_pct": 26.9
+      },
+      "657649": {
+        "pitcher_avg_exit_velocity": 92.8,
+        "pitcher_max_exit_velocity": 116.2,
+        "pitcher_barrel_pct": 7.7,
+        "pitcher_hard_hit_pct": 46.2,
+        "pitcher_sweet_spot_pct": 26.9
+      },
+      "666126": {
+        "pitcher_avg_exit_velocity": 86.3,
+        "pitcher_max_exit_velocity": 107.4,
+        "pitcher_barrel_pct": 11.5,
+        "pitcher_hard_hit_pct": 42.3,
+        "pitcher_sweet_spot_pct": 53.8
+      },
+      "666201": {
+        "pitcher_avg_exit_velocity": 87.1,
+        "pitcher_max_exit_velocity": 111.7,
+        "pitcher_barrel_pct": 11.5,
+        "pitcher_hard_hit_pct": 34.6,
+        "pitcher_sweet_spot_pct": 34.6
+      },
+      "663893": {
+        "pitcher_avg_exit_velocity": 91.4,
+        "pitcher_max_exit_velocity": 111.1,
+        "pitcher_barrel_pct": 11.5,
+        "pitcher_hard_hit_pct": 46.2,
+        "pitcher_sweet_spot_pct": 30.8
+      },
+      "680704": {
+        "pitcher_avg_exit_velocity": 87.0,
+        "pitcher_max_exit_velocity": 111.1,
+        "pitcher_barrel_pct": 7.7,
+        "pitcher_hard_hit_pct": 38.5,
+        "pitcher_sweet_spot_pct": 30.8
+      },
+      "624431": {
+        "pitcher_avg_exit_velocity": 93.2,
+        "pitcher_max_exit_velocity": 106.6,
+        "pitcher_barrel_pct": 11.5,
+        "pitcher_hard_hit_pct": 53.8,
+        "pitcher_sweet_spot_pct": 42.3
+      },
+      "682989": {
+        "pitcher_avg_exit_velocity": 88.0,
+        "pitcher_max_exit_velocity": 106.5,
+        "pitcher_barrel_pct": 0.0,
+        "pitcher_hard_hit_pct": 36.0,
+        "pitcher_sweet_spot_pct": 36.0
+      },
+      "640454": {
+        "pitcher_avg_exit_velocity": 87.5,
+        "pitcher_max_exit_velocity": 112.3,
+        "pitcher_barrel_pct": 4.0,
+        "pitcher_hard_hit_pct": 36.0,
+        "pitcher_sweet_spot_pct": 44.0
+      },
+      "682445": {
+        "pitcher_avg_exit_velocity": 92.9,
+        "pitcher_max_exit_velocity": 109.7,
+        "pitcher_barrel_pct": 12.0,
+        "pitcher_hard_hit_pct": 52.0,
+        "pitcher_sweet_spot_pct": 48.0
+      },
+      "683409": {
+        "pitcher_avg_exit_velocity": 85.4,
+        "pitcher_max_exit_velocity": 114.6,
+        "pitcher_barrel_pct": 8.0,
+        "pitcher_hard_hit_pct": 28.0,
+        "pitcher_sweet_spot_pct": 36.0
+      },
+      "691008": {
+        "pitcher_avg_exit_velocity": 87.0,
+        "pitcher_max_exit_velocity": 105.9,
+        "pitcher_barrel_pct": 8.0,
+        "pitcher_hard_hit_pct": 36.0,
+        "pitcher_sweet_spot_pct": 24.0
+      },
+      "681751": {
+        "pitcher_avg_exit_velocity": 88.5,
+        "pitcher_max_exit_velocity": 106.5,
+        "pitcher_barrel_pct": 12.0,
+        "pitcher_hard_hit_pct": 40.0,
+        "pitcher_sweet_spot_pct": 32.0
+      }
+    },
+    "status": "live"
+  }
+}

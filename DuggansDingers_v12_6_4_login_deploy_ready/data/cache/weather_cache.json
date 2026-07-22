@@ -1,0 +1,478 @@
+{
+  "BOS|2026-07-22T19": {
+    "fetched_at": "2026-07-22T18:47:04.021779+00:00",
+    "payload": {
+      "weather_available": true,
+      "weather_source": "Open-Meteo",
+      "weather_time_local": "2026-07-22T19:00:00-04:00",
+      "temperature_f": 74.0,
+      "humidity_pct": 84,
+      "precip_probability": 11,
+      "precipitation_in": 0.0,
+      "wind_speed_mph": 7.9,
+      "wind_gust_mph": 19.2,
+      "wind_direction_deg": 260,
+      "wind_field_effect": "out",
+      "wind_alignment_difference": 25.0,
+      "weather_code": 3,
+      "weather_description": "Partly cloudy",
+      "weather_impact": 4.3,
+      "weather_grade": "B+",
+      "weather_reasons": [
+        "Mild game-time temperature at 74\u00b0F",
+        "8 mph wind blowing out",
+        "Low precipitation risk"
+      ],
+      "roof_type": "outdoor",
+      "roof_status": "open-air",
+      "stadium_name": "Fenway Park",
+      "stadium_timezone": "America/New_York"
+    }
+  },
+  "COL|2026-07-22T19": {
+    "fetched_at": "2026-07-22T18:47:04.564188+00:00",
+    "payload": {
+      "weather_available": true,
+      "weather_source": "Open-Meteo",
+      "weather_time_local": "2026-07-22T19:00:00-06:00",
+      "temperature_f": 85.9,
+      "humidity_pct": 32,
+      "precip_probability": 40,
+      "precipitation_in": 0.0,
+      "wind_speed_mph": 12.5,
+      "wind_gust_mph": 20.1,
+      "wind_direction_deg": 285,
+      "wind_field_effect": "cross",
+      "wind_alignment_difference": 77.0,
+      "weather_code": 3,
+      "weather_description": "Partly cloudy",
+      "weather_impact": 3.0,
+      "weather_grade": "B+",
+      "weather_reasons": [
+        "Warm game-time air at 86\u00b0F",
+        "12 mph crosswind"
+      ],
+      "roof_type": "outdoor",
+      "roof_status": "open-air",
+      "stadium_name": "Coors Field",
+      "stadium_timezone": "America/Denver"
+    }
+  },
+  "PHI|2026-07-22T19": {
+    "fetched_at": "2026-07-22T18:47:05.194436+00:00",
+    "payload": {
+      "weather_available": true,
+      "weather_source": "Open-Meteo",
+      "weather_time_local": "2026-07-22T19:00:00-04:00",
+      "temperature_f": 79.0,
+      "humidity_pct": 60,
+      "precip_probability": 2,
+      "precipitation_in": 0.0,
+      "wind_speed_mph": 6.1,
+      "wind_gust_mph": 15.9,
+      "wind_direction_deg": 276,
+      "wind_field_effect": "cross",
+      "wind_alignment_difference": 91.0,
+      "weather_code": 0,
+      "weather_description": "Clear",
+      "weather_impact": 1.5,
+      "weather_grade": "B",
+      "weather_reasons": [
+        "Mild game-time temperature at 79\u00b0F",
+        "Low precipitation risk"
+      ],
+      "roof_type": "outdoor",
+      "roof_status": "open-air",
+      "stadium_name": "Citizens Bank Park",
+      "stadium_timezone": "America/New_York"
+    }
+  },
+  "NYY|2026-07-22T19": {
+    "fetched_at": "2026-07-22T18:47:06.016084+00:00",
+    "payload": {
+      "weather_available": true,
+      "weather_source": "Open-Meteo",
+      "weather_time_local": "2026-07-22T19:00:00-04:00",
+      "temperature_f": 85.5,
+      "humidity_pct": 39,
+      "precip_probability": 0,
+      "precipitation_in": 0.0,
+      "wind_speed_mph": 13.7,
+      "wind_gust_mph": 20.8,
+      "wind_direction_deg": 282,
+      "wind_field_effect": "out",
+      "wind_alignment_difference": 12.0,
+      "weather_code": 0,
+      "weather_description": "Clear",
+      "weather_impact": 7.9,
+      "weather_grade": "A+",
+      "weather_reasons": [
+        "Warm game-time air at 86\u00b0F",
+        "14 mph wind blowing out",
+        "Low precipitation risk"
+      ],
+      "roof_type": "outdoor",
+      "roof_status": "open-air",
+      "stadium_name": "Yankee Stadium",
+      "stadium_timezone": "America/New_York"
+    }
+  },
+  "TB|2026-07-22T19": {
+    "fetched_at": "2026-07-22T18:47:06.556761+00:00",
+    "payload": {
+      "weather_available": true,
+      "weather_source": "Open-Meteo",
+      "weather_time_local": "2026-07-22T19:00:00-04:00",
+      "temperature_f": 89.4,
+      "humidity_pct": 58,
+      "precip_probability": 4,
+      "precipitation_in": 0.0,
+      "wind_speed_mph": 9.4,
+      "wind_gust_mph": 12.5,
+      "wind_direction_deg": 237,
+      "wind_field_effect": "out",
+      "wind_alignment_difference": 12.0,
+      "weather_code": 0,
+      "weather_description": "Clear",
+      "weather_impact": 6.4,
+      "weather_grade": "A",
+      "weather_reasons": [
+        "Warm game-time air at 89\u00b0F",
+        "9 mph wind blowing out",
+        "Low precipitation risk"
+      ],
+      "roof_type": "outdoor",
+      "roof_status": "open-air",
+      "stadium_name": "George M. Steinbrenner Field",
+      "stadium_timezone": "America/New_York"
+    }
+  },
+  "HOU|2026-07-22T19": {
+    "fetched_at": "2026-07-22T18:47:07.175983+00:00",
+    "payload": {
+      "weather_available": true,
+      "weather_source": "Open-Meteo",
+      "weather_time_local": "2026-07-22T19:00:00-05:00",
+      "temperature_f": 101.1,
+      "humidity_pct": 38,
+      "precip_probability": 13,
+      "precipitation_in": 0.0,
+      "wind_speed_mph": 4.7,
+      "wind_gust_mph": 13.2,
+      "wind_direction_deg": 55,
+      "wind_field_effect": "cross",
+      "wind_alignment_difference": 103.0,
+      "weather_code": 0,
+      "weather_description": "Clear",
+      "weather_impact": 4.5,
+      "weather_grade": "B+",
+      "weather_reasons": [
+        "Hot hitting weather at 101\u00b0F",
+        "Low precipitation risk"
+      ],
+      "roof_type": "retractable",
+      "roof_status": "unconfirmed",
+      "stadium_name": "Daikin Park",
+      "stadium_timezone": "America/Chicago"
+    }
+  },
+  "SD|2026-07-22T19": {
+    "fetched_at": "2026-07-22T18:47:07.754029+00:00",
+    "payload": {
+      "weather_available": true,
+      "weather_source": "Open-Meteo",
+      "weather_time_local": "2026-07-22T19:00:00-07:00",
+      "temperature_f": 75.1,
+      "humidity_pct": 77,
+      "precip_probability": 1,
+      "precipitation_in": 0.0,
+      "wind_speed_mph": 7.9,
+      "wind_gust_mph": 15.7,
+      "wind_direction_deg": 335,
+      "wind_field_effect": "in",
+      "wind_alignment_difference": 155.0,
+      "weather_code": 0,
+      "weather_description": "Clear",
+      "weather_impact": -1.3,
+      "weather_grade": "D",
+      "weather_reasons": [
+        "Mild game-time temperature at 75\u00b0F",
+        "8 mph wind blowing in",
+        "Low precipitation risk"
+      ],
+      "roof_type": "outdoor",
+      "roof_status": "open-air",
+      "stadium_name": "Petco Park",
+      "stadium_timezone": "America/Los_Angeles"
+    }
+  },
+  "ATH|2026-07-22T19": {
+    "fetched_at": "2026-07-22T18:47:08.332351+00:00",
+    "payload": {
+      "weather_available": true,
+      "weather_source": "Open-Meteo",
+      "weather_time_local": "2026-07-22T19:00:00-07:00",
+      "temperature_f": 81.5,
+      "humidity_pct": 49,
+      "precip_probability": 0,
+      "precipitation_in": 0.0,
+      "wind_speed_mph": 10.6,
+      "wind_gust_mph": 15.0,
+      "wind_direction_deg": 234,
+      "wind_field_effect": "out",
+      "wind_alignment_difference": 1.0,
+      "weather_code": 0,
+      "weather_description": "Clear",
+      "weather_impact": 6.8,
+      "weather_grade": "A",
+      "weather_reasons": [
+        "Warm game-time air at 82\u00b0F",
+        "11 mph wind blowing out",
+        "Low precipitation risk"
+      ],
+      "roof_type": "outdoor",
+      "roof_status": "open-air",
+      "stadium_name": "Sutter Health Park",
+      "stadium_timezone": "America/Los_Angeles"
+    }
+  },
+  "SF|2026-07-22T19": {
+    "fetched_at": "2026-07-22T18:47:09.122535+00:00",
+    "payload": {
+      "weather_available": true,
+      "weather_source": "Open-Meteo",
+      "weather_time_local": "2026-07-22T19:00:00-07:00",
+      "temperature_f": 63.6,
+      "humidity_pct": 88,
+      "precip_probability": 0,
+      "precipitation_in": 0.0,
+      "wind_speed_mph": 15.4,
+      "wind_gust_mph": 23.5,
+      "wind_direction_deg": 289,
+      "wind_field_effect": "out",
+      "wind_alignment_difference": 24.0,
+      "weather_code": 0,
+      "weather_description": "Clear",
+      "weather_impact": 4.8,
+      "weather_grade": "B+",
+      "weather_reasons": [
+        "15 mph wind blowing out",
+        "Low precipitation risk"
+      ],
+      "roof_type": "outdoor",
+      "roof_status": "open-air",
+      "stadium_name": "Oracle Park",
+      "stadium_timezone": "America/Los_Angeles"
+    }
+  },
+  "LAA|2026-07-22T19": {
+    "fetched_at": "2026-07-22T18:47:09.699656+00:00",
+    "payload": {
+      "weather_available": true,
+      "weather_source": "Open-Meteo",
+      "weather_time_local": "2026-07-22T19:00:00-07:00",
+      "temperature_f": 80.5,
+      "humidity_pct": 57,
+      "precip_probability": 0,
+      "precipitation_in": 0.0,
+      "wind_speed_mph": 6.4,
+      "wind_gust_mph": 8.1,
+      "wind_direction_deg": 231,
+      "wind_field_effect": "out",
+      "wind_alignment_difference": 17.0,
+      "weather_code": 0,
+      "weather_description": "Clear",
+      "weather_impact": 5.3,
+      "weather_grade": "A",
+      "weather_reasons": [
+        "Warm game-time air at 80\u00b0F",
+        "6 mph wind blowing out",
+        "Low precipitation risk"
+      ],
+      "roof_type": "outdoor",
+      "roof_status": "open-air",
+      "stadium_name": "Angel Stadium",
+      "stadium_timezone": "America/Los_Angeles"
+    }
+  },
+  "MIN|2026-07-22T19": {
+    "fetched_at": "2026-07-22T18:47:10.443287+00:00",
+    "payload": {
+      "weather_available": true,
+      "weather_source": "Open-Meteo",
+      "weather_time_local": "2026-07-22T19:00:00-05:00",
+      "temperature_f": 75.4,
+      "humidity_pct": 31,
+      "precip_probability": 0,
+      "precipitation_in": 0.0,
+      "wind_speed_mph": 7.7,
+      "wind_gust_mph": 11.6,
+      "wind_direction_deg": 17,
+      "wind_field_effect": "in",
+      "wind_alignment_difference": 127.0,
+      "weather_code": 1,
+      "weather_description": "Partly cloudy",
+      "weather_impact": -1.3,
+      "weather_grade": "D",
+      "weather_reasons": [
+        "Mild game-time temperature at 75\u00b0F",
+        "8 mph wind blowing in",
+        "Low precipitation risk"
+      ],
+      "roof_type": "outdoor",
+      "roof_status": "open-air",
+      "stadium_name": "Target Field",
+      "stadium_timezone": "America/Chicago"
+    }
+  },
+  "CIN|2026-07-22T19": {
+    "fetched_at": "2026-07-22T18:47:11.132881+00:00",
+    "payload": {
+      "weather_available": true,
+      "weather_source": "Open-Meteo",
+      "weather_time_local": "2026-07-22T19:00:00-04:00",
+      "temperature_f": 75.3,
+      "humidity_pct": 43,
+      "precip_probability": 0,
+      "precipitation_in": 0.0,
+      "wind_speed_mph": 12.7,
+      "wind_gust_mph": 18.1,
+      "wind_direction_deg": 342,
+      "wind_field_effect": "out",
+      "wind_alignment_difference": 44.0,
+      "weather_code": 3,
+      "weather_description": "Partly cloudy",
+      "weather_impact": 6.1,
+      "weather_grade": "A",
+      "weather_reasons": [
+        "Mild game-time temperature at 75\u00b0F",
+        "13 mph wind blowing out",
+        "Low precipitation risk"
+      ],
+      "roof_type": "outdoor",
+      "roof_status": "open-air",
+      "stadium_name": "Great American Ball Park",
+      "stadium_timezone": "America/New_York"
+    }
+  },
+  "CWS|2026-07-22T19": {
+    "fetched_at": "2026-07-22T18:47:11.650084+00:00",
+    "payload": {
+      "weather_available": true,
+      "weather_source": "Open-Meteo",
+      "weather_time_local": "2026-07-22T19:00:00-05:00",
+      "temperature_f": 70.0,
+      "humidity_pct": 43,
+      "precip_probability": 0,
+      "precipitation_in": 0.0,
+      "wind_speed_mph": 10.3,
+      "wind_gust_mph": 16.8,
+      "wind_direction_deg": 48,
+      "wind_field_effect": "cross",
+      "wind_alignment_difference": 103.0,
+      "weather_code": 0,
+      "weather_description": "Clear",
+      "weather_impact": 1.5,
+      "weather_grade": "B",
+      "weather_reasons": [
+        "Mild game-time temperature at 70\u00b0F",
+        "10 mph crosswind",
+        "Low precipitation risk"
+      ],
+      "roof_type": "outdoor",
+      "roof_status": "open-air",
+      "stadium_name": "Rate Field",
+      "stadium_timezone": "America/Chicago"
+    }
+  },
+  "MIL|2026-07-22T19": {
+    "fetched_at": "2026-07-22T18:47:12.251617+00:00",
+    "payload": {
+      "weather_available": true,
+      "weather_source": "Open-Meteo",
+      "weather_time_local": "2026-07-22T19:00:00-05:00",
+      "temperature_f": 70.2,
+      "humidity_pct": 44,
+      "precip_probability": 0,
+      "precipitation_in": 0.0,
+      "wind_speed_mph": 6.1,
+      "wind_gust_mph": 7.4,
+      "wind_direction_deg": 114,
+      "wind_field_effect": "in",
+      "wind_alignment_difference": 131.0,
+      "weather_code": 0,
+      "weather_description": "Clear",
+      "weather_impact": -0.7,
+      "weather_grade": "C",
+      "weather_reasons": [
+        "Mild game-time temperature at 70\u00b0F",
+        "6 mph wind blowing in",
+        "Low precipitation risk"
+      ],
+      "roof_type": "retractable",
+      "roof_status": "unconfirmed",
+      "stadium_name": "American Family Field",
+      "stadium_timezone": "America/Chicago"
+    }
+  },
+  "DET|2026-07-22T19": {
+    "fetched_at": "2026-07-22T18:47:12.873362+00:00",
+    "payload": {
+      "weather_available": true,
+      "weather_source": "Open-Meteo",
+      "weather_time_local": "2026-07-22T19:00:00-04:00",
+      "temperature_f": 75.6,
+      "humidity_pct": 30,
+      "precip_probability": 0,
+      "precipitation_in": 0.0,
+      "wind_speed_mph": 9.4,
+      "wind_gust_mph": 12.8,
+      "wind_direction_deg": 332,
+      "wind_field_effect": "in",
+      "wind_alignment_difference": 129.0,
+      "weather_code": 3,
+      "weather_description": "Partly cloudy",
+      "weather_impact": -1.9,
+      "weather_grade": "D",
+      "weather_reasons": [
+        "Mild game-time temperature at 76\u00b0F",
+        "9 mph wind blowing in",
+        "Low precipitation risk"
+      ],
+      "roof_type": "outdoor",
+      "roof_status": "open-air",
+      "stadium_name": "Comerica Park",
+      "stadium_timezone": "America/New_York"
+    }
+  },
+  "BAL|2026-07-22T19": {
+    "fetched_at": "2026-07-22T18:47:13.590395+00:00",
+    "payload": {
+      "weather_available": true,
+      "weather_source": "Open-Meteo",
+      "weather_time_local": "2026-07-22T19:00:00-04:00",
+      "temperature_f": 84.7,
+      "humidity_pct": 49,
+      "precip_probability": 2,
+      "precipitation_in": 0.0,
+      "wind_speed_mph": 10.3,
+      "wind_gust_mph": 17.2,
+      "wind_direction_deg": 311,
+      "wind_field_effect": "cross",
+      "wind_alignment_difference": 109.0,
+      "weather_code": 0,
+      "weather_description": "Clear",
+      "weather_impact": 3.0,
+      "weather_grade": "B+",
+      "weather_reasons": [
+        "Warm game-time air at 85\u00b0F",
+        "10 mph crosswind",
+        "Low precipitation risk"
+      ],
+      "roof_type": "outdoor",
+      "roof_status": "open-air",
+      "stadium_name": "Oriole Park at Camden Yards",
+      "stadium_timezone": "America/New_York"
+    }
+  }
+}
