@@ -47,6 +47,7 @@ routes = {
     "Team Sheets": team_cheatsheets.render,
     "Weather": secondary.weather_center,
     "Sportsbook": secondary.sportsbook_odds,
+    "Game Sims": secondary.game_sims,
     "Parlay Lab": secondary.parlay,
     "Player Intelligence": player_profile.render,
     "Matchups": secondary.matchups,

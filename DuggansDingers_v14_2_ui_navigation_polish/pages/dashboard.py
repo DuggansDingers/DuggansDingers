@@ -29,27 +29,36 @@ def _top_pick_cards(rankings: list[dict[str, Any]]) -> str:
     for rank, player in enumerate(rankings[:6], 1):
         player_id = int(player.get("player_id") or 0)
         player_href = f"?view=player-intelligence&player={player_id}" if player_id else "?view=daily-board"
+        reasons = [str(reason) for reason in (player.get("projection_reasons") or []) if reason]
+        while len(reasons) < 2:
+            if not reasons:
+                reasons.append(f"{percent(player.get('probability'))} model HR probability")
+            else:
+                reasons.append(f"{safe_int(player.get('last_30_home_runs'))} HR over the last 30 games")
+        pitcher = str(player.get("opposing_pitcher") or "Not announced")
+        hand = str(player.get("opposing_pitcher_hand") or "—")
+        hr9 = safe_float(player.get("pitcher_hr9"))
+        pitcher_detail = f"{hand}HP • {hr9:.2f} HR/9" if player.get("pitching_data_available") else "Starter not announced"
+        tier = str(player.get("model_tier") or "Model Pick")
         cards.append(
             f'''
 <a class="dd-pick-card-link" href="{player_href}" target="_self">
-<div class="dd-pick-card">
+<div class="dd-pick-card v15">
   <div class="dd-pick-rank rank-{rank}">{rank}</div>
-  <img class="dd-pick-photo" src="{headshot(player.get('player_id'), 300)}" alt="{esc(player.get('player_name'))}">
+  <div class="dd-pick-tier">{esc(tier)}</div>
+  <img class="dd-pick-photo" src="{headshot(player.get('player_id'), 360)}" alt="{esc(player.get('player_name'))}">
   <div class="dd-pick-copy">
     <div class="dd-pick-name">{esc(player.get('player_name'))}</div>
     <div class="dd-pick-team">{esc(player.get('team_name'))} • {esc(player.get('position') or '—')}</div>
-    <div class="dd-pick-prob" style="color:{_probability_color(rank)}">{percent(player.get('probability'))}</div>
-    <div class="dd-pick-label">HR Probability</div>
+    <div class="dd-pick-prob-row"><b style="color:{_probability_color(rank)}">{percent(player.get('probability'))}</b><span>{safe_float(player.get('dinger_score')):.1f} SCORE</span></div>
+    <div class="dd-pick-reason"><i></i><span>{esc(reasons[0])}</span></div>
+    <div class="dd-pick-reason alt"><i></i><span>{esc(reasons[1])}</span></div>
   </div>
-  <div class="dd-pick-footer">
-    <span><b>{safe_int(player.get('last_7_home_runs'))}</b> Last 7</span>
-    <span><b>{safe_int(player.get('last_30_home_runs'))}</b> Last 30</span>
-  </div>
+  <div class="dd-pick-pitcher"><strong>VS {esc(pitcher)}</strong><span>{esc(pitcher_detail)}</span></div>
 </div>
 </a>'''
         )
-    return '<div class="dd-picks-grid">' + "".join(cards) + "</div>"
-
+    return '<div class="dd-picks-grid v15">' + "".join(cards) + "</div>"
 
 def _weather_games(board: dict[str, Any]) -> list[dict[str, Any]]:
     games: dict[str, dict[str, Any]] = {}
@@ -248,7 +257,7 @@ def _weather_dashboard(board: dict[str, Any]) -> str:
     <div class="dd-forecast-panel">
       <div class="dd-forecast-title">Game Time Forecast</div><div class="dd-game-time">{esc(time_text)}</div>
       <div class="dd-forecast-list"><div><span>☀ &nbsp; Temp</span><b>{temp_text}</b></div><div><span>≋ &nbsp; Wind</span><b>{wind_text}</b></div><div><span>♧ &nbsp; Humidity</span><b>{humidity:.0f}%</b></div><div><span>☂ &nbsp; Precip</span><b>{rain_text}</b></div><div><span>☁ &nbsp; Clouds</span><b>{cloud_text}</b></div><div class="impact"><span>🔥 &nbsp; HR Impact</span><b>{impact_text}</b></div></div>
-      <div class="dd-hourly-button">◷ &nbsp; Live forecast • {esc(str(weather.get('weather_source') or 'Open-Meteo'))}</div><div class="dd-weather-grade">Weather Grade <b>{esc(grade)}</b></div>
+      <div class="dd-hourly-button">◷ &nbsp; Live forecast • {esc(str(weather.get('weather_source') or 'Live provider'))}</div><div class="dd-weather-grade">Weather Grade <b>{esc(grade)}</b></div>
     </div>
   </div>
 </section>'''
@@ -339,7 +348,7 @@ def render(board: dict[str, Any]) -> None:
 
     title_col, action_col = st.columns([8.8, 2.2], vertical_alignment="center")
     with title_col:
-        st.markdown('<div class="dd-home-section-title"><i>⚡</i><div><b>Today\'s Top Home Run Picks</b><span>Our 6 highest projected HR edge plays</span></div></div>', unsafe_allow_html=True)
+        st.markdown('<div class="dd-home-section-title"><i>⚡</i><div><b>Today\'s Top Home Run Picks</b><span>The six strongest model projections, with the real reasons and opposing starter shown on every card</span></div></div>', unsafe_allow_html=True)
     with action_col:
         if st.button("⌁  View All Top Plays", use_container_width=True, key="view_all_top"):
             go("Daily Board"); st.rerun()

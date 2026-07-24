@@ -209,3 +209,107 @@ def generate_parlay(
         used_games.add(str(chosen.get("game_id")))
 
     return picks
+
+
+def generate_blended_parlay(
+    rankings: list[dict[str, Any]],
+    legs: int,
+    longshot_legs: int,
+    *,
+    min_score_override: float = 55,
+    selected_teams: set[str] | None = None,
+    unique_teams: bool = True,
+    unique_games: bool = True,
+    locked_player_ids: set[int] | None = None,
+    seed: int | None = None,
+) -> list[dict[str, Any]]:
+    """Mix higher-probability anchors with true long-price legs.
+
+    Locked players are preserved first. High Dinger Scores remain high-quality
+    model plays; the longshot bucket is based on price/probability, not a label
+    that contradicts the score shown elsewhere on the site.
+    """
+    rng = random.Random(seed)
+    selected_teams = selected_teams or set()
+    locked_player_ids = locked_player_ids or set()
+    locked = [p for p in rankings if int(p.get("player_id") or -1) in locked_player_ids][:legs]
+    picks = list(locked)
+    used_ids = {int(p.get("player_id") or -1) for p in picks}
+    used_teams = {str(p.get("team_name") or "") for p in picks}
+    used_games = {str(p.get("game_id") or "") for p in picks}
+
+    def allowed(player: dict[str, Any]) -> bool:
+        if int(player.get("player_id") or -1) in used_ids:
+            return False
+        if safe_float(player.get("dinger_score")) < min_score_override:
+            return False
+        if selected_teams and str(player.get("team_name") or "") not in selected_teams:
+            return False
+        if unique_teams and str(player.get("team_name") or "") in used_teams:
+            return False
+        if unique_games and str(player.get("game_id") or "") in used_games:
+            return False
+        return True
+
+    high_pool = [
+        p for p in rankings
+        if probability_fraction(p.get("probability")) >= 0.18
+        and safe_float(p.get("dinger_score")) >= max(68, min_score_override)
+    ]
+    long_pool = [
+        p for p in rankings
+        if probability_fraction(p.get("probability")) < 0.18
+        and safe_float(player_price(p)) >= 350
+        and safe_float(p.get("dinger_score")) >= min_score_override
+    ]
+
+    locked_long = sum(
+        1 for p in picks
+        if probability_fraction(p.get("probability")) < 0.18 and safe_float(player_price(p)) >= 350
+    )
+    remaining_long = max(0, min(longshot_legs, legs) - locked_long)
+
+    def choose(pool: list[dict[str, Any]], longshot: bool) -> dict[str, Any] | None:
+        eligible = [p for p in pool if allowed(p)]
+        if not eligible and unique_games:
+            # Relax game uniqueness before team uniqueness.
+            eligible = [
+                p for p in pool
+                if int(p.get("player_id") or -1) not in used_ids
+                and (not selected_teams or str(p.get("team_name") or "") in selected_teams)
+                and (not unique_teams or str(p.get("team_name") or "") not in used_teams)
+                and safe_float(p.get("dinger_score")) >= min_score_override
+            ]
+        if not eligible:
+            return None
+        weights = []
+        for p in eligible:
+            score = safe_float(p.get("dinger_score")) / 100
+            probability = probability_fraction(p.get("probability"))
+            payout = min(1.0, max(0.0, safe_float(player_price(p))) / 900)
+            base = (score * 0.48 + payout * 0.52) if longshot else (score * 0.60 + probability * 1.8)
+            weights.append(max(0.001, base * (0.85 + rng.random() * 0.35)))
+        return rng.choices(eligible, weights=weights, k=1)[0]
+
+    while len(picks) < legs and remaining_long > 0:
+        chosen = choose(long_pool, True)
+        if chosen is None:
+            break
+        picks.append(chosen)
+        used_ids.add(int(chosen.get("player_id") or -1))
+        used_teams.add(str(chosen.get("team_name") or ""))
+        used_games.add(str(chosen.get("game_id") or ""))
+        remaining_long -= 1
+
+    while len(picks) < legs:
+        chosen = choose(high_pool, False)
+        if chosen is None:
+            chosen = choose(long_pool, True)
+        if chosen is None:
+            break
+        picks.append(chosen)
+        used_ids.add(int(chosen.get("player_id") or -1))
+        used_teams.add(str(chosen.get("team_name") or ""))
+        used_games.add(str(chosen.get("game_id") or ""))
+
+    return picks

@@ -5,6 +5,7 @@ import requests
 import streamlit as st
 
 from components.charts import neon_bar_chart, neon_line_chart
+from components.neon_table import Column, render_neon_table
 from components.ui import (
     odds,
     percent,
@@ -93,7 +94,7 @@ def render(board: dict) -> None:
     if not player.get("statcast_available"):
         st.caption("Statcast leaderboard data is unavailable for this player or the optional pybaseball package has not been installed yet.")
 
-    section("Game-Time Weather", "OPEN-METEO LIVE FORECAST", "Forecast matched to scheduled first pitch")
+    section("Game-Time Weather", "MULTI-PROVIDER LIVE FORECAST", "WeatherAPI / Visual Crossing / National Weather Service")
     if player.get("weather_available"):
         w1, w2, w3, w4, w5 = st.columns(5)
         w1.metric("Weather Grade", str(player.get("weather_grade") or "—"), f"{safe_float(player.get('weather_impact')):+.1f} impact")
@@ -102,7 +103,8 @@ def render(board: dict) -> None:
         w4.metric("Rain Chance", f"{safe_float(player.get('precip_probability')):.0f}%")
         w5.metric("Roof", str(player.get("roof_status") or player.get("roof_type") or "—").title())
         reasons = "".join(f"<li>{reason}</li>" for reason in (player.get("weather_reasons") or []))
-        st.markdown(f"<div class='dd-insight' style='border-color:{weather_color(player)}'><strong>{weather_badge(player)}</strong><ul>{reasons}</ul><div style='color:#8fa7c0;font-size:.68rem'>Source: Open-Meteo • Forecast time: {player.get('weather_time_local','—')}</div></div>", unsafe_allow_html=True)
+        provider = str(player.get("weather_source") or "Live weather provider")
+        st.markdown(f"<div class='dd-insight' style='border-color:{weather_color(player)}'><strong>{weather_badge(player)}</strong><ul>{reasons}</ul><div class='dd-provider-line'>Source: {provider} • Forecast time: {player.get('weather_time_local','—')}</div></div>", unsafe_allow_html=True)
         if str(player.get("roof_type")) == "retractable":
             st.warning("Retractable roof status is unconfirmed. Weather is shown as an outdoor scenario until roof status is entered or confirmed.")
     else:
@@ -123,7 +125,7 @@ def render(board: dict) -> None:
                 safe_float(player.get("pitcher_matchup_score")),
             ],
         }).set_index("Component")
-        neon_bar_chart(breakdown, height=330, palette=["#20c5ff"], value_title="Percentile")
+        neon_bar_chart(breakdown, height=330, palette=["#ff4df2"], value_title="Percentile")
     with right:
         section("Why He Ranks Here", "MODEL READ")
         trend, _ = trend_label(player)
@@ -171,17 +173,18 @@ def render(board: dict) -> None:
 
     if history:
         history_df = pd.DataFrame(history)
-        st.dataframe(
-            history_df,
-            use_container_width=True,
-            hide_index=True,
-            column_config={
-                "AVG": st.column_config.NumberColumn(format="%.3f"),
-                "OBP": st.column_config.NumberColumn(format="%.3f"),
-                "SLG": st.column_config.NumberColumn(format="%.3f"),
-                "OPS": st.column_config.NumberColumn(format="%.3f"),
-            },
-        )
+        history_columns = [
+            Column("Season", "Season", width=".65fr", align="center"),
+            Column("Team", "Team", width=".6fr", align="center"),
+            Column("G", "Games", progress_max=162, accent="#27c7ff", width="1fr"),
+            Column("HR", "Home Runs", progress_max=55, accent="#ff4df2", width="1fr"),
+            Column("RBI", "RBI", progress_max=130, accent="#ffd83d", width="1fr"),
+            Column("AVG", "AVG", formatter=lambda v, r: f'<b>{safe_float(v):.3f}</b>', width=".65fr", align="center"),
+            Column("OBP", "OBP", formatter=lambda v, r: f'<b>{safe_float(v):.3f}</b>', width=".65fr", align="center"),
+            Column("SLG", "SLG", formatter=lambda v, r: f'<b style="color:#35f29a">{safe_float(v):.3f}</b>', width=".65fr", align="center"),
+            Column("OPS", "OPS", formatter=lambda v, r: f'<b style="color:#27c7ff">{safe_float(v):.3f}</b>', width=".65fr", align="center"),
+        ]
+        render_neon_table(history_df.to_dict("records"), history_columns, key="player_history", max_height=520)
         season_totals = history_df.groupby("Season", as_index=True)[["HR", "RBI", "G"]].sum().sort_index()
         neon_bar_chart(season_totals[["HR"]], height=310, palette=["#ff4d6d"], value_title="Home Runs")
     else:

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -269,43 +270,93 @@ def percentile_scores(values: list[float]) -> list[float]:
 
 
 def add_dinger_scores(rankings: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Create an absolute-aware 0-100 score.
+
+    Earlier versions were almost entirely percentile based, which could make a
+    low absolute HR probability look elite on a weak slate. V15 anchors the
+    score to the player's actual model probability first, then layers real
+    season/recent power, Statcast, and the announced opposing starter.
+    """
+    def clamp(value: float) -> float:
+        return max(0.0, min(100.0, value))
+
     projection_values = [safe_number(player.get("probability")) for player in rankings]
     statcast_values = [safe_number(player.get("hitter_statcast_signal")) for player in rankings]
     pitcher_values = [safe_number(player.get("pitcher_vulnerability_signal")) for player in rankings]
-    season_values = [safe_number(player.get("season_hr_rate")) for player in rankings]
-    seven_values = [safe_number(player.get("last_7_hr_rate")) for player in rankings]
-    thirty_values = [safe_number(player.get("last_30_hr_rate")) for player in rankings]
-    slug_values = [safe_number(player.get("season_slg")) for player in rankings]
 
-    projection_scores = percentile_scores(projection_values)
-    season_scores = percentile_scores(season_values)
-    seven_scores = percentile_scores(seven_values)
-    thirty_scores = percentile_scores(thirty_values)
-    slug_scores = percentile_scores(slug_values)
-    statcast_scores = percentile_scores(statcast_values)
-    pitcher_scores = percentile_scores(pitcher_values)
+    projection_percentiles = percentile_scores(projection_values)
+    statcast_percentiles = percentile_scores(statcast_values)
+    pitcher_percentiles = percentile_scores(pitcher_values)
 
     scored: list[dict[str, Any]] = []
     for index, player in enumerate(rankings):
+        probability = safe_number(player.get("probability"))
+        if probability > 1:
+            probability /= 100
+        probability = max(0.0, min(1.0, probability))
+
+        projection_absolute = clamp(probability / 0.35 * 100)
+        season_absolute = clamp(safe_number(player.get("season_hr_rate")) / 8.0 * 100)
+        seven_absolute = clamp(safe_number(player.get("last_7_hr_rate")) / 12.0 * 100)
+        thirty_absolute = clamp(safe_number(player.get("last_30_hr_rate")) / 9.0 * 100)
+        slug_absolute = clamp((safe_number(player.get("season_slg")) - 0.300) / 0.350 * 100)
+        statcast_score = statcast_percentiles[index] if player.get("statcast_available") else 50.0
+        pitcher_score = pitcher_percentiles[index] if player.get("pitching_data_available") else 50.0
+
         dinger_score = (
-            projection_scores[index] * 0.37
-            + season_scores[index] * 0.15
-            + seven_scores[index] * 0.10
-            + thirty_scores[index] * 0.08
-            + slug_scores[index] * 0.08
-            + statcast_scores[index] * 0.12
-            + pitcher_scores[index] * 0.10
+            projection_absolute * 0.45
+            + projection_percentiles[index] * 0.15
+            + season_absolute * 0.10
+            + seven_absolute * 0.07
+            + thirty_absolute * 0.06
+            + slug_absolute * 0.06
+            + statcast_score * 0.06
+            + pitcher_score * 0.05
         )
+        dinger_score = round(clamp(dinger_score), 1)
+
+        if dinger_score >= 85:
+            tier = "Elite"
+        elif dinger_score >= 78:
+            tier = "Premium"
+        elif dinger_score >= 70:
+            tier = "Strong"
+        elif dinger_score >= 60:
+            tier = "Upside"
+        else:
+            tier = "Speculative"
+
+        reasons: list[str] = [f"{probability * 100:.1f}% model HR probability"]
+        if safe_number(player.get("last_7_hr_rate")) > max(
+            safe_number(player.get("season_hr_rate")), safe_number(player.get("last_30_hr_rate"))
+        ) and safe_int(player.get("last_7_home_runs")):
+            reasons.append(f"{safe_int(player.get('last_7_home_runs'))} HR in the last 7 games")
+        elif safe_int(player.get("last_30_home_runs")) >= 5:
+            reasons.append(f"{safe_int(player.get('last_30_home_runs'))} HR in the last 30 games")
+        if player.get("pitching_data_available"):
+            reasons.append(
+                f"vs {player.get('opposing_pitcher')} ({safe_number(player.get('pitcher_hr9')):.2f} HR/9)"
+            )
+        elif player.get("opposing_pitcher") and player.get("opposing_pitcher") != "Not announced":
+            reasons.append(f"vs {player.get('opposing_pitcher')}")
+        if player.get("statcast_available") and safe_number(player.get("barrel_pct")) >= 10:
+            reasons.append(f"{safe_number(player.get('barrel_pct')):.1f}% barrel rate")
+        if safe_number(player.get("season_slg")) >= 0.500:
+            reasons.append(f"{safe_number(player.get('season_slg')):.3f} season SLG")
+
         scored.append({
             **player,
-            "ballpark_score": projection_scores[index],
-            "season_power_score": season_scores[index],
-            "recent_power_score": seven_scores[index],
-            "month_power_score": thirty_scores[index],
-            "slug_power_score": slug_scores[index],
-            "statcast_power_score": statcast_scores[index],
-            "pitcher_matchup_score": pitcher_scores[index],
-            "dinger_score": round(dinger_score, 1),
+            "ballpark_score": round(projection_absolute, 1),
+            "projection_percentile": projection_percentiles[index],
+            "season_power_score": round(season_absolute, 1),
+            "recent_power_score": round(seven_absolute, 1),
+            "month_power_score": round(thirty_absolute, 1),
+            "slug_power_score": round(slug_absolute, 1),
+            "statcast_power_score": round(statcast_score, 1),
+            "pitcher_matchup_score": round(pitcher_score, 1),
+            "dinger_score": dinger_score,
+            "model_tier": tier,
+            "projection_reasons": reasons[:3],
         })
 
     scored.sort(key=lambda player: safe_number(player.get("dinger_score")), reverse=True)
@@ -316,7 +367,6 @@ def add_dinger_scores(rankings: list[dict[str, Any]]) -> list[dict[str, Any]]:
         player["overall_rank"] = overall_rank
         player["team_rank"] = team_counts[team]
     return scored
-
 
 def game_metadata(game: dict[str, Any]) -> dict[str, Any]:
     teams = game.get("teams") or {}
@@ -405,49 +455,68 @@ def get_home_run_rankings(target_date: str | None = None) -> dict[str, Any]:
             unique_players[key] = prop
     home_run_props = list(unique_players.values())
 
-    total_players = len(home_run_props)
-    for number, prop in enumerate(home_run_props, start=1):
+    def enrich_player(prop: dict[str, Any]) -> dict[str, Any]:
+        enriched = dict(prop)
         try:
-            prop.update(get_player_details(prop["player_id"], name_cache))
+            enriched.update(get_player_details(enriched["player_id"], name_cache))
         except requests.RequestException:
-            prop.update({"player_name": f"Player {prop['player_id']}", "position": "—", "bat_side": "—"})
+            enriched.update({"player_name": f"Player {enriched['player_id']}", "position": "—", "bat_side": "—"})
 
         try:
-            prop.update(get_team_details(prop.get("team_id"), name_cache))
+            enriched.update(get_team_details(enriched.get("team_id"), name_cache))
         except requests.RequestException:
-            prop.update({"team_name": str(prop.get("team_id") or "N/A"), "team_full_name": "N/A"})
+            enriched.update({"team_name": str(enriched.get("team_id") or "N/A"), "team_full_name": "N/A"})
 
-        if prop.get("opponent_team_id"):
+        if enriched.get("opponent_team_id"):
             try:
-                opponent = get_team_details(prop["opponent_team_id"], name_cache)
-                prop["opponent"] = opponent.get("team_name", "—")
+                opponent = get_team_details(enriched["opponent_team_id"], name_cache)
+                enriched["opponent"] = opponent.get("team_name", "—")
             except requests.RequestException:
-                prop["opponent"] = "—"
+                enriched["opponent"] = "—"
         else:
-            prop["opponent"] = "—"
+            enriched["opponent"] = "—"
 
-        print(f"Getting MLB stats {number} of {total_players}: {prop.get('player_name')}")
         try:
-            prop.update(get_player_hitting_stats(prop["player_id"], season, slate_date, stats_cache))
-        except requests.RequestException as error:
-            print(f"Stats unavailable for {prop.get('player_name')}: {error}")
-            prop.update(empty_player_stats())
+            enriched.update(get_player_hitting_stats(enriched["player_id"], season, slate_date, stats_cache))
+        except requests.RequestException:
+            enriched.update(empty_player_stats())
+        return enriched
 
-        if number % 10 == 0:
-            save_json_file(STATS_CACHE_FILE, stats_cache)
+    # MLB player detail and rolling-stat calls are independent. Running a
+    # bounded pool cuts a cold load dramatically without overwhelming StatsAPI.
+    enriched_props: list[dict[str, Any]] = []
+    with ThreadPoolExecutor(max_workers=min(10, max(1, len(home_run_props)))) as executor:
+        futures = {executor.submit(enrich_player, prop): index for index, prop in enumerate(home_run_props)}
+        completed: dict[int, dict[str, Any]] = {}
+        for future in as_completed(futures):
+            index = futures[future]
+            try:
+                completed[index] = future.result()
+            except Exception:
+                fallback = dict(home_run_props[index])
+                fallback.update(empty_player_stats())
+                completed[index] = fallback
+        enriched_props = [completed[index] for index in range(len(home_run_props))]
+    home_run_props = enriched_props
 
     save_json_file(NAME_CACHE_FILE, name_cache)
     save_json_file(STATS_CACHE_FILE, stats_cache)
 
     from services.statcast import enrich_players
+    from services.pitchers import enrich_probable_pitchers
+
     home_run_props, statcast_status = enrich_players(home_run_props, slate_date, season)
+    games_meta = list(game_map.values())
+    home_run_props, games_meta, pitcher_status = enrich_probable_pitchers(
+        home_run_props, games_meta, slate_date, season
+    )
     scored_rankings = add_dinger_scores(home_run_props)
     teams = sorted({str(player.get("team_name") or "N/A") for player in scored_rankings if player.get("team_name")})
     return {
         "date": slate_date,
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "games": len(games),
-        "games_meta": list(game_map.values()),
+        "games_meta": games_meta,
         "teams": teams,
         "rankings": scored_rankings,
         "data_sources": {
@@ -456,6 +525,6 @@ def get_home_run_rankings(target_date: str | None = None) -> dict[str, Any]:
             "Weather": "not connected",
             "Sportsbook Odds": "not connected",
             "Statcast": statcast_status,
-            "Probable Pitchers": "live",
+            "Probable Pitchers": pitcher_status,
         },
     }

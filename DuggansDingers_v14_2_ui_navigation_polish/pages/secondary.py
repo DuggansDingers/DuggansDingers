@@ -7,6 +7,7 @@ import streamlit as st
 
 from components.navigation import go
 from components.charts import neon_bar_chart
+from components.neon_table import Column, progress_html, render_neon_table
 from components.ui import (
     board_row_html,
     hero,
@@ -19,6 +20,8 @@ from components.ui import (
     section,
     weather_badge,
     weather_color,
+    esc,
+    team_logo,
 )
 from services.parlay_engine import (
     PROFILES,
@@ -26,6 +29,7 @@ from services.parlay_engine import (
     combined_model_probability,
     decimal_to_american,
     generate_parlay,
+    generate_blended_parlay,
     potential_return,
 )
 
@@ -54,12 +58,19 @@ def trends(board: dict) -> None:
         st.info("No trend data is available.")
         return
     top, bottom = st.columns(2)
+    trend_columns = [
+        Column("Player", "Player", width="1.4fr"),
+        Column("Team", "Team", width=".55fr", align="center"),
+        Column("Last 7 HR", "L7 HR", progress_max=5, accent="#35f29a", width="1fr"),
+        Column("Last 30 HR", "L30 HR", progress_max=10, accent="#ff4df2", width="1fr"),
+        Column("Change vs Season", "Δ vs Season", formatter=lambda v, r: f'<b style="color:{"#35f29a" if safe_float(v)>=0 else "#ff5f6d"}">{safe_float(v):+.2f}</b>', width=".8fr", align="center"),
+    ]
     with top:
         section("Biggest Risers", "RECENT MOMENTUM")
-        st.dataframe(frame.head(12), use_container_width=True, hide_index=True)
+        render_neon_table(frame.head(12).to_dict("records"), trend_columns, key="trend_risers")
     with bottom:
         section("Biggest Fallers", "COOLING OFF")
-        st.dataframe(frame.tail(12).sort_values("Change vs Season"), use_container_width=True, hide_index=True)
+        render_neon_table(frame.tail(12).sort_values("Change vs Season").to_dict("records"), trend_columns, key="trend_fallers")
     section("Seven-Game vs 30-Game vs Season Power", "TOP 20 RISERS")
     neon_bar_chart(frame.head(20).set_index("Player")[["Season HR Rate", "Last 30 HR Rate", "Last 7 HR Rate"]], height=430, value_title="HR Rate")
 
@@ -106,7 +117,7 @@ def parks(board: dict) -> None:
     rankings = board.get("rankings", []) or []
     hero(
         "PARK <span>SIGNALS</span>",
-        "Compare the connected Ballpark Pal projection signal with live Open-Meteo game-time weather. Handedness-specific park factors remain the next data layer.",
+        "Compare the connected Ballpark Pal projection signal with multi-provider live game-time weather. Handedness-specific park factors remain the next data layer.",
         stats={"Teams": len(board.get("teams", [])), "Weather": f"{safe_int((board.get('weather_summary') or {}).get('games_available'))} games"},
     )
     frame = pd.DataFrame([
@@ -132,123 +143,181 @@ def parks(board: dict) -> None:
     section("Team Environment Rankings", "CURRENT CONNECTED SIGNAL")
     neon_bar_chart(team_summary.set_index("Team")[["Projection Percentile", "Dinger Score"]], height=390, value_title="Model Score")
     section("All Hitters", "DETAIL")
-    st.dataframe(frame.sort_values("Projection Percentile", ascending=False), use_container_width=True, hide_index=True)
+    park_columns = [
+        Column("Player", "Player", width="1.4fr"),
+        Column("Team", "Team", width=".55fr", align="center"),
+        Column("Venue", "Ballpark", width="1.25fr"),
+        Column("Projection Percentile", "Projection", progress_max=100, accent="#27c7ff", width="1.15fr"),
+        Column("Dinger Score", "Dinger Score", progress_max=100, accent="#ff4df2", width="1.15fr"),
+        Column("HR Probability", "HR Probability", progress_max=35, accent="#35f29a", width="1.15fr"),
+        Column("Weather Grade", "Weather", width=".65fr", align="center"),
+        Column("Weather Impact", "HR Impact", formatter=lambda v, r: f'<b style="color:{"#35f29a" if safe_float(v)>=0 else "#ff5f6d"}">{safe_float(v):+.1f}</b>', width=".7fr", align="center"),
+    ]
+    render_neon_table(frame.sort_values("Projection Percentile", ascending=False).to_dict("records"), park_columns, key="park_detail", max_height=620)
 
 
 def parlay(board: dict) -> None:
     rankings = board.get("rankings", []) or []
     hero(
-        "RANDOM PARLAY <span>LAB</span>",
-        "Generate diversified home-run combinations by risk profile. Balanced favors stronger grades, Longshot chases bigger prices, and Pipedream targets the highest-payout, least-likely chaos builds.",
-        stats={"Players": len(rankings), "Profiles": 3, "Max Legs": 8},
+        "PARLAY <span>LAB</span>",
+        "Build a ticket, lock any legs you love, then reroll only the unlocked spots. Blend mode mixes high-probability anchors with true long-price upside.",
+        stats={"Players": len(rankings), "Modes": 4, "Max Legs": 8},
     )
     if not rankings:
         st.info("No player board is available.")
         return
 
-    mode_columns = st.columns(3)
-    colors = {"Balanced": "#35e27e", "Longshot": "#ffbd2f", "Pipedream": "#ff573d"}
-    for column, (name, profile) in zip(mode_columns, PROFILES.items()):
+    st.session_state.setdefault("generated_parlay", [])
+    st.session_state.setdefault("parlay_locked_ids", [])
+
+    profile_cards = [
+        ("Balanced", "Stronger model grades with payout upside.", "#32f6a6"),
+        ("Longshot", "Bigger prices that still clear the minimum score.", "#ffd83d"),
+        ("Pipedream", "Extreme prices and intentionally low combined hit rate.", "#ff5f6d"),
+        ("Blend", "Choose exactly how many high-probability and long-price legs to mix.", "#ff4df2"),
+    ]
+    columns = st.columns(4)
+    for column, (name, description, color) in zip(columns, profile_cards):
         with column:
-            st.markdown(f'<div class="dd-parlay-mode" style="--accent:{colors[name]}"><b>{name}</b><span>{profile.description}</span></div>', unsafe_allow_html=True)
+            st.markdown(
+                f'<div class="dd-parlay-mode v15" style="--accent:{color}"><b>{name}</b><span>{description}</span></div>',
+                unsafe_allow_html=True,
+            )
 
-    mode = st.radio("Risk profile", list(PROFILES), horizontal=True, index=0)
+    mode = st.radio("Build style", [item[0] for item in profile_cards], horizontal=True, index=0)
     teams = sorted({str(player.get("team_name")) for player in rankings})
-    controls1 = st.columns([1, 1, 1, 1])
-    legs = controls1[0].slider("Legs", 2, 8, 3)
-    stake = controls1[1].number_input("Stake ($)", min_value=1.0, max_value=10000.0, value=10.0, step=5.0)
-    default_min = int(PROFILES[mode].min_score)
-    min_score = controls1[2].slider("Minimum Dinger Score", 0, 95, default_min)
-    selected_teams = controls1[3].multiselect("Team pool", teams, placeholder="All teams")
+    c1, c2, c3, c4 = st.columns([1, 1, 1, 1.5])
+    legs = c1.slider("Legs", 2, 8, 3)
+    stake = c2.number_input("Stake ($)", min_value=1.0, max_value=10000.0, value=10.0, step=5.0)
+    default_min = 55 if mode == "Blend" else int(PROFILES[mode].min_score)
+    min_score = c3.slider("Minimum Dinger Score", 0, 95, default_min)
+    selected_teams = c4.multiselect("Team pool", teams, placeholder="All teams")
 
-    controls2 = st.columns([1, 1, 2])
-    unique_teams = controls2[0].toggle("Max one player per team", value=True)
-    unique_games = controls2[1].toggle("Max one player per game", value=True)
-    lock_options = [int(player.get("player_id")) for player in rankings[:60] if player.get("player_id")]
-    locked = controls2[2].multiselect(
-        "Lock players before generating (optional)",
-        lock_options,
+    d1, d2, d3 = st.columns([1, 1, 2])
+    unique_teams = d1.toggle("Max one per team", value=True)
+    unique_games = d2.toggle("Max one per game", value=True)
+    longshot_legs = 0
+    if mode == "Blend":
+        longshot_legs = d3.slider("Long-price legs", 0, legs, max(1, legs // 2), help="The remaining legs come from the higher-probability anchor pool.")
+    else:
+        d3.markdown('<div class="dd-inline-note"><b>MODEL TIER ≠ BETTING PRICE</b><span>An Elite score never becomes a Longshot label just because its sportsbook price is large.</span></div>', unsafe_allow_html=True)
+
+    prelock_options = [int(player.get("player_id")) for player in rankings[:60] if player.get("player_id")]
+    prelocked = st.multiselect(
+        "Optional locks before the first build",
+        prelock_options,
         max_selections=legs,
-        format_func=lambda player_id: next(f"{player.get('player_name')} ({player.get('team_name')})" for player in rankings if int(player.get("player_id")) == player_id),
+        format_func=lambda pid: next(f"{p.get('player_name')} ({p.get('team_name')})" for p in rankings if int(p.get("player_id")) == pid),
     )
 
-    generate_column, reroll_column, clear_column = st.columns([1.4, 1, 1])
-    generate_clicked = generate_column.button("⚡ Generate Random Parlay", type="primary", use_container_width=True)
-    reroll_clicked = reroll_column.button("↻ Reroll", use_container_width=True)
-    clear_clicked = clear_column.button("Clear ticket", use_container_width=True)
+    generate_col, reroll_col, clear_col = st.columns([1.45, 1.25, 1])
+    generate_clicked = generate_col.button("⚡ Generate New Ticket", type="primary", use_container_width=True)
+    reroll_clicked = reroll_col.button("↻ Reroll Unlocked Legs", use_container_width=True, disabled=not bool(st.session_state.generated_parlay))
+    clear_clicked = clear_col.button("Clear Ticket", use_container_width=True)
+
     if clear_clicked:
         st.session_state.generated_parlay = []
+        st.session_state.parlay_locked_ids = []
         st.rerun()
 
+    current_ids = [int(value) for value in st.session_state.get("generated_parlay", [])]
+    current_locks = {int(value) for value in st.session_state.get("parlay_locked_ids", [])}
+    locked_ids = set(prelocked) if generate_clicked else current_locks
+
     if generate_clicked or reroll_clicked:
-        picks = generate_parlay(
-            rankings,
-            mode,
-            legs,
-            min_score_override=min_score,
-            selected_teams=set(selected_teams),
-            unique_teams=unique_teams,
-            unique_games=unique_games,
-            locked_player_ids=set(locked),
-            seed=secrets.randbits(32),
-        )
+        if mode == "Blend":
+            picks = generate_blended_parlay(
+                rankings,
+                legs,
+                longshot_legs,
+                min_score_override=min_score,
+                selected_teams=set(selected_teams),
+                unique_teams=unique_teams,
+                unique_games=unique_games,
+                locked_player_ids=locked_ids,
+                seed=secrets.randbits(32),
+            )
+        else:
+            picks = generate_parlay(
+                rankings,
+                mode,
+                legs,
+                min_score_override=min_score,
+                selected_teams=set(selected_teams),
+                unique_teams=unique_teams,
+                unique_games=unique_games,
+                locked_player_ids=locked_ids,
+                seed=secrets.randbits(32),
+            )
         st.session_state.generated_parlay = [int(player.get("player_id")) for player in picks if player.get("player_id")]
+        st.session_state.parlay_locked_ids = sorted(locked_ids & set(st.session_state.generated_parlay))
         st.session_state.generated_parlay_mode = mode
         st.session_state.generated_parlay_stake = stake
+        st.rerun()
 
-    selected_ids = st.session_state.get("generated_parlay", [])
-    picks = [player for player_id in selected_ids for player in rankings if int(player.get("player_id") or -1) == int(player_id)]
-    if picks:
-        active_mode = st.session_state.get("generated_parlay_mode", mode)
-        active_stake = float(st.session_state.get("generated_parlay_stake", stake))
-        decimal_odds = combined_decimal_odds(picks)
-        combined_probability = combined_model_probability(picks)
-        combined_american = decimal_to_american(decimal_odds)
-        profit, total_return = potential_return(decimal_odds, active_stake)
-        st.markdown(
-            parlay_ticket_html(picks, active_mode, combined_probability, combined_american, decimal_odds, active_stake, profit, total_return),
-            unsafe_allow_html=True,
-        )
+    selected_ids = [int(value) for value in st.session_state.get("generated_parlay", [])]
+    picks = [next((p for p in rankings if int(p.get("player_id") or -1) == player_id), None) for player_id in selected_ids]
+    picks = [p for p in picks if p]
+    if not picks:
+        st.markdown('<div class="dd-empty">Choose a build style and generate a ticket. After it appears, lock the legs you want to keep and reroll everything else.</div>', unsafe_allow_html=True)
+        return
 
-        if len(picks) < legs:
-            st.warning(f"Only {len(picks)} eligible legs were available with the current restrictions. Relax team/game uniqueness or lower the minimum score.")
-        if active_mode == "Pipedream":
-            st.markdown('<div class="dd-disclaimer"><strong>PIPEDREAM MODE:</strong> This intentionally favors extreme prices and low hit probability. The payout can be enormous because the chance of the entire ticket hitting is very small.</div>', unsafe_allow_html=True)
-        else:
-            st.markdown('<div class="dd-disclaimer">Combined estimates assume independent outcomes. Connected sportsbook prices are used when available; model fair odds fill any missing legs. Treat this as research, not a guarantee.</div>', unsafe_allow_html=True)
+    active_mode = str(st.session_state.get("generated_parlay_mode", mode))
+    active_stake = float(st.session_state.get("generated_parlay_stake", stake))
+    decimal_odds = combined_decimal_odds(picks)
+    combined_probability = combined_model_probability(picks)
+    combined_american = decimal_to_american(decimal_odds)
+    profit, total_return = potential_return(decimal_odds, active_stake)
+    st.markdown(
+        parlay_ticket_html(picks, active_mode, combined_probability, combined_american, decimal_odds, active_stake, profit, total_return),
+        unsafe_allow_html=True,
+    )
 
-        export = pd.DataFrame([
-            {
-                "Profile": active_mode,
-                "Player": player.get("player_name"),
-                "Team": player.get("team_name"),
-                "Opponent": player.get("opponent"),
-                "Dinger Score": player.get("dinger_score"),
-                "HR Probability": percent(player.get("probability")),
-                "Best Book": player.get("best_book") or "Model",
-                "Best/Model Odds": odds(player.get("best_odds")) if player.get("best_odds") is not None else odds(player.get("fair_odds")),
-                "Edge %": player.get("edge_pct"),
-                "Season HR": player.get("season_home_runs"),
-                "Last 7 HR": player.get("last_7_home_runs"),
-                "Last 30 HR": player.get("last_30_home_runs"),
-            }
-            for player in picks
-        ])
-        st.download_button("Download this ticket", export.to_csv(index=False).encode("utf-8"), f"{active_mode.lower()}_hr_parlay_{board.get('date','today')}.csv", "text/csv", use_container_width=True)
-    else:
-        st.markdown('<div class="dd-empty">Choose a profile and click Generate Random Parlay. Use locks and filters to control the chaos.</div>', unsafe_allow_html=True)
+    section("Lock Individual Legs", "KEEP WHAT YOU LIKE", "Checked players survive the next reroll")
+    lock_columns = st.columns(min(4, len(picks)))
+    new_locks: list[int] = []
+    for index, player in enumerate(picks):
+        player_id = int(player.get("player_id") or -1)
+        with lock_columns[index % len(lock_columns)]:
+            checked = st.checkbox(
+                f"🔒 {player.get('player_name')}",
+                value=player_id in set(st.session_state.get("parlay_locked_ids", [])),
+                key=f"post_lock_{player_id}",
+                help="Keep this player when you click Reroll Unlocked Legs.",
+            )
+            if checked:
+                new_locks.append(player_id)
+    st.session_state.parlay_locked_ids = new_locks
 
-    with st.expander("Manual parlay builder"):
-        names = [str(player.get("player_name")) for player in rankings[:80]]
-        manual = st.multiselect("Choose 2 to 8 hitters", names, max_selections=8)
-        if len(manual) >= 2:
-            manual_players = [next(player for player in rankings if player.get("player_name") == name) for name in manual]
-            decimal_odds = combined_decimal_odds(manual_players)
-            model_probability = combined_model_probability(manual_players)
-            american = decimal_to_american(decimal_odds)
-            profit, total_return = potential_return(decimal_odds, stake)
-            st.markdown(parlay_ticket_html(manual_players, "Custom", model_probability, american, decimal_odds, stake, profit, total_return), unsafe_allow_html=True)
+    if len(picks) < legs:
+        st.warning(f"Only {len(picks)} eligible legs were available. Relax team/game uniqueness or lower the minimum score.")
+    st.markdown(
+        '<div class="dd-disclaimer"><strong>MODEL NOTE:</strong> Combined estimates assume independent outcomes. Sportsbook prices are used when connected; model fair odds fill missing prices. This is research, not a guarantee.</div>',
+        unsafe_allow_html=True,
+    )
 
+    export = pd.DataFrame([
+        {
+            "Profile": active_mode,
+            "Locked": int(player.get("player_id") or -1) in new_locks,
+            "Player": player.get("player_name"),
+            "Team": player.get("team_name"),
+            "Opponent": player.get("opponent"),
+            "Projected Pitcher": player.get("opposing_pitcher"),
+            "Dinger Score": player.get("dinger_score"),
+            "HR Probability": percent(player.get("probability")),
+            "Best Book": player.get("best_book") or "Model",
+            "Best/Model Odds": odds(player.get("best_odds")) if player.get("best_odds") is not None else odds(player.get("fair_odds")),
+        }
+        for player in picks
+    ])
+    st.download_button(
+        "Download This Ticket",
+        export.to_csv(index=False).encode("utf-8"),
+        f"{active_mode.lower()}_hr_parlay_{board.get('date','today')}.csv",
+        "text/csv",
+        use_container_width=True,
+    )
 
 def sportsbook_odds(board: dict) -> None:
     from services.odds import ODDS_FILE, template_csv, write_uploaded_odds
@@ -347,35 +416,39 @@ def sportsbook_odds(board: dict) -> None:
         st.info("The connection is automatic. When the books return MLB home-run props, they will appear here when the page loads. Empty results retry automatically; no PowerShell commands or button press are needed.")
         return
 
-    section("Best Value Edges", "MODEL VS MARKET", "Positive edge means the model probability is higher than the sportsbook implied probability")
+    section("Best Value Edges", "DRAFTKINGS + FANDUEL", "Compare both books against the same model probability")
     rows = []
     for player in sorted(priced, key=lambda p: safe_float(p.get("edge_pct")), reverse=True):
+        offers = {str(offer.get("book") or "").lower(): offer for offer in (player.get("sportsbook_offers") or [])}
+        draftkings = next((offer for book, offer in offers.items() if "draft" in book), {})
+        fanduel = next((offer for book, offer in offers.items() if "fanduel" in book or "fan duel" in book), {})
         rows.append({
             "Player": player.get("player_name"),
             "Team": player.get("team_name"),
-            "Opponent": player.get("opponent"),
-            "Book": player.get("best_book"),
+            "Pitcher": player.get("opposing_pitcher") or "Not announced",
+            "DraftKings": draftkings.get("american_odds"),
+            "FanDuel": fanduel.get("american_odds"),
+            "Best Book": player.get("best_book"),
             "Best Odds": player.get("best_odds"),
-            "Model Probability": probability_fraction(player.get("probability")),
-            "Book Implied Probability": safe_float(player.get("book_implied_probability")),
+            "Model Probability": probability_fraction(player.get("probability")) * 100,
+            "Book Implied Probability": safe_float(player.get("book_implied_probability")) * 100,
             "Edge %": safe_float(player.get("edge_pct")),
             "EV per $10": safe_float(player.get("ev_10")),
             "Dinger Score": safe_float(player.get("dinger_score")),
         })
     frame = pd.DataFrame(rows)
-    st.dataframe(
-        frame,
-        use_container_width=True,
-        hide_index=True,
-        column_config={
-            "Best Odds": st.column_config.NumberColumn(format="%+.0f"),
-            "Model Probability": st.column_config.ProgressColumn(format="%.1f%%", min_value=0, max_value=1),
-            "Book Implied Probability": st.column_config.ProgressColumn(format="%.1f%%", min_value=0, max_value=1),
-            "Edge %": st.column_config.NumberColumn(format="%+.1f%%"),
-            "EV per $10": st.column_config.NumberColumn(format="$%+.2f"),
-            "Dinger Score": st.column_config.NumberColumn(format="%.1f"),
-        },
-    )
+    odds_columns = [
+        Column("Player", "Player", width="1.3fr"),
+        Column("Team", "Team", width=".5fr", align="center"),
+        Column("Pitcher", "Projected Pitcher", width="1.2fr"),
+        Column("DraftKings", "DraftKings", formatter=lambda v, r: f'<b style="color:#35f29a">{odds(v)}</b>' if v is not None else '<b>—</b>', width=".75fr", align="center"),
+        Column("FanDuel", "FanDuel", formatter=lambda v, r: f'<b style="color:#ff4df2">{odds(v)}</b>' if v is not None else '<b>—</b>', width=".75fr", align="center"),
+        Column("Model Probability", "Model HR", progress_max=35, accent="#27c7ff", width="1.05fr"),
+        Column("Book Implied Probability", "Book Implied", progress_max=35, accent="#ffd83d", width="1.05fr"),
+        Column("Edge %", "Edge", formatter=lambda v, r: f'<b style="color:{"#35f29a" if safe_float(v)>0 else "#ff5f6d"}">{safe_float(v):+.1f}%</b>', width=".65fr", align="center"),
+        Column("Dinger Score", "Score", progress_max=100, accent="#a85cff", width="1fr"),
+    ]
+    render_neon_table(rows, odds_columns, key="sportsbook_edges", max_height=650)
     st.download_button(
         "Export matched odds and value edges",
         frame.to_csv(index=False).encode("utf-8"),
@@ -384,6 +457,97 @@ def sportsbook_odds(board: dict) -> None:
         use_container_width=True,
     )
 
+
+def game_sims(board: dict) -> None:
+    from services.game_simulator import build_game_sims
+
+    hero(
+        "GAME <span>SIMS</span>",
+        "Run 5,000 deterministic matchup simulations using live MLB team production, the connected hitter board, and projected-pitcher adjustments.",
+        stats={"Simulations / Game": "5,000", "Games": board.get("games", 0), "Outputs": "Runs • Hits • HR • K • SB"},
+    )
+    with st.spinner("Running the game simulation engine..."):
+        sims = build_game_sims(board, iterations=5000)
+    if not sims:
+        st.info("Game simulations are waiting for valid matchup and team data.")
+        return
+
+    game_labels = {
+        sim["game_key"]: f'{sim["away"]} at {sim["home"]} • {sim["projected_score"]}'
+        for sim in sims
+    }
+    selected_key = st.selectbox(
+        "Choose a simulated game",
+        [sim["game_key"] for sim in sims],
+        format_func=lambda key: game_labels.get(key, key),
+    )
+    selected = next(sim for sim in sims if sim["game_key"] == selected_key)
+
+    team_panels: list[str] = []
+    for team, opponent, side in (
+        (selected["away"], selected["home"], "AWAY"),
+        (selected["home"], selected["away"], "HOME"),
+    ):
+        metrics = selected["teams"][team]
+        team_id = selected["away_id"] if side == "AWAY" else selected["home_id"]
+        logo = f'<img src="{team_logo(team_id)}" alt="{esc(team)}">' if team_id else ""
+        team_panels.append(
+            f'''
+<section class="dd-sim-team dd-sim-{side.lower()}">
+  <div class="dd-sim-team-head">{logo}<div><small>{side}</small><b>{esc(team)}</b><span>vs {esc(opponent)}</span></div></div>
+  <div class="dd-sim-score"><b>{safe_float(metrics.get('projected_runs')):.1f}</b><span>Projected Runs</span></div>
+  <div class="dd-sim-win"><div class="dd-sim-win-track"><i style="width:{safe_float(metrics.get('win_probability'))*100:.1f}%"></i></div><b>{safe_float(metrics.get('win_probability'))*100:.1f}% WIN</b></div>
+  <div class="dd-sim-stat-grid">
+    <div><b>{safe_float(metrics.get('projected_hits')):.1f}</b><span>Hits</span></div>
+    <div><b>{safe_float(metrics.get('projected_hr')):.1f}</b><span>Home Runs</span></div>
+    <div><b>{safe_float(metrics.get('projected_so')):.1f}</b><span>Strikeouts</span></div>
+    <div><b>{safe_float(metrics.get('projected_sb')):.1f}</b><span>Stolen Bases</span></div>
+  </div>
+  <div class="dd-sim-source">{esc(metrics.get('source') or 'Model baseline')}</div>
+</section>'''
+        )
+
+    st.markdown(
+        '<div class="dd-sim-matchup">'
+        + team_panels[0]
+        + '<div class="dd-sim-center"><small>PROJECTED FINAL</small><b>'
+        + esc(selected["projected_score"])
+        + '</b><span>5,000 model simulations</span></div>'
+        + team_panels[1]
+        + '</div>',
+        unsafe_allow_html=True,
+    )
+
+    section("Full Slate Simulation Board", "RUNS • HITS • HR • K • SB", "Sorted by combined projected home runs")
+    rows: list[dict] = []
+    for sim in sims:
+        away_metrics = sim["teams"][sim["away"]]
+        home_metrics = sim["teams"][sim["home"]]
+        rows.append({
+            "Game": f'{sim["away"]} @ {sim["home"]}',
+            "Projected Score": sim["projected_score"],
+            "Away Win": safe_float(away_metrics.get("win_probability")) * 100,
+            "Home Win": safe_float(home_metrics.get("win_probability")) * 100,
+            "Hits": safe_float(away_metrics.get("projected_hits")) + safe_float(home_metrics.get("projected_hits")),
+            "Home Runs": safe_float(away_metrics.get("projected_hr")) + safe_float(home_metrics.get("projected_hr")),
+            "Strikeouts": safe_float(away_metrics.get("projected_so")) + safe_float(home_metrics.get("projected_so")),
+            "Stolen Bases": safe_float(away_metrics.get("projected_sb")) + safe_float(home_metrics.get("projected_sb")),
+        })
+    sim_columns = [
+        Column("Game", "Matchup", width="1.1fr"),
+        Column("Projected Score", "Projected Score", width="1.4fr"),
+        Column("Away Win", "Away Win", progress_max=100, accent="#27c7ff", width="1fr"),
+        Column("Home Win", "Home Win", progress_max=100, accent="#ff4df2", width="1fr"),
+        Column("Hits", "Total Hits", progress_max=24, accent="#35f29a", width="1fr"),
+        Column("Home Runs", "Total HR", progress_max=6, accent="#ffd83d", width="1fr"),
+        Column("Strikeouts", "Total K", progress_max=24, accent="#a85cff", width="1fr"),
+        Column("Stolen Bases", "Total SB", progress_max=5, accent="#ff5f6d", width="1fr"),
+    ]
+    render_neon_table(rows, sim_columns, key="game_sims_full_slate", max_height=600)
+    st.markdown(
+        '<div class="dd-disclaimer"><strong>SIMULATION NOTE:</strong> These are model estimates, not sportsbook lines. Team season stats, connected hitter projections, and available probable-pitcher data are used; missing inputs fall back to league-average assumptions.</div>',
+        unsafe_allow_html=True,
+    )
 
 def _field_zone_values(player: dict) -> tuple[int, int, int]:
     impact = safe_float(player.get("weather_impact"))
@@ -458,12 +622,15 @@ def weather_center(board: dict) -> None:
     hero(
         "BALLPARK <span>WEATHER COMMAND</span>",
         "Original stadium-specific wind intelligence showing where the air is helping or suppressing home-run carry in left, center, and right field.",
-        stats={"Games Connected": len(game_weather), "Slate": board.get("date", ""), "Source": "Open-Meteo"},
+        stats={"Games Connected": len(game_weather), "Slate": board.get("date", ""), "Source": ", ".join((board.get("weather_summary") or {}).get("providers") or ["NWS / WeatherAPI"])},
     )
     if not game_weather:
         summary = board.get("weather_summary", {}) or {}
         errors = summary.get("errors", []) or []
-        st.info("No connected outdoor weather games are available for this slate.")
+        st.markdown(
+            '<div class="dd-weather-setup"><b>WEATHER FEED NEEDS A PRIMARY PROVIDER</b><span>Add <code>WEATHERAPI_KEY</code> in Streamlit Secrets for reliable weather at every MLB park. The app will then fall back to Visual Crossing and the National Weather Service automatically.</span></div>',
+            unsafe_allow_html=True,
+        )
         if errors:
             with st.expander("Weather connection details"):
                 for error in errors:
@@ -496,4 +663,17 @@ def weather_center(board: dict) -> None:
             "RF": rf,
             "Dinger Score": safe_float(player.get("dinger_score")),
         })
-    st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+    weather_columns = [
+        Column("Player", "Player", width="1.25fr"),
+        Column("Team", "Team", width=".5fr", align="center"),
+        Column("Ballpark", "Ballpark", width="1.25fr"),
+        Column("Weather Grade", "Grade", width=".55fr", align="center"),
+        Column("HR Impact", "HR Impact", formatter=lambda v, r: f'<b style="color:{"#35f29a" if safe_float(v)>=0 else "#ff5f6d"}">{safe_float(v):+.1f}</b>', width=".7fr", align="center"),
+        Column("Temperature", "Temp", formatter=lambda v, r: f'<b>{safe_float(v):.0f}°F</b>', width=".65fr", align="center"),
+        Column("Wind MPH", "Wind", formatter=lambda v, r: f'<b>{safe_float(v):.0f} mph</b>', width=".65fr", align="center"),
+        Column("LF", "LF", formatter=lambda v, r: f'<b style="color:{"#35f29a" if safe_float(v)>=0 else "#ff5f6d"}">{safe_float(v):+.0f}%</b>', width=".55fr", align="center"),
+        Column("CF", "CF", formatter=lambda v, r: f'<b style="color:{"#35f29a" if safe_float(v)>=0 else "#ff5f6d"}">{safe_float(v):+.0f}%</b>', width=".55fr", align="center"),
+        Column("RF", "RF", formatter=lambda v, r: f'<b style="color:{"#35f29a" if safe_float(v)>=0 else "#ff5f6d"}">{safe_float(v):+.0f}%</b>', width=".55fr", align="center"),
+        Column("Dinger Score", "Score", progress_max=100, accent="#ff4df2", width="1fr"),
+    ]
+    render_neon_table(rows, weather_columns, key="weather_adjusted_board", max_height=650)

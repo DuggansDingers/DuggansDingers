@@ -23,7 +23,7 @@ def render(board: dict) -> None:
     query = f1.text_input("Search player", placeholder="Type a player name...")
     selected_teams = f2.multiselect("Teams", teams)
     min_score = f3.slider("Min score", 0, 100, 0)
-    risk_filters = f4.multiselect("Profile", ["Prime", "Strong", "Longshot", "Pipedream"])
+    risk_filters = f4.multiselect("Profile", ["Elite", "Premium", "Strong", "Upside", "Speculative"])
     sort_by = f5.selectbox("Sort by", ["Dinger Score", "HR Probability", "Best Sportsbook Odds", "Model Edge", "EV per $10", "Fair Odds", "Season HR", "Last 7 HR", "Last 30 HR", "OPS"])
 
     filtered = []

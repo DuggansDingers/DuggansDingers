@@ -7,7 +7,7 @@ import pandas as pd
 import streamlit as st
 
 
-NEON = ["#20c5ff", "#a65cff", "#35f083", "#ffd23f", "#ff4d6d", "#00f0ff"]
+NEON = ["#27c7ff", "#ff4df2", "#35f29a", "#ffd83d", "#a85cff", "#ff5f6d"]
 
 
 def _prepare(data: pd.DataFrame) -> tuple[pd.DataFrame, str, list[str]]:
@@ -28,20 +28,21 @@ def _style(chart: alt.Chart) -> alt.Chart:
         .configure(background="transparent")
         .configure_view(stroke="#173b58", strokeWidth=1, fill="#06111b")
         .configure_axis(
-            labelColor="#8fa9bd",
-            titleColor="#62c9ff",
+            labelColor="#c8efff",
+            titleColor="#ffd83d",
             gridColor="#183149",
             domainColor="#29506c",
             tickColor="#29506c",
             labelFont="Inter",
             titleFont="Inter",
             labelFontSize=11,
+            labelFontWeight=700,
             titleFontSize=11,
-            titleFontWeight=700,
+            titleFontWeight=800,
         )
         .configure_legend(
             labelColor="#b8cad8",
-            titleColor="#62c9ff",
+            titleColor="#ffd83d",
             orient="top",
             direction="horizontal",
             padding=8,

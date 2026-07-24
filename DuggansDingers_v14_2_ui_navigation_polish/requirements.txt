@@ -6,3 +6,5 @@ python-dotenv>=1.0
 pybaseball>=2.2.7
 
 altair>=5.4
+
+numpy>=1.26

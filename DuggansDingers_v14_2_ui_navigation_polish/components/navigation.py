@@ -31,6 +31,11 @@ NAV_ITEMS = [
         "icon": """<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/><circle cx="12" cy="12" r="4"/><path d="M6.5 19h10.8a3.2 3.2 0 0 0 .1-6.4A5.6 5.6 0 0 0 6.7 14 2.5 2.5 0 0 0 6.5 19Z"/></svg>""",
     },
     {
+        "page": "Game Sims",
+        "slug": "game-sims",
+        "icon": """<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17V9l8-5 8 5v8l-8 5Z"/><path d="m4 9 8 5 8-5M12 14v8"/><circle cx="12" cy="9" r="2"/></svg>""",
+    },
+    {
         "page": "Sportsbook",
         "slug": "sportsbook",
         "icon": """<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M14.7 8.2c-.6-.7-1.5-1-2.7-1-1.7 0-2.8.8-2.8 2s1 1.8 2.9 2.2c1.9.4 2.8 1 2.8 2.3s-1.2 2.2-3 2.2c-1.4 0-2.5-.4-3.2-1.3M12 5.5v13"/></svg>""",

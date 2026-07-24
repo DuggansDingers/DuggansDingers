@@ -69,7 +69,7 @@ def sportsbook_price(player: dict[str, Any]) -> str:
     book = esc(player.get("best_book") or "Book")
     edge = player.get("edge_pct")
     edge_text = f"{safe_float(edge):+.1f}% edge" if edge is not None else ""
-    color = "#35e27e" if edge is not None and safe_float(edge) > 0 else "#ffbd2f" if edge is not None else "#91a6bc"
+    color = "#35e27e" if edge is not None and safe_float(edge) > 0 else "#ffbd2f" if edge is not None else "#c7efff"
     return f'<span class="dd-book-price">{odds(player.get("best_odds"))}<small>{book}</small><em style="color:{color}">{edge_text}</em></span>'
 
 def sportsbook_badge(player: dict[str, Any]) -> str:
@@ -119,19 +119,25 @@ def score_color(score: float) -> str:
         return "#a64dff"
     if score >= 68:
         return "#258eff"
-    return "#7f95ad"
+    return "#9edcff"
 
 
 def risk_label(player: dict[str, Any]) -> tuple[str, str]:
-    probability = probability_fraction(player.get("probability"))
+    """Return a model tier that cannot contradict the Dinger Score.
+
+    Betting price and model quality are intentionally separate concepts. A high
+    score is never labeled a longshot simply because the sportsbook price is big.
+    """
     score = safe_float(player.get("dinger_score"))
-    if probability >= 0.30 and score >= 82:
-        return "Prime", "#35e27e"
-    if probability >= 0.22 and score >= 70:
-        return "Strong", "#2f9fff"
-    if probability >= 0.15:
-        return "Longshot", "#ffbd2f"
-    return "Pipedream", "#ff6534"
+    if score >= 85:
+        return "Elite", "#ff4df2"
+    if score >= 78:
+        return "Premium", "#a85cff"
+    if score >= 70:
+        return "Strong", "#2fffc1"
+    if score >= 60:
+        return "Upside", "#ffd83d"
+    return "Speculative", "#ff6b57"
 
 
 def trend_label(player: dict[str, Any]) -> tuple[str, str]:
@@ -143,7 +149,7 @@ def trend_label(player: dict[str, Any]) -> tuple[str, str]:
     if seven > season and safe_int(player.get("last_7_home_runs")) > 0:
         return "UP", "#35e27e"
     if season > 0 and seven <= season * 0.55:
-        return "COOL", "#7890aa"
+        return "COOL", "#ff7bba"
     return "STEADY", "#2f9fff"
 
 
@@ -174,7 +180,7 @@ def source_ribbon(board: dict[str, Any]) -> None:
     st.markdown(
         f'''
 <div class="dd-alert-ribbon">
-  <div><strong>MODEL BOARD</strong> • Ballpark Pal projection + MLB rolling power history. Connected data only—live Open-Meteo weather and imported sportsbook prices when available; no fake values.</div>
+  <div><strong>MODEL BOARD</strong> • Ballpark Pal projection + MLB rolling power history. Connected data only—multi-provider live weather and imported sportsbook prices when available; no fake values.</div>
   <div class="dd-source-pills">{pills}</div>
 </div>''',
         unsafe_allow_html=True,
@@ -233,7 +239,7 @@ def feature_grid_html(cards: list[dict[str, Any]]) -> str:
 def _sparkline(player: dict[str, Any], color: str) -> str:
     series = player.get("recent_game_hr_series") or []
     if not series:
-        return '<span style="color:#6f849a">—</span>'
+        return '<span style="color:#9edcff">—</span>'
     bars = []
     for value in series[-12:]:
         height = 5 if safe_int(value) == 0 else min(30, 16 + safe_int(value) * 8)
@@ -314,7 +320,7 @@ def player_card_html(player: dict[str, Any], rank: int | None = None) -> str:
     <div class="dd-card-stat"><b>{safe_int(player.get('last_30_home_runs'))}</b><span>Last 30</span></div>
     <div class="dd-card-stat"><b>{decimal_stat(player.get('season_slg'))}</b><span>SLG</span></div>
   </div>
-  <div class="dd-card-footer"><span>{rank_html} Overall #{safe_int(player.get('overall_rank'))}</span><span style="color:{trend_color};font-weight:900">{trend}</span><span style="color:{'#35e27e' if safe_float(player.get('edge_pct')) > 0 else '#91a6bc'};font-weight:900">{safe_float(player.get('edge_pct')):+.1f}% EDGE</span><span class="dd-risk-chip" style="--accent:{risk_color}">{risk}</span></div>
+  <div class="dd-card-footer"><span>{rank_html} Overall #{safe_int(player.get('overall_rank'))}</span><span style="color:{trend_color};font-weight:900">{trend}</span><span style="color:{'#35e27e' if safe_float(player.get('edge_pct')) > 0 else '#c7efff'};font-weight:900">{safe_float(player.get('edge_pct')):+.1f}% EDGE</span><span class="dd-risk-chip" style="--accent:{risk_color}">{risk}</span></div>
 </div>'''
 
 
@@ -336,14 +342,15 @@ def stadium_background(team: str) -> str:
 
 
 def grade(score: float) -> tuple[str, str]:
-    if score >= 90:
-        return "ELITE", "#37e29a"
-    if score >= 80:
-        return "STRONG", "#44d8ff"
+    if score >= 85:
+        return "ELITE", "#ff4df2"
+    if score >= 78:
+        return "PREMIUM", "#a85cff"
     if score >= 70:
-        return "WATCH", "#ffd05c"
-    return "LONGSHOT", "#ff8a28"
-
+        return "STRONG", "#2fffc1"
+    if score >= 60:
+        return "UPSIDE", "#ffd83d"
+    return "SPECULATIVE", "#ff6b57"
 
 def profile_banner(player: dict[str, Any]) -> None:
     team = str(player.get("team_name") or "N/A")
@@ -374,38 +381,19 @@ def section(title: str, kicker: str = "", trailing: str = "") -> None:
 
 
 def player_reasons(player: dict[str, Any]) -> list[str]:
-    reasons: list[str] = []
-    score = safe_float(player.get("dinger_score"))
-    seven = safe_float(player.get("last_7_hr_rate"))
-    thirty = safe_float(player.get("last_30_hr_rate"))
-    season = safe_float(player.get("season_hr_rate"))
-    if score >= 88:
-        reasons.append("Elite combination of projection and historical power")
-    elif score >= 76:
-        reasons.append("Strong overall model profile relative to today's board")
-    if seven > max(season, thirty) and safe_int(player.get("last_7_home_runs")) > 0:
-        reasons.append("Seven-game home-run pace is running above longer windows")
-    if safe_int(player.get("last_30_home_runs")) >= 5:
-        reasons.append("Sustained power across the last 30 games")
-    if safe_float(player.get("season_slg")) >= 0.500:
-        reasons.append("Season slugging profile supports real extra-base power")
-    if probability_fraction(player.get("probability")) >= 0.25:
-        reasons.append("Top-tier home-run probability on the current slate")
-    if safe_float(player.get("fair_odds")) >= 350 and score >= 65:
-        reasons.append("High-payout price while retaining a usable model grade")
+    reasons = [str(item) for item in (player.get("projection_reasons") or []) if item]
     if player.get("weather_available") and safe_float(player.get("weather_impact")) >= 3:
-        reasons.append(f"Favorable game-time weather ({player.get('weather_grade','—')}) with {weather_badge(player)}")
+        reasons.append(f"Weather boost: {weather_badge(player)}")
     elif player.get("weather_available") and safe_float(player.get("weather_impact")) <= -3:
-        reasons.append(f"Weather is a meaningful power penalty: {weather_badge(player)}")
+        reasons.append(f"Weather penalty: {weather_badge(player)}")
     if not reasons:
-        reasons.append("Balanced projection, season power, and recent form")
+        reasons.append("Projection, recent power, and season power support the ranking")
     return reasons[:5]
-
 
 def hero(title: str, subtitle: str, eyebrow: str = "MLB HOME RUN INTELLIGENCE", stats: dict[str, Any] | None = None) -> None:
     stats = stats or {}
     stats_html = "".join(
-        f'<div style="min-width:92px;padding:9px 11px;border:1px solid #174e80;border-radius:7px;background:#06182b"><div style="font-size:.61rem;text-transform:uppercase;color:#8fa5bf;font-weight:800">{esc(key)}</div><div style="font-family:Barlow Condensed,sans-serif;font-size:1.22rem;font-weight:900;color:#fff">{esc(value)}</div></div>'
+        f'<div style="min-width:92px;padding:9px 11px;border:1px solid #174e80;border-radius:7px;background:#06182b"><div style="font-size:.61rem;text-transform:uppercase;color:#c7efff;font-weight:800">{esc(key)}</div><div style="font-family:Barlow Condensed,sans-serif;font-size:1.22rem;font-weight:900;color:#fff">{esc(value)}</div></div>'
         for key, value in stats.items()
     )
     st.markdown(
@@ -468,7 +456,7 @@ def parlay_ticket_html(
     american_text = f"+{combined_american:.0f}" if combined_american >= 0 else f"{combined_american:.0f}"
     return f'''
 <div class="dd-parlay-ticket" style="--accent:{accent}">
-  <div class="dd-ticket-head"><div><b>{esc(profile)} Random Dinger Parlay</b><div style="color:#91a6bc;font-size:.68rem">Model-generated combination • {len(picks)} legs</div></div><div style="font-family:Barlow Condensed,sans-serif;font-size:1.65rem;font-weight:900;color:{accent}">{american_text}</div></div>
+  <div class="dd-ticket-head"><div><b>{esc(profile)} Random Dinger Parlay</b><div style="color:#c7efff;font-size:.68rem">Model-generated combination • {len(picks)} legs</div></div><div style="font-family:Barlow Condensed,sans-serif;font-size:1.65rem;font-weight:900;color:{accent}">{american_text}</div></div>
   {''.join(legs)}
   <div class="dd-ticket-summary">
     <div><b>{combined_probability*100:.3f}%</b><span>Est. Hit Rate</span></div>
