@@ -1,0 +1,204 @@
+
+/* ============================================================
+   V20 DATA + UI FIXES
+   ============================================================ */
+
+/* Global readability */
+html,body,[class*="css"]{font-size:16px!important}
+.stApp{background:
+  radial-gradient(circle at 75% -10%,rgba(31,84,160,.20),transparent 34%),
+  radial-gradient(circle at 5% 30%,rgba(131,47,183,.11),transparent 28%),
+  linear-gradient(135deg,#06111f 0%,#081828 45%,#0a1730 100%)!important}
+.block-container{padding-top:.7rem!important}
+label,[data-testid="stWidgetLabel"] p{color:#f3fbff!important;font-weight:900!important;font-size:.9rem!important}
+input,textarea,[data-baseweb="select"]>div,[data-baseweb="base-input"]{color:#fff!important;font-weight:800!important}
+[data-baseweb="popover"]{background:#071827!important}
+[data-baseweb="menu"]{background:#071827!important;border:1px solid #2676a6!important}
+[data-baseweb="menu"] li{background:#071827!important;color:#fff!important;font-size:.95rem!important;font-weight:800!important}
+[data-baseweb="menu"] li:hover{background:#0d3857!important;color:#6ee2ff!important}
+[data-baseweb="select"] svg{color:#55d8ff!important}
+
+/* Ranking cards: eliminate absolute-position overlap */
+.dd-rank-card-grid{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:14px!important}
+.dd20-rank-card{display:flex!important;flex-direction:column!important;min-height:360px!important;padding:10px!important;overflow:hidden!important}
+.dd20-rank-top{display:flex!important;align-items:center!important;gap:9px!important;min-height:30px!important}
+.dd20-rank-card .dd-rank-card-number{position:static!important;flex:0 0 27px!important;width:27px!important;height:27px!important;font-size:.78rem!important}
+.dd20-rank-card .dd-rank-card-label{position:static!important;display:block!important;font-size:1rem!important;line-height:1!important}
+.dd20-rank-player{display:grid!important;grid-template-columns:96px 1fr!important;align-items:center!important;gap:8px!important;min-height:122px!important;margin-top:5px!important}
+.dd20-rank-card .dd-rank-card-photo{position:static!important;width:96px!important;height:120px!important;object-fit:contain!important;align-self:end!important}
+.dd20-rank-identity h3{margin:0 0 7px!important;color:#fff!important;font-family:'Oswald',sans-serif!important;font-size:1.13rem!important;line-height:1.05!important}
+.dd20-rank-card .dd-rank-card-team{font-size:.78rem!important}
+.dd20-rank-card .dd-rank-card-team img{width:27px!important;height:27px!important}
+.dd20-rank-card .dd-rank-card-numbers{display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important;margin:3px 0 7px!important}
+.dd20-rank-card .dd-rank-card-numbers b{font-size:1.55rem!important;line-height:.95!important}
+.dd20-rank-card .dd-rank-card-numbers small{font-size:.62rem!important;margin-top:5px!important}
+.dd20-weather-badge{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:8px!important;min-height:30px!important;padding:5px 7px!important;border:1px solid #2a566f!important;border-radius:5px!important;background:#061624!important}
+.dd20-weather-badge span{color:#85d9fa!important;font-size:.61rem!important;font-weight:900!important}
+.dd20-weather-badge b{color:#ffd65c!important;font-size:.7rem!important;text-align:right!important}
+.dd20-weather-badge.live{border-color:#1f8e6e!important;background:linear-gradient(90deg,rgba(22,116,84,.18),#061624)!important}
+.dd20-weather-badge.live b{color:#48f0a3!important}
+.dd20-rank-card .dd-rank-card-pitcher{position:static!important;margin-top:7px!important;padding:7px 8px!important;min-height:56px!important}
+.dd20-rank-card .dd-rank-card-pitcher span{font-size:.61rem!important}
+.dd20-rank-card .dd-rank-card-pitcher strong{font-size:.8rem!important;white-space:normal!important;line-height:1.1!important}
+.dd20-rank-card .dd-rank-card-pitcher small{font-size:.66rem!important}
+.dd20-rank-card ul{position:static!important;margin:8px 0 0!important;padding:7px 7px 0!important;border-top:1px solid rgba(72,145,187,.26)!important;list-style:none!important}
+.dd20-rank-card li{font-size:.7rem!important;line-height:1.2!important;white-space:normal!important;margin:4px 0!important;color:#f3fbff!important;font-weight:800!important}
+.dd20-rank-card li:before{content:'•';color:var(--card-accent);margin-right:6px}
+.dd20-profile-link{color:inherit!important;text-decoration:none!important}
+.dd20-profile-link:hover b{color:#5de0ff!important;text-shadow:0 0 8px rgba(56,194,255,.6)!important}
+.dd20-weather-table{display:inline-flex;min-width:48px;justify-content:center;padding:4px 7px;border-radius:5px;font-size:.82rem}
+.dd20-weather-table.good{color:#47f4a4;background:rgba(35,180,121,.13);border:1px solid #268d6a}
+.dd20-weather-table.neutral{color:#58d4ff;background:rgba(45,154,211,.11);border:1px solid #246a91}
+.dd20-weather-table.bad{color:#ff6d7a;background:rgba(211,62,86,.11);border:1px solid #8c3347}
+
+/* Weather badge on homepage cards */
+.dd20-home-weather{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:8px!important;padding:5px 8px!important;border-top:1px solid rgba(70,147,191,.24)!important;border-bottom:1px solid rgba(70,147,191,.24)!important;background:rgba(6,24,39,.75)!important}
+.dd20-home-weather span{font-size:.58rem!important;color:#72d4ff!important;font-weight:900!important}
+.dd20-home-weather b{font-size:.66rem!important;color:#4cf2a6!important;text-align:right!important}
+
+/* Team sheets: readable two-column layout and self-explaining form charts */
+.dd20-team-title h1{font-size:3.1rem!important}
+.dd20-team-title p{font-size:1rem!important}
+.dd20-team-sheet{min-width:0!important}
+.dd20-team-sheet .dd-v18-team-brand{min-height:126px!important;padding:15px 17px!important}
+.dd20-team-sheet .dd-v18-team-brand .club>img{width:92px!important;height:92px!important}
+.dd20-team-sheet .dd-v18-team-brand .club b{font-size:3rem!important}
+.dd20-team-sheet .dd-v18-team-brand .club small,.dd20-team-sheet .dd-v18-team-brand .club em{font-size:.78rem!important}
+.dd20-team-sheet .dd-v18-team-brand .score{min-width:145px!important}
+.dd20-team-sheet .dd-v18-team-brand .score span{font-size:.64rem!important}
+.dd20-team-sheet .dd-v18-team-brand .score b{font-size:2.45rem!important}
+.dd20-team-sheet .dd-v18-team-brand .score strong{font-size:1.7rem!important}
+.dd20-team-pitcher{min-height:68px!important;padding:10px 12px!important}
+.dd20-team-pitcher>span{flex:1!important}
+.dd20-team-pitcher small{font-size:.62rem!important}
+.dd20-team-pitcher b{font-size:.9rem!important}
+.dd20-team-pitcher em{font-size:.72rem!important}
+.dd20-team-pitcher>strong{color:#4af0a1!important;font-size:.72rem!important;text-align:right!important}
+.dd20-team-body{grid-template-columns:1.05fr .95fr!important;gap:11px!important;padding:12px!important}
+.dd20-team-sheet .dd-v18-team-top>header,.dd20-form-panel>header{font-size:.86rem!important;padding:9px 10px!important}
+.dd20-team-sheet .dd-v18-team-hitter{grid-template-columns:28px 48px 1fr 62px 78px!important;min-height:62px!important;padding:6px 8px!important}
+.dd20-team-sheet .dd-v18-team-hitter>em{width:25px!important;height:25px!important;font-size:.68rem!important}
+.dd20-team-sheet .dd-v18-team-hitter>img{width:47px!important;height:47px!important}
+.dd20-team-sheet .dd-v18-team-hitter>b{font-size:.84rem!important}
+.dd20-team-sheet .dd-v18-team-hitter>b small{font-size:.64rem!important}
+.dd20-team-sheet .dd-v18-team-hitter>strong{font-size:1.28rem!important}
+.dd20-team-sheet .dd-v18-team-hitter>span{font-size:.82rem!important}
+.dd20-form-panel{padding-bottom:10px!important}
+.dd20-form-panel>p{margin:9px 10px 4px!important;color:#e7f8ff!important;font-size:.72rem!important;line-height:1.35!important;font-weight:800!important}
+.dd20-form-panel>h4{margin:10px 10px 4px!important;color:#7ce1ff!important;font-family:'Oswald',sans-serif!important;font-size:.8rem!important}
+.dd20-team-form{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(27px,1fr))!important;gap:5px!important;height:76px!important;padding:6px 9px!important}
+.dd20-team-form i{position:relative!important;display:flex!important;align-items:flex-end!important;justify-content:center!important;border-radius:5px!important;overflow:hidden!important;font-style:normal!important;border:1px solid #285772!important;background:#0a1b29!important}
+.dd20-team-form i span{display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;height:100%!important;color:#fff!important;font-size:.82rem!important;font-weight:900!important}
+.dd20-team-form i small{position:absolute!important;left:1px!important;right:1px!important;bottom:2px!important;color:#d6f3ff!important;font-size:.47rem!important;text-align:center!important}
+.dd20-team-form .zero{height:54%!important;align-self:end!important;background:linear-gradient(180deg,#0c548c,#09223a)!important}
+.dd20-team-form .one{height:80%!important;align-self:end!important;background:linear-gradient(180deg,#ff762d,#9b281a)!important;box-shadow:0 0 9px rgba(255,103,40,.4)!important}
+.dd20-team-form .multi{height:100%!important;align-self:end!important;background:linear-gradient(180deg,#ff3767,#921638)!important;box-shadow:0 0 10px rgba(255,55,103,.45)!important}
+.dd20-team-form .dnp{height:42%!important;align-self:end!important;background:linear-gradient(180deg,#4f6175,#25313e)!important}
+.dd20-inline-legend{display:grid!important;grid-template-columns:repeat(2,1fr)!important;gap:5px 8px!important;padding:8px 10px 2px!important}
+.dd20-inline-legend span{display:flex!important;align-items:center!important;gap:5px!important;color:#f2fbff!important;font-size:.64rem!important;font-weight:900!important}
+.dd20-inline-legend i,.dd20-form-legend i{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-width:27px!important;height:20px!important;border-radius:4px!important;color:#fff!important;font-size:.62rem!important;font-style:normal!important}
+.dd20-inline-legend .zero,.dd20-form-legend .zero{background:#0c548c!important}
+.dd20-inline-legend .one,.dd20-form-legend .one{background:#d85727!important}
+.dd20-inline-legend .multi,.dd20-form-legend .multi{background:#d82558!important}
+.dd20-inline-legend .dnp,.dd20-form-legend .dnp{background:#4e6073!important}
+.dd20-team-sheet .dd-v18-team-footer li{font-size:.72rem!important;line-height:1.25!important}
+.dd20-form-legend{flex-wrap:wrap!important;font-size:.72rem!important}
+.dd20-form-legend>b{font-size:.78rem!important}
+.dd20-form-legend span{font-size:.65rem!important}
+.dd20-form-legend em{color:#8fdcf9!important;font-size:.65rem!important;font-style:normal!important;font-weight:800!important}
+
+/* AI stadium weather command */
+.dd20-weather-hero{display:grid!important;grid-template-columns:1fr auto!important;align-items:center!important;gap:24px!important;margin-bottom:14px!important;padding:18px 22px!important;border:1px solid #22668f!important;border-radius:10px!important;background:linear-gradient(100deg,#071b2d,#071827 60%,#101839)!important}
+.dd20-weather-hero span{color:#52cbff!important;font-size:.72rem!important;font-weight:900!important;letter-spacing:.12em!important}
+.dd20-weather-hero h1{margin:3px 0!important;color:#fff!important;font-family:'Barlow Condensed',sans-serif!important;font-size:3.6rem!important;font-style:italic!important;line-height:.9!important}
+.dd20-weather-hero h1 em{color:#2ea9ff!important;font-style:italic!important}
+.dd20-weather-hero p{max-width:830px!important;margin:9px 0 0!important;color:#e4f7ff!important;font-size:.9rem!important;font-weight:800!important}
+.dd20-weather-hero aside{display:grid!important;grid-template-columns:110px 110px 210px!important;gap:9px!important}
+.dd20-weather-hero aside div{padding:10px!important;border:1px solid #246b96!important;border-radius:8px!important;background:#061624!important}
+.dd20-weather-hero aside b{display:block!important;color:#fff!important;font-size:1.2rem!important}
+.dd20-weather-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:13px!important;margin-bottom:14px!important}
+.dd20-weather-card-link{color:inherit!important;text-decoration:none!important}
+.dd20-weather-card{position:relative!important;min-height:215px!important;overflow:hidden!important;border:1px solid var(--weather-accent)!important;border-radius:9px!important;background-color:#071827!important;background-size:cover!important;background-position:center!important;box-shadow:inset 0 -115px 95px rgba(0,0,0,.78)!important;transition:.18s ease!important}
+.dd20-weather-card-link:hover .dd20-weather-card,.dd20-weather-card-link.active .dd20-weather-card{transform:translateY(-3px)!important;box-shadow:0 0 18px color-mix(in srgb,var(--weather-accent) 48%,transparent),inset 0 -115px 95px rgba(0,0,0,.72)!important}
+.dd20-weather-card header{display:flex!important;align-items:center!important;justify-content:space-between!important;min-height:47px!important;padding:8px 10px!important;background:linear-gradient(180deg,rgba(2,8,16,.96),rgba(2,8,16,.45))!important}
+.dd20-weather-match{display:flex!important;align-items:center!important;gap:7px!important}
+.dd20-weather-match img{width:31px!important;height:31px!important;object-fit:contain!important}
+.dd20-weather-match b,.dd20-weather-card header>span{color:#fff!important;font-size:.82rem!important;font-weight:900!important}
+.dd20-weather-copy{position:absolute!important;left:12px!important;bottom:45px!important}
+.dd20-weather-copy small{display:block!important;color:#fff!important;font-size:.72rem!important;font-weight:900!important;text-shadow:0 2px 5px #000!important}
+.dd20-weather-copy>div{display:flex!important;align-items:end!important;gap:10px!important}
+.dd20-weather-copy strong{color:#fff!important;font-family:'Barlow Condensed',sans-serif!important;font-size:2.25rem!important;line-height:.9!important;text-shadow:0 2px 7px #000!important}
+.dd20-weather-copy span{max-width:150px!important;color:#e9f8ff!important;font-size:.68rem!important;font-weight:900!important;text-shadow:0 2px 5px #000!important}
+.dd20-weather-grade{position:absolute!important;right:10px!important;bottom:46px!important;min-width:92px!important;padding:7px!important;border:1px solid var(--weather-accent)!important;border-radius:7px!important;background:rgba(2,12,20,.88)!important;text-align:center!important}
+.dd20-weather-grade b{display:block!important;color:var(--weather-accent)!important;font-family:'Barlow Condensed',sans-serif!important;font-size:1.8rem!important}
+.dd20-weather-grade span,.dd20-weather-grade small{display:block!important;color:#fff!important;font-size:.55rem!important;font-weight:900!important}
+.dd20-weather-card footer{position:absolute!important;left:0!important;right:0!important;bottom:0!important;display:grid!important;grid-template-columns:repeat(3,1fr)!important;height:39px!important;background:rgba(2,10,17,.91)!important;border-top:1px solid rgba(86,176,224,.25)!important}
+.dd20-weather-card footer div{display:flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;border-right:1px solid rgba(86,176,224,.19)!important}
+.dd20-weather-card footer span{color:#fff!important;font-size:.68rem!important;font-weight:900!important}
+.dd20-weather-card footer b{color:#4cf2a6!important;font-size:.78rem!important}
+.dd20-weather-detail{display:grid!important;grid-template-columns:1.05fr .95fr 1.15fr!important;overflow:hidden!important;border:1px solid #2c9ed8!important;border-radius:10px!important;background:#061624!important}
+.dd20-weather-detail-scene{position:relative!important;min-height:330px!important;background-size:cover!important;background-position:center!important;border-right:1px solid #205d80!important}
+.dd20-weather-detail-scene header{display:flex!important;justify-content:space-between!important;padding:12px 14px!important;color:#fff!important;font-size:.9rem!important}
+.dd20-weather-detail-scene>div{position:absolute!important;left:18px!important;bottom:20px!important}
+.dd20-weather-detail-scene small{color:#fff!important;font-size:.8rem!important;font-weight:900!important}
+.dd20-weather-detail-scene h2{margin:4px 0!important;color:#fff!important;font-family:'Barlow Condensed',sans-serif!important;font-size:3.3rem!important}
+.dd20-weather-detail-scene p{margin:0!important;color:#f0fbff!important;font-size:.82rem!important;font-weight:800!important}
+.dd20-weather-detail-data{padding:13px!important;border-right:1px solid #205d80!important}
+.dd20-weather-detail-data>header{display:grid!important;grid-template-columns:1fr auto!important;gap:3px!important}
+.dd20-weather-detail-data>header span,.dd20-weather-detail-data>header b{display:block!important}
+.dd20-weather-detail-data>header span{color:#56d3ff!important;font-size:.66rem!important;font-weight:900!important}
+.dd20-weather-detail-data>header b{color:#fff!important;font-size:1rem!important}
+.dd20-weather-detail-data>header em{grid-row:1/3;grid-column:2;padding:6px 9px;border:1px solid #2ca877;border-radius:6px;color:#49f1a1;font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-style:normal;font-weight:900;text-align:center}
+.dd20-weather-detail-data>header em small{display:block;color:#fff;font-family:'Inter',sans-serif;font-size:.52rem}
+.dd20-weather-detail-main{display:flex!important;align-items:center!important;gap:10px!important;margin:18px 0!important}
+.dd20-weather-detail-main i{font-size:2rem!important}.dd20-weather-detail-main b{font-size:2.5rem!important}.dd20-weather-detail-main span{font-size:.8rem!important;color:#e9f8ff!important}
+.dd20-weather-detail-metrics,.dd20-weather-zones{display:grid!important;grid-template-columns:repeat(2,1fr)!important;gap:7px!important}
+.dd20-weather-detail-metrics div,.dd20-weather-zones div{padding:8px!important;border:1px solid #1f5676!important;border-radius:6px!important;background:#071927!important}
+.dd20-weather-detail-metrics span,.dd20-weather-zones span{display:block!important;color:#74d7ff!important;font-size:.58rem!important;font-weight:900!important}
+.dd20-weather-detail-metrics b,.dd20-weather-zones b{color:#fff!important;font-size:1rem!important}
+.dd20-weather-detail-metrics small{color:#bfe8f7!important;font-size:.55rem!important}
+.dd20-weather-hitters{padding:13px!important}
+.dd20-weather-hitters>header{display:flex!important;justify-content:space-between!important;margin-bottom:9px!important}
+.dd20-weather-hitters>header b{color:#fff!important;font-size:.9rem!important}
+.dd20-weather-hitters>header span{color:#67d7ff!important;font-size:.6rem!important;font-weight:900!important}
+.dd20-weather-detail>footer{grid-column:1/-1;padding:9px 13px!important;border-top:1px solid #205d80!important;color:#48f0a3!important;font-size:.72rem!important;font-weight:900!important}
+
+/* Game Sims + Parlay Lab larger type */
+.dd-v18-sim-title h1{font-size:4rem!important}
+.dd-v18-sim-title span{font-size:1rem!important}
+.dd-v18-sim-stat b{font-size:2rem!important}.dd-v18-sim-stat span{font-size:.78rem!important}.dd-v18-sim-stat small{font-size:.64rem!important}
+.dd-v18-sim-team .brand b{font-size:1.4rem!important}.dd-v18-sim-team .brand small,.dd-v18-sim-team .brand em{font-size:.7rem!important}
+.dd-v18-sim-team>strong{font-size:2.2rem!important}
+.dd-v18-sim-score span{font-size:.72rem!important}.dd-v18-sim-score b{font-size:2.5rem!important}.dd-v18-sim-score small{font-size:.68rem!important}
+.dd-v18-sim-breakdown span{font-size:.59rem!important}.dd-v18-sim-breakdown b{font-size:1rem!important}
+.dd-v18-sim-total span{font-size:.62rem!important}.dd-v18-sim-total b{font-size:1.8rem!important}.dd-v18-sim-total small,.dd-v18-sim-total em{font-size:.62rem!important}
+.dd-sim-narrative b{font-size:.84rem!important}.dd-sim-narrative p{font-size:.78rem!important;line-height:1.45!important}
+.dd-sim-row span{font-size:.57rem!important}.dd-sim-row b{font-size:.76rem!important}
+.dd-parlay-mode.v15 b{font-size:1.15rem!important}.dd-parlay-mode.v15 span{font-size:.78rem!important;line-height:1.35!important}
+[data-testid="stCheckbox"] label p,[data-testid="stNumberInput"] input,[data-testid="stSelectbox"] input{font-size:.9rem!important}
+.stButton button,.stDownloadButton button{font-size:.86rem!important;font-weight:900!important}
+
+/* Responsive */
+@media(max-width:1350px){
+  .dd-rank-card-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  .dd20-weather-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .dd20-weather-detail{grid-template-columns:1fr 1fr!important}
+  .dd20-weather-hitters{grid-column:1/-1!important}
+}
+@media(max-width:900px){
+  .dd-rank-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .dd20-weather-grid{grid-template-columns:1fr!important}
+  .dd20-weather-hero{grid-template-columns:1fr!important}
+  .dd20-weather-hero aside{grid-template-columns:repeat(3,1fr)!important}
+  .dd20-weather-detail{grid-template-columns:1fr!important}
+  .dd20-weather-detail-scene,.dd20-weather-detail-data{border-right:0!important;border-bottom:1px solid #205d80!important}
+  .dd20-team-pitcher>strong{display:none!important}
+}
+@media(max-width:620px){
+  .dd-rank-card-grid{grid-template-columns:1fr!important}
+  .dd20-rank-card{min-height:340px!important}
+  .dd20-team-title h1{font-size:2.4rem!important}
+  .dd20-weather-hero h1{font-size:2.6rem!important}
+  .dd20-weather-hero aside{grid-template-columns:1fr!important}
+  .dd20-weather-card{min-height:230px!important}
+}
