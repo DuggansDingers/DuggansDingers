@@ -111,7 +111,13 @@ def simulate_game(
         projected_hr = max(0.25, baseline_hr * 0.48 + model_hr * 0.72)
         run_factor, hr_factor = _opposing_pitcher_adjustment(hitters)
         projected_hr *= hr_factor
-        # Blend actual team hits/game with the simulated run environment.
+        # Project runs first because the hit model uses the simulated run environment.
+        projected_runs = max(
+            1.8,
+            _num(stats.get("runs_pg"), 4.4) * 0.68 * run_factor + projected_hr * 1.18,
+        )
+
+        # Blend actual team hits/game with projected runs.
         # The public UI displays this as a per-team estimate, not a combined total.
         actual_hits_pg = _num(stats.get("hits_pg"), 8.2)
         run_implied_hits = 5.15 + projected_runs * 0.58
@@ -123,10 +129,6 @@ def simulate_game(
                 + run_implied_hits * 0.28
                 + (run_factor - 1.0) * 0.65,
             ),
-        )
-        projected_runs = max(
-            1.8,
-            _num(stats.get("runs_pg"), 4.4) * 0.68 * run_factor + projected_hr * 1.18,
         )
         projected_so = max(4.0, _num(stats.get("so_pg"), 8.5))
         projected_sb = max(0.05, _num(stats.get("sb_pg"), 0.7))
