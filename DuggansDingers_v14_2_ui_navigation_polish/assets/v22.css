@@ -104,3 +104,14 @@
   .dd22-sim-row{grid-template-columns:1.35fr 1fr 1fr 20px!important}
   .dd22-sim-row>div:nth-of-type(4),.dd22-sim-row>div:nth-of-type(5){display:none!important}
 }
+
+
+/* V22.1 hotfix: keep the approved title on one line and hide heading anchors */
+.dd22-weather-hero{display:grid;grid-template-columns:minmax(640px,1.35fr) minmax(540px,.9fr)}
+.dd22-weather-hero h1{font-size:3.18rem;white-space:nowrap}
+.dd22-weather-hero h1 a,.dd22-weather-hero h1 svg{display:none!important}
+.dd22-weather-hero aside{width:100%;grid-template-columns:130px minmax(185px,1fr) minmax(195px,1fr)}
+@media(max-width:1250px){
+  .dd22-weather-hero{display:flex}
+  .dd22-weather-hero h1{font-size:2.7rem;white-space:normal}
+}

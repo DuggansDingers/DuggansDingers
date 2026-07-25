@@ -1531,43 +1531,42 @@ def _v22_weather_card(game: dict) -> str:
         f"linear-gradient(180deg,rgba(1,7,14,.05),rgba(1,7,14,.24)),url('{scene}');"
         if scene else ""
     )
-    return f'''
-<a class="dd22-weather-card-link" href="?view=weather&game={quote(key)}" target="_self" aria-label="Open {esc(away)} at {esc(home)} weather">
-<article class="dd22-weather-card" style="--wx:{accent};{background}">
-  <header>
-    <div class="dd22-weather-match">
-      <img src="{team_logo(game.get('away_team_id'))}" alt="{esc(away)}">
-      <span>VS</span>
-      <img src="{team_logo(game.get('home_team_id'))}" alt="{esc(home)}">
-      <b>{esc(away)} @ {esc(home)}</b>
-    </div>
-    <time>{esc(_v18_game_time(game))} ET</time>
-  </header>
 
-  <div class="dd22-weather-main">
-    <div class="dd22-weather-copy">
-      <small>{esc(stadium)}</small>
-      <strong>{temp}</strong>
-      <span><i>{icon}</i>{esc(description)}</span>
-    </div>
-
-    <aside class="dd22-weather-grade">
-      <small>{wind}</small>
-      <em>{esc(direction)}</em>
-      <b>{esc(grade)}</b>
-      <span>WEATHER<br>GRADE</span>
-    </aside>
-  </div>
-
-  <footer>
-    <div><span>LF</span><b>{_v16_signed(lf)}</b></div>
-    <div><span>CF</span><b>{_v16_signed(cf)}</b></div>
-    <div><span>RF</span><b>{_v16_signed(rf)}</b></div>
-    <div><span>HR IMPACT</span><b>{impact:+.1f}</b></div>
-  </footer>
-</article>
-</a>'''
-
+    parts = [
+        f'<a class="dd22-weather-card-link" href="?view=weather&game={quote(key)}" target="_self" aria-label="Open {esc(away)} at {esc(home)} weather">',
+        f'<article class="dd22-weather-card" style="--wx:{accent};{background}">',
+        '<header>',
+        '<div class="dd22-weather-match">',
+        f'<img src="{team_logo(game.get("away_team_id"))}" alt="{esc(away)}">',
+        '<span>VS</span>',
+        f'<img src="{team_logo(game.get("home_team_id"))}" alt="{esc(home)}">',
+        f'<b>{esc(away)} @ {esc(home)}</b>',
+        '</div>',
+        f'<time>{esc(_v18_game_time(game))} ET</time>',
+        '</header>',
+        '<div class="dd22-weather-main">',
+        '<div class="dd22-weather-copy">',
+        f'<small>{esc(stadium)}</small>',
+        f'<strong>{temp}</strong>',
+        f'<span><i>{icon}</i>{esc(description)}</span>',
+        '</div>',
+        '<aside class="dd22-weather-grade">',
+        f'<small>{wind}</small>',
+        f'<em>{esc(direction)}</em>',
+        f'<b>{esc(grade)}</b>',
+        '<span>WEATHER<br>GRADE</span>',
+        '</aside>',
+        '</div>',
+        '<footer>',
+        f'<div><span>LF</span><b>{_v16_signed(lf)}</b></div>',
+        f'<div><span>CF</span><b>{_v16_signed(cf)}</b></div>',
+        f'<div><span>RF</span><b>{_v16_signed(rf)}</b></div>',
+        f'<div><span>HR IMPACT</span><b>{impact:+.1f}</b></div>',
+        '</footer>',
+        '</article>',
+        '</a>',
+    ]
+    return "".join(parts)
 
 def _v22_weather_detail(board: dict, game: dict) -> str:
     from components.stadium_art import stadium_scene_data
@@ -1586,50 +1585,51 @@ def _v22_weather_detail(board: dict, game: dict) -> str:
         if scene else ""
     )
 
-    return f'''
-<a class="dd22-weather-back" href="?view=weather" target="_self">← ALL BALLPARKS</a>
-<section class="dd22-weather-detail">
-  <div class="dd22-weather-detail-scene" style="{background}">
-    <header>
-      <div><img src="{team_logo(game.get('away_team_id'))}"><b>{esc(away)} @ {esc(home)}</b><img src="{team_logo(game.get('home_team_id'))}"></div>
-      <time>{esc(_v18_game_time(game))} ET</time>
-    </header>
-    <div class="dd22-weather-detail-copy">
-      <small>{esc(stadium)}</small>
-      <h1>{safe_float(game.get('temperature_f')):.0f}°F</h1>
-      <p>{_v22_weather_icon(description)} {esc(description)}</p>
-    </div>
-    <aside>
-      <small>{safe_float(game.get('wind_speed_mph')):.0f} mph</small>
-      <em>{esc(_v22_wind_direction(game))}</em>
-      <b>{esc(game.get('weather_grade') or '—')}</b>
-      <span>WEATHER GRADE</span>
-    </aside>
-  </div>
-
-  <div class="dd22-weather-detail-strip">
-    <div><span>LEFT FIELD</span><b>{_v16_signed(lf)}</b></div>
-    <div><span>CENTER FIELD</span><b>{_v16_signed(cf)}</b></div>
-    <div><span>RIGHT FIELD</span><b>{_v16_signed(rf)}</b></div>
-    <div><span>HR IMPACT</span><b>{impact:+.1f}</b></div>
-  </div>
-
-  <div class="dd22-weather-detail-metrics">
-    <div><span>HUMIDITY</span><b>{safe_float(game.get('humidity_pct')):.0f}%</b></div>
-    <div><span>RAIN CHANCE</span><b>{safe_float(game.get('precip_probability')):.0f}%</b></div>
-    <div><span>PRESSURE</span><b>{safe_float(game.get('surface_pressure_hpa')):.0f} hPa</b></div>
-    <div><span>ROOF</span><b>{esc(str(game.get('roof_status') or game.get('roof_type') or 'Outdoor').title())}</b></div>
-  </div>
-
-  <section class="dd22-weather-hitters">
-    <header><b>WEATHER-ADJUSTED HITTER BOARD</b><span>MODEL HR • WEATHER-ADJUSTED HR • IMPACT</span></header>
-    <div class="dd-weather-hitter-head"><span>RANK</span><span>PLAYER</span><span>TEAM</span><span>MODEL</span><span>ADJ.</span><span>IMPACT</span></div>
-    {_v18_weather_hitter_rows(board, game)}
-  </section>
-
-  <div class="dd22-weather-ticker">⚡ {esc(reasons or 'Live game-time weather connected to this matchup.')}</div>
-</section>'''
-
+    parts = [
+        '<a class="dd22-weather-back" href="?view=weather" target="_self">← ALL BALLPARKS</a>',
+        '<section class="dd22-weather-detail">',
+        f'<div class="dd22-weather-detail-scene" style="{background}">',
+        '<header>',
+        '<div>',
+        f'<img src="{team_logo(game.get("away_team_id"))}" alt="{esc(away)}">',
+        f'<b>{esc(away)} @ {esc(home)}</b>',
+        f'<img src="{team_logo(game.get("home_team_id"))}" alt="{esc(home)}">',
+        '</div>',
+        f'<time>{esc(_v18_game_time(game))} ET</time>',
+        '</header>',
+        '<div class="dd22-weather-detail-copy">',
+        f'<small>{esc(stadium)}</small>',
+        f'<h1>{safe_float(game.get("temperature_f")):.0f}°F</h1>',
+        f'<p>{_v22_weather_icon(description)} {esc(description)}</p>',
+        '</div>',
+        '<aside>',
+        f'<small>{safe_float(game.get("wind_speed_mph")):.0f} mph</small>',
+        f'<em>{esc(_v22_wind_direction(game))}</em>',
+        f'<b>{esc(game.get("weather_grade") or "—")}</b>',
+        '<span>WEATHER GRADE</span>',
+        '</aside>',
+        '</div>',
+        '<div class="dd22-weather-detail-strip">',
+        f'<div><span>LEFT FIELD</span><b>{_v16_signed(lf)}</b></div>',
+        f'<div><span>CENTER FIELD</span><b>{_v16_signed(cf)}</b></div>',
+        f'<div><span>RIGHT FIELD</span><b>{_v16_signed(rf)}</b></div>',
+        f'<div><span>HR IMPACT</span><b>{impact:+.1f}</b></div>',
+        '</div>',
+        '<div class="dd22-weather-detail-metrics">',
+        f'<div><span>HUMIDITY</span><b>{safe_float(game.get("humidity_pct")):.0f}%</b></div>',
+        f'<div><span>RAIN CHANCE</span><b>{safe_float(game.get("precip_probability")):.0f}%</b></div>',
+        f'<div><span>PRESSURE</span><b>{safe_float(game.get("surface_pressure_hpa")):.0f} hPa</b></div>',
+        f'<div><span>ROOF</span><b>{esc(str(game.get("roof_status") or game.get("roof_type") or "Outdoor").title())}</b></div>',
+        '</div>',
+        '<section class="dd22-weather-hitters">',
+        '<header><b>WEATHER-ADJUSTED HITTER BOARD</b><span>MODEL HR • WEATHER-ADJUSTED HR • IMPACT</span></header>',
+        '<div class="dd-weather-hitter-head"><span>RANK</span><span>PLAYER</span><span>TEAM</span><span>MODEL</span><span>ADJ.</span><span>IMPACT</span></div>',
+        _v18_weather_hitter_rows(board, game),
+        '</section>',
+        f'<div class="dd22-weather-ticker">⚡ {esc(reasons or "Live game-time weather connected to this matchup.")}</div>',
+        '</section>',
+    ]
+    return "".join(parts)
 
 def weather_center(board: dict) -> None:
     games = _v17_weather_games(board)
