@@ -1,0 +1,9 @@
+
+*.py[cod]
+*.pyc
+*.pyc.env
+.env
+.streamlit/secrets.toml
+__pycache__/
+data/cache/
+data/cache/*.json
