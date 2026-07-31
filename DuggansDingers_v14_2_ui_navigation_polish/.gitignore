@@ -7,3 +7,6 @@
 __pycache__/
 data/cache/
 data/cache/*.json
+
+# Keep prepared snapshots in Git; ignore only atomic temp files.
+data/snapshots/*.tmp

@@ -111,6 +111,13 @@ def render_navigation(as_of: str, games: int, hitters: int, updated_at: str = ""
         st.markdown('<nav class="dd19-side-nav">' + "".join(links) + "</nav>", unsafe_allow_html=True)
         st.markdown('<div class="dd19-side-spacer"></div>', unsafe_allow_html=True)
         chosen_date = st.date_input("Slate date", value=current_date, key="sidebar_slate_date")
+        if st.button("↻ Refresh live data", key="sidebar_force_live", use_container_width=True):
+            from data_service import load_board
+
+            load_board.clear()
+            st.session_state["_force_live_refresh"] = True
+            st.rerun()
+
         updated = str(updated_at or "")
         if updated:
             try:

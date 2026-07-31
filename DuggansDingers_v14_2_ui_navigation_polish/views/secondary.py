@@ -364,6 +364,7 @@ def sportsbook_odds(board: dict) -> None:
 
             clear_live_odds_cache()
             load_board.clear()
+            st.session_state["_force_live_refresh"] = True
             st.session_state["odds_refresh_pending"] = True
             st.rerun()
 

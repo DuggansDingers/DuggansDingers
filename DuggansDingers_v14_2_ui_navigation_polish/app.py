@@ -13,7 +13,7 @@ st.set_page_config(
 
 from components.navigation import init_state, page_from_query, render_navigation
 from components.theme import apply_theme
-from data_service import empty_board, load_board
+from data_service import empty_board, load_board, snapshot_available
 from views import dashboard, player_profile, rankings, secondary, team_cheatsheets
 
 apply_theme()
@@ -23,8 +23,6 @@ page = page_from_query()
 stored_date = st.session_state.get("slate_date", date.today())
 target_date = stored_date.isoformat() if hasattr(stored_date, "isoformat") else str(stored_date)
 
-# Render the navigation immediately so a cold data refresh never leaves the
-# visitor staring at an empty screen. The last known counts update on reruns.
 page, chosen_date = render_navigation(
     target_date,
     int(st.session_state.get("last_game_count", 0)),
@@ -34,30 +32,71 @@ page, chosen_date = render_navigation(
 if chosen_date != target_date:
     st.rerun()
 
-include_weather = page in {"Home", "Daily Board", "Team Sheets", "Weather", "Game Sims", "Parlay Lab", "Player Intelligence"}
-include_odds = page in {"Home", "Daily Board", "Team Sheets", "Sportsbook", "Parlay Lab", "Player Intelligence", "Game Sims"}
-spinner_text = {
-    "Weather": "Connecting ballpark weather and wind intelligence...",
-    "Sportsbook": "Matching DraftKings and FanDuel prices...",
-    "Game Sims": "Loading the simulation board...",
-}.get(page, "Loading today's home run intelligence...")
+include_weather = page in {
+    "Home",
+    "Daily Board",
+    "Team Sheets",
+    "Weather",
+    "Game Sims",
+    "Parlay Lab",
+    "Player Intelligence",
+}
+include_odds = page in {
+    "Home",
+    "Daily Board",
+    "Team Sheets",
+    "Sportsbook",
+    "Parlay Lab",
+    "Player Intelligence",
+    "Game Sims",
+}
 
-st.markdown(f'<div class="dd-loading-banner"><i></i><span>{spinner_text}</span></div>', unsafe_allow_html=True)
+force_live_refresh = bool(st.session_state.pop("_force_live_refresh", False))
+prepared = snapshot_available(target_date) and not force_live_refresh
+
+spinner_text = (
+    "Opening today's prepared intelligence board..."
+    if prepared
+    else {
+        "Weather": "Connecting ballpark weather and wind intelligence...",
+        "Sportsbook": "Matching DraftKings and FanDuel prices...",
+        "Game Sims": "Loading the simulation board...",
+    }.get(page, "Refreshing today's home run intelligence...")
+)
+
+st.markdown(
+    f'<div class="dd-loading-banner"><i></i><span>{spinner_text}</span></div>',
+    unsafe_allow_html=True,
+)
 with st.spinner(spinner_text):
     try:
-        board = load_board(target_date, include_weather=include_weather, include_odds=include_odds)
+        board = load_board(
+            target_date,
+            include_weather=include_weather,
+            include_odds=include_odds,
+            prefer_prebuilt=not force_live_refresh,
+        )
     except Exception as exc:
         board = empty_board(exc, target_date)
 
 st.session_state.last_game_count = int(board.get("games", 0))
 st.session_state.last_hitter_count = len(board.get("rankings", []))
 st.session_state.last_updated_at = str(board.get("updated_at", ""))
+st.session_state.last_fast_start = bool(board.get("fast_start"))
 
-# Remove the custom loading strip after the board is available.
-st.markdown('<style>.dd-loading-banner{display:none!important}</style>', unsafe_allow_html=True)
+st.markdown(
+    '<style>.dd-loading-banner{display:none!important}</style>',
+    unsafe_allow_html=True,
+)
 
 if board.get("error"):
     st.error(f"Data could not be refreshed: {board['error']}")
+
+if not board.get("fast_start") and board.get("rankings"):
+    st.caption(
+        "Live fallback was used because a prepared snapshot was not available "
+        "for this slate. The scheduled snapshot workflow makes normal startup faster."
+    )
 
 routes = {
     "Home": dashboard.render,
