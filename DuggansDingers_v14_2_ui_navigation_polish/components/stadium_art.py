@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
@@ -7,19 +8,14 @@ from typing import Any
 from components.ui import image_data
 
 BASE_DIR = Path(__file__).resolve().parents[1]
+RENDER_DIR = BASE_DIR / "assets" / "stadium_renders"
 SCENE_DIR = BASE_DIR / "assets" / "stadium_scenes"
 PHOTO_SCENE_DIR = BASE_DIR / "assets" / "stadium_photo_scenes"
+STADIUMS_FILE = BASE_DIR / "data" / "stadiums.json"
 
-SCENES = tuple(sorted(SCENE_DIR.glob("scene_*.jpg")))
-TEAM_SCENES = {
-    path.stem.upper(): path
-    for path in SCENE_DIR.glob("*.jpg")
-    if not path.stem.startswith("scene_")
-}
-PHOTO_TEAM_SCENES = {
-    path.stem.upper(): path
-    for path in PHOTO_SCENE_DIR.glob("*.jpg")
-}
+TEAM_SCENES = {path.stem.upper(): path for path in SCENE_DIR.glob("*.jpg") if not path.stem.startswith("scene_")}
+RENDER_SCENES = {path.stem.upper(): path for path in RENDER_DIR.glob("*.jpg")}
+PHOTO_TEAM_SCENES = {path.stem.upper(): path for path in PHOTO_SCENE_DIR.glob("*.jpg")}
 
 TEAM_ALIASES = {
     "ARIZONA DIAMONDBACKS": "ARI", "DIAMONDBACKS": "ARI",
@@ -54,57 +50,83 @@ TEAM_ALIASES = {
     "WASHINGTON NATIONALS": "WSH", "NATIONALS": "WSH", "WSN": "WSH",
 }
 
+TEAM_ID_TO_ABBR = {
+    109: "ARI", 144: "ATL", 110: "BAL", 111: "BOS", 112: "CHC", 145: "CWS",
+    113: "CIN", 114: "CLE", 115: "COL", 116: "DET", 117: "HOU", 118: "KC",
+    108: "LAA", 119: "LAD", 146: "MIA", 158: "MIL", 142: "MIN", 121: "NYM",
+    147: "NYY", 133: "ATH", 143: "PHI", 134: "PIT", 135: "SD", 137: "SF",
+    136: "SEA", 138: "STL", 139: "TB", 140: "TEX", 141: "TOR", 120: "WSH",
+}
 
-def _normalize_team(value: Any) -> str:
-    raw = " ".join(str(value or "").replace(".", " ").upper().split())
+@lru_cache(maxsize=1)
+def _stadium_name_index() -> dict[str, str]:
+    try:
+        payload = json.loads(STADIUMS_FILE.read_text(encoding="utf-8-sig"))
+    except Exception:
+        payload = {}
+    index: dict[str, str] = {}
+    if isinstance(payload, dict):
+        for abbr, meta in payload.items():
+            names = [meta.get("name"), *(meta.get("aliases") or [])]
+            for name in names:
+                cleaned = " ".join(str(name or "").upper().replace(".", " ").split())
+                if cleaned:
+                    index[cleaned] = abbr.upper()
+    return index
+
+
+def _normalize(value: Any) -> str:
+    raw = " ".join(str(value or "").upper().replace(".", " ").replace("-", " ").split())
     return TEAM_ALIASES.get(raw, raw)
+
+
+def _abbr_from_team_id(value: Any) -> str:
+    try:
+        return TEAM_ID_TO_ABBR.get(int(value), "")
+    except Exception:
+        return ""
+
+
+def _abbr_from_venue(value: Any) -> str:
+    key = " ".join(str(value or "").upper().replace(".", " ").split())
+    return _stadium_name_index().get(key, "")
 
 
 def _team_key(game: dict[str, Any]) -> str:
     candidates = (
+        _abbr_from_team_id(game.get("home_team_id")),
+        _abbr_from_team_id(game.get("team_id")),
+        _abbr_from_venue(game.get("stadium_name") or game.get("venue_name")),
         game.get("stadium_team"),
         game.get("home_team_abbr"),
         game.get("home_team"),
         game.get("home_team_name"),
     )
     for candidate in candidates:
-        key = _normalize_team(candidate)
-        if key:
+        key = _normalize(candidate)
+        if key and key in set(RENDER_SCENES) | set(TEAM_SCENES) | set(PHOTO_TEAM_SCENES):
             return key
     return ""
 
 
-def _seed(game: dict[str, Any]) -> int:
-    values = (
-        game.get("home_team_id"),
-        game.get("venue_id"),
-        game.get("stadium_team"),
-        game.get("stadium_name"),
-        game.get("venue_name"),
-        game.get("home_team_name"),
-    )
-    text = "|".join(str(value or "") for value in values)
-    return sum((index + 1) * ord(char) for index, char in enumerate(text))
-
-
-@lru_cache(maxsize=64)
+@lru_cache(maxsize=256)
 def _image_uri(path_str: str) -> str:
     return image_data(Path(path_str))
 
 
 def stadium_scene_data(game: dict[str, Any], *, detail: bool = False) -> str:
-    """Return the best local stadium scene for the matchup."""
+    """Return a stable venue-specific local render.
+
+    Preference order:
+    1) assets/stadium_renders/<TEAM>.jpg   (drop-in AI stadium renders)
+    2) assets/stadium_scenes/<TEAM>.jpg    (bundled stylized fallback)
+    3) assets/stadium_photo_scenes/<TEAM>.jpg
+
+    Unlike earlier versions, this never rotates through random generic scenes.
+    """
     team = _team_key(game)
-
-    photo = PHOTO_TEAM_SCENES.get(team)
-    if photo:
-        return _image_uri(str(photo))
-
-    illustrated = TEAM_SCENES.get(team)
-    if illustrated:
-        return _image_uri(str(illustrated))
-
-    if not SCENES:
-        return ""
-    index = _seed(game) % len(SCENES)
-    return _image_uri(str(SCENES[index]))
+    for collection in (RENDER_SCENES, TEAM_SCENES, PHOTO_TEAM_SCENES):
+        path = collection.get(team)
+        if path and path.exists():
+            return _image_uri(str(path))
+    return ""
