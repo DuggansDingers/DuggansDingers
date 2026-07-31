@@ -13,8 +13,9 @@ st.set_page_config(
 
 from components.navigation import init_state, page_from_query, render_navigation
 from components.theme import apply_theme
+from components.shell import render_app_header
 from data_service import empty_board, load_board, snapshot_available
-from views import dashboard, player_profile, rankings, secondary, team_cheatsheets
+from views import dashboard, player_profile, rankings, secondary, team_cheatsheets, weather_command, extras
 
 apply_theme()
 init_state()
@@ -33,22 +34,12 @@ if chosen_date != target_date:
     st.rerun()
 
 include_weather = page in {
-    "Home",
-    "Daily Board",
-    "Team Sheets",
-    "Weather",
-    "Game Sims",
-    "Parlay Lab",
-    "Player Intelligence",
+    "Home","Daily Board","Team Sheets","Weather","Game Sims","Parlay Lab",
+    "Player Intelligence","News & Alerts","Matchups","Park Factors"
 }
 include_odds = page in {
-    "Home",
-    "Daily Board",
-    "Team Sheets",
-    "Sportsbook",
-    "Parlay Lab",
-    "Player Intelligence",
-    "Game Sims",
+    "Home","Daily Board","Team Sheets","Sportsbook","Parlay Lab",
+    "Player Intelligence","Game Sims","News & Alerts"
 }
 
 force_live_refresh = bool(st.session_state.pop("_force_live_refresh", False))
@@ -84,6 +75,14 @@ st.session_state.last_hitter_count = len(board.get("rankings", []))
 st.session_state.last_updated_at = str(board.get("updated_at", ""))
 st.session_state.last_fast_start = bool(board.get("fast_start"))
 
+# Counts displayed in the prototype-style sidebar badges.
+st.session_state.last_odds_count = int((board.get("odds_summary") or {}).get("live_records", 0) or 0)
+try:
+    from views.extras import _alerts
+    st.session_state.last_alert_count = len(_alerts(board))
+except Exception:
+    st.session_state.last_alert_count = 0
+
 st.markdown(
     '<style>.dd-loading-banner{display:none!important}</style>',
     unsafe_allow_html=True,
@@ -91,6 +90,8 @@ st.markdown(
 
 if board.get("error"):
     st.error(f"Data could not be refreshed: {board['error']}")
+
+render_app_header(board, page)
 
 if not board.get("fast_start") and board.get("rankings"):
     st.caption(
@@ -102,7 +103,7 @@ routes = {
     "Home": dashboard.render,
     "Daily Board": rankings.render,
     "Team Sheets": team_cheatsheets.render,
-    "Weather": secondary.weather_center,
+    "Weather": weather_command.render,
     "Sportsbook": secondary.sportsbook_odds,
     "Game Sims": secondary.game_sims,
     "Parlay Lab": secondary.parlay,
@@ -110,5 +111,7 @@ routes = {
     "Matchups": secondary.matchups,
     "Park Factors": secondary.parks,
     "Trends": secondary.trends,
+    "News & Alerts": extras.news_alerts,
+    "Settings": extras.settings,
 }
 routes.get(page, dashboard.render)(board)

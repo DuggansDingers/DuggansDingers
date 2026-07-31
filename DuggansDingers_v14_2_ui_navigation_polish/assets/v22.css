@@ -19,10 +19,10 @@
 .dd22-weather-card-link{display:block;color:inherit!important;text-decoration:none!important}
 .dd22-weather-card{position:relative;min-height:202px;overflow:hidden;border:1px solid #00bff5;border-radius:9px;background-color:#071523;background-position:center center;background-size:cover;box-shadow:inset 0 0 0 1px rgba(0,240,255,.04);transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}
 .dd22-weather-card-link:hover .dd22-weather-card{transform:translateY(-2px);border-color:#54e8ff;box-shadow:0 0 18px rgba(0,197,255,.28),inset 0 0 0 1px rgba(120,238,255,.13)}
-.dd22-weather-card:before{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(1,7,14,.22) 0%,rgba(1,7,14,.03) 45%,rgba(1,7,14,.12) 100%),linear-gradient(180deg,rgba(0,4,9,.05),rgba(0,4,9,.02) 52%,rgba(0,4,9,.22))}
+.dd22-weather-card:before{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(1,7,14,.45) 0%,rgba(1,7,14,.05) 45%,rgba(1,7,14,.18) 100%),linear-gradient(180deg,rgba(0,4,9,.15),rgba(0,4,9,.02) 52%,rgba(0,4,9,.42))}
 .dd22-weather-card header{position:relative;z-index:2;min-height:48px;padding:8px 11px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,rgba(1,6,12,.75),rgba(1,6,12,.05))}
 .dd22-weather-match{min-width:0;display:flex;align-items:center;gap:7px}
-.dd22-weather-match img{width:34px;height:34px;object-fit:contain;filter:brightness(1.28) saturate(1.15) drop-shadow(0 0 8px rgba(0,0,0,.95))}
+.dd22-weather-match img{width:30px;height:30px;object-fit:contain;filter:drop-shadow(0 0 5px rgba(0,0,0,.85))}
 .dd22-weather-match span{color:#dcefff;font-size:.72rem;font-weight:900}
 .dd22-weather-match b{overflow:hidden;color:#fff;font-family:'Oswald',sans-serif;font-size:1.08rem;font-weight:900;letter-spacing:.015em;text-overflow:ellipsis;white-space:nowrap}
 .dd22-weather-card time{color:#fff;font-family:'Oswald',sans-serif;font-size:.9rem;font-weight:900;white-space:nowrap}
@@ -46,10 +46,10 @@
 .dd22-weather-back{display:inline-flex;margin-bottom:10px;padding:8px 12px;border:1px solid #0b7db4;border-radius:6px;background:#071826;color:#77ddff!important;font-size:.82rem;font-weight:900;text-decoration:none!important}
 .dd22-weather-detail{overflow:hidden;border:1px solid #0b79aa;border-radius:10px;background:linear-gradient(180deg,#061624,#06121e)}
 .dd22-weather-detail-scene{position:relative;min-height:390px;background-position:center;background-size:cover}
-.dd22-weather-detail-scene:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,5,12,.18),transparent 56%,rgba(0,5,12,.14)),linear-gradient(180deg,rgba(0,5,12,.03),rgba(0,5,12,.24))}
+.dd22-weather-detail-scene:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,5,12,.35),transparent 56%,rgba(0,5,12,.22)),linear-gradient(180deg,rgba(0,5,12,.05),rgba(0,5,12,.38))}
 .dd22-weather-detail-scene header{position:relative;z-index:2;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(180deg,rgba(0,5,12,.72),transparent)}
 .dd22-weather-detail-scene header>div{display:flex;align-items:center;gap:9px}
-.dd22-weather-detail-scene header img{width:44px;height:44px;object-fit:contain;filter:brightness(1.28) saturate(1.15) drop-shadow(0 0 8px rgba(0,0,0,.95))}
+.dd22-weather-detail-scene header img{width:42px;height:42px;object-fit:contain}
 .dd22-weather-detail-scene header b,.dd22-weather-detail-scene header time{color:#fff;font-family:'Oswald',sans-serif;font-size:1.3rem;font-weight:900}
 .dd22-weather-detail-copy{position:absolute;z-index:2;left:20px;bottom:24px;text-shadow:0 2px 5px #000}
 .dd22-weather-detail-copy small{color:#fff;font-size:1rem;font-weight:900}
@@ -115,6 +115,3 @@
   .dd22-weather-hero{display:flex}
   .dd22-weather-hero h1{font-size:2.7rem;white-space:normal}
 }
-
-.dd22-weather-card,.dd22-weather-detail-scene{background-repeat:no-repeat;}
-.dd22-weather-copy strong,.dd22-weather-card time,.dd22-weather-match b{text-shadow:0 2px 6px rgba(0,0,0,.75);}

@@ -1,0 +1,11 @@
+DUGGANSDINGERS V25 PROTOTYPE SITE
+
+PATCH-ONLY INSTALL
+1. Extract this ZIP.
+2. Copy everything inside the extracted folder into the existing live app folder.
+3. Replace files when prompted.
+4. Commit directly to main and push.
+
+This patch contains fewer than 100 files, so it can also be uploaded through GitHub's website.
+
+The existing Streamlit URL, secrets, and V23 fast-start workflow do not need to change.

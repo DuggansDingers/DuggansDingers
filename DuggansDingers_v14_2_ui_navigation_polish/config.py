@@ -4,7 +4,7 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = BASE_DIR / "assets"
-LOGO_PATH = ASSETS_DIR / "sidebar_logo_mockup.png"
+LOGO_PATH = ASSETS_DIR / "sidebar_logo_v25.png"
 STADIUMS_DIR = ASSETS_DIR / "stadiums"
 EXPORTS_DIR = BASE_DIR / "data" / "exports"
 
