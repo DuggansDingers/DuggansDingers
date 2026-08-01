@@ -1,0 +1,9 @@
+DUGGANSDINGERS V30 PATCH
+
+1. Extract DuggansDingers_v30_KITCHEN_HEADER_PATCH.zip.
+2. Copy everything inside DuggansDingers_v30_KITCHEN_HEADER_PATCH into your existing live app folder.
+3. Replace matching files and folders.
+4. Commit to main and push origin.
+5. Run Refresh Live Data or the Fast Start workflow once.
+
+Your Streamlit URL and existing Secrets remain unchanged.

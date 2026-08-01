@@ -8,7 +8,7 @@ from typing import Any
 from components.ui import image_data
 
 BASE_DIR = Path(__file__).resolve().parents[1]
-RENDER_DIR = BASE_DIR / "assets" / "stadium_v26"
+RENDER_DIR = BASE_DIR / "assets" / "stadium_v30_clean"
 STADIUMS_FILE = BASE_DIR / "data" / "stadiums.json"
 
 TEAM_ID_TO_ABBR = {
@@ -55,50 +55,48 @@ TEAM_ALIASES = {
 RENDERS = {path.stem.upper(): path for path in RENDER_DIR.glob("*.jpg")}
 
 
+def _clean(value: Any) -> str:
+    return " ".join(str(value or "").upper().replace(".", " ").split())
+
+
 @lru_cache(maxsize=1)
 def _venue_index() -> dict[str, str]:
     try:
         data = json.loads(STADIUMS_FILE.read_text(encoding="utf-8-sig"))
     except Exception:
         data = {}
-    result: dict[str, str] = {}
-    if isinstance(data, dict):
-        for abbr, stadium in data.items():
-            for name in [stadium.get("name"), *(stadium.get("aliases") or [])]:
-                key = " ".join(str(name or "").upper().replace(".", " ").split())
-                if key:
-                    result[key] = str(abbr).upper()
-    return result
+    index: dict[str, str] = {}
+    for abbr, stadium in (data.items() if isinstance(data, dict) else []):
+        for name in [stadium.get("name"), *(stadium.get("aliases") or [])]:
+            key = _clean(name)
+            if key:
+                index[key] = str(abbr).upper()
+    return index
 
 
-def _normalize(value: Any) -> str:
-    raw = " ".join(str(value or "").upper().replace(".", " ").split())
-    return TEAM_ALIASES.get(raw, raw)
+def _home_team_key(game: dict[str, Any]) -> str:
+    # Primary source: MLB home-team ID.
+    try:
+        abbr = TEAM_ID_TO_ABBR.get(int(game.get("home_team_id")))
+    except Exception:
+        abbr = None
+    if abbr in RENDERS:
+        return abbr
 
+    # Secondary source: exact venue mapping.
+    venue = _clean(game.get("stadium_name") or game.get("venue_name"))
+    abbr = _venue_index().get(venue)
+    if abbr in RENDERS:
+        return abbr
 
-def _team_key(game: dict[str, Any]) -> str:
-    for field in ("home_team_id", "team_id"):
-        try:
-            team = TEAM_ID_TO_ABBR.get(int(game.get(field)))
-        except Exception:
-            team = None
-        if team in RENDERS:
-            return team
+    # Final source: explicit home-team identity only.
+    for field in ("home_team_abbr", "home_team", "home_team_name", "stadium_team"):
+        raw = _clean(game.get(field))
+        abbr = TEAM_ALIASES.get(raw, raw)
+        if abbr in RENDERS:
+            return abbr
 
-    venue = " ".join(str(game.get("stadium_name") or game.get("venue_name") or "").upper().replace(".", " ").split())
-    team = _venue_index().get(venue)
-    if team in RENDERS:
-        return team
-
-    for value in (
-        game.get("stadium_team"),
-        game.get("home_team_abbr"),
-        game.get("home_team"),
-        game.get("home_team_name"),
-    ):
-        team = _normalize(value)
-        if team in RENDERS:
-            return team
+    # Never borrow another team's stadium.
     return ""
 
 
@@ -108,6 +106,6 @@ def _uri(path: str) -> str:
 
 
 def stadium_scene_data(game: dict[str, Any], *, detail: bool = False) -> str:
-    team = _team_key(game)
+    team = _home_team_key(game)
     path = RENDERS.get(team)
     return _uri(str(path)) if path else ""

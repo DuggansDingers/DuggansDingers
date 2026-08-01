@@ -198,7 +198,19 @@ def render(board: dict[str, Any]) -> None:
     render_neon_table(_rows(rankings), columns, key="dd19-home-table", max_height=360)
 
     announced = sum(1 for player in rankings if player.get("pitching_data_available"))
-    weather = sum(1 for player in rankings if player.get("weather_available"))
+    weather_game_ids = {
+        str(game.get("game_id") or game.get("id"))
+        for game in (board.get("games_meta", []) or [])
+        if game.get("weather_available") and (game.get("game_id") or game.get("id"))
+    }
+    if not weather_game_ids:
+        weather_game_ids = {
+            str(player.get("game_id") or player.get("weather_game_key"))
+            for player in rankings
+            if player.get("weather_available")
+            and (player.get("game_id") or player.get("weather_game_key"))
+        }
+    weather = len(weather_game_ids)
     wind = sum(1 for player in rankings if safe_float(player.get("weather_impact")) > 2)
     st.markdown(
         f'''<div class="dd19-summary"><div><i>◎</i><span>FULL MLB SLATE</span><b>{safe_int(board.get('games'))} GAMES</b></div>

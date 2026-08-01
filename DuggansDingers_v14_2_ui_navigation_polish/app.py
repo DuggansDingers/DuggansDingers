@@ -15,7 +15,7 @@ from components.navigation import init_state, page_from_query, render_navigation
 from components.theme import apply_theme
 from components.shell import render_app_header
 from data_service import empty_board, load_board, snapshot_available
-from views import dashboard, player_profile, rankings, secondary, team_cheatsheets, weather_command, extras, matchup_center, prop_center
+from views import dashboard, player_profile, rankings, secondary, team_cheatsheets, weather_command, extras, matchup_center, prop_center, kitchen
 
 apply_theme()
 init_state()
@@ -34,11 +34,11 @@ if chosen_date != target_date:
     st.rerun()
 
 include_weather = page in {
-    "Home","Daily Board","Team Sheets","Weather","Game Sims","Parlay Lab",
+    "Home","Daily Board","Team Sheets","Weather","Game Sims","The Kitchen",
     "Player Intelligence","News & Alerts","Matchups","Park Factors","Props"
 }
 include_odds = page in {
-    "Home","Daily Board","Team Sheets","Sportsbook","Parlay Lab",
+    "Home","Daily Board","Team Sheets","Sportsbook","The Kitchen",
     "Player Intelligence","Game Sims","News & Alerts","Props"
 }
 
@@ -106,7 +106,7 @@ routes = {
     "Weather": weather_command.render,
     "Sportsbook": secondary.sportsbook_odds,
     "Game Sims": secondary.game_sims,
-    "Parlay Lab": secondary.parlay,
+    "The Kitchen": kitchen.render,
     "Player Intelligence": player_profile.render,
     "Matchups": matchup_center.render,
     "Props": prop_center.render,

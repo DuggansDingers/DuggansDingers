@@ -16,7 +16,7 @@ NAV_ITEMS = [
     ("Game Sims","game-sims","Game Sims","cube","games"),
     ("Sportsbook","sportsbook","Sportsbook Odds","money","odds"),
     ("Props","props","Prop Command","props","props"),
-    ("Parlay Lab","parlay-lab","Parlay Lab","lab","parlay"),
+    ("The Kitchen","the-kitchen","The Kitchen","lab","parlay"),
     ("Player Intelligence","player-intelligence","Player Profiles","user",""),
     ("Park Factors","park-factors","Park Factors","park",""),
     ("Matchups","matchups","Matchups","matchup","games"),
@@ -45,7 +45,7 @@ SLUG_TO_PAGE = {slug:page for page,slug,_,_,_ in NAV_ITEMS}
 ALIASES = {
     "Dashboard":"Home","Rankings":"Daily Board","Team Cheat Sheets":"Team Sheets",
     "Player Profile":"Player Intelligence","Player Profiles":"Player Intelligence",
-    "Sportsbook Odds":"Sportsbook","Model Lab":"Parlay Lab",
+    "Sportsbook Odds":"Sportsbook","Model Lab":"The Kitchen","Parlay Lab":"The Kitchen",
 }
 
 
@@ -154,6 +154,7 @@ def render_navigation(as_of: str, games: int, hitters: int, updated_at: str = ""
             "Player Profiles": "Players",
             "News & Alerts": "Alerts",
             "Prop Command": "Props",
+            "The Kitchen": "Kitchen",
         }.get(label, label)
         count = counts.get(count_key, 0) if count_key else 0
         badge = f'<em>{count}</em>' if count else ""
