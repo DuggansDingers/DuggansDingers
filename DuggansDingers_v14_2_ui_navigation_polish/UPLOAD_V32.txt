@@ -1,0 +1,9 @@
+DUGGANSDINGERS V32 BRAND BANNER PATCH
+
+1. Extract DuggansDingers_v32_BRAND_BANNER_PATCH.zip.
+2. Copy everything inside DuggansDingers_v32_BRAND_BANNER_PATCH into the existing app folder.
+3. Replace matching files.
+4. Commit to main and push origin.
+5. Allow Streamlit to reboot.
+
+Your Streamlit URL, APIs, and Secrets remain unchanged.
