@@ -145,15 +145,28 @@ def window_stats(game_log: list[dict[str, Any]], games: int) -> dict[str, Any]:
     home_runs = sum(safe_number((row.get("stat") or {}).get("homeRuns")) for row in sample)
     plate_appearances = sum(safe_number((row.get("stat") or {}).get("plateAppearances")) for row in sample)
     hits = sum(safe_number((row.get("stat") or {}).get("hits")) for row in sample)
+    doubles = sum(safe_number((row.get("stat") or {}).get("doubles")) for row in sample)
+    triples = sum(safe_number((row.get("stat") or {}).get("triples")) for row in sample)
+    stolen_bases = sum(safe_number((row.get("stat") or {}).get("stolenBases")) for row in sample)
+    strikeouts = sum(safe_number((row.get("stat") or {}).get("strikeOuts")) for row in sample)
     at_bats = sum(safe_number((row.get("stat") or {}).get("atBats")) for row in sample)
+    total_bases = hits + doubles + triples * 2 + home_runs * 3
     return {
         "games": len(sample),
         "home_runs": int(home_runs),
         "plate_appearances": int(plate_appearances),
         "hits": int(hits),
+        "doubles": int(doubles),
+        "triples": int(triples),
+        "total_bases": int(total_bases),
+        "stolen_bases": int(stolen_bases),
+        "strikeouts": int(strikeouts),
         "at_bats": int(at_bats),
         "hr_rate": hr_rate(home_runs, plate_appearances),
         "avg": round(hits / at_bats, 3) if at_bats else 0.0,
+        "tb_per_game": round(total_bases / len(sample), 2) if sample else 0.0,
+        "hits_per_game": round(hits / len(sample), 2) if sample else 0.0,
+        "sb_per_game": round(stolen_bases / len(sample), 3) if sample else 0.0,
     }
 
 
@@ -173,14 +186,22 @@ def empty_player_stats() -> dict[str, Any]:
         "season_triples": 0,
         "season_walks": 0,
         "season_strikeouts": 0,
+        "season_stolen_bases": 0,
+        "season_caught_stealing": 0,
         "last_7_games": 0,
         "last_7_home_runs": 0,
         "last_7_plate_appearances": 0,
         "last_7_hr_rate": 0.0,
+        "last_7_hits": 0,
+        "last_7_total_bases": 0,
+        "last_7_stolen_bases": 0,
         "last_10_games": 0,
         "last_10_home_runs": 0,
         "last_10_plate_appearances": 0,
         "last_10_hr_rate": 0.0,
+        "last_10_hits": 0,
+        "last_10_total_bases": 0,
+        "last_10_stolen_bases": 0,
         "last_15_games": 0,
         "last_15_home_runs": 0,
         "last_15_plate_appearances": 0,
@@ -189,6 +210,9 @@ def empty_player_stats() -> dict[str, Any]:
         "last_30_home_runs": 0,
         "last_30_plate_appearances": 0,
         "last_30_hr_rate": 0.0,
+        "last_30_hits": 0,
+        "last_30_total_bases": 0,
+        "last_30_stolen_bases": 0,
         "recent_games": 0,
         "recent_home_runs": 0,
         "recent_plate_appearances": 0,
@@ -262,16 +286,24 @@ def get_player_hitting_stats(player_id: Any, season: int, target_date: str, stat
         "season_triples": safe_int(season_stat.get("triples")),
         "season_walks": safe_int(season_stat.get("baseOnBalls")),
         "season_strikeouts": safe_int(season_stat.get("strikeOuts")),
+        "season_stolen_bases": safe_int(season_stat.get("stolenBases")),
+        "season_caught_stealing": safe_int(season_stat.get("caughtStealing")),
         "last_7_games": seven["games"],
         "last_7_home_runs": seven["home_runs"],
         "last_7_plate_appearances": seven["plate_appearances"],
         "last_7_hr_rate": seven["hr_rate"],
         "last_7_avg": seven["avg"],
+        "last_7_hits": seven["hits"],
+        "last_7_total_bases": seven["total_bases"],
+        "last_7_stolen_bases": seven["stolen_bases"],
         "last_10_games": ten["games"],
         "last_10_home_runs": ten["home_runs"],
         "last_10_plate_appearances": ten["plate_appearances"],
         "last_10_hr_rate": ten["hr_rate"],
         "last_10_avg": ten["avg"],
+        "last_10_hits": ten["hits"],
+        "last_10_total_bases": ten["total_bases"],
+        "last_10_stolen_bases": ten["stolen_bases"],
         "last_15_games": fifteen["games"],
         "last_15_home_runs": fifteen["home_runs"],
         "last_15_plate_appearances": fifteen["plate_appearances"],
@@ -282,12 +314,24 @@ def get_player_hitting_stats(player_id: Any, season: int, target_date: str, stat
         "last_30_plate_appearances": thirty["plate_appearances"],
         "last_30_hr_rate": thirty["hr_rate"],
         "last_30_avg": thirty["avg"],
+        "last_30_hits": thirty["hits"],
+        "last_30_total_bases": thirty["total_bases"],
+        "last_30_stolen_bases": thirty["stolen_bases"],
         # Backward-compatible recent fields use the 15-game window.
         "recent_games": fifteen["games"],
         "recent_home_runs": fifteen["home_runs"],
         "recent_plate_appearances": fifteen["plate_appearances"],
         "recent_hr_rate": fifteen["hr_rate"],
         "recent_game_hr_series": [safe_int((row.get("stat") or {}).get("homeRuns")) for row in reversed(game_log[:15])],
+        "recent_game_hit_series": [safe_int((row.get("stat") or {}).get("hits")) for row in reversed(game_log[:15])],
+        "recent_game_tb_series": [
+            safe_int((row.get("stat") or {}).get("hits"))
+            + safe_int((row.get("stat") or {}).get("doubles"))
+            + safe_int((row.get("stat") or {}).get("triples")) * 2
+            + safe_int((row.get("stat") or {}).get("homeRuns")) * 3
+            for row in reversed(game_log[:15])
+        ],
+        "recent_game_sb_series": [safe_int((row.get("stat") or {}).get("stolenBases")) for row in reversed(game_log[:15])],
         "recent_game_dates": [str(row.get("date", "")) for row in reversed(game_log[:15])],
     }
     stats_cache[cache_key] = stats

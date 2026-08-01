@@ -9,17 +9,16 @@ from components.ui import image_data
 
 
 def render_app_header(board: dict, page: str) -> None:
-    wordmark = image_data(Path(__file__).resolve().parents[1] / "assets" / "wordmark_v25.png")
-    alerts = int(st.session_state.get("last_alert_count",0))
-    st.markdown(
-        f'''<header class="dd25-app-header">
-          <div class="dd25-header-page">{escape(page)}</div>
-          <a href="?view=home" target="_self"><img src="{wordmark}" alt="DuggansDingers"></a>
-          <div class="dd25-header-actions">
-            <span title="Search">&#8981;</span>
-            <span class="notice" title="Alerts">&#9831;<b>{alerts}</b></span>
-            <span title="Account">&#9711;</span>
-          </div>
-        </header>''',
-        unsafe_allow_html=True,
+    brand = image_data(Path(__file__).resolve().parents[1] / "assets" / "header_brand_v28.png")
+    alerts = int(st.session_state.get("last_alert_count", 0))
+    live = "SNAPSHOT" if board.get("fast_start") else "LIVE"
+    html = (
+        '<header class="dd28-app-header">'
+        f'<div class="dd28-header-context"><span>{escape(page)}</span><b><i></i>{live} DATA</b></div>'
+        f'<a class="dd28-brand-lockup" href="?view=home" target="_self"><img src="{brand}" alt="DuggansDingers Home Run Intelligence"></a>'
+        '<div class="dd28-header-actions">'
+        '<a href="?view=props" target="_self"><span>&#9670;</span><b>PROP COMMAND</b></a>'
+        f'<a href="?view=news-alerts" target="_self" class="notice"><span>&#9831;</span><b>{alerts}</b></a>'
+        '</div></header>'
     )
+    st.markdown(html, unsafe_allow_html=True)

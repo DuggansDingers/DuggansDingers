@@ -15,6 +15,7 @@ NAV_ITEMS = [
     ("Weather","weather","Ballpark Weather","weather",""),
     ("Game Sims","game-sims","Game Sims","cube","games"),
     ("Sportsbook","sportsbook","Sportsbook Odds","money","odds"),
+    ("Props","props","Prop Command","props","props"),
     ("Parlay Lab","parlay-lab","Parlay Lab","lab","parlay"),
     ("Player Intelligence","player-intelligence","Player Profiles","user",""),
     ("Park Factors","park-factors","Park Factors","park",""),
@@ -31,6 +32,7 @@ ICONS = {
     "cube":'<svg viewBox="0 0 24 24"><path d="M4 17V9l8-5 8 5v8l-8 5Z"/><path d="m4 9 8 5 8-5M12 14v8"/></svg>',
     "money":'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M15 8.2c-.7-.7-1.6-1-2.9-1-1.8 0-3 .8-3 2.1s1 1.8 3 2.2c2 .4 3 1.1 3 2.4s-1.2 2.2-3.1 2.2c-1.5 0-2.6-.4-3.4-1.3M12 5.3v13.4"/></svg>',
     "lab":'<svg viewBox="0 0 24 24"><path d="M7 3h10M9 3v5l-4.6 8a3 3 0 0 0 2.6 4.5h10a3 3 0 0 0 2.6-4.5L15 8V3"/><path d="M7.2 15h9.6"/></svg>',
+    "props":'<svg viewBox="0 0 24 24"><path d="M4 18V9M9 18V5M14 18v-7M19 18V3"/><path d="M3 20h18"/><circle cx="9" cy="5" r="1.5"/><circle cx="19" cy="3" r="1.5"/></svg>',
     "user":'<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></svg>',
     "park":'<svg viewBox="0 0 24 24"><path d="M3 18V7l9-4 9 4v11l-9 3Z"/><path d="M7 16V9h10v7M12 7v12"/></svg>',
     "matchup":'<svg viewBox="0 0 24 24"><path d="m4 4 16 16M20 4 4 20"/><path d="m3 6 3-3 2 2M21 18l-3 3-2-2M18 3l3 3-2 2M6 21l-3-3 2-2"/></svg>',
@@ -103,6 +105,7 @@ def render_navigation(as_of: str, games: int, hitters: int, updated_at: str = ""
         "odds": int(st.session_state.get("last_odds_count",0)),
         "parlay": len(st.session_state.get("generated_parlay",[]) or []),
         "alerts": int(st.session_state.get("last_alert_count",0)),
+        "props": int(st.session_state.get("last_prop_count",0)),
     }
 
     with st.sidebar:
@@ -150,6 +153,7 @@ def render_navigation(as_of: str, games: int, hitters: int, updated_at: str = ""
             "Sportsbook Odds": "Odds",
             "Player Profiles": "Players",
             "News & Alerts": "Alerts",
+            "Prop Command": "Props",
         }.get(label, label)
         count = counts.get(count_key, 0) if count_key else 0
         badge = f'<em>{count}</em>' if count else ""
