@@ -10,17 +10,14 @@ from components.ui import logo_data
 
 NAV_ITEMS = [
     ("Home","home","Dashboard","home",""),
-    ("Daily Board","daily-board","Player Rankings","rank","hitters"),
-    ("Team Sheets","team-sheets","Team Sheets","sheet",""),
-    ("Weather","weather","Ballpark Weather","weather",""),
-    ("Game Sims","game-sims","Game Sims","cube","games"),
-    ("Sportsbook","sportsbook","Sportsbook Odds","money","odds"),
-    ("Props","props","Prop Command","props","props"),
+    ("Daily Board","daily-board","Player Intelligence","rank","hitters"),
+    ("Probable Pitchers","probable-pitchers","Probable Pitchers","user","games"),
+    ("Matchups","matchups","Matchup Center","matchup","games"),
+    ("Projections","projections","Projections","sheet","hitters"),
+    ("Weather","weather","Weather","weather",""),
     ("The Kitchen","the-kitchen","The Kitchen","lab","parlay"),
-    ("Player Intelligence","player-intelligence","Player Profiles","user",""),
-    ("Park Factors","park-factors","Park Factors","park",""),
-    ("Matchups","matchups","Matchups","matchup","games"),
-    ("News & Alerts","news-alerts","News & Alerts","bell","alerts"),
+    ("Props","props","Prop Command","props","props"),
+    ("Tools","tools","Tools","cube",""),
     ("Settings","settings","Settings","settings",""),
 ]
 
@@ -109,10 +106,6 @@ def render_navigation(as_of: str, games: int, hitters: int, updated_at: str = ""
     }
 
     with st.sidebar:
-        st.markdown(
-            f'<a class="dd25-side-logo" href="?view=home" target="_self"><img src="{logo_data()}" alt="DuggansDingers"></a>',
-            unsafe_allow_html=True,
-        )
         links = []
         for page,slug,label,icon_name,count_key in NAV_ITEMS:
             active = " active" if page == current_page else ""
@@ -148,11 +141,10 @@ def render_navigation(as_of: str, games: int, hitters: int, updated_at: str = ""
     for page, slug, label, icon_name, count_key in NAV_ITEMS:
         active = " active" if page == current_page else ""
         short_label = {
-            "Player Rankings": "Rankings",
-            "Ballpark Weather": "Weather",
-            "Sportsbook Odds": "Odds",
-            "Player Profiles": "Players",
-            "News & Alerts": "Alerts",
+            "Player Intelligence": "Players",
+            "Probable Pitchers": "Pitchers",
+            "Matchup Center": "Matchups",
+            "Projections": "Projects",
             "Prop Command": "Props",
             "The Kitchen": "Kitchen",
         }.get(label, label)

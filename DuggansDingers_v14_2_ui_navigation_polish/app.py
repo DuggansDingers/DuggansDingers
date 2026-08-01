@@ -34,11 +34,11 @@ if chosen_date != target_date:
     st.rerun()
 
 include_weather = page in {
-    "Home","Daily Board","Team Sheets","Weather","Game Sims","The Kitchen",
+    "Home","Daily Board","Probable Pitchers","Matchups","Projections","Weather","The Kitchen",
     "Player Intelligence","News & Alerts","Matchups","Park Factors","Props"
 }
 include_odds = page in {
-    "Home","Daily Board","Team Sheets","Sportsbook","The Kitchen",
+    "Home","Daily Board","Probable Pitchers","Matchups","Projections","The Kitchen",
     "Player Intelligence","Game Sims","News & Alerts","Props"
 }
 
@@ -102,6 +102,9 @@ if not board.get("fast_start") and board.get("rankings"):
 routes = {
     "Home": dashboard.render,
     "Daily Board": rankings.render,
+    "Probable Pitchers": matchup_center.render,
+    "Projections": rankings.render,
+    "Tools": extras.settings,
     "Team Sheets": team_cheatsheets.render,
     "Weather": weather_command.render,
     "Sportsbook": secondary.sportsbook_odds,

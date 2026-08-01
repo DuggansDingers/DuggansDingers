@@ -1,0 +1,12 @@
+DUGGANSDINGERS V33 FULL UPDATE
+
+Use the PATCH ZIP with your current live repository.
+
+1. Extract DuggansDingers_v33_FULL_UPDATE_PATCH.zip.
+2. Open the extracted DuggansDingers_v33_FULL_UPDATE_PATCH folder.
+3. Copy everything inside it into your existing app folder.
+4. Replace matching files.
+5. Commit to main and push origin.
+6. Allow Streamlit to reboot.
+
+Your URL and Secrets remain unchanged.
