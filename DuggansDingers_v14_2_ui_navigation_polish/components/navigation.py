@@ -138,6 +138,31 @@ def render_navigation(as_of: str, games: int, hitters: int, updated_at: str = ""
             f'<div class="dd25-side-status"><span>DATA SOURCE</span><b>WeatherAPI / NWS</b><i><em></em> Live Updated</i><small>{escape(updated or "LIVE")}</small></div>',
             unsafe_allow_html=True,
         )
+
+    # iPhone/mobile navigation: the desktop sidebar is intentionally replaced by
+    # a thumb-friendly fixed navigation dock. All app sections remain reachable.
+    mobile_links = []
+    for page, slug, label, icon_name, count_key in NAV_ITEMS:
+        active = " active" if page == current_page else ""
+        short_label = {
+            "Player Rankings": "Rankings",
+            "Ballpark Weather": "Weather",
+            "Sportsbook Odds": "Odds",
+            "Player Profiles": "Players",
+            "News & Alerts": "Alerts",
+        }.get(label, label)
+        count = counts.get(count_key, 0) if count_key else 0
+        badge = f'<em>{count}</em>' if count else ""
+        mobile_links.append(
+            f'<a class="dd27-mobile-link{active}" href="?view={escape(slug)}" target="_self">'
+            f'<span>{ICONS[icon_name]}</span><b>{escape(short_label)}</b>{badge}</a>'
+        )
+    st.markdown(
+        '<nav class="dd27-mobile-nav" aria-label="Mobile navigation">'
+        '<div class="dd27-mobile-nav-scroll">' + "".join(mobile_links) + '</div></nav>',
+        unsafe_allow_html=True,
+    )
+
     st.session_state.slate_date = chosen_date
     return current_page, chosen_date.isoformat()
 

@@ -47,9 +47,47 @@ def news_alerts(board: dict) -> None:
     st.markdown('<div class="dd25-alert-grid">' + "".join(cards) + '</div>', unsafe_allow_html=True)
 
 
+def _configured(*names: str) -> bool:
+    try:
+        return any(bool(str(st.secrets.get(name, "")).strip()) for name in names)
+    except Exception:
+        return False
+
+
+def _source_statuses(board: dict) -> list[dict]:
+    players = list(board.get("rankings", []) or [])
+    games = list(board.get("games_meta", []) or [])
+    weather_count = sum(1 for game in games if game.get("weather_available"))
+    priced_count = sum(1 for player in players if player.get("best_odds") is not None)
+    pitcher_count = sum(
+        1 for player in players
+        if str(player.get("opposing_pitcher") or "").lower()
+        not in {"", "not announced", "awaiting announcement", "projected starter"}
+    )
+    statcast_count = sum(
+        1 for player in players
+        if player.get("statcast_available")
+        or safe_float(player.get("barrel_pct")) > 0
+        or safe_float(player.get("hard_hit_pct")) > 0
+    )
+
+    def row(name: str, state: str, detail: str) -> dict:
+        return {"name": name, "state": state, "detail": detail}
+
+    return [
+        row("Ballpark Pal", "connected" if players else ("configured" if _configured("BALLPARKPAL_API_KEY") else "missing"), f"{len(players)} ranked hitters" if players else "API key not detected"),
+        row("MLB Stats", "connected" if any(safe_int(p.get("season_home_runs")) for p in players) else "waiting", "Season and rolling history loaded" if players else "Waiting for board data"),
+        row("Weather", "connected" if weather_count else ("configured" if _configured("WEATHERAPI_KEY", "WEATHER_API_KEY", "VISUAL_CROSSING_API_KEY") else "missing"), f"{weather_count} game forecasts loaded" if weather_count else "Configured; no forecast rows in this board" if _configured("WEATHERAPI_KEY", "WEATHER_API_KEY", "VISUAL_CROSSING_API_KEY") else "Add WEATHERAPI_KEY"),
+        row("Sportsbook Odds", "connected" if priced_count else ("configured" if _configured("ODDS_API_IO_KEY") else "missing"), f"{priced_count} priced players matched" if priced_count else "Configured; props not returned yet" if _configured("ODDS_API_IO_KEY") else "Add ODDS_API_IO_KEY"),
+        row("Statcast", "connected" if statcast_count else ("snapshot" if board.get("fast_start") else "waiting"), f"{statcast_count} hitter profiles loaded" if statcast_count else "Available through the prepared snapshot builder" if board.get("fast_start") else "Waiting for Statcast refresh"),
+        row("Probable Pitchers", "connected" if pitcher_count else "waiting", f"{pitcher_count} hitters matched to starters" if pitcher_count else "MLB probable starters have not populated"),
+        row("Fast Start Snapshot", "connected" if board.get("fast_start") else "live", "Prepared snapshot is active" if board.get("fast_start") else "Live fallback is active for this date"),
+    ]
+
+
 def settings(board: dict) -> None:
     st.markdown(
-        '''<section class="dd25-page-hero"><span>APPLICATION CONTROL CENTER</span><h1>SITE <em>SETTINGS</em></h1><p>Control display density, startup behavior, and live-data refresh preferences.</p></section>''',
+        '<section class="dd25-page-hero dd26-settings-hero"><span>APPLICATION CONTROL CENTER</span><h1>SITE <em>SETTINGS</em></h1><p>Control display density, startup behavior, and live-data refresh preferences. Connection cards below are inferred from data actually loaded and configured secret names, never stale labels.</p></section>',
         unsafe_allow_html=True,
     )
     left, right = st.columns(2)
@@ -70,9 +108,14 @@ def settings(board: dict) -> None:
             st.session_state["_force_live_refresh"] = True
             st.rerun()
 
-    sources = board.get("data_sources", {}) or {}
-    tiles = "".join(
-        f'<div><span>{esc(str(name))}</span><b>{esc(str(status))}</b></div>'
-        for name, status in sources.items()
+    cards = []
+    for source in _source_statuses(board):
+        cards.append(
+            f'<article class="dd26-source-card {esc(source["state"])}"><i></i><div><span>{esc(source["name"])}</span><b>{esc(source["state"].replace("_", " ").upper())}</b><p>{esc(source["detail"])}</p></div></article>'
+        )
+    st.markdown(
+        '<section class="dd26-source-panel"><header><div><span>CONNECTION HEALTH</span><b>LIVE DATA SOURCES</b></div><em>Secret values remain hidden</em></header><div>'
+        + "".join(cards)
+        + '</div></section>',
+        unsafe_allow_html=True,
     )
-    st.markdown('<section class="dd25-source-panel"><header><b>CONNECTED DATA SOURCES</b></header><div>' + tiles + '</div></section>', unsafe_allow_html=True)

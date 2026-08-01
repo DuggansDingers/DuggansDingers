@@ -1,0 +1,11 @@
+DUGGANSDINGERS V26 PREMIUM PATCH
+
+Use the PATCH-ONLY ZIP for your existing live repository.
+
+1. Extract the ZIP.
+2. Open the extracted DuggansDingers_v26_PREMIUM_PATCH folder.
+3. Copy everything inside it into the existing live Streamlit app folder.
+4. Replace files when prompted.
+5. Commit to main and push origin in GitHub Desktop.
+
+Your Streamlit URL and existing secrets do not change.

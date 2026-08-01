@@ -1,0 +1,161 @@
+/* ============================================================
+   V27 IPHONE / MOBILE RESPONSIVE FIX
+   Desktop remains unchanged. Mobile uses a fixed, scrollable nav dock.
+   ============================================================ */
+.dd27-mobile-nav{display:none}
+
+@media (max-width: 780px){
+  :root{--dd-mobile-pad:12px}
+  html,body,[data-testid="stAppViewContainer"],.stApp{max-width:100%!important;overflow-x:hidden!important}
+  [data-testid="stSidebar"]{display:none!important}
+  [data-testid="collapsedControl"]{display:none!important}
+  [data-testid="stAppViewContainer"]>.main{margin-left:0!important;width:100%!important}
+  .main .block-container,[data-testid="stMainBlockContainer"]{
+    width:100%!important;max-width:100%!important;min-width:0!important;
+    padding:8px var(--dd-mobile-pad) 104px!important;
+  }
+  .element-container,.stMarkdown,.stVerticalBlock,.stHorizontalBlock{min-width:0!important;max-width:100%!important}
+  iframe{max-width:100%!important}
+
+  /* Fixed thumb navigation replaces inaccessible desktop sidebar. */
+  .dd27-mobile-nav{
+    display:block!important;position:fixed;z-index:999999;left:0;right:0;bottom:0;
+    padding:7px 7px calc(7px + env(safe-area-inset-bottom));
+    border-top:1px solid #176d9c;background:rgba(2,10,19,.97);
+    box-shadow:0 -7px 24px rgba(0,0,0,.55);backdrop-filter:blur(14px)
+  }
+  .dd27-mobile-nav-scroll{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
+  .dd27-mobile-nav-scroll::-webkit-scrollbar{display:none}
+  .dd27-mobile-link{
+    position:relative;flex:0 0 76px;min-height:57px;padding:6px 4px;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:3px;border:1px solid transparent;border-radius:9px;
+    color:#a9d7ec!important;text-decoration:none!important;scroll-snap-align:start
+  }
+  .dd27-mobile-link span{display:flex;align-items:center;justify-content:center}
+  .dd27-mobile-link svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.85;stroke-linecap:round;stroke-linejoin:round}
+  .dd27-mobile-link b{max-width:70px;overflow:hidden;color:inherit;font-size:.58rem;font-weight:900;line-height:1.05;text-overflow:ellipsis;white-space:nowrap;text-transform:uppercase}
+  .dd27-mobile-link em{position:absolute;right:6px;top:4px;display:grid;min-width:16px;height:16px;padding:0 3px;place-items:center;border-radius:8px;background:#0d75d6;color:#fff;font-size:.48rem;font-style:normal;font-weight:900}
+  .dd27-mobile-link.active{border-color:#37bfff;background:linear-gradient(180deg,#0a558f,#06233c);color:#fff!important;box-shadow:0 0 13px rgba(29,167,255,.42),inset 0 0 13px rgba(49,194,255,.11)}
+  .dd27-mobile-link.active span{filter:drop-shadow(0 0 7px #36c6ff)}
+
+  /* App header and status ribbon */
+  .dd25-app-header{display:grid!important;height:54px!important;margin:-8px -12px 7px!important;grid-template-columns:1fr!important;border-bottom:1px solid #15577e!important}
+  .dd25-app-header>a{display:flex!important}
+  .dd25-app-header img{width:min(82vw,330px)!important;height:46px!important}
+  .dd25-header-page,.dd25-header-actions{display:none!important}
+  .dd26-live-ribbon{margin:0 0 8px!important;padding:8px 10px!important;align-items:flex-start!important;font-size:.66rem!important;line-height:1.35!important}
+  .dd26-live-ribbon span{display:block!important}
+
+  /* Dashboard masthead */
+  .dd19-masthead{padding:9px 0 5px!important;overflow:hidden!important}
+  .dd19-wordmark{font-size:2.55rem!important;letter-spacing:-.045em!important;white-space:nowrap!important}
+  .dd19-tagline b{font-size:.78rem!important;letter-spacing:.24em!important}
+  .dd19-date{width:auto!important;max-width:100%!important;margin:10px 26px 0!important;padding:10px 14px!important;font-size:.92rem!important}
+
+  /* One full pick card at a time, rather than two clipped desktop cards. */
+  .dd19-picks{
+    display:flex!important;width:100%!important;gap:10px!important;margin:8px 0 12px!important;
+    padding:0 2px 7px!important;overflow-x:auto!important;scroll-snap-type:x mandatory!important;
+    scrollbar-width:none!important;-webkit-overflow-scrolling:touch!important
+  }
+  .dd19-picks::-webkit-scrollbar{display:none!important}
+  .dd19-pick-link{flex:0 0 calc(100vw - 30px)!important;width:calc(100vw - 30px)!important;scroll-snap-align:center!important}
+  .dd19-pick{width:100%!important;min-width:0!important;height:auto!important;min-height:548px!important;border-radius:10px!important}
+  .dd19-pick header{height:52px!important}
+  .dd19-pick header b{font-size:1.55rem!important}
+  .dd19-photo-wrap{height:205px!important}
+  .dd19-photo-wrap img{max-height:202px!important}
+  .dd19-pick h3{margin-top:8px!important;font-size:1.48rem!important}
+  .dd19-team{font-size:.84rem!important}
+  .dd19-metric-row{margin:12px 15px 0!important}
+  .dd19-metric-row strong{font-size:2rem!important}
+  .dd19-metric-row small{font-size:.58rem!important}
+  .dd19-pick ul{margin:10px 16px 85px!important;padding-top:10px!important}
+  .dd19-pick li{font-size:.78rem!important;white-space:normal!important;line-height:1.35!important}
+  .dd20-home-weather{bottom:43px!important;min-height:42px!important;padding:8px 13px!important}
+  .dd19-pick footer{height:43px!important;padding:0 10px!important}
+  .dd19-pick footer span,.dd19-pick footer b{font-size:.67rem!important}
+
+  /* Ranking title and actions */
+  .dd19-table-title{height:auto!important;min-height:0!important;padding:10px!important;display:block!important}
+  .dd19-table-title>div:first-child{margin-bottom:8px!important}
+  .dd19-table-title>div:first-child b{font-size:1rem!important}
+  .dd19-title-actions{display:grid!important;grid-template-columns:1fr 1fr!important;width:100%!important;gap:7px!important}
+  .dd19-title-actions a{min-height:40px!important;padding:9px 5px!important;font-size:.67rem!important;text-align:center!important}
+
+  /* All data tables become deliberate horizontal scrollers rather than clipped pages. */
+  .dd-neon-table-shell{width:100%!important;max-width:100%!important;overflow:auto!important;-webkit-overflow-scrolling:touch!important}
+  .dd-neon-table-shell>.dd-neon-grid{min-width:1080px!important}
+  #dd19-home-table.dd-neon-table-shell{max-height:530px!important}
+  .dd-neon-th{position:sticky!important;top:0!important;z-index:4!important;font-size:.61rem!important}
+  .dd-neon-td{font-size:.69rem!important}
+  .dd19-player-cell img{width:42px!important;height:48px!important}
+  .dd19-player-cell b{font-size:.70rem!important}
+
+  /* Summary tiles */
+  .dd19-summary{grid-template-columns:1fr 1fr!important;gap:8px!important}
+  .dd19-summary>div{min-height:70px!important;grid-template-columns:40px 1fr!important;padding:8px!important}
+  .dd19-summary i{font-size:1.45rem!important}
+  .dd19-summary span{font-size:.54rem!important}.dd19-summary b{font-size:.74rem!important}
+
+  /* Weather page */
+  .dd25-wx-hero{display:block!important;min-height:0!important;padding:13px!important}
+  .dd25-wx-hero h1{font-size:2.18rem!important;white-space:normal!important;line-height:1!important}
+  .dd25-wx-hero aside{display:grid!important;grid-template-columns:1fr 1fr!important;gap:7px!important;margin-top:12px!important}
+  .dd25-wx-hero aside>div{min-width:0!important;min-height:67px!important;padding:9px!important}
+  .dd25-wx-hero aside>div:last-child{grid-column:1/-1!important}
+  .dd25-wx-grid{grid-template-columns:1fr!important;gap:10px!important}
+  .dd25-wx-card{min-height:220px!important}
+  .dd25-wx-match b{font-size:.92rem!important}.dd25-wx-card time{font-size:.70rem!important}
+  .dd25-wx-detail{overflow:visible!important}.dd25-wx-detail-scene{min-height:360px!important}
+  .dd25-wx-detail-strip,.dd25-wx-detail-metrics{grid-template-columns:1fr 1fr!important}
+  .dd25-wx-hitter-head,.dd25-wx-hitter-row{grid-template-columns:38px 1.3fr .65fr .7fr!important}
+  .dd25-wx-hitter-head>span:nth-child(n+5),.dd25-wx-hitter-row>*:nth-child(n+5){display:none!important}
+
+  /* Matchup Center */
+  .dd26-match-hero{display:block!important;min-height:0!important;padding:14px!important}
+  .dd26-match-hero h1{font-size:2.45rem!important}
+  .dd26-match-hero p{font-size:.76rem!important}
+  .dd26-match-hero aside{grid-template-columns:repeat(3,1fr)!important;margin-top:12px!important}
+  .dd26-match-hero aside>div{min-width:0!important;min-height:66px!important;padding:8px!important}
+  .dd26-match-grid{grid-template-columns:1fr!important}
+  .dd26-match-card{min-height:285px!important}
+  .dd26-match-card-main{grid-template-columns:82px 1fr!important}
+  .dd26-match-card footer{grid-template-columns:1.2fr .7fr .8fr!important}
+  .dd26-match-card footer em{display:none!important}
+  .dd26-match-detail-hero{display:block!important;min-height:0!important;padding:14px!important}
+  .dd26-versus{grid-template-columns:1fr 42px 1fr!important}
+  .logo-plate.hero{width:60px!important;height:60px!important}.logo-plate.hero img{width:49px!important;height:49px!important}
+  .dd26-versus h1{font-size:1.65rem!important}
+  .dd26-match-detail-hero aside{grid-template-columns:1fr 1fr!important;margin-top:12px!important}
+  .dd26-pitcher-grid{grid-template-columns:1fr!important}
+  .dd26-pitcher-stats{grid-template-columns:repeat(3,1fr)!important}
+  .dd26-key-strip{grid-template-columns:1fr 1fr!important}
+  .dd26-batter-board{overflow-x:auto!important;-webkit-overflow-scrolling:touch!important}
+  .dd26-batter-board>header{min-width:760px!important}
+  .dd26-batter-head,.dd26-batter-row{min-width:930px!important;grid-template-columns:42px 180px 85px 85px 75px 75px 85px 90px 95px 80px!important}
+  .dd26-batter-head>span,.dd26-batter-row>*{display:initial!important}
+  .dd26-batter-row .player{display:flex!important}.dd26-batter-row .metric{display:block!important}
+
+  /* Team sheets / rankings / generic pages */
+  .dd25-page-hero{min-height:0!important;padding:15px!important}
+  .dd25-page-hero h1{font-size:2.45rem!important}
+  .dd25-page-hero aside{position:static!important;display:grid!important;grid-template-columns:1fr 1fr!important;margin-top:12px!important}
+  .dd-v18-team-grid,.dd-v18-team-matchup{grid-template-columns:1fr!important}
+  .dd-rank-card-grid{grid-template-columns:1fr!important}
+  .dd26-source-panel>div{grid-template-columns:1fr!important}
+  .dd25-alert-grid{grid-template-columns:1fr!important}
+
+  /* Streamlit controls */
+  [data-baseweb="select"]>div,[data-testid="stDateInput"] input,[data-testid="stTextInput"] input{font-size:16px!important}
+  .stButton>button{min-height:44px!important;font-size:.78rem!important}
+}
+
+@media (max-width: 390px){
+  .dd19-wordmark{font-size:2.22rem!important}
+  .dd19-pick-link{flex-basis:calc(100vw - 26px)!important;width:calc(100vw - 26px)!important}
+  .dd19-pick{min-height:525px!important}
+  .dd19-summary{grid-template-columns:1fr!important}
+  .dd25-wx-hero aside,.dd26-match-hero aside{grid-template-columns:1fr!important}
+  .dd25-wx-hero aside>div:last-child{grid-column:auto!important}
+}

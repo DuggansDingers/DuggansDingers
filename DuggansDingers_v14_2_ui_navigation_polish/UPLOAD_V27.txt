@@ -1,0 +1,9 @@
+DUGGANSDINGERS V27 MOBILE PATCH
+
+1. Extract the patch ZIP.
+2. Open DuggansDingers_v27_MOBILE_PATCH.
+3. Copy everything inside it into the existing live app folder.
+4. Replace matching files.
+5. Commit to main and Push origin.
+
+No Streamlit URL or Secrets changes are required.

@@ -8,7 +8,7 @@ from typing import Any
 from components.ui import image_data
 
 BASE_DIR = Path(__file__).resolve().parents[1]
-RENDER_DIR = BASE_DIR / "assets" / "stadium_v25"
+RENDER_DIR = BASE_DIR / "assets" / "stadium_v26"
 STADIUMS_FILE = BASE_DIR / "data" / "stadiums.json"
 
 TEAM_ID_TO_ABBR = {
@@ -54,21 +54,21 @@ TEAM_ALIASES = {
 
 RENDERS = {path.stem.upper(): path for path in RENDER_DIR.glob("*.jpg")}
 
+
 @lru_cache(maxsize=1)
 def _venue_index() -> dict[str, str]:
     try:
         data = json.loads(STADIUMS_FILE.read_text(encoding="utf-8-sig"))
     except Exception:
         data = {}
-    index: dict[str, str] = {}
+    result: dict[str, str] = {}
     if isinstance(data, dict):
         for abbr, stadium in data.items():
-            names = [stadium.get("name"), *(stadium.get("aliases") or [])]
-            for name in names:
+            for name in [stadium.get("name"), *(stadium.get("aliases") or [])]:
                 key = " ".join(str(name or "").upper().replace(".", " ").split())
                 if key:
-                    index[key] = abbr.upper()
-    return index
+                    result[key] = str(abbr).upper()
+    return result
 
 
 def _normalize(value: Any) -> str:
@@ -77,9 +77,9 @@ def _normalize(value: Any) -> str:
 
 
 def _team_key(game: dict[str, Any]) -> str:
-    for key_name in ("home_team_id", "team_id"):
+    for field in ("home_team_id", "team_id"):
         try:
-            team = TEAM_ID_TO_ABBR.get(int(game.get(key_name)))
+            team = TEAM_ID_TO_ABBR.get(int(game.get(field)))
         except Exception:
             team = None
         if team in RENDERS:

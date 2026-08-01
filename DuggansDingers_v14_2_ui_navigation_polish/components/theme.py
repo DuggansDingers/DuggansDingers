@@ -13,6 +13,8 @@ CSS_FILES = [
     Path(__file__).resolve().parents[1] / "assets" / "v21.css",
     Path(__file__).resolve().parents[1] / "assets" / "v22.css",
     Path(__file__).resolve().parents[1] / "assets" / "v25.css",
+    Path(__file__).resolve().parents[1] / "assets" / "v26.css",
+    Path(__file__).resolve().parents[1] / "assets" / "v27_mobile.css",
 ]
 
 

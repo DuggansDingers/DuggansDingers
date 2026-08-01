@@ -15,7 +15,7 @@ from components.navigation import init_state, page_from_query, render_navigation
 from components.theme import apply_theme
 from components.shell import render_app_header
 from data_service import empty_board, load_board, snapshot_available
-from views import dashboard, player_profile, rankings, secondary, team_cheatsheets, weather_command, extras
+from views import dashboard, player_profile, rankings, secondary, team_cheatsheets, weather_command, extras, matchup_center
 
 apply_theme()
 init_state()
@@ -94,9 +94,9 @@ if board.get("error"):
 render_app_header(board, page)
 
 if not board.get("fast_start") and board.get("rankings"):
-    st.caption(
-        "Live fallback was used because a prepared snapshot was not available "
-        "for this slate. The scheduled snapshot workflow makes normal startup faster."
+    st.markdown(
+        '<div class="dd26-live-ribbon"><i></i><b>LIVE FALLBACK</b><span>A prepared snapshot is not available for this slate. The app is using current live data while the scheduled snapshot catches up.</span></div>',
+        unsafe_allow_html=True,
     )
 
 routes = {
@@ -108,7 +108,7 @@ routes = {
     "Game Sims": secondary.game_sims,
     "Parlay Lab": secondary.parlay,
     "Player Intelligence": player_profile.render,
-    "Matchups": secondary.matchups,
+    "Matchups": matchup_center.render,
     "Park Factors": secondary.parks,
     "Trends": secondary.trends,
     "News & Alerts": extras.news_alerts,
