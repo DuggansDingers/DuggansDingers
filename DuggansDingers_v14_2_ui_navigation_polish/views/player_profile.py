@@ -21,6 +21,85 @@ from components.ui import (
 from services.player_history import get_year_by_year_history
 
 
+
+def _clamp(value: float, low: float, high: float) -> float:
+    return max(low, min(high, value))
+
+
+def _slugging_heatmap_html(player: dict) -> str:
+    """
+    Build a nine-zone modeled slugging map from the real data already loaded:
+    season SLG, recent power, barrel rate, hard-hit rate, hitter side, pitcher
+    hand, and pitcher HR/9. It is clearly labeled as modeled rather than a
+    pitch-location tracking feed.
+    """
+    season_slg = safe_float(player.get("season_slg"))
+    if season_slg <= 0:
+        season_slg = 0.400
+
+    recent_rate = safe_float(player.get("last_10_hr_rate")) or safe_float(player.get("last_7_hr_rate"))
+    season_rate = safe_float(player.get("season_hr_rate"))
+    barrel = safe_float(player.get("barrel_pct"))
+    hard_hit = safe_float(player.get("hard_hit_pct"))
+    pitcher_hr9 = safe_float(player.get("pitcher_hr9"))
+    pitcher_hand = str(player.get("opposing_pitcher_hand") or "—").upper()
+    bats = str(player.get("bat_side") or player.get("bats") or "R").upper()
+
+    form_boost = _clamp((recent_rate - season_rate) * 0.012, -0.045, 0.055)
+    contact_boost = _clamp((barrel - 8.0) * 0.004 + (hard_hit - 38.0) * 0.0016, -0.055, 0.085)
+    pitcher_boost = _clamp((pitcher_hr9 - 1.10) * 0.045, -0.040, 0.075)
+    base = _clamp(season_slg + form_boost + contact_boost + pitcher_boost, 0.250, 0.850)
+
+    pull_left = bats == "L"
+    if bats == "S":
+        pull_left = pitcher_hand == "R"
+
+    # Nine-zone modifiers. The hitter's pull-side and middle-in power receive
+    # the strongest boost; outer/upper zones are suppressed.
+    right_handed = [
+        [-0.075, -0.045, -0.095],
+        [ 0.010,  0.065, -0.030],
+        [ 0.055,  0.105,  0.020],
+    ]
+    left_handed = [list(reversed(row)) for row in right_handed]
+    modifiers = left_handed if pull_left else right_handed
+
+    values = [_clamp(base + modifiers[row][col], 0.180, 1.050) for row in range(3) for col in range(3)]
+    minimum, maximum = min(values), max(values)
+
+    def color(value: float) -> str:
+        ratio = 0.5 if maximum == minimum else (value - minimum) / (maximum - minimum)
+        hue = 215 - ratio * 205
+        light = 25 + ratio * 28
+        return f"hsl({hue:.0f} 92% {light:.0f}%)"
+
+    cells = []
+    for index, value in enumerate(values):
+        label = ("UP & IN","UP","UP & AWAY","IN","HEART","AWAY","DOWN & IN","DOWN","DOWN & AWAY")[index]
+        cells.append(
+            f'<div class="dd31-heat-cell" style="--zone:{color(value)}">'
+            f'<small>{label}</small><b>{value:.3f}</b><span>SLG</span></div>'
+        )
+
+    best_index = max(range(len(values)), key=values.__getitem__)
+    best_label = ("Up & in","Up","Up & away","Inside","Heart","Away","Down & in","Down","Down & away")[best_index]
+    return (
+        '<section class="dd31-heat-panel">'
+        '<header><div><span>MODELED CONTACT MAP</span><b>HEAT MAP — SLUGGING %</b></div>'
+        f'<aside><span>SEASON SLG</span><b>{season_slg:.3f}</b></aside></header>'
+        '<div class="dd31-heat-content"><div class="dd31-zone-wrap">'
+        '<div class="dd31-zone-label top">HIGH</div><div class="dd31-zone-label left">INSIDE</div>'
+        '<div class="dd31-zone-grid">' + "".join(cells) + '</div>'
+        '<div class="dd31-zone-label right">AWAY</div><div class="dd31-zone-label bottom">LOW</div></div>'
+        '<aside class="dd31-heat-read">'
+        f'<div><small>HOTTEST ZONE</small><b>{best_label}</b></div>'
+        f'<div><small>MODELED PEAK SLG</small><b>{maximum:.3f}</b></div>'
+        f'<div><small>BARREL RATE</small><b>{barrel:.1f}%</b></div>'
+        f'<div><small>HARD-HIT RATE</small><b>{hard_hit:.1f}%</b></div>'
+        f'<p>Built from season slugging, recent power, Statcast contact quality, batter side, opposing-pitcher hand, and pitcher HR/9. This is a modeled zone profile, not raw pitch-location tracking.</p>'
+        '</aside></div></section>'
+    )
+
 def render(board: dict) -> None:
     rankings = board.get("rankings", []) or []
     if not rankings:
@@ -113,6 +192,8 @@ def render(board: dict) -> None:
     s5.metric("Pitcher Hard-Hit %", f"{safe_float(player.get('pitcher_hard_hit_pct')):.1f}%" if player.get("pitcher_hard_hit_pct") else "—")
     if not player.get("statcast_available"):
         st.caption("Statcast leaderboard data is unavailable for this player or the optional pybaseball package has not been installed yet.")
+
+    st.markdown(_slugging_heatmap_html(player), unsafe_allow_html=True)
 
     section("Game-Time Weather", "MULTI-PROVIDER LIVE FORECAST", "WeatherAPI / Visual Crossing / National Weather Service")
     if player.get("weather_available"):

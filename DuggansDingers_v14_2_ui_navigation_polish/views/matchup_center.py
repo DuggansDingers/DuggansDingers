@@ -111,6 +111,71 @@ def _matchup_score(player: dict) -> float:
     return max(0.0, min(100.0, score))
 
 
+
+def _metric_percent(value: float, low: float, high: float, *, invert: bool = False) -> float:
+    if high <= low:
+        return 50.0
+    normalized = max(0.0, min(1.0, (value - low) / (high - low)))
+    if invert:
+        normalized = 1.0 - normalized
+    return normalized * 100.0
+
+
+def _matchup_graph_html(player: dict, pitcher: dict, accent: str) -> str:
+    hitter_name = str(player.get("player_name") or "Top projected hitter")
+    pitcher_name = str(pitcher.get("name") or "Projected starter")
+
+    hitter_k_rate = safe_float(player.get("season_strikeouts")) / max(
+        1.0, safe_float(player.get("season_plate_appearances"))
+    ) * 100.0
+    hitter_values = {
+        "Contact": _metric_percent(safe_float(player.get("season_avg")), .190, .330),
+        "Slugging": _metric_percent(safe_float(player.get("season_slg")), .300, .650),
+        "Hard Hit": _metric_percent(safe_float(player.get("hard_hit_pct")), 25, 55),
+        "Barrel": _metric_percent(safe_float(player.get("barrel_pct")), 3, 20),
+        "K Control": _metric_percent(hitter_k_rate, 14, 34, invert=True),
+    }
+    pitcher_values = {
+        "Contact": _metric_percent(safe_float(pitcher.get("whip")), .85, 1.65, invert=True),
+        "Slugging": _metric_percent(safe_float(pitcher.get("hr9")), .45, 2.05, invert=True),
+        "Hard Hit": _metric_percent(safe_float(pitcher.get("hard_hit")), 28, 52, invert=True),
+        "Barrel": _metric_percent(safe_float(player.get("pitcher_barrel_pct")), 4, 14, invert=True),
+        "K Control": _metric_percent(safe_float(pitcher.get("k9")), 5.0, 12.5),
+    }
+
+    rows = []
+    for label in ("Contact", "Slugging", "Hard Hit", "Barrel", "K Control"):
+        hitter = hitter_values[label]
+        pitcher_edge = pitcher_values[label]
+        rows.append(
+            '<div class="dd31-match-row">'
+            f'<span class="dd31-hitter-value">{hitter:.0f}</span>'
+            f'<div class="dd31-left-track"><i style="width:{hitter:.1f}%"></i></div>'
+            f'<b>{label}</b>'
+            f'<div class="dd31-right-track"><i style="width:{pitcher_edge:.1f}%"></i></div>'
+            f'<span class="dd31-pitcher-value">{pitcher_edge:.0f}</span>'
+            '</div>'
+        )
+
+    overall_hitter = sum(hitter_values.values()) / len(hitter_values)
+    overall_pitcher = sum(pitcher_values.values()) / len(pitcher_values)
+    edge = overall_hitter - overall_pitcher
+    edge_text = "HITTER EDGE" if edge >= 6 else "PITCHER EDGE" if edge <= -6 else "EVEN MATCHUP"
+
+    return (
+        f'<section class="dd31-matchup-panel" style="--accent:{accent}">'
+        '<header><div><span>DATA-DRIVEN COMPARISON</span><b>MATCHUP EDGE GRAPH</b></div>'
+        f'<aside><small>{edge_text}</small><b>{abs(edge):.0f}</b></aside></header>'
+        '<div class="dd31-matchup-head">'
+        f'<div class="dd31-match-person hitter"><span>HITTER</span><b>{esc(hitter_name)}</b></div>'
+        '<i>VS</i>'
+        f'<div class="dd31-match-person pitcher"><span>PITCHER</span><b>{esc(pitcher_name)}</b></div></div>'
+        '<div class="dd31-match-bars">' + "".join(rows) + '</div>'
+        '<footer><span>Hitter side: AVG, SLG, hard-hit%, barrel%, and strikeout control</span>'
+        '<span>Pitcher side: WHIP prevention, HR suppression, contact suppression, barrel suppression, and K/9</span></footer>'
+        '</section>'
+    )
+
 def _time(meta: dict) -> str:
     for field in ("game_time_local", "game_time", "start_time", "gameTime"):
         value = str(meta.get(field) or "")
@@ -245,6 +310,16 @@ def _detail(board: dict, game: dict) -> None:
         f'<div><span>PROJECTED HITTERS</span><b>{len(game["players"])}</b></div></section>',
         unsafe_allow_html=True,
     )
+
+    away_top = game["away_players"][0] if game["away_players"] else {}
+    home_top = game["home_players"][0] if game["home_players"] else {}
+    matchup_graphs = []
+    if away_top:
+        matchup_graphs.append(_matchup_graph_html(away_top, home_pitcher, "#31c7ff"))
+    if home_top:
+        matchup_graphs.append(_matchup_graph_html(home_top, away_pitcher, "#ff4dd2"))
+    if matchup_graphs:
+        st.markdown('<div class="dd31-matchup-grid">' + "".join(matchup_graphs) + '</div>', unsafe_allow_html=True)
 
     st.markdown(
         _team_batter_board(f"{away} OFFENSE", away_id, home_pitcher, game["away_players"], "#31c7ff")

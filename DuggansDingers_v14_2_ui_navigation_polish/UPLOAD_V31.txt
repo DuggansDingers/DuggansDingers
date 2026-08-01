@@ -1,0 +1,9 @@
+DUGGANSDINGERS V31 VISUAL ANALYTICS PATCH
+
+1. Extract DuggansDingers_v31_VISUAL_ANALYTICS_PATCH.zip.
+2. Copy everything inside DuggansDingers_v31_VISUAL_ANALYTICS_PATCH into the existing app folder.
+3. Replace matching files.
+4. Commit to main and push origin.
+5. Allow Streamlit to reboot.
+
+No new API key is required. The visualizations use data already available in the app.
