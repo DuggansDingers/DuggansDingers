@@ -119,6 +119,7 @@ def _pitcher_rows(board: dict) -> list[dict]:
         row = grouped.setdefault(key, {
             "pitcher_name": name,
             "pitcher_id": player.get("opposing_pitcher_id"),
+            "team_id": player.get("opponent_team_id") or player.get("opposing_team_id"),
             "team_name": player.get("opponent_team_name") or player.get("opposing_team") or "—",
             "game_id": player.get("game_id"),
             "hand": player.get("opposing_pitcher_hand") or "—",
@@ -162,6 +163,16 @@ def _pitcher_rows(board: dict) -> list[dict]:
     return rows
 
 
+def _pitcher_image(row: dict, size: int = 240) -> str:
+    pitcher_id = safe_int(row.get("pitcher_id"))
+    if pitcher_id > 0:
+        return headshot(pitcher_id, size)
+    team_id = safe_int(row.get("team_id"))
+    if team_id > 0:
+        return team_logo(team_id)
+    return ""
+
+
 def _market_rows(board: dict, market: str) -> list[dict]:
     return _pitcher_rows(board) if market == "pitcher-ks" else _hitter_rows(board, market)
 
@@ -182,7 +193,7 @@ def _top_cards(rows: list[dict], market: str) -> str:
     cards = []
     for rank, row in enumerate(rows[:5],1):
         if market == "pitcher-ks":
-            image = team_logo(row.get("team_id"))
+            image = _pitcher_image(row, 280)
             name = str(row.get("pitcher_name") or "—")
             subtitle = f'{row.get("hand")}HP • {safe_float(row.get("k9")):.1f} K/9'
         else:
@@ -196,7 +207,13 @@ def _top_cards(rows: list[dict], market: str) -> str:
             f'<div class="numbers"><strong>{safe_float(row.get("prop_score")):.1f}<em>PROP SCORE</em></strong>'
             f'<strong>{safe_float(row.get("prop_projection")):.2f}<em>PROJECTED {meta["short"]}</em></strong></div>'
             f'<div class="confidence"><i><em style="width:{safe_float(row.get("prop_score")):.1f}%"></em></i><span>{safe_float(row.get("prop_probability")):.0f}% model confidence</span></div>'
-            f'<footer><b>LINE {safe_float(row.get("prop_line")):.1f}</b><span>{esc(row.get("prop_reasons",[""])[0])}</span></footer>'
+            + (
+                f'<div class="pitcher-rail"><span><small>ERA</small><b>{safe_float(row.get("era")):.2f}</b></span>'
+                f'<span><small>WHIP</small><b>{safe_float(row.get("whip")):.2f}</b></span>'
+                f'<span><small>OPP K%</small><b>{safe_float(row.get("opponent_k_rate")):.1f}%</b></span></div>'
+                if market == "pitcher-ks" else ""
+              )
+            + f'<footer><b>LINE {safe_float(row.get("prop_line")):.1f}</b><span>{esc(row.get("prop_reasons",[""])[0])}</span></footer>'
             '</article>'
         )
     return '<div class="dd28-prop-card-row">'+"".join(cards)+'</div>'
@@ -207,7 +224,7 @@ def _board(rows: list[dict], market: str) -> str:
     body = []
     for rank,row in enumerate(rows[:30],1):
         if market == "pitcher-ks":
-            image = team_logo(row.get("team_id"))
+            image = _pitcher_image(row, 200)
             name = str(row.get("pitcher_name") or "—")
             subtitle = f'{row.get("hand")}HP • {safe_float(row.get("era")):.2f} ERA'
         else:
