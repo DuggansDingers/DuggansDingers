@@ -1,0 +1,13 @@
+DUGGANSDINGERS V34 DUGGANS X
+
+PATCH INSTALL
+1. Extract DuggansDingers_v34_DUGGANS_X_PATCH.zip.
+2. Copy everything inside DuggansDingers_v34_DUGGANS_X_PATCH into your existing live app folder.
+3. Replace matching files.
+4. Commit to main and push origin.
+5. Allow Streamlit to reboot.
+
+FULL INSTALL
+Use DuggansDingers_v34_DUGGANS_X_FULL.zip only when replacing the entire app folder.
+
+Your Streamlit URL and Secrets do not change.

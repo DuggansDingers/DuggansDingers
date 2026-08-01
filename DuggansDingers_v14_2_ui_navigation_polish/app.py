@@ -77,6 +77,7 @@ st.session_state.last_fast_start = bool(board.get("fast_start"))
 
 # Counts displayed in the prototype-style sidebar badges.
 st.session_state.last_odds_count = int((board.get("odds_summary") or {}).get("live_records", 0) or 0)
+st.session_state.last_prop_count = len(board.get("rankings", []) or [])
 try:
     from views.extras import _alerts
     st.session_state.last_alert_count = len(_alerts(board))
