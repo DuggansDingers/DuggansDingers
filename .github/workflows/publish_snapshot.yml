@@ -4,7 +4,12 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: "17 */4 * * *"
+  # Hourly during the main MLB lineup and game window
+  - cron: "17 13-23 * * *"
+  - cron: "17 0-3 * * *"
+
+  # Every four hours overnight
+  - cron: "17 4,8,12 * * *"
 
 permissions:
   contents: read
