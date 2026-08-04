@@ -1,0 +1,113 @@
+﻿name: Publish dashboard snapshot
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "17 */4 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-dashboard-snapshot
+  cancel-in-progress: true
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout model repository
+        uses: actions/checkout@v4
+        with:
+          path: model-repo
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: model-repo/DuggansDingers_v14_2_ui_navigation_polish/requirements.txt
+
+      - name: Install model dependencies
+        working-directory: model-repo/DuggansDingers_v14_2_ui_navigation_polish
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build fresh dashboard snapshot
+        working-directory: model-repo/DuggansDingers_v14_2_ui_navigation_polish
+        env:
+          BALLPARKPAL_API_KEY: ${{ secrets.BALLPARKPAL_API_KEY }}
+          ODDS_API_IO_KEY: ${{ secrets.ODDS_API_IO_KEY }}
+          WEATHERAPI_KEY: ${{ secrets.WEATHERAPI_KEY }}
+          ODDS_API_IO_BASE_URL: https://api.odds-api.io/v3
+          ODDS_API_IO_BOOKMAKERS: DraftKings,FanDuel
+          ODDS_TIMEZONE: America/New_York
+          TZ: America/New_York
+        run: |
+          python scripts/build_daily_snapshot.py
+
+      - name: Verify generated snapshot
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path(
+              "model-repo/"
+              "DuggansDingers_v14_2_ui_navigation_polish/"
+              "data/snapshots/current_full.json"
+          )
+
+          if not path.is_file():
+              raise SystemExit(f"Snapshot was not created: {path}")
+
+          if path.stat().st_size == 0:
+              raise SystemExit("Snapshot file is empty")
+
+          board = json.loads(path.read_text(encoding="utf-8"))
+
+          rankings = board.get("rankings") or board.get("players") or []
+          games = board.get("games_meta") or board.get("games") or []
+
+          if not rankings:
+              raise SystemExit("Snapshot contains no ranked hitters")
+
+          if not games:
+              raise SystemExit("Snapshot contains no games")
+
+          print(f"Snapshot verified: {len(rankings)} hitters, {len(games)} games")
+          PY
+
+      - name: Checkout production repository
+        uses: actions/checkout@v4
+        with:
+          repository: DuggansDingers/duggans-dingerzv3
+          token: ${{ secrets.PRODUCTION_REPO_TOKEN }}
+          path: production-repo
+
+      - name: Copy snapshot into production backend
+        run: |
+          mkdir -p production-repo/backend/data
+          cp \
+            model-repo/DuggansDingers_v14_2_ui_navigation_polish/data/snapshots/current_full.json \
+            production-repo/backend/data/current_full.json
+
+      - name: Commit and push updated snapshot
+        working-directory: production-repo
+        run: |
+          git config user.name "Duggans Snapshot Bot"
+          git config user.email "actions@users.noreply.github.com"
+
+          git add backend/data/current_full.json
+
+          if git diff --cached --quiet; then
+            echo "Snapshot did not change. Nothing to publish."
+            exit 0
+          fi
+
+          git commit -m "Refresh production dashboard snapshot"
+          git push origin main
