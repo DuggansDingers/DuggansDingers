@@ -1,0 +1,21 @@
+{
+  "date": "2026-08-06",
+  "generated_at": "2026-08-06T18:02:30.571472+00:00",
+  "games": 11,
+  "ranked_hitters": 198,
+  "weather_games": 10,
+  "odds_offers": 3240,
+  "odds_markets": [
+    "Hits",
+    "Home Run",
+    "Pitcher Earned Runs",
+    "Pitcher Outs Recorded",
+    "Pitcher Strikeouts",
+    "RBIs",
+    "Runs Scored",
+    "Stolen Bases",
+    "Total Bases",
+    "Walks"
+  ],
+  "warnings": []
+}
