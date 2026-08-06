@@ -80,6 +80,11 @@ def build_snapshot(target_date: str) -> dict[str, Any]:
 
     if not board.get("rankings"):
         raise RuntimeError("Snapshot validation failed: rankings are empty.")
+    board.setdefault("props", [])
+    board["pricedProps"] = sum(
+        1 for prop in board.get("props", []) if isinstance(prop, dict) and prop.get("odds") is not None
+    )
+    board["priced_props"] = board["pricedProps"]
     return board
 
 
@@ -100,7 +105,11 @@ def main() -> int:
             "games": board.get("games", 0),
             "ranked_hitters": len(board.get("rankings", [])),
             "weather_games": (board.get("weather_summary") or {}).get("games_available", 0),
-            "odds_offers": (board.get("odds_summary") or {}).get("live_records", 0),
+            "odds_offers": (board.get("odds_summary") or {}).get(
+                "priced_props",
+                (board.get("odds_summary") or {}).get("live_prop_records", 0),
+            ),
+            "odds_markets": (board.get("odds_summary") or {}).get("markets", []),
             "warnings": board.get("snapshot_warnings", []),
         },
     )

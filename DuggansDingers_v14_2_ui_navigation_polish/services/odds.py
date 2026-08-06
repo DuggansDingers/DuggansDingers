@@ -25,6 +25,7 @@ LIVE_CACHE_FILE = BASE_DIR / "data" / "cache" / "odds_api_io.json"
 API_BASE = os.getenv("ODDS_API_IO_BASE_URL", "https://api.odds-api.io/v3").rstrip("/")
 API_BOOKMAKERS = os.getenv("ODDS_API_IO_BOOKMAKERS", "DraftKings,FanDuel").strip() or "DraftKings,FanDuel"
 ODDS_TIMEZONE = os.getenv("ODDS_TIMEZONE", "America/New_York").strip() or "America/New_York"
+ODDS_CACHE_SCHEMA = 2
 
 
 @dataclass(frozen=True)
@@ -36,6 +37,21 @@ class OddsRecord:
     american_odds: float
     player_id: int | None = None
     game_id: str = ""
+
+
+@dataclass(frozen=True)
+class PlayerPropRecord:
+    slate_date: str
+    player_name: str
+    market: str
+    line: float | None
+    side: str
+    book: str
+    american_odds: float
+    player_id: int | None = None
+    team: str = ""
+    game_id: str = ""
+    source: str = "live"
 
 
 def safe_float(value: Any, default: float = 0.0) -> float:
@@ -240,6 +256,240 @@ def _market_is_home_run(value: str) -> bool:
         or "homerun" in text
         or text in {"batter hr", "player hr", "to hit a home run"}
     )
+
+
+# Canonical market names consumed by the Next.js Prop Command and Kitchen pages.
+# Keep this list intentionally narrow so team totals and game totals cannot be
+# mistaken for player props.
+def canonical_player_market(value: Any) -> str:
+    text = normalize_name(value)
+    if not text or text == "player props":
+        return ""
+
+    if any(token in text for token in ("hits runs rbis", "hits runs rbi", "singles", "doubles", "triples")):
+        return ""
+    if "earned runs" in text:
+        return "Pitcher Earned Runs"
+    if "outs recorded" in text or "pitching outs" in text or "pitcher outs" in text:
+        return "Pitcher Outs Recorded"
+    if "strikeout" in text or text in {"ks", "k s", "pitcher ks"}:
+        return "Pitcher Strikeouts"
+    if "stolen base" in text:
+        return "Stolen Bases"
+    if "total base" in text:
+        return "Total Bases"
+    if "home run" in text or "homerun" in text or text in {"batter hr", "player hr"}:
+        return "Home Run"
+    if "runs batted in" in text or re.search(r"\brbis?\b", text):
+        return "RBIs"
+    if "walk" in text and "allowed" not in text:
+        return "Walks"
+    if "hit" in text and "allowed" not in text:
+        return "Hits"
+    if "run" in text and not any(token in text for token in ("allowed", "earned", "home run")):
+        return "Runs Scored"
+    return ""
+
+
+def _extract_line(node: dict[str, Any], market: str) -> float | None:
+    for key in ("hdp", "line", "point", "handicap", "threshold", "total"):
+        if key not in node or node.get(key) in (None, ""):
+            continue
+        value = safe_float(node.get(key), default=float("nan"))
+        if value == value:
+            return value
+    # Home-run props are commonly yes/no offers without an explicit line.
+    return 0.5 if market == "Home Run" else None
+
+
+def _split_player_market_label(label: Any, fallback_market: Any = "") -> tuple[str, str]:
+    raw = " ".join(str(label or "").split())
+    if not raw:
+        return "", ""
+
+    # Odds-API.io's documented baseball shape uses labels like
+    # "Shohei Ohtani (Home Runs)".
+    match = re.match(r"^(.+?)\s*\(([^()]*)\)\s*$", raw)
+    if match:
+        market = canonical_player_market(match.group(2))
+        if market:
+            return match.group(1).strip(), market
+
+    for separator in (" - ", " | ", ": "):
+        if separator not in raw:
+            continue
+        left, right = [part.strip() for part in raw.rsplit(separator, 1)]
+        market = canonical_player_market(right)
+        if market:
+            return left, market
+        market = canonical_player_market(left)
+        if market:
+            return right, market
+
+    fallback = canonical_player_market(fallback_market)
+    if fallback and normalize_name(raw) not in {"over", "under", "yes", "no"}:
+        return raw, fallback
+    return "", ""
+
+
+def _offer_side_prices(offer: dict[str, Any]) -> list[tuple[str, float]]:
+    prices: list[tuple[str, float]] = []
+    side_fields = (
+        ("Over", ("over", "overOdds", "over_odds")),
+        ("Under", ("under", "underOdds", "under_odds")),
+        ("Yes", ("yes", "yesOdds", "yes_odds")),
+        ("No", ("no", "noOdds", "no_odds")),
+    )
+    for side, keys in side_fields:
+        for key in keys:
+            if key not in offer or offer.get(key) in (None, ""):
+                continue
+            price = normalize_odds(offer.get(key))
+            if price:
+                prices.append((side, price))
+            break
+
+    if prices:
+        return prices
+
+    side = _text_from(offer, ("side", "selection", "outcome", "type"))
+    price = _extract_price(offer)
+    normalized_side = normalize_name(side)
+    if price and normalized_side in {"over", "under", "yes", "no"}:
+        return [(normalized_side.title(), price)]
+    return []
+
+
+def _parse_odds_api_io_all_player_props(payload: Any, target_date: str, event_id: str) -> list[PlayerPropRecord]:
+    if not isinstance(payload, dict):
+        return []
+    bookmakers = payload.get("bookmakers")
+    if not isinstance(bookmakers, dict):
+        return []
+
+    records: list[PlayerPropRecord] = []
+    for book, markets in bookmakers.items():
+        if not isinstance(markets, list):
+            continue
+        for market_node in markets:
+            if not isinstance(market_node, dict):
+                continue
+            container_name = _text_from(market_node, ("name", "label", "market", "marketName"))
+            normalized_container = normalize_name(container_name)
+            if "player prop" not in normalized_container and not canonical_player_market(container_name):
+                continue
+            offers = market_node.get("odds") or market_node.get("outcomes") or market_node.get("selections") or []
+            if isinstance(offers, dict):
+                offers = [offers]
+            if not isinstance(offers, list):
+                continue
+            for offer in offers:
+                if not isinstance(offer, dict):
+                    continue
+                label = _text_from(offer, ("label", "description", "name", "participant", "participantName"))
+                player_name, market = _split_player_market_label(label, container_name)
+                if not player_name or not market:
+                    # Some feeds separate the participant and stat fields.
+                    player_name = _extract_player_name(offer)
+                    market = canonical_player_market(
+                        _text_from(offer, ("market", "marketName", "market_name", "statType", "stat_type", "betType", "bet_type"))
+                        or container_name
+                    )
+                if not player_name or not market:
+                    continue
+                line = _extract_line(offer, market)
+                for side, american_odds in _offer_side_prices(offer):
+                    records.append(
+                        PlayerPropRecord(
+                            slate_date=target_date,
+                            player_name=player_name,
+                            market=market,
+                            line=line,
+                            side=side,
+                            book=str(book),
+                            american_odds=american_odds,
+                            game_id=event_id,
+                        )
+                    )
+    return records
+
+
+def _walk_player_prop_offers(
+    node: Any,
+    *,
+    target_date: str,
+    event_id: str,
+    book: str = "",
+    market: str = "",
+) -> list[PlayerPropRecord]:
+    records: list[PlayerPropRecord] = []
+    if isinstance(node, list):
+        for item in node:
+            records.extend(
+                _walk_player_prop_offers(
+                    item,
+                    target_date=target_date,
+                    event_id=event_id,
+                    book=book,
+                    market=market,
+                )
+            )
+        return records
+    if not isinstance(node, dict):
+        return records
+
+    local_book = book
+    local_market = market
+    book_candidate = _text_from(node, ("bookmaker", "sportsbook", "book", "bookmakerName"))
+    if book_candidate:
+        local_book = book_candidate
+    market_candidate = _text_from(node, ("market", "marketName", "market_name", "group", "betType", "statType"))
+    canonical = canonical_player_market(market_candidate)
+    if canonical:
+        local_market = canonical
+
+    label = _text_from(node, ("label", "description", "name", "participant", "participantName"))
+    player_name, label_market = _split_player_market_label(label, local_market)
+    if label_market:
+        local_market = label_market
+    if not player_name:
+        player_name = _extract_player_name(node)
+    if player_name and local_market:
+        line = _extract_line(node, local_market)
+        for side, price in _offer_side_prices(node):
+            records.append(
+                PlayerPropRecord(
+                    slate_date=target_date,
+                    player_name=player_name,
+                    market=local_market,
+                    line=line,
+                    side=side,
+                    book=local_book or "Odds-API.io",
+                    american_odds=price,
+                    game_id=event_id,
+                )
+            )
+
+    for key, value in node.items():
+        if not isinstance(value, (dict, list)):
+            continue
+        next_book = local_book
+        next_market = local_market
+        key_market = canonical_player_market(key)
+        if key_market:
+            next_market = key_market
+        elif not next_book and isinstance(value, dict) and any(k in value for k in ("markets", "odds", "outcomes")):
+            next_book = str(key)
+        records.extend(
+            _walk_player_prop_offers(
+                value,
+                target_date=target_date,
+                event_id=event_id,
+                book=next_book,
+                market=next_market,
+            )
+        )
+    return records
 
 
 def _selection_is_yes_or_over(node: dict[str, Any], inherited_market: str) -> bool:
@@ -493,18 +743,93 @@ def _dedupe_records(records: list[OddsRecord]) -> list[OddsRecord]:
     return list(best.values())
 
 
+def _dedupe_prop_records(records: list[PlayerPropRecord]) -> list[PlayerPropRecord]:
+    best: dict[tuple[str, str, str, str, str, str], PlayerPropRecord] = {}
+    for record in records:
+        line_key = "" if record.line is None else f"{record.line:g}"
+        key = (
+            normalize_name(record.player_name),
+            normalize_name(record.market),
+            line_key,
+            normalize_name(record.side),
+            record.book.lower(),
+            record.game_id,
+        )
+        existing = best.get(key)
+        if existing is None or american_to_decimal(record.american_odds) > american_to_decimal(existing.american_odds):
+            best[key] = record
+    return list(best.values())
 
 
-def _cached_live_result(target_date: str) -> tuple[list[OddsRecord], dict[str, Any]] | None:
+def _hr_records_from_props(records: list[PlayerPropRecord]) -> list[OddsRecord]:
+    return _dedupe_records(
+        [
+            OddsRecord(
+                slate_date=record.slate_date,
+                player_name=record.player_name,
+                team=record.team,
+                book=record.book,
+                american_odds=record.american_odds,
+                player_id=record.player_id,
+                game_id=record.game_id,
+            )
+            for record in records
+            if record.market == "Home Run"
+            and normalize_name(record.side) in {"over", "yes"}
+            and (record.line is None or record.line <= 0.5)
+        ]
+    )
+
+
+def _manual_hr_props(records: list[OddsRecord]) -> list[PlayerPropRecord]:
+    return [
+        PlayerPropRecord(
+            slate_date=record.slate_date,
+            player_name=record.player_name,
+            market="Home Run",
+            line=0.5,
+            side="Over",
+            book=record.book,
+            american_odds=record.american_odds,
+            player_id=record.player_id,
+            team=record.team,
+            game_id=record.game_id,
+            source="manual",
+        )
+        for record in records
+    ]
+
+
+def _best_prop_board_records(records: list[PlayerPropRecord]) -> list[PlayerPropRecord]:
+    """Keep the best available sportsbook price for each player/market/side."""
+    best: dict[tuple[str, str, str, str, str], PlayerPropRecord] = {}
+    for record in records:
+        line_key = "" if record.line is None else f"{record.line:g}"
+        key = (
+            normalize_name(record.player_name),
+            normalize_name(record.market),
+            line_key,
+            normalize_name(record.side),
+            record.game_id,
+        )
+        existing = best.get(key)
+        if existing is None or american_to_decimal(record.american_odds) > american_to_decimal(existing.american_odds):
+            best[key] = record
+    return list(best.values())
+
+
+def _cached_live_result(target_date: str) -> tuple[list[OddsRecord], list[PlayerPropRecord], dict[str, Any]] | None:
     """Return a recent cached odds result.
 
     Successful pulls are reused for one hour. Empty or failed pulls are reused
-    for only five minutes so the app retries automatically without a button.
+    for only five minutes so the scheduled snapshot retries quickly.
     """
     if not LIVE_CACHE_FILE.exists():
         return None
     try:
         cached = json.loads(LIVE_CACHE_FILE.read_text(encoding="utf-8"))
+        if int(cached.get("schema_version") or 0) != ODDS_CACHE_SCHEMA:
+            return None
         if str(cached.get("target_date") or "") != target_date:
             return None
         updated_at = datetime.fromisoformat(str(cached.get("updated_at") or "").replace("Z", "+00:00"))
@@ -512,17 +837,23 @@ def _cached_live_result(target_date: str) -> tuple[list[OddsRecord], dict[str, A
             updated_at = updated_at.replace(tzinfo=timezone.utc)
         age = (datetime.now(timezone.utc) - updated_at.astimezone(timezone.utc)).total_seconds()
         raw_records = cached.get("records") or []
-        max_age = 3600 if raw_records else 300
+        raw_props = cached.get("prop_records") or []
+        max_age = 3600 if raw_records or raw_props else 300
         if age < 0 or age > max_age:
             return None
         records = [OddsRecord(**item) for item in raw_records if isinstance(item, dict)]
+        prop_records = [PlayerPropRecord(**item) for item in raw_props if isinstance(item, dict)]
+        # Upgrade old HR-only caches without forcing a failed first load.
+        if not prop_records and records:
+            prop_records = _manual_hr_props(records)
         status = cached.get("status") or {}
         if not isinstance(status, dict):
             status = {}
         status = dict(status)
         status["from_cache"] = True
         status["raw_cache"] = str(LIVE_CACHE_FILE)
-        return records, status
+        status.setdefault("prop_offers", len(prop_records))
+        return records, prop_records, status
     except Exception:
         return None
 
@@ -534,10 +865,16 @@ def clear_live_odds_cache() -> None:
         pass
 
 
-def fetch_live_odds(target_date: str) -> tuple[list[OddsRecord], dict[str, Any]]:
+def fetch_live_odds(target_date: str) -> tuple[list[OddsRecord], list[PlayerPropRecord], dict[str, Any]]:
     api_key = os.getenv("ODDS_API_IO_KEY", "").strip()
     if not api_key:
-        return [], {"connected": False, "status": "API key not configured", "events": 0, "offers": 0}
+        return [], [], {
+            "connected": False,
+            "status": "API key not configured",
+            "events": 0,
+            "offers": 0,
+            "prop_offers": 0,
+        }
 
     cached = _cached_live_result(target_date)
     if cached is not None:
@@ -546,8 +883,10 @@ def fetch_live_odds(target_date: str) -> tuple[list[OddsRecord], dict[str, Any]]
     try:
         events = fetch_mlb_events(api_key, target_date)
         all_records: list[OddsRecord] = []
+        all_props: list[PlayerPropRecord] = []
         raw_events: list[dict[str, Any]] = []
         skipped_events: list[dict[str, Any]] = []
+
         def fetch_event(event: dict[str, Any]) -> tuple[dict[str, Any], Any | None, dict[str, Any] | None]:
             event_id = str(event.get("id") or "")
             if not event_id:
@@ -574,26 +913,62 @@ def fetch_live_odds(target_date: str) -> tuple[list[OddsRecord], dict[str, Any]]
                     continue
                 event_id = str(event.get("id") or "")
                 raw_events.append({"event": event, "odds": payload})
-                parsed = _parse_odds_api_io_player_props(payload, target_date=target_date, event_id=event_id)
-                if not parsed:
-                    parsed = _walk_offers(payload, target_date=target_date, event_id=event_id)
-                all_records.extend(parsed)
+
+                parsed_props = _parse_odds_api_io_all_player_props(
+                    payload,
+                    target_date=target_date,
+                    event_id=event_id,
+                )
+                parsed_props.extend(
+                    _walk_player_prop_offers(
+                        payload,
+                        target_date=target_date,
+                        event_id=event_id,
+                    )
+                )
+                parsed_props = _dedupe_prop_records(parsed_props)
+                all_props.extend(parsed_props)
+
+                hr_records = _hr_records_from_props(parsed_props)
+                if not hr_records:
+                    # Backwards-compatible fallback for unusual HR-only payloads.
+                    hr_records = _parse_odds_api_io_player_props(
+                        payload,
+                        target_date=target_date,
+                        event_id=event_id,
+                    )
+                    if not hr_records:
+                        hr_records = _walk_offers(
+                            payload,
+                            target_date=target_date,
+                            event_id=event_id,
+                        )
+                all_records.extend(hr_records)
 
         records = _dedupe_records(all_records)
+        prop_records = _dedupe_prop_records(all_props)
         game_totals = _best_game_totals(raw_events)
-        if records:
-            status_text = "Live HR props loaded automatically"
+        markets = sorted({record.market for record in prop_records})
+
+        if prop_records:
+            status_text = f"Loaded {len(prop_records)} live player-prop offer(s) across {len(markets)} market(s)"
         elif events and skipped_events:
-            status_text = f"Checked {len(events)} upcoming MLB game(s); {len(skipped_events)} odds request(s) failed and no 0.5 HR offers were returned"
+            status_text = (
+                f"Checked {len(events)} upcoming MLB game(s); "
+                f"{len(skipped_events)} odds request(s) failed and no player props were returned"
+            )
         elif events:
-            status_text = "Upcoming MLB games found, but no 0.5 home-run offers were returned by the selected books"
+            status_text = "Upcoming MLB games found, but the selected books returned no supported player props"
         else:
             status_text = "No MLB events found for this slate"
+
         status_payload = {
             "connected": True,
             "status": status_text,
             "events": len(events),
             "offers": len(records),
+            "prop_offers": len(prop_records),
+            "markets": markets,
             "skipped_events": len(skipped_events),
             "raw_cache": str(LIVE_CACHE_FILE),
             "from_cache": False,
@@ -601,23 +976,40 @@ def fetch_live_odds(target_date: str) -> tuple[list[OddsRecord], dict[str, Any]]
         }
         LIVE_CACHE_FILE.parent.mkdir(parents=True, exist_ok=True)
         LIVE_CACHE_FILE.write_text(
-            json.dumps({
-                "updated_at": datetime.now(timezone.utc).isoformat(),
-                "target_date": target_date,
-                "records": [asdict(record) for record in records],
-                "status": status_payload,
-                "events": raw_events,
-                "game_totals": game_totals,
-                "skipped_events": skipped_events,
-            }, indent=2),
+            json.dumps(
+                {
+                    "schema_version": ODDS_CACHE_SCHEMA,
+                    "updated_at": datetime.now(timezone.utc).isoformat(),
+                    "target_date": target_date,
+                    "records": [asdict(record) for record in records],
+                    "prop_records": [asdict(record) for record in prop_records],
+                    "status": status_payload,
+                    "events": raw_events,
+                    "game_totals": game_totals,
+                    "skipped_events": skipped_events,
+                },
+                indent=2,
+            ),
             encoding="utf-8",
         )
-        return records, status_payload
+        return records, prop_records, status_payload
     except requests.HTTPError as exc:
         status_code = exc.response.status_code if exc.response is not None else ""
-        return [], {"connected": False, "status": f"Odds API HTTP error {status_code}", "events": 0, "offers": 0}
+        return [], [], {
+            "connected": False,
+            "status": f"Odds API HTTP error {status_code}",
+            "events": 0,
+            "offers": 0,
+            "prop_offers": 0,
+        }
     except Exception as exc:
-        return [], {"connected": False, "status": f"Odds API error: {exc}", "events": 0, "offers": 0}
+        return [], [], {
+            "connected": False,
+            "status": f"Odds API error: {exc}",
+            "events": 0,
+            "offers": 0,
+            "prop_offers": 0,
+        }
 
 
 def _match_score(player: dict[str, Any], record: OddsRecord) -> int:
@@ -646,25 +1038,148 @@ def _match_score(player: dict[str, Any], record: OddsRecord) -> int:
     return score
 
 
+def _prop_subjects(board: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    subjects: dict[str, dict[str, Any]] = {}
+    for player in board.get("rankings", []) or []:
+        name = str(player.get("player_name") or "").strip()
+        if not name:
+            continue
+        subjects[normalize_name(name)] = {
+            "player_id": safe_int(player.get("player_id")),
+            "team": str(player.get("team_name") or "").upper(),
+            "game_id": str(player.get("game_id") or player.get("mlb_game_pk") or ""),
+            "probability": player.get("probability"),
+            "score": player.get("dinger_score"),
+            "kind": "hitter",
+        }
+
+    for game in board.get("games_meta", []) or []:
+        for side in ("home", "away"):
+            name = str(game.get(f"{side}_probable_pitcher") or "").strip()
+            if not name:
+                continue
+            subjects.setdefault(
+                normalize_name(name),
+                {
+                    "player_id": safe_int(game.get(f"{side}_probable_pitcher_id")),
+                    "team": str(game.get(f"{side}_team_name") or "").upper(),
+                    "game_id": str(game.get("mlb_game_pk") or game.get("game_id") or ""),
+                    "probability": None,
+                    "score": None,
+                    "kind": "pitcher",
+                },
+            )
+    return subjects
+
+
+def _build_board_props(board: dict[str, Any], records: list[PlayerPropRecord]) -> list[dict[str, Any]]:
+    subjects = _prop_subjects(board)
+    all_records = _dedupe_prop_records(records)
+    best_records = _best_prop_board_records(all_records)
+    offers_by_key: dict[tuple[str, str, str, str, str], list[dict[str, Any]]] = {}
+
+    for record in all_records:
+        line_key = "" if record.line is None else f"{record.line:g}"
+        key = (
+            normalize_name(record.player_name),
+            normalize_name(record.market),
+            line_key,
+            normalize_name(record.side),
+            record.game_id,
+        )
+        offers_by_key.setdefault(key, []).append(
+            {
+                "sportsbook": record.book,
+                "odds": record.american_odds,
+                "decimalOdds": american_to_decimal(record.american_odds),
+                "impliedProbability": implied_probability(record.american_odds),
+                "source": record.source,
+            }
+        )
+
+    props: list[dict[str, Any]] = []
+    for record in sorted(
+        best_records,
+        key=lambda row: (
+            row.market,
+            normalize_name(row.player_name),
+            row.line if row.line is not None else -1,
+            row.side,
+        ),
+    ):
+        subject = subjects.get(normalize_name(record.player_name), {})
+        line_key = "" if record.line is None else f"{record.line:g}"
+        key = (
+            normalize_name(record.player_name),
+            normalize_name(record.market),
+            line_key,
+            normalize_name(record.side),
+            record.game_id,
+        )
+        model_probability = None
+        model_score = None
+        if record.market == "Home Run" and normalize_name(record.side) in {"over", "yes"}:
+            model_probability = subject.get("probability")
+            model_score = subject.get("score")
+
+        player_id = record.player_id or subject.get("player_id")
+        team = record.team or subject.get("team") or ""
+        identity = "|".join(
+            [
+                str(record.game_id),
+                str(player_id or normalize_name(record.player_name)),
+                normalize_name(record.market),
+                line_key,
+                normalize_name(record.side),
+            ]
+        )
+        props.append(
+            {
+                "id": identity,
+                "playerId": player_id,
+                "playerName": record.player_name,
+                "team": team,
+                "market": record.market,
+                "line": record.line,
+                "side": record.side,
+                "odds": record.american_odds,
+                "americanOdds": record.american_odds,
+                "sportsbook": record.book,
+                "probability": model_probability,
+                "score": model_score,
+                "gameId": record.game_id or subject.get("game_id") or None,
+                "bookImpliedProbability": implied_probability(record.american_odds),
+                "offers": sorted(
+                    offers_by_key.get(key, []),
+                    key=lambda offer: american_to_decimal(offer.get("odds")),
+                    reverse=True,
+                ),
+            }
+        )
+    return props
+
+
 def enrich_board_odds(board: dict[str, Any], path: Path = ODDS_FILE) -> dict[str, Any]:
     rankings = board.get("rankings", []) or []
     target_date = str(board.get("date") or date.today().isoformat())
 
-    live_records, live_status = fetch_live_odds(target_date)
+    live_records, live_props, live_status = fetch_live_odds(target_date)
     try:
         cached_payload = json.loads(LIVE_CACHE_FILE.read_text(encoding="utf-8")) if LIVE_CACHE_FILE.exists() else {}
         game_totals = cached_payload.get("game_totals") if isinstance(cached_payload.get("game_totals"), list) else []
     except (OSError, json.JSONDecodeError):
         game_totals = []
     _attach_game_totals(board, game_totals)
+
     manual_records = load_odds(path, target_date)
-    # Manual rows stay useful as a fallback and can override/add books that the
-    # live provider does not return.
+    # Manual CSV rows remain an HR fallback. Live provider rows can now carry all
+    # supported player markets into the top-level snapshot props list.
     records = _dedupe_records(live_records + manual_records)
+    prop_records = _dedupe_prop_records(live_props + _manual_hr_props(manual_records))
 
     matched_players = 0
     unmatched_records = set(range(len(records)))
-    books: set[str] = set()
+    books: set[str] = {record.book for record in prop_records if record.book}
 
     for player in rankings:
         matches: list[tuple[int, OddsRecord]] = []
@@ -718,24 +1233,35 @@ def enrich_board_odds(board: dict[str, Any], path: Path = ODDS_FILE) -> dict[str
         player["roi_pct"] = player["ev_10"] * 10
         player["model_fair_odds"] = fair_american_from_probability(model_probability) if model_probability else player.get("fair_odds")
 
+    board_props = _build_board_props(board, prop_records)
+    board["props"] = board_props
+    board["pricedProps"] = sum(1 for prop in board_props if prop.get("odds") is not None)
+    board["priced_props"] = board["pricedProps"]
+
     positive_edges = [player for player in rankings if player.get("edge_pct") is not None and float(player["edge_pct"]) > 0]
-    source = "Odds-API.io Live" if live_records else ("Manual CSV" if manual_records else "Not connected")
+    source = "Odds-API.io Live" if live_props or live_records else ("Manual CSV" if manual_records else "Not connected")
     board["odds_summary"] = {
         "source": source,
         "file": str(path),
         "records": len(records),
         "live_records": len(live_records),
+        "live_prop_records": len(live_props),
+        "prop_records": len(prop_records),
+        "priced_props": len(board_props),
+        "markets": sorted({prop.get("market") for prop in board_props if prop.get("market")}),
         "manual_records": len(manual_records),
         "matched_players": matched_players,
         "unmatched_records": len(unmatched_records),
         "books": sorted(books),
         "positive_edges": len(positive_edges),
-        "connected": bool(records) or bool(live_status.get("connected")),
+        "connected": bool(records) or bool(prop_records) or bool(live_status.get("connected")),
         "api_status": live_status.get("status", ""),
         "api_events": live_status.get("events", 0),
         "raw_cache": live_status.get("raw_cache", ""),
     }
-    board.setdefault("data_sources", {})["Sportsbook Odds"] = "live" if live_records else ("manual" if manual_records else "unavailable")
+    board.setdefault("data_sources", {})["Sportsbook Odds"] = (
+        "live" if live_props or live_records else ("manual" if manual_records else "unavailable")
+    )
     return board
 
 
